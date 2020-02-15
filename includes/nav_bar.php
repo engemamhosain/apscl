@@ -56,7 +56,7 @@ nav .start-about, a:nth-child(2):hover~.animation {
 	left: 100px;
 	background-color: #e74c3c;
 }
-nav .start-blog, a:nth-child(3):hover~.animation {
+nav .start-tr, a:nth-child(3):hover~.animation {
 	width: 100px;
 	left: 210px;
 	background-color: #3498db;
@@ -104,11 +104,10 @@ span {
 <h1> APSCL O&M Knowledge Base </h1>
 
 <nav>
-	<a href="#">Home</a>
-	<a href="#">Reports</a>
-	<a href="#">TR Report</a>
-	<a href="#">Equipment</a>
+	<a href="dashboard.php">Home</a>
+	<a href="#">EM Reports</a>
+	<a href="tr_list.php">TR Report</a>
+	<a href="#">Equipment List</a>
 	<a href="#">Contact</a>
-	<div class="animation start-home"></div>
-</nav>
+	
 
