@@ -59,7 +59,7 @@
 					</div>
 
 					<div class="container-login100-form-btn" onclick="Login();">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn loginbtn">
 							Login
 						</button>`
 					</div>
@@ -92,11 +92,34 @@
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="Login_v3/js/main.js"></script>
+	<script src="base_url.js"></script>
+	
 	<script type="text/javascript">
+
+		var user_list=[{username:"Bashar",password:"Bashar",role:"Admin",id:"1001"},{username:"hasanmahmud",password:"hasanmahmud",role:"Admin",id:"1002"}]
+        var isloginMatch=false;
+        localStorage.isLogin = "false"
+
 			function Login(){
-				$(".username").val();
-				$(".pass").val();
+				 user_list.forEach(function(item){ 
+				 	console.log(item);
+        			if( item.username === $(".username").val() && item.password === $(".pass").val() ){
+					 
+					 localStorage.role = item.role;
+					 localStorage.id = item.id;
+					 localStorage.username = item.username;					 
+
+					 isloginMatch=true;
+					}
+    			}); 
+			
+				if(isloginMatch){
+					
+					localStorage.isLogin = "true"
+					location.replace(url+"dashboard.php")
+				}else{
+					location.replace("error-404/")
+				}
 			}
 	</script>
 
