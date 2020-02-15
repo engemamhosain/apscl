@@ -15,8 +15,8 @@
 </head>
 <body>
 <?php include 'includes/html_open.php';?>
-
-        <h1> APSCL O&M Knowledge Base </h1>
+<?php include 'includes/nav_bar.php';?>
+       
 
   <?php include 'includes/html_close.php';?>
 
