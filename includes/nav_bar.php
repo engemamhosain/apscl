@@ -105,9 +105,9 @@ span {
 
 <nav>
 	<a href="#">Home</a>
-	<a href="#">About</a>
-	<a href="#">Blog</a>
-	<a href="#">Portefolio</a>
+	<a href="#">Reports</a>
+	<a href="#">TR Report</a>
+	<a href="#">Equipment</a>
 	<a href="#">Contact</a>
 	<div class="animation start-home"></div>
 </nav>

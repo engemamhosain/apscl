@@ -19,7 +19,7 @@
               <a href="#logout">	<span class="white-text email"> <i class="material-icons">logout</i> </span> </a>
 
             </div>
-        	<h5> APSCL O&M Knowledge Base</h5>
+        <!-- 	<h5> APSCL O&M Knowledge Base</h5> -->
         <li class="bold">
         	<p>
 
@@ -34,15 +34,15 @@
         <li class="no-padding ">
           <ul class=" collapsible collapsible-accordion">
             <li class="bold ">
-            	<a class="collapsible-header waves-effect waves-teal" tabindex="0">
+            	<a  style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
             		Equipment Maintenance Report
             	</a>
               <div class="collapsible-body" style="display: block;">
                 <ul>
-                  <li><a href="#"> Show Reports </a></li>
-                  <li><a href="#"> Search</a></li>
-                  <li><a href="#"> Archive</a></li>
-                  <li><a href="#"> Create New</a></li>
+                  <li><a style="width: 300px;" href="#"> Show Reports </a></li>
+                  <li><a style="width: 300px;" href="#"> Search</a></li>
+                  <li><a style="width: 300px;" href="#"> Archive</a></li>
+                  <li><a style="width: 300px;" href="#"> Create New</a></li>
 
                 </ul>
               </div>
@@ -53,15 +53,15 @@
         <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
             <li class="bold ">
-            	<a class="collapsible-header waves-effect waves-teal" tabindex="0">
+            	<a  style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
             		TR | Troble Report
             	</a>
               <div class="collapsible-body" style="display: block;">
                 <ul>
-                  <li><a href="#"> TR in Progress </a></li>
-                  <li><a href="#"> Create New</a></li>
-                  <li><a href="#"> Archive</a></li>
-                  <li><a href="#"> Search</a></li>
+                  <li><a style="width: 300px;" href="#"> TR in Progress </a></li>
+                  <li><a style="width: 300px;" href="#"> Create New</a></li>
+                  <li><a style="width: 300px;" href="#"> Archive</a></li>
+                  <li><a style="width: 300px;" href="#"> Search</a></li>
 
                 </ul>
               </div>
@@ -72,14 +72,14 @@
       <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
             <li class="bold ">
-            	<a class="collapsible-header waves-effect waves-teal" tabindex="0">
+            	<a style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
             		Device Manual
             	</a>
               <div class="collapsible-body" style="display: block;">
                 <ul>
-                  <li><a href="#"> Search</a></li>
-                  <li><a href="#"> Related Reports </a></li>
-                  <li><a href="#"> Add New Manual</a></li>
+                  <li><a  style="width: 300px;" href="#"> Search</a></li>
+                  <li><a style="width: 300px;" href="#"> Related Reports </a></li>
+                  <li><a style="width: 300px;" href="#"> Add New Manual</a></li>
                 </ul>
               </div>
             </li>
@@ -90,14 +90,14 @@
       <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
             <li class="bold ">
-            	<a class="collapsible-header waves-effect waves-teal" tabindex="0">
+            	<a style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
             		Admin / User Mangment
             	</a>
               <div class="collapsible-body" style="display: block;">
                 <ul>
-                  <li><a href="#"> Team Managment </a></li>
-                  <li><a href="#"> Update Profile</a></li>
-                  <li><a href="#"> Add New User</a></li>
+                  <li><a style="width: 300px;"  href="#"> Team Managment </a></li>
+                  <li><a style="width: 300px;"  href="#"> Update Profile</a></li>
+                  <li><a style="width: 300px;" href="#"> Add New User</a></li>
                 </ul>
               </div>
             </li>

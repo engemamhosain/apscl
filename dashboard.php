@@ -14,8 +14,12 @@
 
 </head>
 <body>
+
+
 <?php include 'includes/html_open.php';?>
+
 <?php include 'includes/nav_bar.php';?>
+<?php include 'includes/slider.php';?>
        
 
   <?php include 'includes/html_close.php';?>
