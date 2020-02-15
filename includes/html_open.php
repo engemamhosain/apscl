@@ -11,12 +11,10 @@
                 <img class="circle" src="asset/img/employee.jpg">
               </a>
               <a href="#name">
-                <span class="white-text name">Zulfikar Hossian
-
-                </span>
+                <span class="white-text name username"></span>
               </a>
               <a href="#email">
-                <span class="white-text email">ID: 102019058771</span>
+                <span class="white-text email userid"></span>
               </a>
               <a href="#logout">	<span class="white-text email"> <i class="material-icons">logout</i> </span> </a>
 
@@ -109,4 +107,5 @@
       <li><a href="#logout"> Logout</a></li>
 
     </div>
+
 <div class="col s12 m8 l9">

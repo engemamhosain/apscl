@@ -15,10 +15,17 @@
 </head>
 <body>
 <?php include 'includes/html_open.php';?>
-        <h1> APSCL Knowledge Base </h1>
+
+        <h1> APSCL O&M Knowledge Base </h1>
 
   <?php include 'includes/html_close.php';?>
 
 	<?php include 'includes/include_js.php';?>
+
+	   <script type="text/javascript">
+  $(".username").html(localStorage.username+" ( "+localStorage.role+" )");
+  $(".userid").html( "ID: " + localStorage.id );
+</script>
+
 </body>
 </html>
