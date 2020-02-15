@@ -21,6 +21,7 @@
 <?php include 'includes/nav_bar.php';?>
 
 	<div class="animation start-home"></div>
+	
 </nav>
 
 

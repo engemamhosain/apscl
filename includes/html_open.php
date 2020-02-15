@@ -1,8 +1,8 @@
-<div class="row">
-    <div class="col s12 m4 l3">
 
+<div class="row">
+     <div class="col-3 col-sm-3  col-md-3  col-lg-3  col-xl-3">
     	<ul id="nav-mobile" class="sidenav sidenav-fixed" style="transform: translateX(0px);">
-    		<div class="user-view">
+        <div class="user-view">
               <div class="background">
 
                 <img src="asset/img/bg_apscl.jpg">
@@ -16,27 +16,22 @@
               <a href="#email">
                 <span class="white-text email userid"></span>
               </a>
-              <a href="#logout">	<span class="white-text email"> <i class="material-icons">logout</i> </span> </a>
+              <a href="#logout">  <span class="white-text email"> <i class="material-icons">logout</i> </span> </a>
 
             </div>
-        <!-- 	<h5> APSCL O&M Knowledge Base</h5> -->
+       
         <li class="bold">
-        	<p>
+          <p>
 
-        	</p>
+          </p>
         </li>
-        <!-- <li class="search">
-          <div class="search-wrapper">
-            <input id="search" placeholder=" Search"><i class="material-icons">search</i>
-            <div class="search-results"></div>
-          </div>
-        </li> -->
+       
         <li class="no-padding ">
           <ul class=" collapsible collapsible-accordion">
             <li class="bold ">
-            	<a  style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
-            		Equipment Maintenance Report
-            	</a>
+              <a  style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
+                Equipment Maintenance Report
+              </a>
               <div class="collapsible-body" style="display: block;">
                 <ul>
                   <li><a style="width: 300px;" href="#"> Show Reports </a></li>
@@ -53,16 +48,13 @@
         <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
             <li class="bold ">
-            	<a  style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
-            		TR | Troble Report
-            	</a>
+              <a  style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
+                TR | Troble Report
+              </a>
               <div class="collapsible-body" style="display: block;">
                 <ul>
-                  <li><a style="width: 300px;" href="#"> TR in Progress </a></li>
-                  <li><a style="width: 300px;" href="#"> Create New</a></li>
-                  <li><a style="width: 300px;" href="#"> Archive</a></li>
-                  <li><a style="width: 300px;" href="#"> Search</a></li>
-
+                  <li><a href="tr_list.php" style="width: 300px;" href="#"> TR Report </a></li>
+                  <li><a style="width: 300px;" href="tr_form.php"> Create New</a></li>                              
                 </ul>
               </div>
             </li>
@@ -72,9 +64,9 @@
       <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
             <li class="bold ">
-            	<a style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
-            		Device Manual
-            	</a>
+              <a style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
+                Device Manual
+              </a>
               <div class="collapsible-body" style="display: block;">
                 <ul>
                   <li><a  style="width: 300px;" href="#"> Search</a></li>
@@ -90,9 +82,9 @@
       <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
             <li class="bold ">
-            	<a style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
-            		Admin / User Mangment
-            	</a>
+              <a style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
+                Admin / User Mangment
+              </a>
               <div class="collapsible-body" style="display: block;">
                 <ul>
                   <li><a style="width: 300px;"  href="#"> Team Managment </a></li>
@@ -108,4 +100,4 @@
 
     </div>
 
-<div class="col s12 m8 l9">
+<div class="col-8 col-sm-8  col-md-8  col-lg-8  col-xl-8">

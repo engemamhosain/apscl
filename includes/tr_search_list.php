@@ -14,22 +14,33 @@
   text-align: center;
 }
 
+th{
+    width: 200px;
+}
+
+td{
+    width: 200px;
+}
+
 </style>
 
-<div class="container" >
+
+
+
+
     <br>
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4">
-            <input type="search" id="search" value="" class="form-control" placeholder="Search tr">
+            <input type="search" id="search" value="" class="form-control" placeholder="Search TR">
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-lg-12">
-            <table class="table card" id="table" style="width: 80%">
+    
+        
+            <table class="table card" id="table"  style="width: 100%">
                 <thead style="background-color: #6c7ae0;">
                     <tr>
-                        <th>TR No</th>
+                        <th width="100px">TR No</th>
                         <th>Equipment</th>
                         <th>Designation</th>
                         <th>Status</th>
@@ -81,33 +92,5 @@
                 </tbody>
             </table>
           
-        </div>
-    </div>
-
-</div>
-
-
-
-<script src="//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js"></script>
-<script type="text/javascript">
-    $(function () {
-    $( '#table' ).searchable({
-        striped: true,
-        oddRow: { 'background-color': '#f5f5f5' },
-        evenRow: { 'background-color': '#fff' },
-        searchType: 'fuzzy'
-    });
     
-    $( '#searchable-container' ).searchable({
-        searchField: '#container-search',
-        selector: '.row',
-        childSelector: '.col-xs-4',
-        show: function( elem ) {
-            elem.slideDown(100);
-        },
-        hide: function( elem ) {
-            elem.slideUp( 100 );
-        }
-    })
-});
-</script>
+

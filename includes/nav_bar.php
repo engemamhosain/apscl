@@ -1,7 +1,7 @@
 
 <style type="text/css">
 	nav {
-	margin: 27px auto 0;
+	margin:auto;
 
 	position: relative;
 	width: 590px;
@@ -108,6 +108,6 @@ span {
 	<a href="#">EM Reports</a>
 	<a href="tr_list.php">TR Report</a>
 	<a href="#">Equipment List</a>
-	<a href="#">Contact</a>
+	<a href="contact_form.php">Contact</a>
 	
 

@@ -5,7 +5,7 @@
 		Report
 	</title>
 	<?php include 'includes/include_css.php';?>
-
+<script src="asset/vendor/jquery/jquery-3.4.1.min.js"></script>
 
 </head>
 <body>
@@ -160,12 +160,13 @@
 		 			<i class="material-icons left">save</i>
 		 		Save </button>
 	</div>
+	
 	  <div id="list_push" class="collection container_main">
 	  </div>
 
 	  <div id="details_push" class="collection container_main">
 	  </div>
-<a class="btn-floating left btn-large waves-effect waves-light red" href="#report/add"><i class="material-icons">add</i></a>
+	<a class="btn-floating left btn-large waves-effect waves-light red" href="#report/add"><i class="material-icons">add</i></a>
 </div>
 </div>
 </div>
