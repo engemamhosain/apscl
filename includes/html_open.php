@@ -35,8 +35,7 @@
               <div class="collapsible-body" style="display: block;">
                 <ul>
                   <li><a style="width: 300px;" href="#"> Show Reports </a></li>
-                  <li><a style="width: 300px;" href="#"> Search</a></li>
-                  <li><a style="width: 300px;" href="#"> Archive</a></li>
+                  <li><a style="width: 300px;" href="#"> Search</a></li>                  
                   <li><a style="width: 300px;" href="#"> Create New</a></li>
 
                 </ul>
@@ -65,13 +64,12 @@
           <ul class="collapsible collapsible-accordion">
             <li class="bold ">
               <a style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
-                Device Manual
+                Equipment Manual
               </a>
               <div class="collapsible-body" style="display: block;">
-                <ul>
-                  <li><a  style="width: 300px;" href="#"> Search</a></li>
-                  <li><a style="width: 300px;" href="#"> Related Reports </a></li>
-                  <li><a style="width: 300px;" href="#"> Add New Manual</a></li>
+                <ul>                  
+                  <li><a style="width: 300px;" href="device_manual.php"> Equipment List </a></li>
+                  
                 </ul>
               </div>
             </li>

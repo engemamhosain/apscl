@@ -4,7 +4,7 @@
 	margin:auto;
 
 	position: relative;
-	width: 590px;
+	width: 800px;
 	height: 50px;
 	background-color: #34495e;
 	border-radius: 8px;
@@ -35,10 +35,10 @@ a:nth-child(1) {
 	width: 100px;
 }
 a:nth-child(2) {
-	width: 110px;
+	width: 200px;
 }
 a:nth-child(3) {
-	width: 100px;
+	width: 200px;
 }
 a:nth-child(4) {
 	width: 160px;
@@ -51,24 +51,24 @@ nav .start-home, a:nth-child(1):hover~.animation {
 	left: 0;
 	background-color: #1abc9c;
 }
-nav .start-about, a:nth-child(2):hover~.animation {
-	width: 110px;
+nav .start-maintenance, a:nth-child(2):hover~.animation {
+	width: 200px;
 	left: 100px;
 	background-color: #e74c3c;
 }
 nav .start-tr, a:nth-child(3):hover~.animation {
-	width: 100px;
-	left: 210px;
+	width: 200px;
+	left: 300px;
 	background-color: #3498db;
 }
-nav .start-portefolio, a:nth-child(4):hover~.animation {
+nav .start-manual, a:nth-child(4):hover~.animation {
 	width: 160px;
-	left: 310px;
+	left: 500px;
 	background-color: #9b59b6;
 }
 nav .start-contact, a:nth-child(5):hover~.animation {
 	width: 120px;
-	left: 470px;
+	left: 660px;
 	background-color: #e67e22;
 }
 
@@ -83,7 +83,7 @@ h1 {
 	text-align: center;
 	font-size: 30px;
 	color: #ecf0f1;
-	text-shadow: 2px 2px 4px #000000;
+	
 	font-family: 'Cherry Swash', cursive;
 }
 
@@ -105,9 +105,9 @@ span {
 
 <nav>
 	<a href="dashboard.php">Home</a>
-	<a href="#">EM Reports</a>
-	<a href="tr_list.php">TR Report</a>
-	<a href="#">Equipment List</a>
+	<a href="report_list.php">Maintenance Reports</a>
+	<a href="tr_list.php">Troble Report</a>
+	<a href="device_manual.php">Equipment List</a>
 	<a href="contact_form.php">Contact</a>
 	
 

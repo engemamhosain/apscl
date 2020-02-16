@@ -10,39 +10,40 @@
 </head>
 <body>
 <?php include 'includes/html_open.php';?>
-<div class="container">
+<div class="container1">
 <div class="section scrollspy">
 
-<div class="row">
-<div class="col s12 m8 offset-m1 xl7 offset-xl1">
-	<nav>
-    <div class="nav-wrapper blue">
-	<form onsubmit="return false" >
-        <div class="input-field">
-          <input id="search" type="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-      </div>
-  </nav>
-</div>
-</div>
-<div class="row">
-<div class="col s12 m8 offset-m1 xl7 offset-xl1">
-	<nav>
-    <div class="nav-wrapper light-blue darken-4">
-      <div class="col s12" id="px-breadcrumb">
-      	<script type="text/template" id="tmp_breadcrumbs">
-        	<a href="<%= url %>" class="breadcrumb"> <%= title %></a>
-      	</script>
+	<div class="row">
+		<div class="col s12 m8 offset-m1 xl7 offset-xl1">
+			<nav>
+		    <div class="nav-wrapper blue">
+			<form onsubmit="return false" >
+		        <div class="input-field">
+		          <input id="search" type="search" required>
+		          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+		          <i class="material-icons">close</i>
+		        </div>
+		      </form>
+		      </div>
+		  </nav>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col s12 m8 offset-m1 xl7 offset-xl1">
+			<nav>
+		    <div class="nav-wrapper light-blue darken-4">
+		      <div class="col s12" id="px-breadcrumb">
+		      	<script type="text/template" id="tmp_breadcrumbs">
+		        	<a href="<%= url %>" class="breadcrumb"> <%= title %></a>
+		      	</script>
 
 
-      </div>
-    </div>
-  </nav>
-</div>
-</div>
+		      </div>
+		    </div>
+		  </nav>
+		</div>
+	</div>
 
 <!-- <div class="row">
 <div class="col s12 m8 offset-m1 xl7 offset-xl1">
