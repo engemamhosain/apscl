@@ -6,7 +6,13 @@
 	</title>
 	<?php include 'includes/include_css.php';?>
 <script src="asset/vendor/jquery/jquery-3.4.1.min.js"></script>
-
+<style type="text/css">
+	.breadcrumb::after {
+    display: none;
+    clear: both;
+    content: "";
+}
+</style>
 </head>
 <body>
 <?php include 'includes/html_open.php';?>
@@ -28,7 +34,8 @@
 		  </nav>
 		</div>
 	</div>
-	
+
+
 	<div class="row">
 		<div class="col s12 m8 offset-m1 xl7 offset-xl1">
 			<nav>
@@ -172,8 +179,11 @@
 </div>
 </div>
 </div>
+
+
   <?php include 'includes/html_close.php';?>
 	<?php include 'includes/include_js.php';?>
 	<script src="asset/js/app/pages/report_list.js"></script>
+	
 </body>
 </html>

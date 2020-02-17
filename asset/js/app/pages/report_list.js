@@ -70,7 +70,16 @@ function edit_report_init(){
     });
     $('#all_the_fields').html(push_html);
     _.each(editor_id_list, function(item){
-        new Jodit(item);
+
+     new Jodit(item, {
+            buttons: ['image'],
+            uploader: {
+                 insertImageAsBase64URI: true
+            },
+        });
+
+
+ //       new Jodit(item);
     });
     console.log('edit is ready');
 }

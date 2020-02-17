@@ -31,7 +31,7 @@ td{
     <br>
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4">
-            <input type="search" id="search" value="" class="form-control" placeholder="Search Troble">
+            <input type="search" id="search" value="" class="form-control" placeholder="Search Trouble">
         </div>
     </div>
 

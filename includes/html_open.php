@@ -34,9 +34,8 @@
               </a>
               <div class="collapsible-body" style="display: block;">
                 <ul>
-                  <li><a style="width: 300px;" href="#"> Show Reports </a></li>
-                  <li><a style="width: 300px;" href="#"> Search</a></li>                  
-                  <li><a style="width: 300px;" href="#"> Create New</a></li>
+                  <li><a style="width: 300px;" href="report_list.php#report"> Show Reports </a></li>                  
+                  <li><a style="width: 300px;" href="report_list.php#report/add"> Create New</a></li>
 
                 </ul>
               </div>
@@ -48,11 +47,11 @@
           <ul class="collapsible collapsible-accordion">
             <li class="bold ">
               <a  style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
-                TR | Troble Report
+                TR | Trouble Report
               </a>
               <div class="collapsible-body" style="display: block;">
                 <ul>
-                  <li><a href="tr_list.php" style="width: 300px;" href="#"> TR Report </a></li>
+                  <li><a href="tr_list.php" style="width: 300px;" href="#"> All TR</a></li>
                   <li><a style="width: 300px;" href="tr_form.php"> Create New</a></li>                              
                 </ul>
               </div>
@@ -81,11 +80,11 @@
           <ul class="collapsible collapsible-accordion">
             <li class="bold ">
               <a style="width: 300px;" class="collapsible-header waves-effect waves-teal" tabindex="0">
-                Admin / User Mangment
+                Admin / User Management
               </a>
               <div class="collapsible-body" style="display: block;">
                 <ul>
-                  <li><a style="width: 300px;"  href="#"> Team Managment </a></li>
+                  <li><a style="width: 300px;"  href="#"> Team Management </a></li>
                   <li><a style="width: 300px;"  href="#"> Update Profile</a></li>
                   <li><a style="width: 300px;" href="#"> Add New User</a></li>
                 </ul>
