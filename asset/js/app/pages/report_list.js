@@ -72,7 +72,30 @@ function edit_report_init(){
     _.each(editor_id_list, function(item){
 
      new Jodit(item, {
-            buttons: ['image'],
+
+    buttons: [
+        'source', '|',
+        'table',
+        'bold',
+        'italic', '|',
+        'ul',
+        'ol', '|',
+        'font',
+        'fontsize',
+        'brush',
+        'paragraph', '|',
+        'image',
+        'link', '|',
+        'left',
+        'center',
+        'right',
+        'justify', '|',
+        'undo', 'redo', '|',
+        'hr',
+        'eraser',
+        'fullsize',
+        'about'
+    ],
             uploader: {
                  insertImageAsBase64URI: true
             },

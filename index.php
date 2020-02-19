@@ -1,3 +1,22 @@
+<?php include 'user/users.php';?>
+<?php
+	
+	$isLogin="false";	
+	 $get_user = [];
+	if(isset($_POST["username"])){
+		if(!select_user($_POST["username"],$_POST["pass"])){
+			header('Location: error-404.html');
+
+		}
+		 $get_user = select_user($_POST["username"],$_POST["pass"]);
+		
+		$isLogin="true";
+	}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +56,7 @@
 
 		<div class="container-login100" style="background-image: url('Login_v3/images/bg-01.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="index.php" method="post">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-account"></i>
 					</span>
@@ -63,7 +82,7 @@
 						</label>
 					</div>
 
-					<div class="container-login100-form-btn" onclick="Login();">
+					<div class="container-login100-form-btn">
 						<button class="login100-form-btn loginbtn">
 							Login
 						</button>`
@@ -100,42 +119,34 @@
 	<script src="base_url.js"></script>
 	
 	<script type="text/javascript">
-var user_list=[{username:"Md. Fahad Hossain",password:"Md. Fahad Hossain",role:"Admin",department:"Electrical",designation:"Executive Engineer",id:"1603060045"},
-{username:"Md. Khairul Bashar",password:"Md. Khairul Bashar",role:"Report Creator",department:"Mechanical",designation:"Sub-Divisional Engineer",id:"1410070103"},
-
-{username:"Prodip Chandra Saha",password:"Prodip Chandra Saha",role:"Report Creator",department:"Electrical",designation:"Assistant Engineer",id:"1705070147"},
-{username:"Mahmud hasan khan",password:"Mahmud hasan khan",role:"Report Creator",department:"Operation",designation:"Assistant Engineer",id:"1609070124"},
-{username:"Pankaj Kumar Sutradhar",password:"Pankaj Kumar Sutradhar",role:"Report Creator",department:"Mechanical",designation:"Assistant Engineer",id:"1709070149"},
-{username:"Mohammed Akram Hossain",password:"Mohammed Akram Hossain",role:"Report Viewer",department:"Instrumentation & Control (I&C)",designation:"Assistant Engineer",id:"1705070146"},
-{username:"Palash Chandra Das",password:"Palash Chandra Das",role:"Report Viewer",department:"Civil",designation:"Assistant Engineer",id:"1611070132"},
-{username:"Md. Kowser Alam",password:"Md. Kowser Alam",role:"Report Viewer",department:"Operation",designation:"Assistant Engineer",id:"1609070122"},
-{username:"A.H.M. Kamal",password:"A.H.M. Kamal",role:"Report Viewer",department:"Instrumentation & Control (I&C)",designation:"Assistant Engineer",id:"1611070133"},
 						
-						]
-        var isloginMatch=false;
-        localStorage.isLogin = "false"
 
-			function Login(){
-				 user_list.forEach(function(item){ 
-				 	console.log(item);
-        			if( item.username === $(".username").val() && item.password === $(".pass").val() ){
+						
+         var isloginMatch = <?php echo $isLogin; ?>;
+         
+         var get_user = <?php echo json_encode($get_user);?>
+   //      localStorage.isLogin = "false"
+
+			// function Login(){
+			// 	 user_list.forEach(function(item){ 
+			// 	 	console.log(item);
+   //      			if( item.username === $(".username").val() && item.password === $(".pass").val() ){
 					 
-					 localStorage.role = item.role;
-					 localStorage.id = item.id;
-					 localStorage.username = item.username;					 
+			// 		 localStorage.role = item.role;
+			// 		 localStorage.id = item.id;
+			// 		 localStorage.username = item.username;					 
 
-					 isloginMatch=true;
-					}
-    			}); 
+			// 		 isloginMatch=true;
+			// 		}
+   //  			}); 
 			
 				if(isloginMatch){
-					
+			 		 localStorage.role = get_user.role;
+			 		 localStorage.id = get_user.id;
+			 		 localStorage.username = get_user.username;	
 					localStorage.isLogin = "true"
 					location.replace("dashboard.php");
-				}else{
-					location.replace("error-404.html");
 				}
-			}
 	</script>
 
 </body>
