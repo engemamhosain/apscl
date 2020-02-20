@@ -1,10 +1,16 @@
+function deleteReport(item_id){
+
+}
+
 function init_list_populate(data){
     
+    console.log(data.entries);
      var template = $("#tmp_report_list").html(),
          tx = _.template(template), 
          html_to_push = '';
     
     _.each(data.entries, function(item, key, arr){
+        item.id=key;
         html_to_push  += tx(item);
     });         
 
@@ -60,6 +66,7 @@ api_get('report', init_list_populate);
 function edit_report_init(){
     var push_html = '', editor_id_list = [];
     _.each(tg.db['report'].fields, function(item, key, arr){
+
         if(item.type === 'text'){
             push_html += tml_textinput({key:key, label:item.options.label, value:''});            
         }else if(item.type === 'html'){
@@ -68,8 +75,10 @@ function edit_report_init(){
         }
         // console.log('edit', {key, item});
     });
+    
     $('#all_the_fields').html(push_html);
     _.each(editor_id_list, function(item){
+       
 
      new Jodit(item, {
 
@@ -85,6 +94,11 @@ function edit_report_init(){
         'brush',
         'paragraph', '|',
         'image',
+        'file',
+        'video',
+        'cut',
+        'copy',
+        'paste',
         'link', '|',
         'left',
         'center',
@@ -136,6 +150,7 @@ $d.on('hash-changed', function(e, hash){
     }else{
         var id = hash.split('/')[1];
         item = _.filter(tg.db['report'].entries, function(item){
+
             if(item._id === id){
                 return item;
             }
@@ -148,14 +163,13 @@ $d.on('hash-changed', function(e, hash){
 
 
 $('#save_report').click(function(){
-    // console.log('bammma bam,m', $('.tg-inputs'));
+
     var obj = {};
     $('.tg-inputs').each(function(i, v){
         obj[v.id] = $(v).val();
     });
 
-    console.log(obj);
     api_post('report', obj , function(data){
-        console.log('posted', data);
+        location.replace("report_list.php")
     });
 });

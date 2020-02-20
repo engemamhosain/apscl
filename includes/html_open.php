@@ -1,4 +1,10 @@
 
+  <script type="text/javascript">
+      if(localStorage.isLogin == "false"){
+        location.replace("error-404.html")
+      }
+  </script>
+  
 <div class="row">
      <div class="col-3 col-sm-3  col-md-3  col-lg-3  col-xl-3">
     	<ul id="nav-mobile" class="sidenav sidenav-fixed" style="transform: translateX(0px);">
@@ -16,7 +22,7 @@
               <a href="#email">
                 <span class="white-text email userid"></span>
               </a>
-              <a href="#logout">  <span class="white-text email"> <i class="material-icons">logout</i> </span> </a>
+              <a href="index.php">  <span class="white-text email"> <i class="material-icons">logout</i> </span> </a>
 
             </div>
        
@@ -84,16 +90,14 @@
               </a>
               <div class="collapsible-body" style="display: block;">
                 <ul>
-                  <li><a style="width: 300px;"  href="#"> Team Management </a></li>
-                  <li><a style="width: 300px;"  href="#"> Update Profile</a></li>
-                  <li><a style="width: 300px;" href="#"> Add New User</a></li>
+                  <li><a style="width: 300px;"  href="user_list.php"> Team Management </a></li>                 
                 </ul>
               </div>
             </li>
 
       </ul>
       </li>
-      <li><a href="#logout"> Logout</a></li>
+      <li><a href="index.php"> Logout</a></li>
 
     </div>
 

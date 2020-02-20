@@ -37,8 +37,8 @@ function set_full_text(data){
 
 function api_get(collection_name, callback){
     var url = tg.config.apiurl + 'collections/get/'+collection_name + tg.config.token;
-    
     $.get(url, function(data){
+        console.log(data.fields);
         set_full_text(data);
         tg.db[collection_name] = data;
         callback(data);

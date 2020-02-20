@@ -16,6 +16,9 @@
 </head>
 <body>
 <?php include 'includes/html_open.php';?>
+
+
+
 <div class="container1">
 <div class="section scrollspy">
 
@@ -61,8 +64,9 @@
 <div class="col s12 m8 offset-m1 xl7 offset-xl1">
 	<script type="text/template" id="tmp_report_list">
 
-	    <div class="collection-item avatar">
+	    <div class="collection-item avatar" style ="position:relative">
 	      <i class="material-icons circle blue">dvr</i>
+	      <div style ="position:absolute;right:16px; cursor:pointer;" onclick="deleteReport('<%= id %>');"><i class="material-icons red-text">delete</i></div>
 	      <span class="title"><a class="click_title" href=#report/<%= _id %> data-id=<%= _id %>  ><%= name_of_trouble %></a></span><br>
 	      <small><%= report_creator %> on <%= performed_date %></small>
 	      <p> <%= $('<p>' +description_of_trouble+'</p>').text().substring(0, 250) %>
@@ -150,6 +154,17 @@
 	      	</div>
 
 	      	<br>
+
+	      	  	<small>
+		 	<%= fields.referance_manual.options.label %>
+			</small>
+			<br>
+		 	<div>
+		 		<%= entries.referance_manual_description %>
+	      	</div>
+
+	      	<br>
+
 
 		 		<textarea></textarea>
 		 		<button class="waves-effect waves-light btn" >

@@ -1,6 +1,7 @@
 <?php include 'user/users.php';?>
 <?php
-	
+	session_start();	
+	$_SESSION["role"] = "user";
 	$isLogin="false";	
 	 $get_user = [];
 	if(isset($_POST["username"])){
@@ -9,8 +10,12 @@
 
 		}
 		 $get_user = select_user($_POST["username"],$_POST["pass"]);
-		
+		 
+
+		 $_SESSION["role"] = $get_user->role;
+        		
 		$isLogin="true";
+		
 	}
 
 
@@ -124,8 +129,8 @@
 						
          var isloginMatch = <?php echo $isLogin; ?>;
          
-         var get_user = <?php echo json_encode($get_user);?>
-   //      localStorage.isLogin = "false"
+         var get_user = <?php echo json_encode($get_user);?>;
+         localStorage.isLogin = "false"
 
 			// function Login(){
 			// 	 user_list.forEach(function(item){ 

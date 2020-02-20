@@ -4,12 +4,7 @@
 	<title>
 		Home page / Dashboad
 	</title>
-	<script type="text/javascript">
-			if(localStorage.isLogin == "false"){
-				location.replace("error-404/")
-			}
-	</script>
-
+	
 
 	<?php include 'includes/include_css.php';?>
 
