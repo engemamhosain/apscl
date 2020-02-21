@@ -72,7 +72,7 @@
 	      ><i class="material-icons red-text">edit</i></a>
 
 	      <span class="title"><a class="click_title" href=#report/<%= _id %> data-id=<%= _id %>  ><%= name_of_trouble %></a></span><br>
-	      <small><%= report_creator %> on <%= performed_date %></small>
+	      <small><%= report_creator %>  <%= performed_date %></small>
 	      <p> <%= $('<p>' +description_of_trouble+'</p>').text().substring(0, 250) %>
 	      </p>
 	      <!-- <a href="#" class="secondary-content"><i class="material-icons">grade</i></a> -->
