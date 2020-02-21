@@ -67,6 +67,10 @@
 	    <div class="collection-item avatar" style ="position:relative">
 	      <i class="material-icons circle blue">dvr</i>
 	      <div style ="position:absolute;right:16px; cursor:pointer;" onclick="deleteReport('<%= _id %>');"><i class="material-icons red-text">delete</i></div>
+	      <a style ="position:absolute;right:36px;"
+	      href="#report/edit/<%= _id %>"
+	      ><i class="material-icons red-text">edit</i></a>
+
 	      <span class="title"><a class="click_title" href=#report/<%= _id %> data-id=<%= _id %>  ><%= name_of_trouble %></a></span><br>
 	      <small><%= report_creator %> on <%= performed_date %></small>
 	      <p> <%= $('<p>' +description_of_trouble+'</p>').text().substring(0, 250) %>
@@ -173,6 +177,16 @@
 	      	</div>
 		</div>
 	</script>
+	<div id="edit_item_push" class="collection container_main hide">
+
+		<div id="edit_item_all_the_fields">
+
+		</div>
+		<input type="hidden" id="_id" class="tg-inputs" />
+		<button id="update_report" class="waves-effect waves-light btn">
+		 			<i class="material-icons left">save</i>
+		 	Update </button>
+	</div>
 
 	<div id="edit_push" class="collection container_main hide">
 		<?php include 'partial_report_edit.php';?>
