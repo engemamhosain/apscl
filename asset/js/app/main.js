@@ -50,6 +50,11 @@ function api_post(collection_name, post_data ,callback){
     $.post(url, {data: post_data}, callback);
 }
 
+function api_remove(collection_name, collection_id , callback){
+    var url = tg.config.apiurl + 'collections/remove/'+collection_name + tg.config.token;
+    $.post(url, {filter: {_id:collection_id}}, callback);
+}
+
 
 
 //---------------------------- Not using

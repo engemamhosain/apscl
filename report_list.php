@@ -66,7 +66,7 @@
 
 	    <div class="collection-item avatar" style ="position:relative">
 	      <i class="material-icons circle blue">dvr</i>
-	      <div style ="position:absolute;right:16px; cursor:pointer;" onclick="deleteReport('<%= id %>');"><i class="material-icons red-text">delete</i></div>
+	      <div style ="position:absolute;right:16px; cursor:pointer;" onclick="deleteReport('<%= _id %>');"><i class="material-icons red-text">delete</i></div>
 	      <span class="title"><a class="click_title" href=#report/<%= _id %> data-id=<%= _id %>  ><%= name_of_trouble %></a></span><br>
 	      <small><%= report_creator %> on <%= performed_date %></small>
 	      <p> <%= $('<p>' +description_of_trouble+'</p>').text().substring(0, 250) %>
@@ -183,7 +183,7 @@
 		 			<i class="material-icons left">save</i>
 		 		Save </button>
 	</div>
-	
+
 	  <div id="list_push" class="collection container_main">
 	  </div>
 
@@ -199,6 +199,6 @@
   <?php include 'includes/html_close.php';?>
 	<?php include 'includes/include_js.php';?>
 	<script src="asset/js/app/pages/report_list.js"></script>
-	
+
 </body>
 </html>

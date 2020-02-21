@@ -1,5 +1,11 @@
 function deleteReport(item_id){
-
+    console.log('delete item',item_id);
+    if(confirm("Deleting this report, Will delete this permanently.\n Are you Sure? ")){
+        api_remove('report',item_id, function(data){
+            // console.log(':::: delete:::::',data);
+            api_get('report', init_list_populate);
+        });
+    }
 }
 
 function init_list_populate(data){
