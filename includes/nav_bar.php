@@ -1,5 +1,15 @@
 
 <style type="text/css">
+
+	.header_wrapper {
+	margin:auto;
+	width: 800px;
+	position: relative;	
+	background-color: #34495e;
+	border-radius: 8px;
+	font-size: 0;
+}
+
 	nav {
 	margin:auto;
 
@@ -101,7 +111,8 @@ span {
     color: #2BD6B4;
 }
 </style> 
-<h1> APSCL O&M Knowledge Base </h1>
+<div class="header_wrapper"><img src="asset/img/logo.gif"><h1 style="display: contents;"> APSCL O&M Knowledge Base </h1></div><br>
+
 
 <nav>
 	<a href="dashboard.php">Home</a>

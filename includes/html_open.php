@@ -22,9 +22,12 @@
               <a href="#email">
                 <span class="white-text email userid"></span>
               </a>
-              <a href="index.php">  <span class="white-text email"> <i class="material-icons">logout</i> </span> </a>
+              <div style="position: relative;">
+                <a href="index.php" style="position: absolute;right: 0px;text-align: right;"> <i class="material-icons white-text">logout</i> </a>
+                <a href="dashboard.php" style="width: 100px;"><i class="material-icons white-text">home</i></a>
+              </div>
 
-            </div>
+        </div>
        
         <li class="bold">
           <p>
