@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12">
-                <input type="search" id="search" value="" class="form-control" placeholder="Search Trouble">
+                <input type="search" id="search" value="" class="form-control" placeholder="Search All Manuals">
             </div>
         </div>
     </div>

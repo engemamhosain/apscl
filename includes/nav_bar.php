@@ -1,10 +1,4 @@
 
-<div class="header_wrapper">
-	<img src="asset/img/logo.gif" />
-	<h1 style="display: contents;"> APSCL O&M Knowledge Base </h1>
-</div><br>
-
-
 <nav>
 	<a href="dashboard.php">Home</a>
 	<a href="report_list.php">Maintenance Reports</a>

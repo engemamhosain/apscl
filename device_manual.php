@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>
-		Home page / Dashboad
+		All Manulas
 	</title>
 	
 	<?php include 'includes/include_css.php';?>
@@ -12,6 +12,8 @@
 
 
 <?php include 'includes/html_open.php';?>
+
+<?php include 'includes/header.php';?>
 
 <?php include 'includes/nav_bar.php';?>
 

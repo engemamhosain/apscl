@@ -42,7 +42,7 @@ function init_detail_populate(data){
     
         
         html_to_push  = tx(data);
-
+console.log(data);
      $('.container_main').hide();
      $('#details_push').show();
 
@@ -246,6 +246,7 @@ $d.on('hash-changed', function(e, hash){
         
 
     }else{
+  
         var id = hash.split('/')[1];
         item = _.filter(tg.db['report'].entries, function(item){
 

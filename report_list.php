@@ -7,6 +7,7 @@
 	<?php include 'includes/include_css.php';?>
 <script src="asset/vendor/jquery/jquery-3.4.1.min.js"></script>
 <style type="text/css">
+
 	.breadcrumb::after {
     display: none;
     clear: both;
@@ -16,6 +17,8 @@
 </head>
 <body>
 <?php include 'includes/html_open.php';?>
+<?php include 'includes/header.php';?>
+
 
 
 
@@ -85,9 +88,9 @@
 		 <div class="">
 		 	<div class="col s12 m8 x12 ">
 
-			 	<small class>
+			 	<span style="font-weight: bold;">
 			 		<%= fields.name_of_trouble.options.label %>
-			 	</small>
+			 	</span>
 			 	<br>
 
 		 	<a><span class="title">
@@ -96,9 +99,9 @@
 		 	<br>
 		 	</div>
 		 	<div class="col s12 m4 x4 ">
-		 	<small class>
+		 	<span style="font-weight: bold;">
 		 		<%= fields.report_creator.options.label %>
-		 	</small>
+		 	</span>
 		 	<br>
 
 		 	<a href=# ><%= entries.report_creator %>
@@ -106,9 +109,9 @@
 
 		 	<br>
 
-		 	<small>
+		 	<span style="font-weight: bold;">
 		 	<%= fields.performed_date.options.label %>
-			</small>
+			</span>
 			<br>
 
 		 	<span><%= entries.performed_date %></span>
@@ -116,42 +119,42 @@
 		 	</div>
 
 
-		 	<small>
+		 	<span style="font-weight: bold;">
 		 	<%= fields.description_of_trouble.options.label %>
-			</small>
+			</span>
 			<br>
 		 	<div>
 		 		<%= entries.description_of_trouble %>
 	      	</div>
 		 	<br>
-	      	<small>
+	      	<span style="font-weight: bold;">
 		 	<%= fields.trouble_analysis.options.label %>
-			</small>
+			</span>
 			<br>
 		 	<div>
 		 		<%= entries.trouble_analysis %>
 	      	</div>
 		 	<br>
-	      	<small>
+	      	<span style="font-weight: bold;">
 		 	<%= fields.description_of_work.options.label %>
-			</small>
+			</span>
 			<br>
 		 	<div>
 		 		<%= entries.description_of_work %>
 	      	</div>
 	      	<br>
-	      	<small>
+	      	<span style="font-weight: bold;">
 		 	<%= fields.used_tools_list.options.label %>
-			</small>
+			</span>
 			<br>
 		 	<div>
 		 		<%= entries.used_tools_list %>
 	      	</div>
 	      	<br>
 
-	      	<small>
+	      	<span style="font-weight: bold;">
 		 	<%= fields.root_cause_analysis.options.label %>
-			</small>
+			</span>
 			<br>
 		 	<div>
 		 		<%= entries.root_cause_analysis %>
@@ -159,16 +162,23 @@
 
 	      	<br>
 
-	      	  	<small>
+
+
+	      	 <span style="font-weight:bold;"> 	
 		 	<%= fields.referance_manual.options.label %>
-			</small>
+			</span>
 			<br>
 		 	<div>
-		 		<%= entries.referance_manual_description %>
+		 		<%= entries.referance_manual %>
 	      	</div>
 
-	      	<br>
-
+ 			<span style="font-weight:bold;"> 	
+		 	<%= fields.list_of_personel.options.label %>
+			</span>
+			<br>
+		 	<div>
+		 		<%= entries.list_of_personel %>
+	      	</div>
 
 		 		<textarea></textarea>
 		 		<button class="waves-effect waves-light btn" >

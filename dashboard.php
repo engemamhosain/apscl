@@ -15,6 +15,8 @@
   font-family: sans-serif;
   background: #2c3e50;
 }
+
+
 </style>
 </head>
 <body>
@@ -22,6 +24,7 @@
 
 <?php include 'includes/html_open.php';?>
 
+<br>
 <?php include 'includes/nav_bar.php';?>
 
 	<div class="animation start-home"></div>

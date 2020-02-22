@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>
-		Home page / Dashboad
+		Trouble Report
 	</title>
 
 	<?php include 'includes/include_css.php';?>
@@ -12,7 +12,7 @@
 
 
 <?php include 'includes/html_open.php';?>
-
+<?php include 'includes/header.php';?>
 <?php include 'includes/nav_bar.php';?>
 
 	<div class="animation start-tr"></div>

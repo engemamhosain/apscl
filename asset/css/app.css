@@ -1,12 +1,13 @@
 
-	.header_wrapper {
+/*	.header_wrapper {
 	margin:auto;
+	background-image: url(../img/banner.jpg);
 	width: 800px;
 	position: relative;	
 	background-color: #34495e;
 	border-radius: 8px;
-	font-size: 0;
-}
+	font-size: 18;
+}*/
 
 	nav {
 	margin:auto;

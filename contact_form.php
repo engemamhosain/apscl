@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Contact V15</title>
+	<title>Contact</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -33,7 +33,7 @@
 <body>
 
 <?php include 'includes/html_open.php';?>
-
+<?php include 'includes/header.php';?>
 <?php include 'includes/nav_bar.php';?>
 
 	<div class="animation start-contact"></div>

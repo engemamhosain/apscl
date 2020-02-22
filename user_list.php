@@ -26,7 +26,7 @@ if(strcmp($_SESSION ["role"], "Admin") != 0){
 </head>
 <body>
 <?php include 'includes/html_open.php';?>
-
+<?php include 'includes/header.php';?>
 
 <style type="text/css">
 	body{margin-top:20px;}
