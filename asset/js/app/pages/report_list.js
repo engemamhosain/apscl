@@ -13,9 +13,28 @@ function edit_report_init_view(item_id){
 }
 
 
+function init_list_populate1(data){
+    
+    
+     var template = $("#test").html(),
+         tx = _.template(template), 
+         html_to_push = '';
+    
+    _.each(data.entries, function(item, key, arr){
+        item.id=key;
+        html_to_push  += tx(item);
+    });         
+    
+     $("#notification_messate").html(html_to_push);
+
+    
+}
+
+
 function init_list_populate(data){
     
-    console.log(data.entries);
+    init_list_populate1(data);
+     
      var template = $("#tmp_report_list").html(),
          tx = _.template(template), 
          html_to_push = '';
@@ -26,6 +45,7 @@ function init_list_populate(data){
     });         
 
      $("#list_push").html(html_to_push);
+
      // $('.click_title').unbind('click');
      // $('.click_title').click(open_details);
      $('.container_main').hide();

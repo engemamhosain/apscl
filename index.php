@@ -152,6 +152,18 @@
 					localStorage.isLogin = "true"
 					location.replace("dashboard.php");
 				}
+
+			
+
+
+
+
+
+
+			if(window.app){
+
+				app.hide();
+			}	
 	</script>
 
 </body>

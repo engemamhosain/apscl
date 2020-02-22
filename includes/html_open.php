@@ -4,12 +4,38 @@
         location.replace("error-404.html")
       }
   </script>
-  
+
+  <style type="text/css">
+
+    @media only screen and (min-width: 800px) {
+      .close-wrapper{
+      position: relative;text-align: right;display: none;
+    }
+     .menu-wrapper{
+      display: show;
+    }
+
+  }
+    .close-wrapper{
+      position: relative;text-align: right;
+    }
+
+    .menu-wrapper{
+      margin: 16px;
+    }
+
+  </style>
+
 <div class="row">
+              <div class="menu-wrapper" onclick='$(".sidemenu").show();'>
+                  <i class="material-icons blue-text">menu</i>
+              </div>
      <div class="col s3 m3 l3 xl3 sidemenu">
         	<ul id="nav-mobile" class="sidenav sidenav-fixed" style="transform: translateX(0px);">
             <div class="user-view">
-                <div style="position: relative;text-align: right;display: none;" onclick='$(".sidemenu").hide();'>
+
+              
+                <div  class="close-wrapper" onclick='$(".sidemenu").hide();'>
                   <i class="material-icons white-text">close</i>
                 </div>
                 <div class="background">
@@ -28,10 +54,55 @@
                   </a>
                   <div style="position: relative; ">
                     <a href="index.php" style="position: absolute;right: 0px;text-align: right"> <i class="material-icons white-text">logout</i> </a>
-                    <a href="dashboard.php" style="width: 100px;"><i class="material-icons white-text">home</i></a>
+                    <a href="dashboard.php" style="width: 100px;"><i class="material-icons white-text">home</i></a>                   
                   </div>
 
             </div>
+
+
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header">
+                 <ul id="slide-out" class="sidenav" style="background-color: #34495e;color: white;">
+                    
+                  
+                        <style type="text/css">
+                          
+                        .GNVPVGB{
+                            padding: 5px;
+                            margin: 20px;
+                            border-radius: 2px;
+                            box-shadow: 0 3px 1px -2px 
+                        rgba(0,0,0,.14),0 2px 2px 0 rgba(0,0,0,.098),0 1px 5px 0
+                            rgba(0,0,0,.084);
+                        }
+                        </style>
+                        
+                       <div style="margin-left: 16px;">Message</div> 
+                       
+                         <div id ="notification_messate" style="font-size: 12px;"> 
+                          <script type="text/template" id="test">
+                          <div class="GNVPVGB">
+                              
+                                <small> <%= $('<small>' +name_of_trouble+'</small>').text().substring(0, 40) %>                          
+                                </small>      
+                                <small><%= report_creator %>  <%= performed_date %></small>
+                         </div>
+                          </script>
+
+                        
+                        </div>
+                        
+
+                  </ul>
+                  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons red-text">message</i></a>
+                                     
+                <span class="new badge">4</span>
+              </div>        
+            </li>
+            
+          </ul>  
+                
            
             <li class="bold">
               <p> </p>
