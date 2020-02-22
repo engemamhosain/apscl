@@ -7,8 +7,15 @@
 	
 
 	<?php include 'includes/include_css.php';?>
+  <link rel="stylesheet" href="asset/css/app.css">
 
-
+<style type="text/css">
+  body {
+  font-size: 12px;
+  font-family: sans-serif;
+  background: #2c3e50;
+}
+</style>
 </head>
 <body>
 

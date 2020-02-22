@@ -6,7 +6,7 @@
 	</title>
 
 	<?php include 'includes/include_css.php';?>
-
+<link rel="stylesheet" href="asset/css/app.css">
 </head>
 <body>
 
@@ -17,6 +17,7 @@
 
 	<div class="animation start-tr"></div>
 </nav>
+
 
 <?php include 'includes/tr_search_list.php';?>
 <a class="btn-floating left btn-large waves-effect waves-light red" href="tr_form.php"><i class="material-icons">add</i></a>

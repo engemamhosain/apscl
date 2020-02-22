@@ -23,7 +23,7 @@
 <div class="section scrollspy">
 
 	<div class="row">
-		<div class="col s12 m8 offset-m1 xl7 offset-xl1">
+		<div class="col s12 m12 l12 xl12">
 			<nav>
 		    <div class="nav-wrapper blue">
 			<form onsubmit="return false" >
@@ -40,7 +40,7 @@
 
 
 	<div class="row">
-		<div class="col s12 m8 offset-m1 xl7 offset-xl1">
+		<div class="col s12 m12 l12 xl12">
 			<nav>
 		    <div class="nav-wrapper light-blue darken-4">
 		      <div class="col s12" id="px-breadcrumb">
@@ -61,17 +61,17 @@
 </div>
 </div> -->
 <div class="row">
-<div class="col s12 m8 offset-m1 xl7 offset-xl1">
+<div class="col s12 m12 l12 xl12">
 	<script type="text/template" id="tmp_report_list">
 
 	    <div class="collection-item avatar" style ="position:relative">
 	      <i class="material-icons circle blue">dvr</i>
 	      <div style ="position:absolute;right:16px; cursor:pointer;" onclick="deleteReport('<%= _id %>');"><i class="material-icons red-text">delete</i></div>
-	      <a style ="position:absolute;right:36px;"
+	      <a style ="position:absolute;right:45px;"
 	      href="#report/edit/<%= _id %>"
 	      ><i class="material-icons red-text">edit</i></a>
 
-	      <span class="title"><a class="click_title" href=#report/<%= _id %> data-id=<%= _id %>  ><%= name_of_trouble %></a></span><br>
+	      <span class="title"><a  style="padding-right:80px;" class="click_title" href=#report/<%= _id %> data-id=<%= _id %>  ><%= name_of_trouble %></a></span><br>
 	      <small><%= report_creator %>  <%= performed_date %></small>
 	      <p> <%= $('<p>' +description_of_trouble+'</p>').text().substring(0, 250) %>
 	      </p>

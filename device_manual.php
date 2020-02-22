@@ -6,7 +6,7 @@
 	</title>
 	
 	<?php include 'includes/include_css.php';?>
-
+    <link rel="stylesheet" href="asset/css/app.css">
 </head>
 <body>
 

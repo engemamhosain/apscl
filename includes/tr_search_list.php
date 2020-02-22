@@ -1,43 +1,14 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-<style type="text/css">
-    .row-padding {
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-
-.card {  
-  width: 250px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-}
-
-th{
-    width: 200px;
-}
-
-td{
-    width: 200px;
-}
-
-</style>
-
-
-
-
 
     <br>
-    <div class="row">
-        <div class="col-lg-4 col-lg-offset-4">
-            <input type="search" id="search" value="" class="form-control" placeholder="Search Trouble">
-        </div>
-    </div>
-
-    
-        
-            <table class="table card" id="table"  style="width: 100%">
+      <div class="container">
+        <!-- Page Content goes here -->
+            <div class="row">
+                <div class="col s12">
+                    <input type="search" id="search" value="" class="form-control" placeholder="Search Trouble">
+                </div>
+            </div>
+      </div>
+            <table class="striped" id="table">
                 <thead style="background-color: #6c7ae0;">
                     <tr>
                         <th width="100px">TR No</th>
@@ -91,6 +62,4 @@ td{
                     
                 </tbody>
             </table>
-          
-    
-
+<br>
