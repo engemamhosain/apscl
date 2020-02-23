@@ -1,10 +1,10 @@
-
+<!-- 
   <script type="text/javascript">
       if(localStorage.isLogin == "false"){
         location.replace("error-404.html")
       }
   </script>
-
+ -->
   <style type="text/css">
 
     @media only screen and (min-width: 800px) {
@@ -83,19 +83,55 @@
                        <div style="margin-left: 16px;">Message</div> 
                        
                          <div id ="notification_message" style="font-size: 12px;"> 
-                           <script type="text/template" id="test">
-                                <div class="GNVPVGB" onclick='location.replace("chat.php")'>
+                        
+                                <div class="GNVPVGB" onclick='location.replace("group_chat.php")'>
                                   <div style="background-color:white;color: #6c757d;height: 24px;position: relative;" >
                                      <i class="material-icons left blue-text" style="margin-top:-10px;font-size: 20px;">notification_important</i>
-                                  <div  style="position:absolute;font-size: 12px;left: 30px;top: -10px;"><span><%= report_creator %>  <%= performed_date %></span></div>
+                                  <div  style="position:absolute;font-size: 12px;left: 30px;top: -10px;"><span>Md. Fahad Hossain</span></div>
                                     <i class="tiny material-icons right gray-text"  style="position:absolute;right:-22px;margin-top:-10px;font-size: 20px;">close</i>
 
                                   </div>
                                   <div style="background-color:#6c757d;height: 40px;color: white;text-align:left;">
-                                      <div> <%= $('<div>' +name_of_trouble+'</div>').text().substring(0, 20) %></div>
+                                      <div>Circulating Water Pump Motor </div>
                                </div>
                               </div> 
-                                </script>
+
+                                <div class="GNVPVGB" onclick='location.replace("group_chat.php")'>
+                                  <div style="background-color:white;color: #6c757d;height: 24px;position: relative;" >
+                                     <i class="material-icons left blue-text" style="margin-top:-10px;font-size: 20px;">notification_important</i>
+                                  <div  style="position:absolute;font-size: 12px;left: 30px;top: -10px;"><span>Md. Khairul Bashar</span></div>
+                                    <i class="tiny material-icons right gray-text"  style="position:absolute;right:-22px;margin-top:-10px;font-size: 20px;">close</i>
+
+                                  </div>
+                                  <div style="background-color:#6c757d;height: 40px;color: white;text-align:left;">
+                                      <div>Circulating Water Pump Motor </div>
+                               </div>
+                              </div>  
+
+                               <div class="GNVPVGB" onclick='location.replace("group_chat.php")'>
+                                  <div style="background-color:white;color: #6c757d;height: 24px;position: relative;" >
+                                     <i class="material-icons left blue-text" style="margin-top:-10px;font-size: 20px;">notification_important</i>
+                                  <div  style="position:absolute;font-size: 12px;left: 30px;top: -10px;"><span>Md. Fahad Hossain</span></div>
+                                    <i class="tiny material-icons right gray-text"  style="position:absolute;right:-22px;margin-top:-10px;font-size: 20px;">close</i>
+
+                                  </div>
+                                  <div style="background-color:#6c757d;height: 40px;color: white;text-align:left;">
+                                      <div>Circulating Water Pump Motor </div>
+                               </div>
+                              </div>  
+
+                               <div class="GNVPVGB" onclick='location.replace("group_chat.php")'>
+                                  <div style="background-color:white;color: #6c757d;height: 24px;position: relative;" >
+                                     <i class="material-icons left blue-text" style="margin-top:-10px;font-size: 20px;">notification_important</i>
+                                  <div  style="position:absolute;font-size: 12px;left: 30px;top: -10px;"><span>Md. Khairul Bashar</span></div>
+                                    <i class="tiny material-icons right gray-text"  style="position:absolute;right:-22px;margin-top:-10px;font-size: 20px;">close</i>
+
+                                  </div>
+                                  <div style="background-color:#6c757d;height: 40px;color: white;text-align:left;">
+                                      <div>Circulating Water Pump Motor </div>
+                               </div>
+                              </div> 
+                          
                       
                             
                           </div>

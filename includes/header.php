@@ -8,6 +8,7 @@
 	  width: 810px;
 	  position: relative; 
 	  border-radius: 8px;
+	  height: 150px;
 	  font-size: 18;
 	}
 
@@ -47,8 +48,8 @@
 
 
 </style>
-<br><br>
-<div style="background-color: #34495e;padding: 10px; border-radius: 8px;">
+
+<div style="background-color: #34495e;padding: 10px; border-radius: 8px;margin-top:-70px;">
 	<div class="header_wrapper" align="left">
 	  <img src="asset/img/logo.gif"  class="app-logo" />
 	  <span class="app-name"> APSCL O&M Knowledge Base </span>
@@ -58,4 +59,5 @@
 	</div>
 </div>
 <br>
+
   

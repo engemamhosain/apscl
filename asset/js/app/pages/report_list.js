@@ -16,16 +16,16 @@ function edit_report_init_view(item_id){
 function init_list_populate1(data){
     
     
-     var template = $("#test").html(),
-         tx = _.template(template), 
-         html_to_push = '';
+    //  var template = $("#test").html(),
+    //      tx = _.template(template), 
+    //      html_to_push = '';
     
-    _.each(data.entries, function(item, key, arr){
-        item.id=key;
-        html_to_push  += tx(item);
-    });         
+    // _.each(data.entries, function(item, key, arr){
+    //     item.id=key;
+    //     html_to_push  += tx(item);
+    // });         
     
-     $("#notification_message").html(html_to_push);
+    //  $("#notification_message").html(html_to_push);
 
     
 }
