@@ -25,7 +25,7 @@ function init_list_populate1(data){
         html_to_push  += tx(item);
     });         
     
-     $("#notification_messate").html(html_to_push);
+     $("#notification_message").html(html_to_push);
 
     
 }

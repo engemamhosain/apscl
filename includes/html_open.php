@@ -69,8 +69,10 @@
                         <style type="text/css">
                           
                         .GNVPVGB{
+                         
                             padding: 5px;
-                            margin: 20px;
+                            margin: auto;
+                            width: 80%;
                             border-radius: 2px;
                             box-shadow: 0 3px 1px -2px 
                         rgba(0,0,0,.14),0 2px 2px 0 rgba(0,0,0,.098),0 1px 5px 0
@@ -80,18 +82,24 @@
                         
                        <div style="margin-left: 16px;">Message</div> 
                        
-                         <div id ="notification_messate" style="font-size: 12px;"> 
-                          <script type="text/template" id="test">
-                          <div class="GNVPVGB">
-                              
-                                <small> <%= $('<small>' +name_of_trouble+'</small>').text().substring(0, 40) %>                          
-                                </small>      
-                                <small><%= report_creator %>  <%= performed_date %></small>
-                         </div>
-                          </script>
+                         <div id ="notification_message" style="font-size: 12px;"> 
+                           <script type="text/template" id="test">
+                                <div class="GNVPVGB" onclick='location.replace("chat.php")'>
+                                  <div style="background-color:white;color: #6c757d;height: 24px;position: relative;" >
+                                     <i class="material-icons left blue-text" style="margin-top:-10px;font-size: 20px;">notification_important</i>
+                                  <div  style="position:absolute;font-size: 12px;left: 30px;top: -10px;"><span><%= report_creator %>  <%= performed_date %></span></div>
+                                    <i class="tiny material-icons right gray-text"  style="position:absolute;right:-22px;margin-top:-10px;font-size: 20px;">close</i>
 
-                        
-                        </div>
+                                  </div>
+                                  <div style="background-color:#6c757d;height: 40px;color: white;text-align:left;">
+                                      <div> <%= $('<div>' +name_of_trouble+'</div>').text().substring(0, 20) %></div>
+                               </div>
+                              </div> 
+                                </script>
+                      
+                            
+                          </div>
+                                                                    
                         
 
                   </ul>
