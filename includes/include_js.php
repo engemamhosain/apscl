@@ -8,21 +8,22 @@
 <script src="asset/js/app/nav.js"></script>
 
 <script src="asset/js/app/main.js"></script>
+<script src="asset/js/app/api.js"></script>
 
 <!-- <script type="text/javascript">
    var url = tg.config.apiurl + 'collections/get/report'+ tg.config.token;
-    $.get(url, function(data){   
+    $.get(url, function(data){
         var template = $("#test").html(),
-         tx = _.template(template), 
+         tx = _.template(template),
          html_to_push = '';
-    
+
     _.each(data.entries, function(item, key, arr){
         item.id=key;
         html_to_push  += tx(item);
-    });         
-    
+    });
+
      $("#notification_message").html(html_to_push);
     });
 
-   
+
 </script> -->
