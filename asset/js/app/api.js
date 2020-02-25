@@ -4,7 +4,7 @@ $d.ready(function(){
 
 
     api.login= function(user, password){
-        var url = tg.config.apiurl + 'authUser'; //+tg.config.token;
+        var url = tg.config.apiurl + 'cockpit/authUser?token=0f6da260fda8c87be078a646e5cc9b'; //+tg.config.token;
         $.post(url, {
             user: user,
             password: password
