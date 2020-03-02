@@ -26,7 +26,7 @@ $d.ready(function(){
 
     api.get = function(collection_name, callback){
         api.check_login();
-        console.log('aapi get:  ', collection_name);
+        console.log('api get:  ', collection_name);
         // return 'boom';
 
     };
