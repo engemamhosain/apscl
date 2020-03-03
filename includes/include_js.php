@@ -1,6 +1,6 @@
 <script src="asset/vendor/jquery/jquery-3.4.1.min.js"></script>
 <script src="asset/vendor/underscore/underscore-min.js"></script>
-<script src="asset/vendor/materialize/materialize.min.js"></script>
+<script src="asset/vendor/materialize/js/materialize.min.js"></script>
 <script src="asset/vendor/jodit/jodit.min.js"></script>
 <script src="asset/js/lib/tg_core.js"></script>
 <script src="asset/js/app/config.js"></script>
@@ -27,3 +27,9 @@
 
 
 </script> -->
+
+
+<script src="asset/vendor/materialize/js/init.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+
+
