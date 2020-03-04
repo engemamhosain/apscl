@@ -8,28 +8,10 @@ if(strcmp($_SESSION ["role"], "Admin") != 0){
 
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>
-		Report
-	</title>
-	<?php include 'includes/include_css.php';?>
-<script src="asset/vendor/jquery/jquery-3.4.1.min.js"></script>
-<style type="text/css">
-	.breadcrumb::after {
-    display: none;
-    clear: both;
-    content: "";
-}
-</style>
-</head>
-<body>
-<?php include 'includes/html_open.php';?>
-<?php include 'includes/header.php';?>
+
+<?php include 'includes/header-new.php';?>
 
 <style type="text/css">
-	body{margin-top:20px;}
 
 
 /* USER LIST TABLE */
@@ -275,8 +257,5 @@ if(strcmp($_SESSION ["role"], "Admin") != 0){
 
 
 
-  <?php include 'includes/html_close.php';?>
-	<?php include 'includes/include_js.php';?>
-	
-</body>
-</html>
+  
+	<?php include 'includes/footer-new.php';?>
