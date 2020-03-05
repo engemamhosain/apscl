@@ -22,10 +22,11 @@
 
   <div class="top-banner">
 	<div class="header_wrapper" align="left">
-	  <img src="asset/img/logo.gif"  class="app-logo" />
-	  <span class="app-name"> APSCL O&M Knowledge Base </span>
+	 
+	  <div class="app-name"> APSCL O&M<br> Knowledge Base </div>
+	   <img src="asset/img/logo.png"  class="app-logo" />
 	  <div style="position: absolute;right: 0px;top: 0px;">
-	  	<img src="asset/img/mojib1.jpg" class="mojib" align="right" />
+	  	<img src="asset/img/mujib100.png" class="mojib" align="right" />
 	  </div>
 	</div>
 </div>
@@ -34,26 +35,26 @@
 
 	.header_wrapper {
 
-	  margin:auto;
-	  background-image: url(asset/img/banner.jpg);
+	  padding: 45px 15px 0;
+	  background: url(asset/img/banner.jpg) no-repeat center 30% /cover;
 	  width: 100%;
 	  position: relative;
 	  
-	  height: 150px;
-	  font-size: 18;
+	  height: 201px;
+	 
 	}
 
-.header_wrapper:before{ content: ''; position: absolute; height: 100%; width: 100%; background: rgba(68, 169, 255,.2) }
+.header_wrapper:after{ content: ''; position: absolute; height: 100%; width: 100%; left:0; top: 0; background: rgba(255, 255, 255,.6); z-index: 0}
 
 
 .mojib{
-	height: 80px;padding-left:  10px;margin-top: 5px;
+	height: 150px;padding-left:  10px;margin-top: 25px; position: relative; z-index: 9
 }
 .app-name{
-	color: red;font-size: 24px;margin-top:-10px;font-style: bold;
+	color: #222;font-size: 44px;font-weight: bold; text-align: center; position: relative; z-index: 9; line-height: 44px; text-shadow: 0 0 5px rgba(0,0,0,.2) 
 }
 .app-logo{
-	width:100px;padding-left:  10px;margin-top: 5px;
+	width:100px; position: absolute; z-index: 9; top: 40px; left: 20px
 }
 
 @media only screen and (max-width: 800px) {
@@ -61,24 +62,14 @@
 	margin:auto;
 	width: 100%;
 	position: relative;
-	background-color: #34495e;
-	border-radius: 8px;
-	font-size: 0;
+
 }
 
-.mojib{
-	width:100px;padding-left:  10px;margin-top: 5px;
-}
 .app-name{
-	color: red;font-size: 12px;margin-top:-10px;font-style: bold;
+	font-size: 33px;;
 }
-.app-logo{
-	width:100px;padding-left:  10px;margin-top: 5px;
-}
-.top-banner{
 
 }
-}
-#details_push, #all_the_fields{ background: white; padding: 15px }
+
 
 </style>

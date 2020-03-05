@@ -1,23 +1,59 @@
 <div id="dropdown1" class="dropdown-content notifications">
-        <div class="notifications-title">notifications</div>
-        <div class="card">
-          <div class="card-content"><span class="card-title">Joe Smith made a purchase</span>
-            <p>Content</p>
-          </div>
-          <div class="card-action"><a href="#!">view</a><a href="#!">dismiss</a></div>
-        </div>
-        <div class="card">
-          <div class="card-content"><span class="card-title">Daily Traffic Update</span>
-            <p>Content</p>
-          </div>
-          <div class="card-action"><a href="#!">view</a><a href="#!">dismiss</a></div>
-        </div>
-        <div class="card">
-          <div class="card-content"><span class="card-title">New User Joined</span>
-            <p>Content</p>
-          </div>
-          <div class="card-action"><a href="#!">view</a><a href="#!">dismiss</a></div>
-        </div>
+        <div class="notifications-title">Messages</div>
+        
+          <div id ="notification_message" style="font-size: 12px;"> 
+                        
+                                <div class="GNVPVGB" onclick='location.replace("group_chat.php")'>
+                                  <div style="background-color:white;color: #6c757d;height: 24px;position: relative;" >
+                                     <i class="material-icons left blue-text" style="margin-top:-10px;font-size: 20px;">notification_important</i>
+                                  <div  style="position:absolute;font-size: 12px;left: 30px;top: -10px;"><span>Md. Fahad Hossain</span></div>
+                                    <i class="tiny material-icons right gray-text"  style="position:absolute;right:-22px;margin-top:-10px;font-size: 20px;">close</i>
+
+                                  </div>
+                                  <div style="background-color:#6c757d;height: 40px;color: white;text-align:left;">
+                                      <div>Circulating Water Pump Motor </div>
+                               </div>
+                              </div> 
+
+                                <div class="GNVPVGB" onclick='location.replace("group_chat.php")'>
+                                  <div style="background-color:white;color: #6c757d;height: 24px;position: relative;" >
+                                     <i class="material-icons left blue-text" style="margin-top:-10px;font-size: 20px;">notification_important</i>
+                                  <div  style="position:absolute;font-size: 12px;left: 30px;top: -10px;"><span>Md. Khairul Bashar</span></div>
+                                    <i class="tiny material-icons right gray-text"  style="position:absolute;right:-22px;margin-top:-10px;font-size: 20px;">close</i>
+
+                                  </div>
+                                  <div style="background-color:#6c757d;height: 40px;color: white;text-align:left;">
+                                      <div>Circulating Water Pump Motor </div>
+                               </div>
+                              </div>  
+
+                               <div class="GNVPVGB" onclick='location.replace("group_chat.php")'>
+                                  <div style="background-color:white;color: #6c757d;height: 24px;position: relative;" >
+                                     <i class="material-icons left blue-text" style="margin-top:-10px;font-size: 20px;">notification_important</i>
+                                  <div  style="position:absolute;font-size: 12px;left: 30px;top: -10px;"><span>Md. Fahad Hossain</span></div>
+                                    <i class="tiny material-icons right gray-text"  style="position:absolute;right:-22px;margin-top:-10px;font-size: 20px;">close</i>
+
+                                  </div>
+                                  <div style="background-color:#6c757d;height: 40px;color: white;text-align:left;">
+                                      <div>Circulating Water Pump Motor </div>
+                               </div>
+                              </div>  
+
+                               <div class="GNVPVGB" onclick='location.replace("group_chat.php")'>
+                                  <div style="background-color:white;color: #6c757d;height: 24px;position: relative;" >
+                                     <i class="material-icons left blue-text" style="margin-top:-10px;font-size: 20px;">notification_important</i>
+                                  <div  style="position:absolute;font-size: 12px;left: 30px;top: -10px;"><span>Md. Khairul Bashar</span></div>
+                                    <i class="tiny material-icons right gray-text"  style="position:absolute;right:-22px;margin-top:-10px;font-size: 20px;">close</i>
+
+                                  </div>
+                                  <div style="background-color:#6c757d;height: 40px;color: white;text-align:left;">
+                                      <div>Circulating Water Pump Motor </div>
+                               </div>
+                              </div> 
+                          
+                      
+                            
+                          </div>
       </div>
       <div id="chat-dropdown" class="dropdown-content dropdown-tabbed">
         <ul class="tabs tabs-fixed-width">
@@ -57,3 +93,17 @@
           </ul>
         </div>
       </div>
+
+      <style>
+           
+                        .GNVPVGB{
+                         
+                            padding: 5px;
+                            margin: auto;
+                            width: 80%;
+                            border-radius: 2px;
+                            box-shadow: 0 3px 1px -2px 
+                        rgba(0,0,0,.14),0 2px 2px 0 rgba(0,0,0,.098),0 1px 5px 0
+                            rgba(0,0,0,.084);
+                        }
+      </style>

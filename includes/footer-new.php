@@ -1,6 +1,6 @@
 <footer class="page-footer">
     <div class="container">
-      <div class="row">
+      <!-- <div class="row">
         <div class="col s6 m3">
           <img class="materialize-logo" src="img/materialize-logo.png" alt="Materialize">
           <p>Made with love by Materialize.</p>
@@ -29,7 +29,12 @@
             <li><a href="#!">Github</a></li>
           </ul>
         </div>
-      </div>
+      </div> -->
+      <div class="row">
+    <div class="col s12">
+      <p class="center-align">Ashuganj Power Station Company Ltd. © 2020. All Rights Reserved.</p>
+    </div>
+  </div>
     </div>
   </footer><!-- Scripts -->
 
