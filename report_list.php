@@ -6,6 +6,7 @@
 	</title>
 	<?php include 'includes/include_css.php';?>
 <script src="asset/vendor/jquery/jquery-3.4.1.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
 <style type="text/css">
 
 	.breadcrumb::after {
@@ -210,6 +211,7 @@
 
 	  <div id="list_push" class="collection container_main">
 	  </div>
+	  <div onclick="pdf()">print</div>
 
 	  <div id="details_push" class="collection container_main">
 	  </div>
@@ -223,6 +225,20 @@
   <?php include 'includes/html_close.php';?>
 	<?php include 'includes/include_js.php';?>
 	<script src="asset/js/app/pages/report_list.js"></script>
+<script type="text/javascript">
+	
+function pdf() {
+			var divContents = $("#details_push").html();
+            var printWindow = window.open('', '', 'height=500px,width=500px');
+            printWindow.document.write('<html>');            
+                    
+           printWindow.document.write('<link rel="stylesheet" type="text/css" href="asset/vendor/materialize/materialize.min.css"  />')
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+}
 
+</script>
 </body>
 </html>
