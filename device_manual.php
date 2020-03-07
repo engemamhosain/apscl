@@ -1,32 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>
-		All Manulas
-	</title>
-	
-	<?php include 'includes/include_css.php';?>
-    <link rel="stylesheet" href="asset/css/app.css">
-</head>
-<body>
 
 
-<?php include 'includes/html_open.php';?>
-
-<?php include 'includes/header.php';?>
-
-<?php include 'includes/nav_bar.php';?>
-
-	<div class="animation start-manual"></div>
-</nav>
-
+<?php include 'includes/header-new.php';?>
+<main>
+<div class="container">
 <?php include 'includes/manual_search_list.php';?>
-
-
-  <?php include 'includes/html_close.php';?>
-
-
-<?php include 'includes/include_js.php';?>
+</div>
+</main>
 
 <script src="//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js"></script>
 
@@ -60,6 +39,4 @@
         });
     
 </script>
-
-</body>
-</html>
+<?php include 'includes/footer-new.php';?>

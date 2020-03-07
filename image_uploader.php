@@ -1,12 +1,11 @@
     
 <?php
-var_dump($_FILES);
-var_dump($_REQUEST);
+
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["pathinfo(path)"]["name"]);
-var_dump($target_file);
-move_uploaded_file($_FILES["files"]["tmp_name"], "uploads/test.jpg");
-die();
+
+move_uploaded_file($_FILES["files"]["tmp_name"], "uploads/testaa.jpg");
+
 
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

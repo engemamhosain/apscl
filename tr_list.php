@@ -1,22 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>
-		Trouble Report
-	</title>
-
-	<?php include 'includes/include_css.php';?>
-<link rel="stylesheet" href="asset/css/app.css">
-</head>
-<body>
+<?php include 'includes/header-new.php';?>
 
 
-<?php include 'includes/html_open.php';?>
-<?php include 'includes/header.php';?>
-<?php include 'includes/nav_bar.php';?>
-
-	<div class="animation start-tr"></div>
-</nav>
+<main>
+<div class="container">
 
 
 <?php include 'includes/tr_search_list.php';?>
@@ -60,6 +46,9 @@
         });
     
 </script>
+</div>
+</main>
+<?php include 'includes/footer-new.php';?>
 
-</body>
-</html>
+
+

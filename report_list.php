@@ -1,63 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>
-		Report
-	</title>
-	<?php include 'includes/include_css.php';?>
-<script src="asset/vendor/jquery/jquery-3.4.1.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-<style type="text/css">
 
-	.breadcrumb::after {
-    display: none;
-    clear: both;
-    content: "";
-}
-</style>
-</head>
-<body>
-<?php include 'includes/html_open.php';?>
-<?php include 'includes/header.php';?>
+<?php include 'includes/header-new.php';?>
+ 
 
+<main>
 
+<div class="container">
+	
+<div class="scrollspy">
 
+	
+<form onsubmit="return false" >
 
-<div class="container1">
-<div class="section scrollspy">
-
-	<div class="row">
-		<div class="col s12 m12 l12 xl12">
-			<nav>
-		    <div class="nav-wrapper blue">
-			<form onsubmit="return false" >
 		        <div class="input-field">
 		          <input id="search" type="search" required>
 		          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
 		          <i class="material-icons">close</i>
 		        </div>
 		      </form>
-		      </div>
-		  </nav>
-		</div>
-	</div>
 
-
-	<div class="row">
-		<div class="col s12 m12 l12 xl12">
-			<nav>
-		    <div class="nav-wrapper light-blue darken-4">
-		      <div class="col s12" id="px-breadcrumb">
-		      	<script type="text/template" id="tmp_breadcrumbs">
-		        	<a href="<%= url %>" class="breadcrumb"> <%= title %></a>
-		      	</script>
-
-
-		      </div>
-		    </div>
-		  </nav>
-		</div>
-	</div>
 
 <!-- <div class="row">
 <div class="col s12 m8 offset-m1 xl7 offset-xl1">
@@ -73,7 +33,7 @@
 	      <div style ="position:absolute;right:16px; cursor:pointer;" onclick="deleteReport('<%= _id %>');"><i class="material-icons red-text">delete</i></div>
 	      <a style ="position:absolute;right:45px;"
 	      href="#report/edit/<%= _id %>"
-	      ><i class="material-icons red-text">edit</i></a>
+	      ><i class="material-icons green-text">edit</i></a>
 
 	      <span class="title"><a  style="padding-right:80px;" class="click_title" href=#report/<%= _id %> data-id=<%= _id %>  ><%= name_of_trouble %></a></span><br>
 	      <small><%= report_creator %>  <%= performed_date %></small>
@@ -199,7 +159,7 @@
 		 	Update </button>
 	</div>
 
-	<div id="edit_push" class="collection container_main hide">
+	<div id="edit_push" class="container_main hide">
 		<?php include 'partial_report_edit.php';?>
 		<div id="all_the_fields">
 
@@ -222,23 +182,7 @@
 </div>
 
 
-  <?php include 'includes/html_close.php';?>
-	<?php include 'includes/include_js.php';?>
+</main>
+  <?php include 'includes/footer-new.php';?>
 	<script src="asset/js/app/pages/report_list.js"></script>
-<script type="text/javascript">
-	
-function pdf() {
-			var divContents = $("#details_push").html();
-            var printWindow = window.open('', '', 'height=500px,width=500px');
-            printWindow.document.write('<html>');            
-                    
-           printWindow.document.write('<link rel="stylesheet" type="text/css" href="asset/vendor/materialize/materialize.min.css"  />')
-            printWindow.document.write(divContents);
-            printWindow.document.write('</body></html>');
-            printWindow.document.close();
-            printWindow.print();
-}
 
-</script>
-</body>
-</html>
