@@ -171,8 +171,7 @@
 
 	  <div id="list_push" class="collection container_main">
 	  </div>
-	  <div onclick="pdf()">print</div>
-
+	     <div id="editor"></div>
 	  <div id="details_push" class="collection container_main">
 	  </div>
 	<a class="btn-floating left btn-large waves-effect waves-light red" href="#report/add"><i class="material-icons">add</i></a>
@@ -183,6 +182,7 @@
 
 
 </main>
+
   <?php include 'includes/footer-new.php';?>
 	<script src="asset/js/app/pages/report_list.js"></script>
 

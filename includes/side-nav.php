@@ -63,7 +63,7 @@
         </li>
         <?php include 'includes/include_js.php';?>
 
-         <script type="text/javascript">
+<script type="text/javascript">
   $(".username").html(localStorage.username+" ( "+localStorage.role+" )");
   $(".userid").html( "ID: " + localStorage.id );
 </script>

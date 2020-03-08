@@ -114,37 +114,86 @@ function add_report_init(){
 
      new Jodit(item, {
 
-    buttons: [
-        'source', '|',
-        'table',
-        'bold',
-        'italic', '|',
-        'ul',
-        'ol', '|',
-        'font',
-        'fontsize',
-        'brush',
-        'paragraph', '|',
-        'image',
-        'file',
-        'video',
-        'cut',
-        'copy',
-        'paste',
-        'link', '|',
-        'left',
-        'center',
-        'right',
-        'justify', '|',
-        'undo', 'redo', '|',
-        'hr',
-        'eraser',
-        'fullsize',
-        'about'
-    ],
-            uploader: {
-                 insertImageAsBase64URI: true
-            },
+
+         enableDragAndDropFileToEditor: true,
+    uploader: {
+        url:tg.config.cockpit_add_asset_url,
+        format: 'json',
+        pathVariableName: 'path',
+        filesVariableName: 'images',
+        prepareData: function (data) {                    
+            return data;
+        },
+        isSuccess: function (resp) {
+            console.log(resp);
+            this.jodit.selection.insertHTML('<img src="'+tg.config.cockpit_image_url+resp.assets.path+'"/>')                      
+            return !resp.error;
+        },
+        getMsg: function (resp) {
+            return resp.msg.join !== undefined ? resp.msg.join(' ') : resp.msg;
+        },
+        process: function (resp) {  
+               
+            return {
+                files: resp[this.options.filesVariableName] || [],
+                path: resp.assets.path,
+                baseurl: resp.baseurl,
+                error: resp.error,
+                msg: resp.msg
+            };
+        },
+        error: function (e) {           
+            console.log("error");
+            this.events.fire('errorPopap', [e.getMessage(), 'error', 4000]);
+        },
+        defaultHandlerSuccess: function (data, resp) {
+            console.log("defaultHandlerSuccess");
+         
+            
+            var i, field = this.options.filesVariableName;
+            if (data[field] && data[field].length) {
+                for (i = 0; i < data[field].length; i += 1) {
+                    this.selection.insertImage(data.baseurl + data[field][i]);
+                }
+            }
+        },
+        defaultHandlerError: function (resp) {
+             console.log("defaultHandlerError");
+            this.events.fire('errorPopap', [this.options.uploader.getMsg(resp)]);
+        }
+    }
+
+    // buttons: [
+    //     'source', '|',
+    //     'table',
+    //     'bold',
+    //     'italic', '|',
+    //     'ul',
+    //     'ol', '|',
+    //     'font',
+    //     'fontsize',
+    //     'brush',
+    //     'paragraph', '|',
+    //     'image',
+    //     'file',
+    //     'video',
+    //     'cut',
+    //     'copy',
+    //     'paste',
+    //     'link', '|',
+    //     'left',
+    //     'center',
+    //     'right',
+    //     'justify', '|',
+    //     'undo', 'redo', '|',
+    //     'hr',
+    //     'eraser',
+    //     'fullsize',
+    //     'about'
+    // ],
+    //         uploader: {
+    //              insertImageAsBase64URI: true
+    //         },
         });
 
 
@@ -197,37 +246,88 @@ function report_edit_init_view(edit_data){
 
      new Jodit(item, {
 
-    buttons: [
-        'source', '|',
-        'table',
-        'bold',
-        'italic', '|',
-        'ul',
-        'ol', '|',
-        'font',
-        'fontsize',
-        'brush',
-        'paragraph', '|',
-        'image',
-        'file',
-        'video',
-        'cut',
-        'copy',
-        'paste',
-        'link', '|',
-        'left',
-        'center',
-        'right',
-        'justify', '|',
-        'undo', 'redo', '|',
-        'hr',
-        'eraser',
-        'fullsize',
-        'about'
-    ],
-            uploader: {
-                 insertImageAsBase64URI: true
-            },
+    // buttons: [
+    //     'source', '|',
+    //     'table',
+    //     'bold',
+    //     'italic', '|',
+    //     'ul',
+    //     'ol', '|',
+    //     'font',
+    //     'fontsize',
+    //     'brush',
+    //     'paragraph', '|',
+    //     'image',
+    //     'file',
+    //     'video',
+    //     'cut',
+    //     'copy',
+    //     'paste',
+    //     'link', '|',
+    //     'left',
+    //     'center',
+    //     'right',
+    //     'justify', '|',
+    //     'undo', 'redo', '|',
+    //     'hr',
+    //     'eraser',
+    //     'fullsize',
+    //     'about'
+    // ],
+    //         uploader: {
+    //              insertImageAsBase64URI: true
+    //         },
+
+ enableDragAndDropFileToEditor: true,
+    uploader: {
+        url: 'http://localhost/cockpit/api/cockpit/addAssets?token=6faf5df9bad9ba9c64aecb14d3fcf1',
+        format: 'json',
+        pathVariableName: 'path',
+        filesVariableName: 'images',
+        prepareData: function (data) {                    
+            return data;
+        },
+        isSuccess: function (resp) {
+            this.jodit.selection.insertHTML('<img src="http://localhost/cockpit/storage/uploads/2020/03/06/5e62a2a31eeebapscl.gif"/>')                      
+            return !resp.error;
+        },
+        getMsg: function (resp) {
+            return resp.msg.join !== undefined ? resp.msg.join(' ') : resp.msg;
+        },
+        process: function (resp) {  
+               
+            return {
+                files: resp[this.options.filesVariableName] || [],
+                path: resp.assets.path,
+                baseurl: resp.baseurl,
+                error: resp.error,
+                msg: resp.msg
+            };
+        },
+        error: function (e) {           
+            console.log("error");
+            this.events.fire('errorPopap', [e.getMessage(), 'error', 4000]);
+        },
+        defaultHandlerSuccess: function (data, resp) {
+            console.log("defaultHandlerSuccess");
+         
+            
+            var i, field = this.options.filesVariableName;
+            if (data[field] && data[field].length) {
+                for (i = 0; i < data[field].length; i += 1) {
+                    this.selection.insertImage(data.baseurl + data[field][i]);
+                }
+            }
+        },
+        defaultHandlerError: function (resp) {
+             console.log("defaultHandlerError");
+            this.events.fire('errorPopap', [this.options.uploader.getMsg(resp)]);
+        }
+    }
+
+
+
+
         });
 
 
@@ -304,3 +404,4 @@ $('#save_report').click(function(){
         location.replace("report_list.php")
     });
 });
+

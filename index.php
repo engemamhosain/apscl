@@ -1,21 +1,23 @@
-<?php include 'user/users.php';?>
+<?php include 'curl_api/api.php';?>
+
 <?php
-	session_start();	
+
+		session_start();	
 	$_SESSION["role"] = "user";
-	$isLogin="false";	
-	 $get_user = [];
-	if(isset($_POST["username"])){
-		if(!select_user($_POST["username"],$_POST["pass"])){
-			header('Location: error-404.html');
+	$isLogin="false";
 
-		}
-		 $get_user = select_user($_POST["username"],$_POST["pass"]);
-		 
+	$get_user = [];
 
-		 $_SESSION["role"] = $get_user->role;
-        		
-		$isLogin="true";
-		
+	if(isset($_POST["username"]) && isset($_POST["pass"])){
+		 $api = new Api();
+ 	 	$user=$api->get_user($_POST["username"],$_POST["pass"]);
+ 	 	//var_dump($user);
+ 	 	if($user->active){ 	
+ 			$_SESSION["role"] = $user->group; 	
+ 			$isLogin="true";
+ 	 	}else{
+ 	 		header('Location: error-404.html');
+ 	 	} 		
 	}
 
 
@@ -129,37 +131,15 @@
 						
          var isloginMatch = <?php echo $isLogin; ?>;
          
-         var get_user = <?php echo json_encode($get_user);?>;
-         localStorage.isLogin = "false"
-
-			// function Login(){
-			// 	 user_list.forEach(function(item){ 
-			// 	 	console.log(item);
-   //      			if( item.username === $(".username").val() && item.password === $(".pass").val() ){
-					 
-			// 		 localStorage.role = item.role;
-			// 		 localStorage.id = item.id;
-			// 		 localStorage.username = item.username;					 
-
-			// 		 isloginMatch=true;
-			// 		}
-   //  			}); 
+         var get_user = <?php echo json_encode($user);?>;
 			
 				if(isloginMatch){
 			 		 localStorage.role = get_user.role;
 			 		 localStorage.id = get_user.id;
-			 		 localStorage.username = get_user.username;	
-					localStorage.isLogin = "true"
+			 		 localStorage.username = get_user.name;	
+		 			 localStorage.isLogin = "true"
 					location.replace("dashboard.php");
 				}
-
-			
-
-
-
-
-
-
 			if(window.app){
 
 				app.hide();

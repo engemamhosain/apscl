@@ -1,13 +1,21 @@
 <script src="asset/vendor/jquery/jquery-3.4.1.min.js"></script>
 <script src="asset/vendor/underscore/underscore-min.js"></script>
 <script src="asset/vendor/materialize/js/materialize.min.js"></script>
-<script src="asset/vendor/jodit/jodit.min.js"></script>
+<script src="asset/vendor/jodit/jodit.min_new.js"></script>
 <script src="asset/js/lib/tg_core.js"></script>
 <script src="asset/js/app/config.js"></script>
+
+
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jodit/3.1.39/jodit.min.css"> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.1.39/jodit.min.js"></script> -->
+
 <!-- <script src="//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js"></script> -->
+
+
 <script src="asset/js/app/nav.js"></script>
 
 <script src="asset/js/app/main.js"></script>
+
 <script src="asset/js/app/api.js"></script>
 
 <!-- <script type="text/javascript">
