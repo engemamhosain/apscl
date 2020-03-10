@@ -134,8 +134,8 @@
          var get_user = <?php echo json_encode($user);?>;
 			
 				if(isloginMatch){
-			 		 localStorage.role = get_user.role;
-			 		 localStorage.id = get_user.id;
+			 		 localStorage.role = get_user.group;
+			 		 localStorage.id = get_user.user;
 			 		 localStorage.username = get_user.name;	
 		 			 localStorage.isLogin = "true"
 					location.replace("dashboard.php");

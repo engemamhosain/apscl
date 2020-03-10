@@ -30,6 +30,7 @@
             <li class="bold waves-effect waves-blue"><a class="collapsible-header">Equipment Maintenance<i class="material-icons chevron">chevron_left</i></a>
               <div class="collapsible-body">
                 <ul>
+                   <li class="unpublish" style="display: none;"><a href="unpublish_report_list.php#report" class="waves-effect waves-blue">Not Approved Reports<i class="material-icons">speaker_notes_off</i></a></li>
                   <li><a href="report_list.php#report" class="waves-effect waves-blue">Show Reports<i class="material-icons">note</i></a></li>
                   <li><a href="report_list.php#report/add" class="waves-effect waves-blue">Create New<i class="material-icons">note_add</i></a></li>                  
                 </ul>
@@ -66,6 +67,9 @@
 <script type="text/javascript">
   $(".username").html(localStorage.username+" ( "+localStorage.role+" )");
   $(".userid").html( "ID: " + localStorage.id );
+  if(localStorage.role=="admin"){
+      $(".unpublish").show();
+  }
 </script>
 
 
