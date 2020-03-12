@@ -8,7 +8,7 @@ function deleteReport(item_id){
 }
 
 function edit_report_init_view(item_id){
-    console.log('edit item',item_id);
+
 
 }
 
@@ -62,7 +62,7 @@ function init_detail_populate(data){
     
         
         html_to_push  = tx(data);
-console.log(data);
+
      $('.container_main').hide();
      $('#details_push').show();
 
@@ -143,11 +143,11 @@ function add_report_init(){
             };
         },
         error: function (e) {           
-            console.log("error");
+
             this.events.fire('errorPopap', [e.getMessage(), 'error', 4000]);
         },
         defaultHandlerSuccess: function (data, resp) {
-            console.log("defaultHandlerSuccess");
+
          
             
             var i, field = this.options.filesVariableName;
@@ -158,7 +158,7 @@ function add_report_init(){
             }
         },
         defaultHandlerError: function (resp) {
-             console.log("defaultHandlerError");
+
             this.events.fire('errorPopap', [this.options.uploader.getMsg(resp)]);
         }
     }
@@ -219,14 +219,15 @@ function report_add_init_view(){
 }
 
 function report_edit_init_view(edit_data){
-    // console.log('edit ...... ', edit_data);
-    console.log('edit ...... fields', tg.db['report'].fields);
-    // report_edit_init_view({entries:item, fields: tg.db['report'].fields});
+    
     change_breadcum([{url:'#report', title:'Report'}, {url:'#report/edit/'+item._id, title: item.name_of_trouble}]);
 
     var push_html = '', editor_id_list = [];
     _.each(tg.db['report'].fields, function(item, key, arr){
-        console.log(item, key, item.type);
+        
+        if(item.name == "status"){
+            return
+        }
         if(item.type === 'text'){
             push_html += tml_textinput({key:key, label:item.options.label, value: edit_data[key]});            
         }else if(item.type === 'html'){
@@ -280,7 +281,7 @@ function report_edit_init_view(edit_data){
 
  enableDragAndDropFileToEditor: true,
     uploader: {
-        url: 'http://localhost/cockpit/api/cockpit/addAssets?token=6faf5df9bad9ba9c64aecb14d3fcf1',
+        url:tg.config.cockpit_add_asset_url,
         format: 'json',
         pathVariableName: 'path',
         filesVariableName: 'images',
@@ -288,7 +289,7 @@ function report_edit_init_view(edit_data){
             return data;
         },
         isSuccess: function (resp) {
-            this.jodit.selection.insertHTML('<img src="http://localhost/cockpit/storage/uploads/2020/03/06/5e62a2a31eeebapscl.gif"/>')                      
+           this.jodit.selection.insertHTML('<img src="'+tg.config.cockpit_image_url+resp.assets.path+'"/>') 
             return !resp.error;
         },
         getMsg: function (resp) {
@@ -357,11 +358,14 @@ $d.on('hash-changed', function(e, hash){
     }else if(hash.substr(0,13) === '#report/edit/'){
         var id = hash.split('/')[2];
         item = _.filter(tg.db['report'].entries, function(item){
+            console.log(item);
 
-            if(item._id === id){
-                return item;
+            if(item._id === id ){
+                 return item;
             }
+
         })[0];
+
         report_edit_init_view(item);
         
 
@@ -393,6 +397,16 @@ $('#update_report').click(function(){
     });
 });
 
+$('#approve_report').click(function(){
+
+    var obj = {_id:location.hash.split("/")[location.hash.split("/").length-1],status:"approved"};
+
+    api_post('report', obj , function(data){
+        location.replace("report_list.php")
+    });
+});
+
+
 $('#save_report').click(function(){
 
     var obj = {};
@@ -400,6 +414,7 @@ $('#save_report').click(function(){
         obj[v.id] = $(v).val();
     });
 
+    obj.status="not approve"
     api_post('report', obj , function(data){
         location.replace("report_list.php")
     });

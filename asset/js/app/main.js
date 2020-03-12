@@ -37,7 +37,12 @@ function set_full_text(data){
 
 function api_get(collection_name, callback){
     var url = tg.config.apiurl + 'collections/get/'+collection_name + tg.config.token;
-    $.get(url, function(data){
+    if(location.href.split("/")[location.href.split("/").length-1]=="report_list.php#report"){
+        var status="approved"
+    }else{
+        var status="not approve"
+    }
+    $.post(url,{"filter": {"status":status}}, function(data){
         console.log(data.fields);
         set_full_text(data);
         tg.db[collection_name] = data;
