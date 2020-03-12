@@ -1,21 +1,27 @@
 
-
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <input type="search" id="search" value="" class="form-control" placeholder="Search All Manuals">
-            </div>
+    <form class="search-manual">
+      <div class="row">
+        <div class="input-field col12">
+          <i class="material-icons prefix">search</i>
+           <input type="text" id="search" value="">
+          <label for="search">Search All Manuals</label>
         </div>
-    </div>
+      </div>
+    </form>
 
-    
+
+
+               
+ 
+       
+
+    <div class="table-responsive">
         
             <table class="striped" id="table">
-                <thead style="background-color: #6c7ae0;color: white">
+                <thead style="background-color:rgb(68, 169, 255);color: white">
                     <tr>
-                        <th>Volumn No</th>
-                        <th>Document Number</th>
+                        <th width="110">Volumn No</th>
+                        <th width="160">Document Number</th>
                         <th>Equipment Name</th>
                         <th>Plant Name</th>
                         <th>Title of the documents</th>
@@ -63,5 +69,9 @@
                 </tbody>
             </table>
           
-    
+    </div>
 
+<style>
+    .search-manual{ padding: 10px 0 0 10px }
+    .table-responsive{ overflow-x: auto; }
+</style>

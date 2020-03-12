@@ -1,0 +1,36 @@
+
+.app-color{
+
+background-color:rgb(173, 197, 239);
+}
+.bg-color{
+background-color: #0d47a1;
+}
+.tx-color{
+color: white;
+}
+
+.ds-card{
+width:123px;
+height:123px;
+border-radius: 50%;
+margin:20px auto;
+text-align: center;
+color: white;
+font-size: 17px;
+transition: all .2s;
+}
+.ds-card i{ font-size: 42px }
+.logo-m{width: 60px; position: absolute; left: 0; top: 50%; margin-top: -30px }
+.site-title{ margin-left: 70px; font-size: 20px; font-weight: bold; line-height: 18px; display: inline-block; line-height: 22px }
+.site-title span{ display: block; text-align: center; letter-spacing: 2px }
+.header{ padding: 10px; height: 80px; box-shadow: 0 2px 3px rgba(0,0,0,.2); background: rgba(255,255,255,.1)}
+.searchbykeyword{ border: 1px solid rgba(13, 71, 161,.5) !important; margin: 15px auto!important; padding:0 0 0 5px!important; background: rgba(255,255,255,.5)!important; box-sizing: border-box!important;}
+.header{ display: table; }
+.logo-title{ display: table-cell; height: 100%; vertical-align: middle; position: relative;}
+#round-links a:hover .ds-card{background: black}
+
+.site-title-mobile{font-size: 20px; font-weight: bold; line-height: 18px;  line-height: 22px; text-align: center; }
+.site-title-mobile span{ display: block; letter-spacing: 2px }
+.mobilelogin label{ color: #222!important }
+.remember{ margin-left: 20px }
