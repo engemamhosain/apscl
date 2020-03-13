@@ -1,3 +1,4 @@
+
 function deleteReport(item_id){
     if(confirm("Deleting this report, Will delete this permanently.\n Are you Sure? ")){
         api_remove('report',item_id, function(data){
@@ -30,10 +31,26 @@ function init_list_populate1(data){
     
 }
 
+function user_list_populate(){
+    
+    api_get('user_list', init_list_populate);
+
+    //  var template = $(".user-list").html(),
+    //      tx = _.template(template), 
+    //      html_to_push = '';
+    
+    // _.each(data.entries, function(item, key, arr){
+    //     item.id=key;
+    //     html_to_push  += tx(item);
+    // });         
+
+    //  $("#list_push").html(html_to_push);
+
+
+}
 
 function init_list_populate(data){
     
-    init_list_populate1(data);
      
      var template = $("#tmp_report_list").html(),
          tx = _.template(template), 
@@ -98,7 +115,8 @@ function add_report_init(){
     var push_html = '', editor_id_list = [];
     _.each(tg.db['report'].fields, function(item, key, arr){
 
-        if(item.type === 'text'){
+        if(item.type === 'text' && item.options.label!="Status" && item.options.label!="Approved By" && item.options.label!="Approved Date"){
+            
             push_html += tml_textinput({key:key, label:item.options.label, value:''});            
         }else if(item.type === 'html'){
             push_html += tml_textinput({key:key, label:item.options.label, value:''});            
@@ -108,6 +126,7 @@ function add_report_init(){
     });
 
     
+
     $('#all_the_fields').html(push_html);
     _.each(editor_id_list, function(item){
        
@@ -125,7 +144,7 @@ function add_report_init(){
             return data;
         },
         isSuccess: function (resp) {
-            console.log(resp);
+            
             this.jodit.selection.insertHTML('<img src="'+tg.config.cockpit_image_url+resp.assets.path+'"/>')                      
             return !resp.error;
         },
@@ -358,7 +377,7 @@ $d.on('hash-changed', function(e, hash){
     }else if(hash.substr(0,13) === '#report/edit/'){
         var id = hash.split('/')[2];
         item = _.filter(tg.db['report'].entries, function(item){
-            console.log(item);
+          
 
             if(item._id === id ){
                  return item;
@@ -373,6 +392,7 @@ $d.on('hash-changed', function(e, hash){
   
         var id = hash.split('/')[1];
         item = _.filter(tg.db['report'].entries, function(item){
+    
 
             if(item._id === id){
                 return item;
@@ -397,14 +417,35 @@ $('#update_report').click(function(){
     });
 });
 
-$('#approve_report').click(function(){
 
-    var obj = {_id:location.hash.split("/")[location.hash.split("/").length-1],status:"approved"};
+$('.approve_report').click(function(){
+console.log("call approved");
+    var obj = {_id:location.hash.split("/")[location.hash.split("/").length-1],status:"approved",approved_by:localStorage.username,approved_date:new Date().getTime()};
 
     api_post('report', obj , function(data){
         location.replace("report_list.php")
     });
 });
+
+
+function approve(){ 
+    var obj = {_id:location.hash.split("/")[location.hash.split("/").length-1],status:"approved",approved_by:localStorage.username,approved_date:new Date().getTime()};
+
+    api_post('report', obj , function(data){
+        location.replace("report_list.php")
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 $('#save_report').click(function(){

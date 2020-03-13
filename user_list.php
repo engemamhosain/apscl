@@ -1,15 +1,20 @@
 <?php 
 session_start();
 
-if(strcmp($_SESSION ["role"], "Admin") != 0){
+if(strcmp($_SESSION ["role"], "admin") != 0){
 		header('Location: dashboard.php');
 
 }
 
 
 ?>
-
+<?php include 'curl_api/api.php';?>
 <?php include 'includes/header-new.php';?>
+<?php
+ $api = new Api();
+ $users=$api->get_user_list();
+
+?>
 
 <style type="text/css">
 
@@ -189,7 +194,6 @@ if(strcmp($_SESSION ["role"], "Admin") != 0){
 </style>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<?php include 'user/users.php';?>
 
 <div class="row">
 	<div class="col-lg-12">
@@ -199,52 +203,33 @@ if(strcmp($_SESSION ["role"], "Admin") != 0){
 					<thead>
 						<tr>
 							<th><span>User</span></th>
-							<th><span>Created</span></th>
 							<th class="text-center"><span>Status</span></th>
 							<th><span>Email</span></th>
+							<th><span>Created</span></th>
 							<th>&nbsp;</th>
 						</tr>
 					</thead>
 					<tbody>
-						<?php
+						<?php					
 							foreach ($users as $key => $value) {
 						?>
 	
 						<tr>
-							<td>
+							<td> 
 								<img src="https://bootdey.com/img/Content/avatar/avatar<?php echo $key%2+1; ?>.png"  alt="">
-								<a href="#" class="user-link"><?php echo $value->username; ?></a>
-								<span class="user-subhead"><?php echo $value->role; ?></span>
-							</td>
-							<td>
-								2019/01/01
+								<a href="#" class="user-link"><?php echo $value->user; ?></a>
+								<span class="user-subhead"><?php echo $value->group; ?></span>
 							</td>
 							<td class="text-center">
 								<span class="label label-default">Active</span>
 							</td>
 							<td>
-								<a href="#"><?php echo $value->username; ?>@gmail.com</a>
+								<a href="#"><?php echo $value->email; ?></a>
 							</td>
-							<td style="width: 20%;">
-								<a href="#" class="table-link">
-									<span class="fa-stack">
-										<i class="fa fa-square fa-stack-2x"></i>
-										<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-									</span>
-								</a>
-								<a href="#" class="table-link">
-									<span class="fa-stack">
-										<i class="fa fa-square fa-stack-2x"></i>
-										<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-									</span>
-								</a>
-								<a href="#" class="table-link danger">
-									<span class="fa-stack">
-										<i class="fa fa-square fa-stack-2x"></i>
-										<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-									</span>
-								</a>
-							</td>
+							<td>
+								<?php echo date("Y-m-d h:i:sa", $value->_created); ?>
+								
+							</td>								
 						</tr>
 					<?php  } ?>					
 					</tbody>

@@ -140,11 +140,7 @@
 		 	<div>
 		 		<%= entries.list_of_personel %>
 	      	</div>
-
-		 		<textarea></textarea>
-		 		<button class="waves-effect waves-light btn" >
-		 			<i class="material-icons left">comment</i>
-		 		Remarks / Suggestions</button>
+		 		<button onclick ="approve()" class="approve_report waves-effect waves-light btn" style="align:right"><i class="material-icons left">verified_user</i>Approve </button>
 	      	</div>
 		</div>
 	</script>
@@ -155,7 +151,7 @@
 		</div>
 		<input type="hidden" id="_id" class="tg-inputs" />
 		<button id="update_report" class="waves-effect waves-light btn"><i class="material-icons left">save</i>Update </button>
-		<button id="approve_report" class="waves-effect waves-light btn" style="align:right"><i class="material-icons left">verified_user</i>Approve </button>
+		<button class="approve_report waves-effect waves-light btn" style="align:right"><i class="material-icons left">verified_user</i>Approve </button>
 	</div>
 
 	<div id="edit_push" class="container_main hide">
@@ -183,5 +179,5 @@
 </main>
 
   <?php include 'includes/footer-new.php';?>
-	<script src="asset/js/app/pages/report_list.js"></script>
+<script src="asset/js/app/pages/report_list.js"></script>
 
