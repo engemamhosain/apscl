@@ -14,7 +14,12 @@
 
     $(document).ready(function(){
       $('select').formSelect();
+       $('input#input_text, textarea#textarea2').characterCounter();
+       $('.dropdown-trigger').dropdown();
     });
-  </script>  
+
+
+    </script>  
+
 </body>
 </html>

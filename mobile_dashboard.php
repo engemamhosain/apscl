@@ -20,7 +20,7 @@
     </div>
     <section id="round-links">
       <div class="col s6">
-        <a href="">
+        <a href="mobile-send-info.php">
           <div class="button card bg-color ds-card">          
             <br><i  style="" class="material-icons white-text center">info</i><br>
             <div>Send info</div>   
@@ -29,7 +29,7 @@
       </div>
 
       <div class="col s6">
-        <a href="">
+        <a href="mobile-create-tr.php">
           <div class=" button card bg-color ds-card" style="text-align: center;">          
             <br><i  style="" class="material-icons white-text center">create</i><br>
             <div>Create TR</div>   
@@ -38,7 +38,7 @@
       </div>
 
       <div class="col s6">
-        <a href="">
+        <a href="mobile-add-report.php">
           <div class=" button card bg-color ds-card" style="text-align: center;">          
             <br><i  style="" class="material-icons white-text center">add_circle</i><br>
             <div>Add Report</div>   
@@ -47,7 +47,7 @@
       </div>
 
       <div class="col s6">
-        <a href="">
+        <a href="mobile-all-manual.php">
           <div class=" button card bg-color ds-card" style="text-align: center;">          
             <br><i  style="" class="material-icons white-text center">assignment</i><br>
             <div>All Manual</div>   
