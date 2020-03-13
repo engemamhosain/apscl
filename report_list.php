@@ -117,18 +117,18 @@
 		 	<%= fields.root_cause_analysis.options.label %>
 			</span>
 			<br>
+
 		 	<div>
 		 		<%= entries.root_cause_analysis %>
 	      	</div>
 
 	      	<br>
-
-
-
 	      	 <span style="font-weight:bold;">
 		 	<%= fields.referance_manual.options.label %>
 			</span>
+
 			<br>
+
 		 	<div>
 		 		<%= entries.referance_manual %>
 	      	</div>
@@ -136,15 +136,39 @@
  			<span style="font-weight:bold;">
 		 	<%= fields.list_of_personel.options.label %>
 			</span>
+
 			<br>
+
 		 	<div>
 		 		<%= entries.list_of_personel %>
 	      	</div>
 
-		 		<textarea></textarea>
-		 		<button class="waves-effect waves-light btn" >
-		 			<i class="material-icons left">comment</i>
-		 		Remarks / Suggestions</button>
+
+	      	<span style="font-weight:bold;">
+		 	<%= fields.approved_by.options.label %>
+			</span>
+			<br>
+
+		 	<div>
+		 		<%= entries.approved_by %>
+	      	</div>
+
+	      		<span style="font-weight:bold;">
+		 	<%= fields.approved_date.options.label %>
+			</span>
+			<br>
+
+		 	<div>
+		 		<%= new Date(parseInt(entries.approved_date)) %>
+		 			
+	      	</div>
+
+	      	<br><br>
+
+
+
+		 	<textarea> </textarea>
+		 		<button class="waves-effect waves-light btn" ><i class="material-icons left">comment</i>Remarks / Suggestions</button>
 	      	</div>
 		</div>
 	</script>

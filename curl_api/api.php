@@ -8,6 +8,9 @@ class Api {
   
   const BASE_URL = "https://softlh.com/apscl/cockpit/api/cockpit/";
   const TOKEN = "?token=bac038febd5cd9e663f2f731834db8";
+
+  //   const BASE_URL = "http://localhost/cockpit/api/cockpit/";
+  // const TOKEN = "?token=6faf5df9bad9ba9c64aecb14d3fcf1";
   
 
   // // Methods
