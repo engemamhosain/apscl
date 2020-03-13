@@ -35,6 +35,20 @@ class Api {
 		
         return $jsonArrayUser;
   }
+
+  public function get_user_list() {
+
+    $cURLConnection = curl_init(self::BASE_URL."listUsers".self::TOKEN);
+
+    curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+
+    $apiResponse = curl_exec($cURLConnection);
+    curl_close($cURLConnection);
+    $jsonArrayUser = json_decode($apiResponse);
+    
+        return $jsonArrayUser;
+  }
+
 }
 
 

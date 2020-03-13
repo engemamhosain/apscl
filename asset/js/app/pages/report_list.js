@@ -31,10 +31,26 @@ function init_list_populate1(data){
     
 }
 
+function user_list_populate(){
+    
+    api_get('user_list', init_list_populate);
+
+    //  var template = $(".user-list").html(),
+    //      tx = _.template(template), 
+    //      html_to_push = '';
+    
+    // _.each(data.entries, function(item, key, arr){
+    //     item.id=key;
+    //     html_to_push  += tx(item);
+    // });         
+
+    //  $("#list_push").html(html_to_push);
+
+
+}
 
 function init_list_populate(data){
     
-    init_list_populate1(data);
      
      var template = $("#tmp_report_list").html(),
          tx = _.template(template), 
