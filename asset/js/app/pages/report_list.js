@@ -14,6 +14,7 @@ function edit_report_init_view(item_id){
 }
 
 
+
 function init_list_populate1(data){
     
     
@@ -445,9 +446,26 @@ function approve(){
 
 
 
+function init_tr_list_populate(data){
+    
+    console.log(data);
+     
+    //  var template = $("#tmp_report_list").html(),
+    //      tx = _.template(template), 
+    //      html_to_push = '';
+    
+    // _.each(data.entries, function(item, key, arr){
+    //     item.id=key;
+    //     html_to_push  += tx(item);
+    // });         
+
+    //  $("#list_push").html(html_to_push);
+}
 
 
-
+console.log("call");
+api_get('TR', init_tr_list_populate);
+//api_post('TR',{no:12334}, init_TR_populate);
 $('#save_report').click(function(){
 
     var obj = {};

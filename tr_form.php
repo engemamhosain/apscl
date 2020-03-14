@@ -26,6 +26,7 @@
     <link href="tr_form/css/main.css" rel="stylesheet" media="all">
 </head>
 
+
 <body>
     <div class="page-wrapper" style="background: #2c3e50;"> 
         <div class="wrapper wrapper--w680">
@@ -33,85 +34,93 @@
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">TROUBLE REPORT</h2>
-                        <form method="POST" action="tr_list.php">
-                        
-                        <div class="row row-space">
-                           <div class="col-2"> 
-                                <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="T.R. No." name="name">                              
-                                </div>
-                            </div> 
-                             <div class="col-2"> 
-                                <div class="input-group">                             
-                                    <input class="input--style-1" type="text" placeholder="Equipment:" name="name">
-                                </div>
-                            </div>
-                          </div>
+                       
+                            <script type="text/template" id="tmp_tr_list">
+                                
+                                <div class="row row-space">
+                                   <div class="col-2"> 
+                                        <div class="input-group">
+                                            <input class="input--style-1" type="text" placeholder="<%= Tr_No.options.label %>" name="<%= Tr_No.name %>">                              
+                                        </div>
+                                    </div> 
+                                     <div class="col-2"> 
+                                        <div class="input-group">                             
+                                            <input class="input--style-1" type="text" placeholder="<%= Equipment.options.label %>" name="<%= Equipment.name %>">
+                                        </div>
+                                    </div>
+                                  </div>
 
-                           <div class="row row-space">
-                           <div class="col-2"> 
-                                <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="Name of the Reporting Person:" name="name">                              
-                                </div>
-                            </div> 
-                             <div class="col-2"> 
-                                <div class="input-group">                             
-                                    <input class="input--style-1" type="text" placeholder="Location:" name="name">
-                                </div>
-                            </div>
-                          </div>  
-                        
+                                   <div class="row row-space">
+                                   <div class="col-2"> 
+                                        <div class="input-group">
+                                            <input class="input--style-1" type="text" placeholder="<%= Name_of_the_Reporting_Persion.options.label %>" name="<%= Name_of_the_Reporting_Persion.name %>">                              
+                                        </div>
+                                    </div> 
+                                     <div class="col-2"> 
+                                        <div class="input-group">                             
+                                            <input class="input--style-1" type="text" placeholder="<%= Location.options.label %>" name="<%= Location.name %>">
+                                        </div>
+                                    </div>
+                                  </div>  
+                                
 
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <input class="input--style-1 js-datepicker" type="text" placeholder="Date" name="birthday">
-                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="gender">
-                                            <option disabled="disabled" selected="selected">Designation:</option>
-                                            <option>Sub-Assistant Engineer</option>
-                                            <option>Assistant Engineer</option>
-                                            <option>Other</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <input class="input--style-1 js-datepicker" type="Date" placeholder="<%= Date.options.label %>" name="<%= Date.options.label %>">
+                                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group">
+                                            <div class="rs-select2 js-select-simple select--no-search">
+                                                <select name="<%= Designation.name %>">
+                                                    <option disabled="disabled" selected="selected"><%= Designation.options.label %>:</option>
+                                                    <option>Sub-Assistant Engineer</option>
+                                                    <option>Assistant Engineer</option>
+                                                    <option>Other</option>
+                                                </select>
+                                                <div class="select-dropdown"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                               
+
+                                <label for="comment"><%= Description_of_Trouble.options.label %>:</label>
+                                <div class="input-group">
+                                    <textarea class="input--style-1" style="width: 100%"  rows="5" id="comment" name="<%= Description_of_Trouble.name %>"></textarea>
+                                </div>
+
+                                 <div class="input-group">
+                                    <input class="input--style-1" type="text" placeholder="<%= Referred_to.options.label %>:" name="<%= Referred_to.name %>">
+                                </div>
+                                  
+                                
+                                <div class="row row-space">
+                                    <div class="col-6">
+                                        <div class="p-t-20">
+                                            <button class="btn btn--radius"  style="background-color: blue;opacity: .7" type="submit" onclick="location.replace('tr_list.php')">Back</button>
+                                        </div>
+                                    </div>  
+                                      <div class="col-6">
+                                        <div class="p-t-20">
+                                            <button class="btn btn--radius btn--green" type="submit" onclick="postTr()">Submit</button>
+                                        </div>
+                                    </div>    
+                                 </div> 
+                                                                                
+
+                            </script>
+                            <div id="list_push">
+                              
                             </div>
-                        </div>
-                       
-
-                        <label for="comment">Description of Trouble:</label>
-                        <div class="input-group">
-                            <textarea class="input--style-1" style="width: 100%"  rows="5" id="comment"></textarea>
-                        </div>
-
-                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="Referred to" name="res_code">
-                        </div>
-                          
-                        
-                        <div class="row row-space">
-                            <div class="col-6">
-                                <div class="p-t-20">
-                                    <button class="btn btn--radius"  style="background-color: blue;opacity: .7" type="submit">Back</button>
-                                </div>
-                            </div>  
-                              <div class="col-6">
-                                <div class="p-t-20">
-                                    <button class="btn btn--radius btn--green" type="submit">Submit</button>
-                                </div>
-                            </div>    
-                         </div>     
-                    </form>
+                 
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- Jquery JS-->
     <script src="tr_form/vendor/jquery/jquery.min.js"></script>
@@ -126,4 +135,19 @@
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
-<!-- end document-->
+
+  <?php include 'includes/footer-new.php';?>
+    <script src="asset/js/app/pages/tr_list.js"></script>
+
+<script type="text/javascript">
+    function postTr(){
+    console.log("tr post");
+        var obj = {};
+          $('.input--style-1').each(function(i, v){
+             obj[v.name] =v.value;            
+        });
+        api_post('TR', obj , function(data){
+            location.replace("dashboard.php")
+        });
+}
+</script>

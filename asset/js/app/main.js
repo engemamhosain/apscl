@@ -36,12 +36,23 @@ function set_full_text(data){
 }
 
 function api_get(collection_name, callback){
+
     var url = tg.config.apiurl + 'collections/get/'+collection_name + tg.config.token;
     if(location.href.split("/")[location.href.split("/").length-1]=="unpublish_report_list.php#report"){
         var status="not approve"
     }else{
          var status="approved"
     }
+
+    if(collection_name === "TR"){
+    $.post(url,function(data){
+        set_full_text(data);
+        tg.db[collection_name] = data;
+        callback(data);
+    });    
+        return
+    }
+    
     $.post(url,{"filter": {"status":status}}, function(data){
         set_full_text(data);
         tg.db[collection_name] = data;
