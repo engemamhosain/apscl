@@ -188,7 +188,10 @@ label.light {
 	 
 	 <script src="asset/js/app/pages/add_user.js"></script>
 	 <script type="text/javascript">
+
 	 	 var department = ["Electrical","Mechanical","Accounts"];  
+		 var role = ["admin","repoter","author"];  
+	 	 
   		for (var i = 0; i < department.length; i++)
 		{ 
 		     $('#add_user_push').append($('<option>',
@@ -198,7 +201,6 @@ label.light {
 		    }));
 		}
 
-		 var role = ["admin","repoter","author"];  
   		for (var i = 0; i < role.length; i++)
 		{ 
 		     $('#Role').append($('<option>',
