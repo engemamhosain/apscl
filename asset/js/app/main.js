@@ -52,6 +52,15 @@ function api_get(collection_name, callback){
     });    
         return
     }
+
+       if(collection_name === "Department"){
+    $.post(url,function(data){   
+
+        tg.db[collection_name] = data;
+        callback(data);
+    });    
+        return
+    }
     
     $.post(url,{"filter": {"status":status}}, function(data){
         set_full_text(data);
@@ -60,10 +69,23 @@ function api_get(collection_name, callback){
     });
 }
 
+
+
 function api_post(collection_name, post_data ,callback){
     var url = tg.config.apiurl + 'collections/save/'+collection_name + tg.config.token;
     $.post(url, {data: post_data}, callback);
 }
+
+
+
+function api_post_user(post_data ,callback){
+   console.log(post_data);
+    $.post(tg.config.user_url, {"user":post_data}, callback);
+}
+// function api_post_user(post_data ,callback){
+   
+//     $.post(tg.config.user_url, {user: post_data}, callback);
+// }
 
 function api_remove(collection_name, collection_id , callback){
     var url = tg.config.apiurl + 'collections/remove/'+collection_name + tg.config.token;

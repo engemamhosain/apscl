@@ -203,6 +203,8 @@ if(strcmp($_SESSION ["role"], "admin") != 0){
 					<thead>
 						<tr>
 							<th><span>User</span></th>
+							<th class="text-center"><span>id</span></th>
+							<th class="text-center"><span>Department</span></th>
 							<th class="text-center"><span>Status</span></th>
 							<th><span>Email</span></th>
 							<th><span>Created</span></th>
@@ -210,7 +212,7 @@ if(strcmp($_SESSION ["role"], "admin") != 0){
 						</tr>
 					</thead>
 					<tbody>
-						<?php					
+						<?php										
 							foreach ($users as $key => $value) {
 						?>
 	
@@ -221,7 +223,13 @@ if(strcmp($_SESSION ["role"], "admin") != 0){
 								<span class="user-subhead"><?php echo $value->group; ?></span>
 							</td>
 							<td class="text-center">
-								<span class="label label-default">Active</span>
+								<span class="label label-default"><?php if($value->employee_id) echo $value->employee_id; else echo ""; ?></span>
+							</td>
+							<td class="text-center">
+								<span class="label label-default"><?php if($value->department)echo $value->department; else echo ""; ?></span>
+							</td>
+							<td class="text-center">
+								<span class="label label-default"><?php if($value->active)echo "Active"; else echo "In Active"; ?></span>
 							</td>
 							<td>
 								<a href="#"><?php echo $value->email; ?></a>

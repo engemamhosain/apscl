@@ -1,3 +1,4 @@
+<?php include 'includes/header-new.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,21 +94,19 @@
                                 </div>
 
                                  <div class="input-group">
-                                    <input class="input--style-1" type="text" placeholder="<%= Referred_to.options.label %>:" name="<%= Referred_to.name %>">
+                                    <input list="department" class="input--style-1" type="text" placeholder="<%= Referred_to.options.label %>:" name="<%= Referred_to.name %>">
+                                    
+                                      <datalist id="department">                                        
+                                      </datalist>
                                 </div>
                                   
                                 
                                 <div class="row row-space">
-                                    <div class="col-6">
-                                        <div class="p-t-20">
-                                            <button class="btn btn--radius"  style="background-color: blue;opacity: .7" type="submit" onclick="location.replace('tr_list.php')">Back</button>
-                                        </div>
-                                    </div>  
-                                      <div class="col-6">
-                                        <div class="p-t-20">
-                                            <button class="btn btn--radius btn--green" type="submit" onclick="postTr()">Submit</button>
-                                        </div>
-                                    </div>    
+                                  
+                                       
+                                            <button  style="width:100%" class="btn btn--radius btn--green" type="submit" onclick="postTr()">Submit</button>
+                                       
+                                      
                                  </div> 
                                                                                 
 
@@ -150,4 +149,16 @@
             location.replace("dashboard.php")
         });
 }
+
+     var department = ["Electrical","Mechanical","Accounts"]; 
+         $("#department").empty(); 
+               setTimeout(function(){
+                    for (var i = 0; i < department.length; i++)
+                    { 
+                       
+                           $("#department").append("<option value='" + department[i] + "'></option>");                        
+                         
+                    }
+               },3000)
 </script>
+
