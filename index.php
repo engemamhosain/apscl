@@ -2,7 +2,7 @@
 
 <?php
 
-		session_start();	
+	session_start();	
 	$_SESSION["role"] = "user";
 	$isLogin="false";
 
@@ -135,10 +135,11 @@
 			
 				if(isloginMatch){
 			 		 localStorage.role = get_user.group;
-			 		 localStorage.id = get_user.user;
-			 		 localStorage.username = get_user.name;	
+			 		 localStorage.id = get_user.employee_id;
+			 		 localStorage.username = get_user.user;	
+			 		 localStorage.department = get_user.department;	
 		 			 localStorage.isLogin = "true"
-					location.replace("dashboard.php");
+					 location.replace("dashboard.php");
 				}
 			if(window.app){
 

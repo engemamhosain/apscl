@@ -3,13 +3,7 @@
     <!-- Title Page-->
     <title>TR Form</title>
 
-    <!-- Icons font CSS-->
-    <link href="tr_form/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="tr_form/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="tr_form/https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
-    <!-- Vendor CSS-->
     <link href="tr_form/vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="tr_form/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
@@ -31,14 +25,14 @@
                                    <div class="col-2"> 
 
                                         <div class="input-field">
-                                            <input type="text" name="<%= Tr_No.name %>">   
-                                            <label for="<%= Tr_No.name %>"><%= Tr_No.options.label %></label>                          
+                                            <span><%= Tr_No.options.label %></span>                          
+                                            <input type="text" name="<%= Tr_No.name %>" class="tr_field">   
                                         </div>
                                     </div> 
                                      <div class="col-2"> 
                                         <div class="input-field">                             
-                                            <input type="text" name="<%= Equipment.name %>">
-                                            <label for="<%= Equipment.name %>"><%= Equipment.options.label %></label>
+                                            <span class="active" for="<%= Equipment.name %>"><%= Equipment.options.label %></span>
+                                            <input type="text" name="<%= Equipment.name %>" class="tr_field">
                                         </div>
                                     </div>
                                   </div>
@@ -46,14 +40,14 @@
                                    <div class="row row-space">
                                    <div class="col-2"> 
                                         <div class="input-field">
-                                            <input type="text" name="<%= Name_of_the_Reporting_Persion.name %>"> 
-                                            <label for="<%= Name_of_the_Reporting_Persion.name %>"><%= Name_of_the_Reporting_Persion.options.label %></label>                             
+                                            <span for="<%= Name_of_the_Reporting_Persion.name %>"><%= Name_of_the_Reporting_Persion.options.label %></span>                             
+                                            <input type="text" name="<%= Name_of_the_Reporting_Persion.name %>" class="tr_field"> 
                                         </div>
                                     </div> 
                                      <div class="col-2"> 
                                         <div class="input-field">                             
-                                            <input type="text" name="<%= Location.name %>">
-                                            <label for="<%= Location.name %>"><%= Location.options.label %></label>
+                                            <span for="<%= Location.name %>"><%= Location.options.label %></span>
+                                            <input type="text" name="<%= Location.name %>" class="tr_field">
                                         </div>
                                     </div>
                                   </div>  
@@ -62,15 +56,15 @@
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-field">
-                                            <input js-datepicker" type="Date" name="<%= Date.options.label %>">
+                                            <span for="<%= Date.options.label %>"><%= Date.options.label %></span>
+                                            <input js-datepicker" type="Date" name="<%= Date.options.label %>" class="tr_field">
                                             <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                            <label for="<%= Date.options.label %>"><%= Date.options.label %></label>
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-field">
                                             <div class="rs-select2 js-select-simple select--no-search">
-                                                <select name="<%= Designation.name %>">
+                                                <select name="<%= Designation.name %>" class="tr_field">
                                                     <option disabled="disabled" selected="selected"><%= Designation.options.label %>:</option>
                                                     <option>Sub-Assistant Engineer</option>
                                                     <option>Assistant Engineer</option>
@@ -86,13 +80,13 @@
 
                                
                                 <div class="input-field">
-                                    <textarea rows="5" id="comment" name="<%= Description_of_Trouble.name %>"></textarea>
-                                     <label for="<%= Description_of_Trouble.name %>"><%= Description_of_Trouble.options.label %>:</label>
+                                     <span for="<%= Description_of_Trouble.name %>"><%= Description_of_Trouble.options.label %>:</span>
+                                    <textarea rows="5" id="comment" name="<%= Description_of_Trouble.name %>" class="tr_field"></textarea>
                                 </div>
 
                                  <div class="input-field">
-                                    <input list="department" type="text" name="<%= Referred_to.name %>">
-                                    <label for="<%= Referred_to.name %>"><%= Referred_to.options.label %>:</label>
+                                    <span for="<%= Referred_to.name %>"><%= Referred_to.options.label %>:</span>
+                                    <input list="department" type="text" name="<%= Referred_to.name %>" class="tr_field">
                                       <datalist id="department"></datalist>
                                 </div>
                                   
@@ -133,25 +127,29 @@
 
 <script type="text/javascript">
        function postTr(){
-    console.log("tr post");
+    
         var obj = {};
-          $('.input--style-1').each(function(i, v){
+          $('.tr_field').each(function(i, v){
              obj[v.name] =v.value;            
         });
+          
+         obj.Tr_creator = localStorage.username;          
         api_post('TR', obj , function(data){
-            location.replace("dashboard.php")
+        //    location.replace("dashboard.php")
         });
 }
 
-     var department = ["Electrical","Mechanical","Accounts"]; 
+
+
+     var department = ["Mechanical Maintenance", "Electrical Maintenance", "Instrument and Control", "Operation (Shift)","Operation (General)"];
          $("#department").empty(); 
-               setTimeout(function(){
-                    for (var i = 0; i < department.length; i++)
-                    { 
-                       
-                           $("#department").append("<option value='" + department[i] + "'></option>");                        
-                         
-                    }
-               },3000)
+		setTimeout(function(){
+			for (var i = 0; i < department.length; i++)
+			{ 
+
+			$("#department").append("<option value='" + department[i] + "'></option>");                        
+
+			}
+		},3000)
 </script>
 

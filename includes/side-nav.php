@@ -40,6 +40,7 @@
               <div class="collapsible-body">
                 <ul>
                   <li><a href="tr_list.php" class="waves-effect waves-blue">All TR<i class="material-icons">picture_as_pdf</i></a></li>
+                  <li><a href="tr_list.php#my_tr" class="waves-effect waves-blue">My TR<i class="material-icons">picture_as_pdf</i></a></li>
                   <li><a href="tr_form.php" class="waves-effect waves-blue">Create New<i class="material-icons">queue</i></a></li>
                   
                 </ul>

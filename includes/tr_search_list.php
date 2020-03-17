@@ -7,24 +7,23 @@
 </style>
 
     <form class="search-manual">
+    <div class="btn-large waves-effect waves-light green"  onclick="location.replace('tr_form.php')">Add New TR</div>
       <div class="row">
         <div class="input-field col12">
           <i class="material-icons prefix">search</i>
            <input type="text" id="myInput" value="" onkeyup="myFunction()" >
-          <label for="myInput">Search Trouble Report</label>
+          <label for="myInput">Search Trouble Equipment</label>
         </div>
       </div>
     </form>
-    
+  
 
                 <script type="text/template" id="tmp_tr_list">
                     <tr>
-                        <td><%= Tr_No %></td>
-                        <td><%= Equipment %></td>
+                        <td style="font-weight:bold"> <a href="tr_status.php#<%= _id %> "><%= Tr_No %> </a> <br> <span style="color:gray;font-size:12px"> <%= Date %> </span> </td>
+                        <td><%= Equipment %> <br> (<span style="color:gray;font-size:12px"><%= Location %>) </span></td>
                         <td><%= Referred_to %></td>
-                        <td><%= Location %></td>
-                        <td><%= Date %></td>
-                                                
+                                                                                              
                     </tr>
  
                 </script>
@@ -32,11 +31,10 @@
             <table class="striped" id="table">
                 <thead style="background-color:rgb(68, 169, 255);color: white">
                     <tr class="header"> 
-                        <th width="100px">TR No</th>
-                        <th>Equipment</th>
-                        <th>Reffer to</th>
-                        <th>Locaion</th>
-                        <th>Date</th>
+                        <th >TR No & Date</th>
+                        <th >Equipment & Locaion</th>
+                        <th>Assign to</th>                        
+                        
                     </tr>
                 </thead>
                 <tbody id="list_push">

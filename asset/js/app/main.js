@@ -44,6 +44,34 @@ function api_get(collection_name, callback){
          var status="approved"
     }
 
+
+
+    if(location.pathname.split("/")[location.pathname.split("/").length-1] == "tr_status.php"){
+        if(collection_name=="TR_Status"){
+            $.post(url,{"filter": {"tr_id":location.hash.substr(1)}}, function(data){            
+                tg.db[collection_name] = data;
+                callback(data);
+            });
+            return
+        }
+        $.post(url,{"filter": {"_id":location.hash.substr(1)}}, function(data){            
+            tg.db[collection_name] = data;
+            callback(data);
+        });
+        return
+    }
+
+
+  if(location.hash=="#my_tr"){
+        
+        $.post(url,{"filter": {"Tr_creator":localStorage.username}}, function(data){         
+            tg.db[collection_name] = data;
+            callback(data);
+        });
+
+        return
+    }
+    
     if(collection_name === "TR"){
     $.post(url,function(data){
         set_full_text(data);
@@ -53,14 +81,16 @@ function api_get(collection_name, callback){
         return
     }
 
-       if(collection_name === "Department"){
-    $.post(url,function(data){   
+    if(collection_name === "Department"){
+        $.post(url,function(data){   
 
-        tg.db[collection_name] = data;
-        callback(data);
-    });    
+            tg.db[collection_name] = data;
+            callback(data);
+        });    
         return
     }
+
+
     
     $.post(url,{"filter": {"status":status}}, function(data){
         set_full_text(data);

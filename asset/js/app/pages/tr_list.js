@@ -4,8 +4,6 @@
 
 
 function init_tr_list_populate(data){
-    console.log("data");         
-    console.log(data);         
      var template = $("#tmp_tr_list").html(),
          tx = _.template(template), 
          html_to_push = '';
@@ -26,7 +24,34 @@ function init_tr_list_populate(data){
 }
 
 
+function init_tr_status_populate(data){
+
+     var template = $("#tmp_tr_list").html(),
+        tx = _.template(template), 
+        html_to_push = '';
+        html_to_push  += tx(data);        
+        $("#list_push").html(html_to_push);
+}
+function init_tr_note_populate(data){
+
+     var template = $("#tmp_tr_status_list").html(),
+        tx = _.template(template), 
+        html_to_push = '';
+        html_to_push  += tx(data);        
+        $("#status_list").html(html_to_push);
+}
 
 
-api_get('TR', init_tr_list_populate);
+if(location.pathname.split("/")[location.pathname.split("/").length-1] == "tr_status.php"){
+    api_get('TR', init_tr_status_populate);
+    api_get('TR_Status', init_tr_note_populate);
+}else{
+    api_get('TR', init_tr_list_populate);
+}
 
+$d.on('hash-changed', function(e, hash){
+
+    if(hash === '#my_tr'){
+       api_get('TR', init_tr_list_populate); 
+    }
+});

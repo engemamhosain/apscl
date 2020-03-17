@@ -189,7 +189,7 @@ label.light {
 	 <script src="asset/js/app/pages/add_user.js"></script>
 	 <script type="text/javascript">
 
-	 	 var department = ["Electrical","Mechanical","Accounts"];  
+var department = ["Mechanical Maintenance", "Electrical Maintenance", "Instrument and Control", "Operation (Shift)","Operation (General)"];
 		 var role = ["admin","repoter","author"];  
 	 	 
   		for (var i = 0; i < department.length; i++)
