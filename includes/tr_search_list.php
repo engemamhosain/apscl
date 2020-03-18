@@ -21,7 +21,7 @@
                 <script type="text/template" id="tmp_tr_list">
                     <tr>
                         <td style="font-weight:bold"> <a href="tr_status.php#<%= _id %> "><%= Tr_No %> </a> <br> <span style="color:gray;font-size:12px"> <%= Date %> </span> </td>
-                        <td><%= Equipment %> <br> (<span style="color:gray;font-size:12px"><%= Location %>) </span></td>
+                        <td><%= Equipment %> <br> <span style="color:gray;font-size:12px"><%= Location %> </span></td>
                         <td><%= Referred_to %></td>
                                                                                               
                     </tr>

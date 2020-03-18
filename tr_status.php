@@ -22,10 +22,11 @@
         
     <div style="width: 80%;margin: auto;">    
         <div class="card"style="padding:16px;">   
-            <div><%= fields.status.options.label %>: <%= entries[0].status %></div>    
-            <div><%= fields.Date.options.label %>: <%= new Date(parseInt(entries[0].Date)) %></div>    
-            <div><%= fields.Assigner.options.label %>: <%= entries[0].Assigner %></div>    
-            <div><%= fields.Assign_to.options.label %>: <%= entries[0].Assign_to %></div>                
+            <div><%= fields.status.options.label %>: <%= item.status %></div>    
+            <div><%= fields.Date.options.label %>: <%= new Date(parseInt(item.Date)) %></div>    
+            <div><%= fields.note.options.label %>: <%= item.note %></div>    
+            <div><%= fields.Assigner.options.label %>: <%= item.Assigner %></div>    
+            <div><%= fields.Assign_to.options.label %>: <%= item.Assign_to %></div>                
         </div>
     </div>
                                            
@@ -36,7 +37,7 @@
     <div class="card blue-grey darken-1"style="padding:16px;color:white" id="list_push"></div>
 </div>
 
-<div style="width: 80%;margin: auto;">    
+<div style="width: 80%;margin: auto;" class="Assign_to_wrapper">    
     <div class="card-panel"style="padding:16px;">   
         <h3>Update Trouble infromation</h3> 
         <label>Reffer to</label>   
@@ -63,6 +64,7 @@
         
   <?php include 'includes/footer-new.php';?>
 <script type="text/javascript">
+  
     
 
 var department = ["Mechanical Maintenance", "Electrical Maintenance", "Instrument and Control", "Operation (Shift)","Operation (General)"];
@@ -82,13 +84,18 @@ function TrAssign(){
           $('.tr_field').each(function(i, v){
              obj[v.name] =v.value;            
         });
-          
+            
          obj.Assigner = localStorage.username;          
          obj.Date = parseInt(new Date().getTime());          
          obj.tr_id = ""+location.hash.substr(1);
          obj.status = "Active";
         api_post('TR_Status', obj , function(data){
-            location.replace("dashboard.php")
+
+           api_post('TR', {_id:location.hash.substr(1),Referred_to:$("#department").val()}, function(data){
+
+                location.reload("tr_status.php"+location.hash)                
+            });   
+            
         });
 }
 
