@@ -1,8 +1,3 @@
-
-
-
-
-
 function init_tr_list_populate(data){
      var template = $("#tmp_tr_list").html(),
          tx = _.template(template), 
