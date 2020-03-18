@@ -26,13 +26,20 @@ function init_tr_status_populate(data){
         html_to_push = '';
         html_to_push  += tx(data);        
         $("#list_push").html(html_to_push);
+        if(data.entries[0].Referred_to != localStorage.department){
+            $(".Assign_to_wrapper").hide();
+        }
 }
 function init_tr_note_populate(data){
 
      var template = $("#tmp_tr_status_list").html(),
         tx = _.template(template), 
         html_to_push = '';
-        html_to_push  += tx(data);        
+         _.each(data.entries, function(item, key, arr){    
+                html_to_push  += tx({fields:data.fields,item:item});
+               console.log({fields:data.fields,item:item});
+            });  
+        //html_to_push  += tx(data);        
         $("#status_list").html(html_to_push);
 }
 

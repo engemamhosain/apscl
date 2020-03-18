@@ -73,8 +73,7 @@ function api_get(collection_name, callback){
     }
     
     if(collection_name === "TR"){
-    $.post(url,function(data){
-        set_full_text(data);
+    $.post(url,function(data){       
         tg.db[collection_name] = data;
         callback(data);
     });    
