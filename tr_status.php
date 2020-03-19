@@ -5,12 +5,15 @@
 
     <script type="text/template" id="tmp_tr_list">
         
-        <div class="col s6"><label><%= fields.Tr_No.options.label %>:</label> <%= entries[0].Tr_No %></div>          
+        <div class="col s6">
+          <label><%= fields.Tr_No.options.label %>:</label> <%= entries[0].Tr_No %><br>
+        <label><%= fields.Location.options.label %>:</label> <%= entries[0].Location %><br>
+        <label><%= fields.Equipment.options.label %>:</label> <%= entries[0].Equipment %>
+        </div>          
         <div class="col s6"><label><%= fields.Date.options.label %>:</label> <%= new Date(parseInt(entries[0].Date)) %></div>  
 
         <div class="col s12"><hr class="h-r"></div>  
 
-        <div class="col s12"><label><%= fields.Location.options.label %>:</label> <%= entries[0].Location %></div>
 
         <div class="col s12"><hr class="h-r"></div>
 
@@ -19,7 +22,6 @@
 
        <div class="col s12"><hr class="h-r"></div>  
         <div class="col s6"><label><%= fields.Designation.options.label %>:</label> <%= entries[0].Designation %></div> 
-        <div class="col s6"><label><%= fields.Equipment.options.label %>:</label> <%= entries[0].Equipment %></div>    
             
 
        <div class="col s12"><hr class="h-r"></div>  
@@ -39,13 +41,13 @@
         
     <div class="col s12"><hr class="h-r-2"></div> 
 
-            <div class="col s6"><label><%= fields.status.options.label %>:</label> <%= entries[0].status %></div>    
-            <div class="col s6"><label><%= fields.Date.options.label %>:</label> <%= new Date(parseInt(entries[0].Date)) %></div>  
+            <div class="col s6"><label><%= fields.status.options.label %>:</label> <%= item.status %></div>    
+            <div class="col s6"><label><%= fields.Date.options.label %>:</label> <%= new Date(parseInt(item.Date)) %></div>  
             <div class="col s12"><hr class="h-r"></div> 
             <div class="col s12"><label><%= fields.note.options.label %>:</label>  <%= item.note %></div>     
             <div class="col s12"><hr class="h-r"></div> 
-            <div class="col s6"><label><%= fields.Assigner.options.label %>:</label> <%= entries[0].Assigner %></div>    
-            <div class="col s6"><label><%= fields.Assign_to.options.label %>:</label> <%= entries[0].Assign_to %></div>         
+            <div class="col s6"><label><%= fields.Assigner.options.label %>:</label> <%= item.Assigner %></div>    
+            <div class="col s6"><label><%= fields.Assign_to.options.label %>:</label> <%= item.Assign_to %></div>         
                                            
     </script>
                            
@@ -54,26 +56,6 @@
 <div class="container">
   <div class="card-panel">
   <div class="row">
-
-    <table>
-      <tr>
-        <td>ASHUGANJ POWER STATION COMPANY LIMITED</td>
-        <td>Document No:</td>
-      </tr>
-
-      <tr>
-        <td>FORMS</td>
-        <td>Revision No:</td>
-      </tr>
-
-
-      <tr>
-        <td>TITLE: CLEARANCE FOR WORK EXECUTION</td>
-        <td>Effective Date:</td>
-      </tr>
-
-
-    </table>
 
     <h4 style="text-align: center; margin: 60px auto">CLEARANCE FOR WORK EXECUTION</h2>
 

@@ -135,7 +135,7 @@
           
          obj.Tr_creator = localStorage.username;          
         api_post('TR', obj , function(data){
-        //    location.replace("dashboard.php")
+            location.replace("tr_list.php#my_tr")
         });
 }
 
