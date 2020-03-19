@@ -26,8 +26,12 @@ function init_tr_status_populate(data){
         html_to_push = '';
         html_to_push  += tx(data);        
         $("#list_push").html(html_to_push);
+        console.log("data");
+        console.log(data);
         if(data.entries[0].Referred_to != localStorage.department){
             $(".Assign_to_wrapper").hide();
+        }else{
+            $(".Assign_to_wrapper").show();
         }
 }
 function init_tr_note_populate(data){

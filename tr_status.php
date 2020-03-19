@@ -6,13 +6,15 @@
     <script type="text/template" id="tmp_tr_list">
         
         <div class="col s6">
-          <label><%= fields.Tr_No.options.label %>:</label> <%= entries[0].Tr_No %><br>
-        <label><%= fields.Location.options.label %>:</label> <%= entries[0].Location %><br>
-        <label><%= fields.Equipment.options.label %>:</label> <%= entries[0].Equipment %>
+          <label><%= fields.Tr_No.options.label %>:</label> <%= entries[0].Tr_No %>
         </div>          
-        <div class="col s6"><label><%= fields.Date.options.label %>:</label> <%= new Date(parseInt(entries[0].Date)) %></div>  
+        <div class="col s6"><label><%= fields.Date.options.label %>:</label> <%= new Date(parseInt(entries[0].Date)).toDateString() +" "+ new Date(parseInt(entries[0].Date)).toLocaleTimeString()   %></div>  
 
         <div class="col s12"><hr class="h-r"></div>  
+
+        <div class="col s12">
+          <label><%= fields.Location.options.label %> & <%= fields.Equipment.options.label %> :</label> <%= entries[0].Location %>-<%= entries[0].Equipment %>          
+        </div>
 
 
         <div class="col s12"><hr class="h-r"></div>
@@ -22,6 +24,7 @@
 
        <div class="col s12"><hr class="h-r"></div>  
         <div class="col s6"><label><%= fields.Designation.options.label %>:</label> <%= entries[0].Designation %></div> 
+        
             
 
        <div class="col s12"><hr class="h-r"></div>  
@@ -42,7 +45,7 @@
     <div class="col s12"><hr class="h-r-2"></div> 
 
             <div class="col s6"><label><%= fields.status.options.label %>:</label> <%= item.status %></div>    
-            <div class="col s6"><label><%= fields.Date.options.label %>:</label> <%= new Date(parseInt(item.Date)) %></div>  
+            <div class="col s6"><label><%= fields.Date.options.label %>:</label> <%= new Date(parseInt(item.Date)).toDateString()+" "+new Date(parseInt(item.Date)).toLocaleTimeString() %></div>  
             <div class="col s12"><hr class="h-r"></div> 
             <div class="col s12"><label><%= fields.note.options.label %>:</label>  <%= item.note %></div>     
             <div class="col s12"><hr class="h-r"></div> 
@@ -78,7 +81,7 @@
         <div class="input-field col s6">
               <i class="material-icons prefix">mode_edit</i>
               <textarea id="icon_prefix2" class="materialize-textarea tr_field" name="note"></textarea>
-              <label for="icon_prefix2">Write note</label>
+              <label for="icon_prefix2">Write Description</label>
               <a class="waves-effect waves-light btn" style="width: 100%;" onclick="TrAssign()">Assign</a>
         </div>        
 
