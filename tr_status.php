@@ -30,7 +30,7 @@
        <div class="col s12"><hr class="h-r"></div>  
 
         <div class="col s6"><label><%= fields.Name_of_the_Reporting_Persion.options.label %>:</label> <%= entries[0].Name_of_the_Reporting_Persion %></div>    
-        <div class="col s6"><label><%= fields.Referred_to.options.label %>:</label> <%= entries[0].Referred_to %></div>    
+        <div class="col s6"><label>Assign to:</label> <%= entries[0].Referred_to %></div>    
 
         <div class="col s12"><hr class="h-r"></div> 
 
