@@ -30,6 +30,7 @@ function init_tr_status_populate(data){
         console.log(data);
         if(data.entries[0].Referred_to != localStorage.department){
             $(".Assign_to_wrapper").hide();
+            
         }else{
             $(".Assign_to_wrapper").show();
         }

@@ -16,3 +16,4 @@
 <script src="asset/vendor/moment/moment.js"></script>
 
 
+<script src="asset/js/app/pages/notification.js"></script>

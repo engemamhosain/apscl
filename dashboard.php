@@ -21,14 +21,7 @@
   </header>
   <main>
     <?php include 'includes/slider-home.php';?>
-
-
-
-    <div class="animation start-home"></div>
-
   </main>
 
   <?php include 'includes/footer-new.php';?>
 
-
-  

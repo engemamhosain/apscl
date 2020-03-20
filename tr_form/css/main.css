@@ -259,7 +259,11 @@ input[type="date" i] {
   padding: 10px 0;
 }
 
-.daterangepicker .table-condensed th select {
+.daterangepicker .table-condensed th 
+
+
+
+select {
   border: 1px solid #ccc;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;

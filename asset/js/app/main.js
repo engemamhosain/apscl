@@ -123,6 +123,25 @@ function api_remove(collection_name, collection_id , callback){
 
 
 
+function api_get_notificaion(collection_name, callback){
+   var url = tg.config.apiurl + 'collections/get/'+collection_name + tg.config.token;
+     
+        $.post(url,{"filter": {"department":localStorage.department}}, function(data){         
+            tg.db[collection_name] = data;
+            callback(data);
+        });
+
+        // $.post(url,function(data){   
+        //     console.log(data)
+        //     tg.db[collection_name] = data;
+        //     callback(data);
+        // });    
+ 
+ 
+
+
+}
+
 //---------------------------- Not using
 /*
 function get_fields_label(data){
