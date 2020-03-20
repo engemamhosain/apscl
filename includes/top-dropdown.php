@@ -1,4 +1,4 @@
-<div id="dropdown1" class="dropdown-content notifications">
+<div id="dropdown1" class="dropdown-content notifications" style="height: 500px;">
   <div class="notifications-title">Messages</div>
 
   <div id ="notification_message" style="font-size: 12px;"> 
@@ -23,7 +23,7 @@
 </style>
   <script type="text/template" id="tmp_tr_notification_list">
        <div class="card blue-grey darken-1" style="color: white">            
-          <table class="striped" onclick="location.replace('<%= message_id %>')">
+          <table class="striped" onclick="location.reload('tr_status.php#<%= message_id %>')">
             <thead>
               <tr>
                   <th width="50%"><%= title %></th>

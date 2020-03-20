@@ -68,6 +68,7 @@ init_notification_list_populate = (data) =>{
 }
 
 $("#nav-mobile").click(function(){
+	$("#dropdown1").css("height","500px")
 	api_get_notificaion('Notification', init_notification_list_populate);		
 	api_get_notificaion('Notification', init_notification_count_populate);
 })
