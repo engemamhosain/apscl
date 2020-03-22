@@ -9,9 +9,7 @@
         <div class="card-heading"><h2 class="title">TROUBLE REPORT</h2></div>
         <div class="card-body">
                                    
-            <div id="list_push">
-              
-            </div>
+            <div id="list_push"></div>
          
         </div>
     </div>
@@ -46,7 +44,7 @@
             </div>
         </div> 
          <div class="col-2"> 
-            <div class="input-field">                             
+            <div class="input-field">
                 <span for="<%= Location.name %>"><%= Location.options.label %></span>
                 <input type="text" name="<%= Location.name %>" class="tr_field">
             </div>
@@ -69,7 +67,7 @@
                 <select name="<%= Designation.name %>" class="tr_field">                         
                     <option  selected="selected">Sub-Assistant Engineer</option>
                     <option>Assistant Engineer</option>
-                    <option>Other</option>
+                    <option>Exicutive Engineer</option>
                 </select>                                
             </div>
         </div>
@@ -120,6 +118,8 @@
         });
           
          obj.Tr_creator = localStorage.username;          
+         obj.status = "Waiting For Approval";          
+         obj.department = localStorage.department          
         api_post('TR', obj , function(data){          
                
              var obj={
@@ -127,9 +127,9 @@
                  message:data.Equipment,
                  type:"TR",
                  message_id:data._id,
-                 department:data.Referred_to,
+                 department:localStorage.department,
                  is_read:true
-             }
+             }  
 
              api_post('Notification',obj, function(data){       
                 location.replace("tr_list.php#my_tr")
@@ -140,16 +140,16 @@
 }
 
 
-
      var department = ["Mechanical Maintenance", "Electrical Maintenance", "Instrument and Control", "Operation (Shift)","Operation (General)"];
          $("#department").empty(); 
 		setTimeout(function(){
 			for (var i = 0; i < department.length; i++)
 			{ 
 
-			$("#department").append("<option value='" + department[i] + "'></option>");                        
+			    $("#department").append("<option value='" + department[i] + "'></option>");                        
 
 			}
 		},3000)
-</script>
 
+
+</script>

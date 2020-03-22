@@ -2,6 +2,8 @@
   
 function init_production_config() {
 	tg.config = {
+		
+	    get_user_url: 'https://softlh.com/apscl/cockpit/api/cockpit/saveUser/?token=bac038febd5cd9e663f2f731834db8',    	    
 	    user_url: 'https://softlh.com/apscl/cockpit/api/cockpit/saveUser/?token=bac038febd5cd9e663f2f731834db8',    	    
 	    logged_in: false,
 	    user_token: false,
@@ -15,6 +17,8 @@ function init_production_config() {
 
 function init_local_config() {
 	tg.config = {	    
+		
+		get_user_url: 'https://softlh.com/apscl/cockpit/api/cockpit/listUsers/?token=bac038febd5cd9e663f2f731834db8',    
 		user_url: 'https://softlh.com/apscl/cockpit/api/cockpit/saveUser/?token=bac038febd5cd9e663f2f731834db8',    
 	    logged_in: false,
 	    user_token: false,

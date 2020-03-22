@@ -138,6 +138,8 @@
 			 		 localStorage.id = get_user.employee_id;
 			 		 localStorage.username = get_user.user;	
 			 		 localStorage.department = get_user.department;	
+			 		 localStorage.designation = get_user.designation;	
+			 		 localStorage.email = get_user.email;	
 		 			 localStorage.isLogin = "true"
 					 location.replace("dashboard.php");
 				}

@@ -23,6 +23,11 @@
                         <td style="font-weight:bold"> <a href="tr_status.php#<%= _id %> "><%= Tr_No %> </a> <br> <span style="color:gray;font-size:12px"> <%= Date %> </span> </td>
                         <td><%= Equipment %> <br> <span style="color:gray;font-size:12px"><%= Location %> </span></td>
                         <td><%= Referred_to %></td>
+                        <% if(localStorage.designation == "Exicutive Engineer" && department== localStorage.department) { %>
+                        <td><a class="waves-effect waves-light btn" onclick="approve('<%= _id %>')">Approve</a></td>
+                         <% } else { %>
+                        <td><%= status %></td>
+                          <% } %>
                                                                                               
                     </tr>
  
@@ -34,6 +39,7 @@
                         <th >TR No & Date</th>
                         <th >Equipment & Locaion</th>
                         <th>Assign to</th>                        
+                        <th>Status</th>                        
                         
                     </tr>
                 </thead>
@@ -63,4 +69,13 @@ function myFunction() {
     }       
   }
 }
+
+  function approve(id){
+    api_filter_get("TR",{_id:id},function(data){
+        api_post('TR', {_id:id,department:data.entries[0].Referred_to}, function(data){
+          location.reload("tr_list.php")                
+        });   
+    })
+  }
+
 </script>

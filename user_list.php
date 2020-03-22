@@ -2,7 +2,7 @@
 session_start();
 
 if(strcmp($_SESSION ["role"], "admin") != 0){
-		header('Location: dashboard.php');
+	//	header('Location: dashboard.php');
 
 }
 
@@ -237,9 +237,13 @@ if(strcmp($_SESSION ["role"], "admin") != 0){
 							<td>
 								<?php echo date("Y-m-d h:i:sa", $value->_created); ?>
 								
-							</td>								
+							</td>	
+							<td>
+									
+								<a href="add_user.php#<?php echo $value->_id ?>" > <i class="material-icons green-text">create</i></a>
+							</td>							
 						</tr>
-					<?php  } ?>					
+					<?php  } ?>			
 					</tbody>
 				</table>
 			</div>
@@ -248,7 +252,4 @@ if(strcmp($_SESSION ["role"], "admin") != 0){
 	</div>
 </div>
 
-
-
-  
-	<?php include 'includes/footer-new.php';?>
+<?php include 'includes/footer-new.php';?>

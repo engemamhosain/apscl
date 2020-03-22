@@ -2,10 +2,8 @@
 session_start();
 
 if(strcmp($_SESSION ["role"], "admin") != 0){
-		header('Location: dashboard.php');
-
+//	header('Location: dashboard.php');
 }
-
 
 ?>
 <?php //include 'curl_api/api.php';?>
@@ -41,6 +39,7 @@ h1 {
   text-align: center;
 }
 
+
 input[type="text"],
 input[type="password"],
 input[type="date"],
@@ -52,7 +51,7 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea,
-select {
+ {
   background: rgba(255,255,255,0.1);
   border: none;
   font-size: 16px;
@@ -71,8 +70,20 @@ input[type="radio"],
 input[type="checkbox"] {
   margin: 0 4px 8px 0;
 }
-
 select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+.select-wrapper input.select-dropdown{
+	display: none;
+}
+select{
+  display: inline;
+}
+
+select1 {
   padding: 6px;
   height: 32px;
   border-radius: 2px;
@@ -173,15 +184,14 @@ label.light {
         <label for="Department">Department:</label>
         <select name="department" id="add_user_push" class="user"></select><br>
 
+  		<label for="designation">Designation:</label>
+        <select name="designation" id="designation" class="user"></select><br>
+
         <label for="Role">Role:</label>
         <select name="group" id="Role" class="user"></select>
         </fieldset>
-
-        
-       
-                  
-                
-        <button type="submit" onclick="postUser()">Add user</button>
+                                         
+        <button class="userBtn" type="submit" onclick="postUser()">Add user</button>
       </div>
 	<?php include 'includes/footer-new.php';?>
 	<?php include 'includes/include_js.php';?>
@@ -190,9 +200,20 @@ label.light {
 	 <script type="text/javascript">
 
 var department = ["Mechanical Maintenance", "Electrical Maintenance", "Instrument and Control", "Operation (Shift)","Operation (General)"];
+var designation = ["Assistant Engineer","Sub-Assistant Engineer", "Exicutive Engineer"];
 		 var role = ["admin","repoter","author"];  
 	 	 
-  		for (var i = 0; i < department.length; i++)
+  		for (var i = 0; i < designation.length; i++)
+		{ 
+		     $('#designation').append($('<option>',
+		     {
+		        value: designation[i],
+		        text : designation[i]
+		    }));
+		}
+
+
+		for (var i = 0; i < department.length; i++)
 		{ 
 		     $('#add_user_push').append($('<option>',
 		     {
@@ -200,6 +221,7 @@ var department = ["Mechanical Maintenance", "Electrical Maintenance", "Instrumen
 		        text : department[i]
 		    }));
 		}
+
 
   		for (var i = 0; i < role.length; i++)
 		{ 
@@ -218,11 +240,33 @@ var department = ["Mechanical Maintenance", "Electrical Maintenance", "Instrumen
 			obj[v.name] =v.value;            
 			});
 			obj.active ="active";
+			if(location.hash != ""){
+				obj._id = location.hash.substring(1);
+				delete obj.password;
+			}
 			api_post_user(obj , function(data){
 			location.replace("user_list.php")
 			});
 		}
 
+		if(location.hash != ""){
+			$(".userBtn").html("Update user")
+				
+			api_get_user({_id:location.hash.substring(1)},function(data){			
+			var data=data[0]
+			$("#name").val(data.user)		
+			$("#mail").val(data.email)		
+			$("#employee_id").val(data.employee_id)		
+			$("#designation").val(data.designation)		
+			$("#add_user_push").val(data.department)		
+			$("#Role").val(data.group)		
+			})
+
+		}
+
+
+
 	 </script>
+		
 
 	

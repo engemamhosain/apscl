@@ -1,3 +1,4 @@
+
 function init_tr_list_populate(data){
      var template = $("#tmp_tr_list").html(),
          tx = _.template(template), 
@@ -18,7 +19,6 @@ function init_tr_list_populate(data){
 
 }
 
-
 function init_tr_status_populate(data){
 
      var template = $("#tmp_tr_list").html(),
@@ -35,14 +35,14 @@ function init_tr_status_populate(data){
             $(".Assign_to_wrapper").show();
         }
 }
+
 function init_tr_note_populate(data){
 
      var template = $("#tmp_tr_status_list").html(),
         tx = _.template(template), 
         html_to_push = '';
          _.each(data.entries, function(item, key, arr){    
-                html_to_push  += tx({fields:data.fields,item:item});
-               console.log({fields:data.fields,item:item});
+                html_to_push  += tx({fields:data.fields,item:item});        
             });  
         //html_to_push  += tx(data);        
         $("#status_list").html(html_to_push);
@@ -61,4 +61,5 @@ $d.on('hash-changed', function(e, hash){
     if(hash === '#my_tr'){
        api_get('TR', init_tr_list_populate); 
     }
+
 });

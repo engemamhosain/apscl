@@ -35,6 +35,15 @@ function set_full_text(data){
         });
 }
 
+
+function api_filter_get(collection_name,obj, callback){
+    var url = tg.config.apiurl + 'collections/get/'+collection_name + tg.config.token;
+      $.post(url,{"filter": obj}, function(data){                    
+            callback(data);
+        });
+        
+}
+
 function api_get(collection_name, callback){
 
     var url = tg.config.apiurl + 'collections/get/'+collection_name + tg.config.token;
@@ -111,10 +120,14 @@ function api_post_user(post_data ,callback){
    console.log(post_data);
     $.post(tg.config.user_url, {"user":post_data}, callback);
 }
-// function api_post_user(post_data ,callback){
+
+
+function api_get_user(post_data ,callback){
    
-//     $.post(tg.config.user_url, {user: post_data}, callback);
-// }
+    $.post(tg.config.get_user_url,  {filter:post_data}, callback);
+}
+
+
 
 function api_remove(collection_name, collection_id , callback){
     var url = tg.config.apiurl + 'collections/remove/'+collection_name + tg.config.token;
@@ -130,65 +143,5 @@ function api_get_notificaion(collection_name, callback){
             tg.db[collection_name] = data;
             callback(data);
         });
-
-        // $.post(url,function(data){   
-        //     console.log(data)
-        //     tg.db[collection_name] = data;
-        //     callback(data);
-        // });    
- 
- 
-
-
 }
 
-//---------------------------- Not using
-/*
-function get_fields_label(data){
-
-    var process_obj = [],
-        labels = {},
-        tmp_items =[], 
-        tmp_obj = {};
-    
-    _.each(data.fields, function(item, key){
-        labels[key] = item.options.label; 
-    });
-    
-
-    
-
-    _.each(data.entries, 
-        function(array_item){
-            tmp_items = [];
-            full_text = '';
-
-            _.each(array_item, function(value, key){
-                tmp_obj = {
-                    key: key,
-                    value: value
-                };
-
-                if(_.isString(value)){
-                    full_text += value.toLowerCase();
-                }
-                
-
-                if(_.isUndefined(labels[key])){
-                    tmp_obj.label     =  false;
-                    tmp_obj.show      = false;
-                }else{
-                    tmp_obj.show      = true;
-                    tmp_obj.label     = labels[key];
-                }
-
-                tmp_items.push(tmp_obj);
-            });
-            tmp_items._full_text = full_text;
-            process_obj.push(tmp_items);
-    });
-
-    return process_obj;
-}
-
-*/
