@@ -114,7 +114,7 @@
     if( location.hostname =="localhost"){
         var url = "http://localhost/apscl/curl_api/push_notification.php"
     }else{
-        var url = "https://softlh.com/apscl/curl_api/push_notification.php"
+        var url = "https://softlh.com/apscl/app/curl_api/push_notification.php"
     }
        function postTr(){
     
