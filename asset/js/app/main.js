@@ -11,7 +11,7 @@
 
 // url ?? 
 
-if(location.pathname!="/apscl/mobile_dashboard.php"){
+if(location.pathname!="/apscl/app/mobile_dashboard.php"){
 	var tmp_breadcum = _.template($("#tmp_breadcrumbs").html());
 }
 
