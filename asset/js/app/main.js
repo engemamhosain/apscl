@@ -10,7 +10,11 @@
 // localstoage ?? 
 
 // url ?? 
-var tmp_breadcum = _.template($("#tmp_breadcrumbs").html());
+
+if(location.pathname!="/apscl/mobile_dashboard.php"){
+	var tmp_breadcum = _.template($("#tmp_breadcrumbs").html());
+}
+
 function change_breadcum(arr){
     var html_push = '';
     _.each(arr, function(item){
@@ -134,6 +138,10 @@ function api_remove(collection_name, collection_id , callback){
     $.post(url, {filter: {_id:collection_id}}, callback);
 }
 
+function api_push_remove(collection_name, employee_id , callback){
+    var url = tg.config.apiurl + 'collections/remove/'+collection_name + tg.config.token;
+    $.post(url, {filter: {employee_id:employee_id}}, callback);
+}
 
 
 function api_get_notificaion(collection_name, callback){
@@ -144,4 +152,3 @@ function api_get_notificaion(collection_name, callback){
             callback(data);
         });
 }
-

@@ -61,3 +61,10 @@
 </div>
 
 <?php include 'mobile-footer.php';?>
+<?php include 'includes/include_js.php';?>
+<script type="text/javascript">
+  if(window.app){
+    api_push_remove("PushNotificaion",localStorage.id)
+    app.fcm(localStorage.id,localStorage.department)    
+  }
+</script>

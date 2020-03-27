@@ -141,8 +141,12 @@
 			 		 localStorage.designation = get_user.designation;	
 			 		 localStorage.email = get_user.email;	
 		 			 localStorage.isLogin = "true"
+		 			   if(window.app){		 			   
+					 		location.replace("mobile_dashboard.php");
+		 			   }
 					 location.replace("dashboard.php");
 				}
+
 			if(window.app){
 
 				app.hide();

@@ -51,6 +51,15 @@
 <br>
 
 <script>
+
+
+
+   if( location.hostname =="localhost"){
+        var url = "http://localhost/apscl/curl_api/push_notification.php"
+    }else{
+        var url = "https://softlh.com/apscl/curl_api/push_notification.php"
+    }
+
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");
@@ -73,7 +82,18 @@ function myFunction() {
   function approve(id){
     api_filter_get("TR",{_id:id},function(data){
         api_post('TR', {_id:id,department:data.entries[0].Referred_to}, function(data){
-          location.reload("tr_list.php")                
+        
+           api_filter_get("PushNotificaion",{department:localStorage.department},function(fcm_token){  
+                         var array = [];
+                          for(token of fcm_token.entries){
+                              array.push(token.fcm_token)
+
+                          }
+
+                        $.get(url,{title:"tr",message:"Description_of_Trouble","data[]":token}, function(array){         
+                              location.reload("tr_list.php")                      
+                        });
+                   })              
         });   
     })
   }
