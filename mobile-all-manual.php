@@ -1,4 +1,4 @@
-<?php include 'mobile-header.php';?>
+<?php include 'mobile-header-secondary.php';?>
 
 <div class="container"> 
   <div class="row">
