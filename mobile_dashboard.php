@@ -1,5 +1,13 @@
 <?php include 'mobile-header.php';?>
 
+  <header>
+   
+    <ul id="sidenav-left" class="sidenav sidenav-fixed">
+      <?php include 'includes/side-nav.php';?>
+    </ul>
+    <?php //include 'includes/top-dropdown.php';?>
+  </header>
+
 <div class="container"> 
   <div class="row">
 

@@ -1,27 +1,24 @@
 
-// $d.on('tom-tom', function(e, data){
-//     console.log('tom-tom',data);
-// });
-// $d.trigger('tom-tom', {data:'cool data'});
-
-
-
-
-// localstoage ?? 
-
-// url ?? 
-
-if(location.pathname!="/apscl/app/mobile_dashboard.php"){
+if(typeof($("#tmp_breadcrumbs").html())!="undefined"){
 	var tmp_breadcum = _.template($("#tmp_breadcrumbs").html());
 }
 
 function change_breadcum(arr){
+
+    if(typeof($("#tmp_breadcrumbs").html())=="undefined"){
+       return
+    }
+
+
     var html_push = '';
     _.each(arr, function(item){
         html_push += tmp_breadcum(item);
     });
 
-    $('#px-breadcrumb').html(html_push);
+    if(typeof($("#px-breadcrumb").html())!="undefined"){
+        $('#px-breadcrumb').html(html_push);
+    }
+
 }
 
 

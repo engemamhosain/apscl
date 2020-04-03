@@ -7,7 +7,7 @@
 </style>
 
     <form class="search-manual">
-    <div class="btn-large waves-effect waves-light green"  onclick="location.replace('tr_form.php')">Add New TR</div>
+    <div class="btn-large waves-effect waves-light green"  onclick="if(window.app){location.replace('mobile-create-tr.php')}else{location.replace('tr_form.php')}">Add New TR</div>
       <div class="row">
         <div class="input-field col12">
           <i class="material-icons prefix">search</i>

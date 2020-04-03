@@ -29,7 +29,8 @@ init_notification_count_populate = (data) =>{
 	
 	
 	}
-	$("a .new-badge").html(notificaionCount);
+	//$("a .new-badge").html(notificaionCount);
+	$(".notif-num").html(notificaionCount);
 }
   api_get_notificaion('Notification', init_notification_count_populate);
 
@@ -43,6 +44,7 @@ init_notification_list_populate = (data) =>{
          _.each(data.entries, function(item, key, arr){    
                 html_to_push  += tx(item);              
         });
+
 
         $("#notification_message").html(html_to_push);
 
@@ -66,6 +68,13 @@ init_notification_list_populate = (data) =>{
 		}		
 	}
 }
+
+$(".notif-icon").click(function(){
+
+	api_get_notificaion('Notification', init_notification_list_populate);		
+	api_get_notificaion('Notification', init_notification_count_populate);
+})
+
 
 $("#nav-mobile").click(function(){
 	$("#dropdown1").css("height","500px")
