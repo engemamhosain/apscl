@@ -1,38 +1,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-}
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+    <script src='https://meet.jit.si/external_api.js'></script>
 
-a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.previous {
-  background-color: #f1f1f1;
-  color: black;
-}
-
-.next {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.round {
-  border-radius: 50%;
-}
-</style>
+      <title>Home - Admin</title>
+  <?php include 'includes/include_css.php';?>
 </head>
-<body>
+<body class="has-fixed-sidenav">
+  <header>
+    <div class="navbar-fixed">
+      <?php include 'includes/top-nav.php';?>
+    </div>
+    <ul id="sidenav-left" class="sidenav sidenav-fixed">
+      <?php include 'includes/side-nav.php';?>
+    </ul>
+    <?php include 'includes/top-dropdown.php';?>
+  </header>
 
-<div><a href="dashboard.php" class="next round">&#8249;</a></div><br>
-  <div style="width:100%;height: 80%;margin: auto;">   
-    <iframe src="group_chat/chat.php"    style="width:100%;height: 80%;margin: auto;"></iframe>
-  </div>
-</body>
-</html> 
+
+ <div id="meet"></div>
+  <script type="text/javascript">
+        
+            const domain = 'meet.jist.si';
+            const options = {
+                roomName: 'apsclapp',
+                width: 700,
+                height: 700,
+                    parentNode: document.querySelector('#meet')
+            };
+            const api = new JitsiMeetExternalAPI(domain, options);
+    </script>
+
+
+  <?php include 'includes/footer-new.php';?>
+
 
 

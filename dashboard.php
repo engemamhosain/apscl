@@ -23,5 +23,10 @@
     <?php include 'includes/slider-home.php';?>
   </main>
 
+<div style="position:relative;">
+  <div style="position: fixed;bottom: 100px;right: 60px;z-index: 100000">    
+  <a  href="group_chat.php" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">call</i></a>
+  </div>
+      
+</div>
   <?php include 'includes/footer-new.php';?>
-
