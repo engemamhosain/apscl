@@ -1,0 +1,78 @@
+a{color: #0b79ea}
+a:hover, a:active{ color: red }
+.app-color{background-color:rgb(173, 197, 239);}
+.bg-color{background-color: #0d47a1;}
+.tx-color{color: white;}
+.ds-card{width:123px;height:123px;border-radius: 50%;margin:20px auto;text-align: center;color: white;font-size: 17px;transition: all .2s;}
+.ds-card i{ font-size: 42px }
+.logo-m{width: 60px; position: absolute; left: 0; top: 50%; margin-top: -30px }
+.site-title{ margin-left: 70px; font-size: 20px; font-weight: bold; line-height: 18px; display: inline-block; line-height: 22px }
+.site-title span{ display: block; text-align: center; letter-spacing: 2px }
+.header{ padding: 10px; height: 80px; box-shadow: 0 2px 3px rgba(0,0,0,.2);background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);}
+.searchbykeyword{ border: 1px solid rgba(13, 71, 161,.5) !important; margin: 15px auto!important; padding:0 0 0 5px!important; background: rgba(255,255,255,.5)!important; box-sizing: border-box!important;}
+.header{ display: table; position: relative; }
+.logo-title{ display: table-cell; height: 100%; vertical-align: middle; position: relative; width: 100%}
+.logo-title a{ color: #222 }
+#round-links a:hover .ds-card{background: black}
+.site-title-mobile{font-size: 20px; font-weight: bold; line-height: 18px;  line-height: 22px; text-align: center; }
+.site-title-mobile span{ display: block; letter-spacing: 2px }
+.mobilelogin label{ color: #222!important }
+.remember{ margin-left: 20px }
+.user-pic{ width: 50px; margin-top: 5px}
+.user-pic img{ width: 100%; }
+
+@media (max-width: 400px){
+.site-title{ font-size: 15px }
+}
+
+ .input-field > label
+   {
+      color: #01579b;
+    }
+
+ .input-field input[type]:not([readonly]),
+    .input-field input[type]:focus:not([readonly]),
+    .input-field textarea:not([readonly]),
+    .input-field textarea:focus:not([readonly]) {
+      border-bottom: 1px solid #01579b;
+      box-shadow: 0 1px 0 0 #01579b;
+    }
+    
+    .input-field input[type]:focus:not([readonly])+label,
+    .input-field textarea:focus:not([readonly])+label {
+      color: #01579b;
+    }
+    .input-field input[type].invalid,
+    .input-field input[type].invalid:focus,
+    .input-field textarea.invalid,
+    .input-field textarea.invalid:focus {
+      border-bottom: 1px solid #e57373;
+      box-shadow: 0 1px 0 0 #e57373;
+    }
+    
+    .input-field input[type].invalid:focus+label,
+    .input-field input[type].invalid~.helper-text::after,
+    .input-field input[type].invalid:focus~.helper-text::after, 
+    .input-field textarea.invalid:focus+label,
+    .input-field textarea.invalid~.helper-text::after,
+    .input-field textarea.invalid:focus~.helper-text::after {
+      color: #e57373;
+    }
+
+    .input-field input[type].valid,
+    .input-field input[type].valid:focus,
+    .input-field textarea.valid,
+    .input-field textarea.valid:focus {
+      border-bottom: 1px solid #26a69a;
+      box-shadow: 0 1px 0 0 #26a69a;
+    }
+    
+    .input-field input[type].valid:focus+label,
+    .input-field input[type].valid~.helper-text::after,
+    .input-field input[type].valid:focus~.helper-text::after,
+    .input-field textarea.valid:focus+label,
+    .input-field textarea.valid~.helper-text::after,
+    .input-field textarea.valid:focus~.helper-text::after {
+      color: #26a69a;
+    }
