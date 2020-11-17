@@ -6,12 +6,15 @@ class Api {
   // public $name;
   // public $color;
   
+  const BASE_Post_URL = "https://softlh.com/apscl/cockpit-master/api/collections/save/";
+  const BASE_get_URL = "https://softlh.com/apscl/cockpit-master/api/collections/get/";
+
+ 
+
   const BASE_URL = "https://softlh.com/apscl/cockpit/api/cockpit/";
   const TOKEN = "?token=bac038febd5cd9e663f2f731834db8";
 
-  //   const BASE_URL = "http://localhost/cockpit/api/cockpit/";
-  // const TOKEN = "?token=6faf5df9bad9ba9c64aecb14d3fcf1";
-  
+//  https://softlh.com/apscl/cockpit-master/api/collections/save/manual?token=bac038febd5cd9e663f2f731834db8
 
   // // Methods
   // function set_name($name) {
@@ -49,6 +52,51 @@ class Api {
         return $jsonArrayUser;
   }
 
+
+
+    public function post_device_manual($post,$ducument_name) {
+
+  
+      $data = array(
+        'Volumn_No' => $post['volumn_no'],
+        'Document_Number' => $post['document_number'],
+        'Equipment_Name' => $post['equipment_name'],
+        'Plant_Name' => $post['plant_name'],
+        'Title_Of_Document' => $post['title_of_document'],
+        'Ducument_Name' => $ducument_name,
+    );
+
+    $payload = json_encode( array( "data"=> $data ) );
+
+    $cURLConnection = curl_init(self::BASE_Post_URL."manual".self::TOKEN);
+    curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $payload);
+    curl_setopt( $cURLConnection, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+    curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+
+    $apiResponse = curl_exec($cURLConnection);
+    curl_close($cURLConnection);
+    
+    }
+
+
+    public function get_manual() {
+
+      $cURLConnection = curl_init(self::BASE_get_URL."manual".self::TOKEN);
+      curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+  
+      $apiResponse = curl_exec($cURLConnection);
+      curl_close($cURLConnection);
+      $jsonArrayUser = json_decode($apiResponse);
+      
+          return $jsonArrayUser;
+    }
+  
+
+ 
 }
+
+
+
+
 
 
