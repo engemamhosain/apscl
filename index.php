@@ -1,8 +1,12 @@
-<?php include 'curl_api/api.php';?>
+<?php 
+session_start();
+
+include 'curl_api/api.php';
+?>
 
 <?php
 
-	session_start();	
+		
 	$_SESSION["role"] = "user";
 	$isLogin="false";
 

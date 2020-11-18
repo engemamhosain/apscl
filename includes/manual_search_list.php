@@ -1,3 +1,10 @@
+<?php 
+
+include 'curl_api/api.php' ;
+$manual=new Api();
+$result=$manual->get_manual();
+?>
+
 
     <form class="search-manual">
       <div class="row">
@@ -30,43 +37,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><a href="manual/V-0748501030-0021.pdf">Volumn 01</a></td>                        
-                        <td><a href="manual/V-0748501030-0021.pdf">V-0748501030-0021</a></td>                        
-                        <td>GAS PERFORMANCE HEATER</td>                        
-                        <td>ASHUGANJ 450 MW CCPP (North)</td>                                                
-                        <td>INSTALLATION, SITE ERECTION, O&M INSTRUCTION MANUALS</td>                                                
-                    </tr>
-                     <tr>
-                        <td><a href="manual/V-0748505030-0042.pdf">Volumn 01</a></td>                        
-                        <td><a href="manual/V-0748505030-0042.pdf">V-0748505030-0042</a></td>                        
-                        <td>BOILER FEED WATER PUMP</td>                        
-                        <td>ASHUGANJ 450 MW CCPP (North)</td>                        
-                        <td>Installation, mantenance and operation manual</td>                        
-                        
-                    </tr> 
-                    <tr>
-                        <td><a href="manual/V-0748505050-0039.pdf">Volumn 01</a></td>                        
-                        <td><a href="manual/V-0748505050-0039.pdf">V-0748505050-0039</a></td>
-                        <td>CIRCULATING WATER PUMPS</td>                        
-                        <td>ASHUGANJ 450 MW CCPP (North)</td>                        
-                        <td>Installation, mantenance and operation manual</td>                        
-                    </tr> 
-                    <tr>
-                        <td><a href="manual/V-0748510010-0012.pdf">Volumn 01</a></td>                        
-                        <td><a href="manual/V-0748510010-0012.pdf">V-0748510010-0012</a></td>
-                        <td>DCS</td>                        
-                        <td>ASHUGANJ 450 MW CCPP (North)</td>                        
-                        <td>Installation, Operation and Maintenance Manual</td>                        
-                    </tr> 
-                    <tr>
-                        <td><a href="manual/V-0748512010-0026.pdf">Volumn 01</a></td>                        
-                        <td><a href="manual/V-0748512010-0026.pdf">V-0748512010-0026</a></td>
-                        <td>00/230KV INTERBUS TRANSFORMERS </td>                        
-                        <td>ASHUGANJ 450 MW CCPP (North)</td>                        
-                        <td>OPERATION & MAINTENANCE  MANUAL</td>                        
-                    </tr>                            
+                <?php 
                     
+                    foreach ($result->entries as $rows) :?>
+                    <tr>
+                    <td><a href="uploads/<?php echo $rows->Ducument_Name; ?>"><?php echo $rows->Volumn_No; ?></a></td> 
+                    <td><a href="uploads/<?php echo $rows->Ducument_Name; ?>"><?php echo $rows->Document_Number; ?></a></td> 
+                    <td><?php echo $rows->Equipment_Name; ?></td> 
+                    <td><?php echo $rows->Plant_Name; ?></td> 
+                    <td><?php echo $rows->Title_Of_Document; ?></td> 
+                
+                 
+                    </tr>
+                    
+                    <?php endforeach;?>
+                   
+  
                 </tbody>
             </table>
           
@@ -75,4 +61,4 @@
 <style>
     .search-manual{ padding: 10px 0 0 10px }
     .table-responsive{ overflow-x: auto; }
-</style>s
+</style>

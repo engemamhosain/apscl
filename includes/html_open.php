@@ -194,6 +194,7 @@
                   <div class="collapsible-body" style="display: block;">
                     <ul>                  
                       <li><a style="width: 300px;" href="device_manual.php">All Manuals</a></li>
+                      <li><a style="width: 300px;" href="add_manual.php"> Add New</a></li>
                       
                     </ul>
                   </div>

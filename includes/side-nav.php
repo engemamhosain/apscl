@@ -50,6 +50,7 @@
               <div class="collapsible-body">
                 <ul>
                   <li><a href="device_manual.php" class="waves-effect waves-blue">All Manuals<i class="material-icons">picture_as_pdf</i></a></li>                  
+                  <li><a href="add_manual.php" class="waves-effect waves-blue">Add New<i class="material-icons">note_add</i></a></li> 
                 </ul>
               </div>
             </li>

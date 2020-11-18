@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="icon" type="image/png" href="../Login_v3/images/icons/favicon.ico"/>
+  <link rel="icon" type="image/png" href="asset/img/favicon.ico"/>
   <title>
     O&M Knowledge Base APSCL 
   </title>
 
 <!-- <link rel="stylesheet" href="asset/vendor/bootstrap/css/bootstrap.min.css"> -->
-<link rel="stylesheet" href="../asset/vendor/jodit/jodit.min.css">
+<link rel="stylesheet" href="asset/vendor/jodit/jodit.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="../asset/vendor/materialize/css/admin-materialize.min.css">
+<link rel="stylesheet" href="asset/vendor/materialize/css/admin-materialize.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <link rel="stylesheet" href="mobile-css.css">
@@ -17,24 +17,18 @@
 
 <body class="app-color">
 
-
-  <!-- <div class="header"><div class="logo-title">
-    <a href="mobile_dashboard.php"><img src="asset/img/apscl-logo.png" class="logo-m"> <div class="site-title">O&M Knowledge Base <span>APSCL</span></div></a>
-  </div>  
- -->
-
   <div class="header"><div class="logo-title">
     <a href="mobile_dashboard.php">
-      <a href="#!" data-target="sidenav-left" class="sidenav-trigger left"><i class="material-icons black-text">menu</i></a>
+      <!-- <a href="#!" data-target="sidenav-left" class="sidenav-trigger left"><i class="material-icons black-text">menu</i></a> -->
       <div class="site-title">O&M Knowledge Base <span>APSCL</span></div></a>
   </div>
 
 
-  <div class="user-pic dropdown-trigger"  data-target='dropdown-user'><img src="../asset/img/user-nopic.png"></div>
+  <div class="user-pic dropdown-trigger"  data-target='dropdown-user'><img src="asset/img/user-nopic.png"></div>
    <!-- Dropdown user -->
   <div id='dropdown-user' class='dropdown-content'>
     
-    <div>User Name</div>
+    <div class="user-name"></div>
     <a href=""><i  class="material-icons" style="font-size:16px; vertical-align: middle;">settings</i> Settings</a>
    
   </div>
@@ -135,7 +129,7 @@
 
       <div class="col s6">
 
-        <a href="../mobile-all-manual.php">
+        <a href="pages/manual/manual.html">
 
           <div class=" button card bg-color ds-card" style="text-align: center;">          
             <br><i  style="" class="material-icons white-text center">assignment</i><br>
@@ -156,29 +150,32 @@
 
 <?php include 'includes/include_js.php';?> -->
 
-<script src="../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
-<script src="../asset/vendor/underscore/underscore-min.js"></script>
-<script src="../asset/vendor/materialize/js/materialize.min.js"></script>
-<script src="../asset/vendor/jodit/jodit.min_new.js"></script>
-<script src="../asset/js/lib/tg_core.js"></script>
-<script src="../asset/js/app/config.js"></script>
+<script src="asset/vendor/jquery/jquery-3.4.1.min.js"></script>
+<script src="asset/vendor/underscore/underscore-min.js"></script>
+<script src="asset/vendor/materialize/js/materialize.min.js"></script>
+<script src="asset/vendor/jodit/jodit.min_new.js"></script>
+<script src="asset/js/lib/tg_core.js"></script>
+<script src="asset/js/app/config.js"></script>
 
-<script src="../asset/js/app/nav.js"></script>
+<script src="asset/js/app/nav.js"></script>
 
-<script src="../asset/js/app/main.js"></script>
+<script src="asset/js/app/main.js"></script>
 
-<script src="../asset/js/app/api.js"></script>
-
-
-<script src="../asset/vendor/materialize/js/init.js"></script>
-<script src="../asset/vendor/moment/moment.js"></script>
+<script src="asset/js/app/api.js"></script>
 
 
-<script src="../asset/js/app/pages/notification.js"></script>
+<script src="asset/vendor/materialize/js/init.js"></script>
+<script src="asset/vendor/moment/moment.js"></script>
+
+
+<script src="asset/js/app/pages/notification.js"></script>
 
 <script type="text/javascript">
   if(window.app){
     api_push_remove("PushNotificaion",localStorage.id)
     app.fcm(localStorage.id,localStorage.department)    
   }
+
+  localStorage.isLogin="true"
+  $(".user-name").html(localStorage.name)
 </script>
