@@ -23,7 +23,7 @@
 
 
   <div class="header secondary"><div class="logo-title">
-    <a href="mobile_dashboard.php"> <i  class="material-icons" style="font-size:33px; vertical-align: middle;">keyboard_backspace</i></a> Current Page Title
+    <a href="../../mobile_dashboard.html"> <i  class="material-icons" style="font-size:33px; vertical-align: middle;">keyboard_backspace</i></a> Current Page Title
   </div>
   <!-- <div class="user-pic dropdown-trigger"  data-target='dropdown-user'><img src="asset/img/user-nopic.png"></div> -->
    <!-- Dropdown user -->
@@ -63,41 +63,20 @@
    <h4>All Manual</h4>
    
    <h5>Plant List:</h5>
-   <ul>
- <li><a href="mobile-all-manual-details.php"> *UNIT 3,4,5 </a></li>
- <li><a href="mobile-all-manual-details.php"> *50 MW GE </a></li>
-  <li><a href="mobile-all-manual-details.php">*225 MW </a></li>
-  <li><a href="mobile-all-manual-details.php">*450 MW SOUTH </a></li>
-  <li><a href="mobile-all-manual-details.php">*450 MW NORTH </a></li>
 
-</ul>
+   <input style="background-color: white;" id="myInput" type="text" placeholder="Search..">
+   <br><br>
 
-<button class="btn waves-effect">Submit</button>
+   <div class="col s12 m7 list">
+ 
   </div>
+  
 </div>
 
-<footer style="position: relative;">
-    <div class="tx-color" style="width:100%;position: fixed;bottom:0px; background: #7f9ac3">
-
-      <div class="row" style="margin-top: 10px; margin-bottom: 10px">        
-        <div class="col s6"><a href="" class="white-text">About us</a></div>
-        <div class="col s6" align="right"><a href="" class="white-text">Contact us</a></div>
-      </div>
-
-    </div>   
-  </footer> 
   <script src="../../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
   <script src="../../asset/vendor/materialize/js/materialize.min.js"></script>
-  <script>
-
-    $(document).ready(function(){
-      $('select').formSelect();
-       $('input#input_text, textarea#textarea2').characterCounter();
-       $('.dropdown-trigger').dropdown();
-    });
-
-
-    </script>  
+  <script src="../../api_get.js"></script>
+  <script src="manual.js"></script>
 
 </body>
 </html>
