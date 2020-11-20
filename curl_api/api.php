@@ -91,6 +91,80 @@ class Api {
           return $jsonArrayUser;
     }
   
+    public function get_tr() {
+
+      $cURLConnection = curl_init(self::BASE_get_URL."TR".self::TOKEN);
+      curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+  
+      $apiResponse = curl_exec($cURLConnection);
+      curl_close($cURLConnection);
+      $jsonArrayUser = json_decode($apiResponse);
+      
+          return $jsonArrayUser;
+    }
+  
+    public function message_post($post) {
+      try {
+        $data = array(
+          'message_poster_id' => $post['employee_id'],
+          'message' => $post['message'],
+          'name' => $post['name'],
+          'tr_no' => $post['tr_no'],
+          'media_url' => $post['media_url'],
+      
+      );
+  
+      $payload = json_encode( array( "data"=> $data ) );
+  
+      $cURLConnection = curl_init(self::BASE_Post_URL."chat".self::TOKEN);
+      curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $payload);
+      curl_setopt( $cURLConnection, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+      curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+  
+      $apiResponse = curl_exec($cURLConnection);
+     
+      curl_close($cURLConnection);
+         $jsonArrayUser = json_decode($apiResponse);
+      
+          return $jsonArrayUser;
+      } catch (Throwable $th) {
+        throw $th;
+      }
+
+     
+    }
+
+
+    public function message_get($post) {
+      try {
+
+        $data = array(
+            'tr_no' => $post['tr_no'],
+            '_created' => array('$gt'=>$post['_created']),
+      );
+      $sort= array('_created'=>1);
+      
+  
+      $payload = json_encode( array( "filter"=> $data ,"sort"=>$sort) );
+  
+      $cURLConnection = curl_init(self::BASE_get_URL."chat".self::TOKEN);
+      curl_setopt($cURLConnection, CURLOPT_POSTFIELDS, $payload);
+      curl_setopt( $cURLConnection, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+      curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+  
+      $apiResponse = curl_exec($cURLConnection);
+     
+      curl_close($cURLConnection);
+      $jsonArrayUser = json_decode($apiResponse);
+      
+      return $jsonArrayUser;
+      } catch (Throwable $th) {
+        throw $th;
+      }
+
+     
+    }
+  
 
  
 }
