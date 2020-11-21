@@ -46,8 +46,9 @@
 						
 						<div class="card-footer">
 							<div class="input-group">
-								<div class="input-group-append">
-									<span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
+								<div class="input-group-append" >
+									<span onclick="chooseFile()" class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
+									<input type="file" id="media" style="display: none">
 								</div>
 								<textarea name="" class="form-control type_msg" placeholder="Type your message..."></textarea>
 								<div class="input-group-append" onclick="sendMessage()">
@@ -64,6 +65,27 @@
 
 	<script>
 		$(".title").html("TR"+location.hash)
+
+
+		function chooseFile(){
+			$('#media').trigger('click');
+		}
+
+		$("#media").change(function() {
+			var fd = new FormData();
+        var files = $('#media')[0].files[0];
+        fd.append('file',files);
+        fd.append('name',localStorage.user);
+        fd.append('employee_id',localStorage.employee_id);
+        fd.append('message',"");
+        fd.append('tr_no',location.hash);
+        fd.append('media_url', $('#media')[0].files[0].name);
+		image_post("media_upload.php",fd,function(data){
+			console.log(data);
+		});
+		});
+
+
 	</script>
 	</body>
 </html>
