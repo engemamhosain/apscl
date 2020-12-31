@@ -1,10 +1,9 @@
-function athenticate(name,password){
+function athenticate(email,password){
     
 
 
-    get("login.php",{name:name,password:password},function (result){
+    get("login.php",{email:email,password:password},function (result){
         try {
-
             if(typeof JSON.parse(result).user!="undefined"){
                     var data=JSON.parse(result);
                   localStorage.user=data.user;

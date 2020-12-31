@@ -63,29 +63,5 @@
 	<script src="../../api_get.js"></script>
 	<script src="mobile_chat.js"></script>
 
-	<script>
-		$(".title").html("TR"+location.hash)
-
-
-		function chooseFile(){
-			$('#media').trigger('click');
-		}
-
-		$("#media").change(function() {
-			var fd = new FormData();
-        var files = $('#media')[0].files[0];
-        fd.append('file',files);
-        fd.append('name',localStorage.user);
-        fd.append('employee_id',localStorage.employee_id);
-        fd.append('message',"");
-        fd.append('tr_no',location.hash);
-        fd.append('media_url', $('#media')[0].files[0].name);
-		image_post("media_upload.php",fd,function(data){
-			console.log(data);
-		});
-		});
-
-
-	</script>
 	</body>
 </html>
