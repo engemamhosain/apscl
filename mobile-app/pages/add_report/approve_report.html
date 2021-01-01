@@ -7,38 +7,33 @@
     O&M Knowledge Base APSCL 
   </title>
 
-  <!-- <link rel="stylesheet" href="../../asset/vendor/bootstrap/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="asset/vendor/bootstrap/css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="../../asset/vendor/jodit/jodit.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="../../asset/vendor/materialize/css/admin-materialize.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="mobile-css.css">
+  <link rel="stylesheet" href="../../mobile-css.css">
 </head>
 
 <body class="app-color">
 
-
-
-
-
-
   <div class="header secondary"><div class="logo-title">
-    <a onclick="window.history.back()"> <i  class="material-icons" style="font-size:33px; vertical-align: middle;">keyboard_backspace</i></a> Current Page Title
+    <a onclick="window.history.back()"> <i  class="material-icons" style="font-size:33px; vertical-align: middle;">keyboard_backspace</i></a>Report  
   </div>
-  <!-- <div class="user-pic dropdown-trigger"  data-target='dropdown-user'><img src="../../asset/img/user-nopic.png"></div> -->
-   <!-- Dropdown user -->
+
   <div id='dropdown-user' class='dropdown-content'>
     
     <div>User Name</div>
     <a href=""><i  class="material-icons" style="font-size:16px; vertical-align: middle;">settings</i> Settings</a>
    
   </div>
-<a href="#!" class="dropdown-trigger"  data-target='dropdown-notification'>
-<div class="notif-icon secondary">        
-   <i  class="material-icons white-text res" style="font-size:30px;">notifications</i> 
-  <div class="notif-num">9</div>
-</div>
-</a>
+
+  <a href="#!" class="dropdown-trigger"  data-target='dropdown-notification'>
+    <div class="notif-icon secondary">        
+      <i  class="material-icons white-text res" style="font-size:30px;">notifications</i> 
+      <div class="notif-num">9</div>
+    </div>
+  </a>
 </div>
 <!-- Dropdown notifiaction -->
   <div id='dropdown-notification' class='dropdown-content'>
@@ -50,6 +45,9 @@
    
   </div>
 
+
+  
+
 <style>
   .header.secondary{ height: 40px }
   #dropdown-user{ width:120px!important; padding: 15px; top: 60px!important; text-align: right }
@@ -57,324 +55,30 @@
   .notif-icon.secondary{position: absolute;top:50%; margin-top:-15px;right:15px;}
   .notif-num{text-align:center;position: absolute;top:0;right:0;background-color: red;width:16px;height:16px;line-height:16px;border-radius: 10px; color: white; font-size: 12px}
 </style>
-<div class="container"> 
-  <div class="row">
-
-   <h4>Add Report</h4>
 
 
-<main>
+<br>
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+		  <span class="card-title">Title</span>
+		  <div>description</div>
 
-<div class="container">
-	
-<div class="scrollspy">
+		  <span class="card-title">Title</span>
+		  <div>description</div>
 
-	
-<form onsubmit="return false" >
-
-		        <div class="input-field">
-		          <input id="search" type="search" required>
-		          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-		          <i class="material-icons">close</i>
-		        </div>
-		      </form>
-
-
-<!-- <div class="row">
-<div class="col s12 m8 offset-m1 xl7 offset-xl1">
-	<h5> Reports </h5>
-</div>
-</div> -->
-<div class="row">
-<div class="col s12 m12 l12 xl12">
-	<script type="text/template" id="tmp_report_list">
-
-	    <div class="collection-item avatar" style ="position:relative">
-	      <i class="material-icons circle blue">dvr</i>
-	      <div style ="position:absolute;right:16px; cursor:pointer;" onclick="deleteReport('<%= _id %>');"><i class="material-icons red-text">delete</i></div>
-	      <a style ="position:absolute;right:45px;"
-	      href="#report/edit/<%= _id %>"
-	      ><i class="material-icons green-text">edit</i></a>
-
-	      <span class="title"><a  style="padding-right:80px;" class="click_title" href=#report/<%= _id %> data-id=<%= _id %>  ><%= name_of_trouble %></a></span><br>
-	      <small><%= report_creator %>  <%= performed_date %></small>
-	      <p> <%= $('<p>' +description_of_trouble+'</p>').text().substring(0, 250) %>
-	      </p>
-	      <!-- <a href="#" class="secondary-content"><i class="material-icons">grade</i></a> -->
-	    </div>
-
-
-	</script>
-	<script type="text/template" id="tmp_report_details">
-
-		 <div class="">
-		 	<div class="col s12 m8 x12 ">
-
-			 	<span style="font-weight: bold;">
-			 		<%= fields.name_of_trouble.options.label %>
-			 	</span>
-			 	<br>
-
-		 	<a><span class="title">
-		 		<%= entries.name_of_trouble %>
-		 	</span></a>
-		 	<br>
-		 	</div>
-		 	<div class="col s12 m4 x4 ">
-		 	<span style="font-weight: bold;">
-		 		<%= fields.report_creator.options.label %>
-		 	</span>
-		 	<br>
-
-		 	<a href=# ><%= entries.report_creator %>
-		 	</a>
-
-		 	<br>
-
-		 	<span style="font-weight: bold;">
-		 	<%= fields.performed_date.options.label %>
-			</span>
-			<br>
-
-		 	<span><%= entries.performed_date %></span>
-		 	<br>
-		 	</div>
-
-
-		 	<span style="font-weight: bold;">
-		 	<%= fields.description_of_trouble.options.label %>
-			</span>
-			<br>
-		 	<div>
-		 		<%= entries.description_of_trouble %>
-	      	</div>
-		 	<br>
-	      	<span style="font-weight: bold;">
-		 	<%= fields.trouble_analysis.options.label %>
-			</span>
-			<br>
-		 	<div>
-		 		<%= entries.trouble_analysis %>
-	      	</div>
-		 	<br>
-	      	<span style="font-weight: bold;">
-		 	<%= fields.description_of_work.options.label %>
-			</span>
-			<br>
-		 	<div>
-		 		<%= entries.description_of_work %>
-	      	</div>
-	      	<br>
-	      	<span style="font-weight: bold;">
-		 	<%= fields.used_tools_list.options.label %>
-			</span>
-			<br>
-		 	<div>
-		 		<%= entries.used_tools_list %>
-	      	</div>
-	      	<br>
-
-	      	<span style="font-weight: bold;">
-		 	<%= fields.root_cause_analysis.options.label %>
-			</span>
-			<br>
-
-		 	<div>
-		 		<%= entries.root_cause_analysis %>
-	      	</div>
-
-	      	<br>
-	      	 <span style="font-weight:bold;">
-		 	<%= fields.referance_manual.options.label %>
-			</span>
-
-			<br>
-
-		 	<div>
-		 		<%= entries.referance_manual %>
-	      	</div>
-
- 			<span style="font-weight:bold;">
-		 	<%= fields.list_of_personel.options.label %>
-			</span>
-
-			<br>
-
-		 	<div>
-		 		<%= entries.list_of_personel %>
-	      	</div>
-
-
-	      	<span style="font-weight:bold;">
-		 	<%= fields.approved_by.options.label %>
-			</span>
-			<br>
-
-		 	<div>
-		 		<%= entries.approved_by %>
-	      	</div>
-
-	      		<span style="font-weight:bold;">
-		 	<%= fields.approved_date.options.label %>
-			</span>
-			<br>
-
-		 	<div>
-		 		<%= new Date(parseInt(entries.approved_date)) %>
-		 			
-	      	</div>
-
-	      	<br><br>
-
-
-
-		 	<textarea> </textarea>
-		 		<button class="waves-effect waves-light btn" ><i class="material-icons left">comment</i>Remarks / Suggestions</button>
-	      	</div>
-		</div>
-	</script>
-	<div id="edit_item_push" class="collection container_main hide">
-
-		<div id="edit_item_all_the_fields">
-
-		</div>
-		<input type="hidden" id="_id" class="tg-inputs" />
-		<button id="update_report" class="waves-effect waves-light btn">
-		 			<i class="material-icons left">save</i>
-		 	Update </button>
-	</div>
-
-	<div id="edit_push" class="container_main hide">
-		<script type="text/template" id="tmp_input">
-<div class="card-panel">
-  <div class="row">
-    <div class="input-field col s12">
-      <b><%= label %></b>
-      <input id="<%= key %>" value="<%= value %>" type="text" class="validate tg-inputs"   />
-    </div>
-    </div>
-  </div>
-</script>
-<script type="text/template" id="tmp_textarea">
-  <div class="card-panel">
-<div class="row">
-    <div class="input-field col s12 card-panel">
-      <b><%= label %></b>
-      <textarea id="<%= key %>" class="tg-inputs" ><%= value %></textarea>
-    </div>
-  </div>
-</div>
- </script>		<div id="all_the_fields">
-
-		</div>
-		<button id="save_report" class="waves-effect waves-light btn">
-		 			<i class="material-icons left">save</i>
-		 		Save </button>
-	</div>
-
-	  <div id="list_push" class="collection container_main">
-	  </div>
-	     <div id="editor"></div>
-	  <div id="details_push" class="collection container_main">
-	  </div>
-	<a class="btn-floating left btn-large waves-effect waves-light red" href="#report/add"><i class="material-icons">add</i></a>
-</div>
-</div>
-</div>
-</div>
-
-
-</main>
-
-  <footer class="page-footer">
-    <div class="container">
-      <!-- <div class="row">
-        <div class="col s6 m3">
-          <img class="materialize-logo" src="img/materialize-logo.png" alt="Materialize">
-          <p>Made with love by Materialize.</p>
+		  <span class="card-title">Title</span>
+		  <div>description</div>
         </div>
-        <div class="col s6 m3">
-          <h5>About</h5>
-          <ul>
-            <li><a href="#!">Blog</a></li>
-            <li><a href="#!">Pricing</a></li>
-            <li><a href="#!">Docs</a></li>
-          </ul>
-        </div>
-        <div class="col s6 m3">
-          <h5>Connect</h5>
-          <ul>
-            <li><a href="#!">Community</a></li>
-            <li><a href="#!">Subscribe</a></li>
-            <li><a href="#!">Email</a></li>
-          </ul>
-        </div>
-        <div class="col s6 m3">
-          <h5>Contact</h5>
-          <ul>
-            <li><a href="#!">Twitter</a></li>
-            <li><a href="#!">Facebook</a></li>
-            <li><a href="#!">Github</a></li>
-          </ul>
-        </div>
-      </div> -->
-      <div class="row">
-    <div class="col s12">
-      <p class="center-align">Ashuganj Power Station Company Ltd. © 2020. All Rights Reserved.</p>
-    </div>
-  </div>
-    </div>
-  </footer><!-- Scripts -->
-
-  <script src="../../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
-<script src="../../asset/vendor/underscore/underscore-min.js"></script>
-<script src="../../asset/vendor/materialize/js/materialize.min.js"></script>
-<script src="../../asset/vendor/jodit/jodit.min_new.js"></script>
-<script src="../../asset/js/lib/tg_core.js"></script>
-<script src="../../asset/js/app/config.js"></script>
-
-<script src="../../asset/js/app/nav.js"></script>
-
-<script src="../../asset/js/app/main.js"></script>
-
-<script src="../../asset/js/app/api.js"></script>
-
-
-<script src="../../asset/vendor/materialize/js/init.js"></script>
-<script src="../../asset/vendor/moment/moment.js"></script>
-
-
-<script src="../../asset/js/app/pages/notification.js"></script></body>
-</html>	<script src="../../asset/js/app/pages/mobile_report_list.js"></script>
-
-   
-
-
-  </div>
-</div>
-
-<footer style="position: relative;">
-    <div class="tx-color" style="width:100%;position: fixed;bottom:0px; background: #7f9ac3">
-
-      <div class="row" style="margin-top: 10px; margin-bottom: 10px">        
-        <div class="col s6"><a href="" class="white-text">About us</a></div>
-        <div class="col s6" align="right"><a href="" class="white-text">Contact us</a></div>
+    
       </div>
+    </div>
+ 
+<a class="waves-effect waves-light btn" style="position:fixed;bottom:0;width:90%;left: 5%;">Approve</a>
 
-    </div>   
-  </footer> 
   <script src="../../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
   <script src="../../asset/vendor/materialize/js/materialize.min.js"></script>
-  <script>
-
-    $(document).ready(function(){
-      $('select').formSelect();
-       $('input#input_text, textarea#textarea2').characterCounter();
-       $('.dropdown-trigger').dropdown();
-    });
-
-
-    </script>  
-
+  <script src="../../api_get.js"></script>
+  <script src="report.js"></script>
 </body>
 </html>

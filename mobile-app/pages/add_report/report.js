@@ -1,14 +1,16 @@
 
- get("maintenance_report.php",{page_row_count:100,page_offset:0},function (result){
+ //get("maintenance_report.php",{page_row_count:100,page_offset:0},function (result){
+// get("my_maintenance_report.php",{page_row_count:100,page_offset:0},function (result){
+ get("waiting_for_approval_maintenance_report.php",{page_row_count:100,page_offset:0},function (result){
     try {
        var data = result.data
        data.forEach(element => {
         $(".list").append(`
       
           <li class="collection-item avatar" onclick="goSearch('${element.id}')">
-          <i class="material-icons circle green">list</i>
-          <span class="title">Plant Id ${element.id}</span>
-          <p>${element.name}</p>
+          <i class="material-icons circle green">message</i>
+          <span class="title">Report  ${element.name_of_trouble}</span>
+          <p>${element.report_creator}</p>
           <a href="#!" class="secondary-content"><i class="material-icons">chevron_right</i></a>
         </li>
       `);
@@ -19,7 +21,7 @@
 })
 
 function goSearch(link){
-  location.href="search_manual.html#"+link
+  location.href="approve_report.html#"+link
 }
 
     $(document).ready(function(){
