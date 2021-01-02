@@ -1,5 +1,5 @@
           
-     get("getTr.php",{},function(data){
+     get("chat_group.php",{},function(data){
          try {
              var result=JSON.parse(data).entries;
              result.forEach(element => {

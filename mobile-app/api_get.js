@@ -1,6 +1,7 @@
 
 //var base_url="http://localhost/apscl-fahad/curl_api/"
 var base_url="https://softlh.com/k20-apscl/k20-backend/api/mobile/"
+
 var search_base_url="https://softlh.com/k20-apscl/k20-backend/api/pdf-upload/search_in_pdf.php"
 var manual_pdf="https://softlh.com/k20-apscl/k20-backend/upload/pdf/"
 var image_url="http://localhost/apscl-fahad/"
@@ -44,5 +45,18 @@ function image_post(url,data,fn){
     });
 
     return fn;
+}
+
+function get_one(data,id){
+   
+    if(typeof data== "undefined" || data==null){
+        return [];
+    }
+  
+
+   return $.grep( data, function( obj, i ) {
+     
+        return obj.id==id;
+    })
 }
 
