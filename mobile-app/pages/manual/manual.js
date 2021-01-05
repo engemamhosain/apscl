@@ -1,4 +1,12 @@
 
+ 
+
+ get("new_chat_group.php",{  "group_name": "Simple Test Group",
+ "group_detail": "Test 1 Group",
+ "group_level": 1,},function (result){
+  
+})
+
  get("plants.php",{},function (result){
     try {
        var data = result.data

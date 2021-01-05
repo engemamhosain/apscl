@@ -17,39 +17,40 @@
 
 <body class="app-color">
 
-  <div class="header secondary"><div class="logo-title">
-    <a onclick="window.history.back()"> <i  class="material-icons" style="font-size:33px; vertical-align: middle;">keyboard_backspace</i></a>Report  
+  <div class="header secondary">
+
+    <div class="logo-title">
+    <a onclick="window.history.back()"> <i  class="material-icons" style="font-size:33px; vertical-align: middle;">keyboard_backspace</i></a>Add New Group  
   </div>
 
 
 </div>
+<br><br>
 
 
-  
 
-<br>
-<div class="detail"></div>
+  <div class="col s12">
+
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="name" type="text" class="validate">
+          <label for="name">Gropu Name</label>
+        </div>
+
+
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="desc" type="text" class="validate">
+          <label for="desc">Group Description</label>
+        </div>
    
- 
-<a class="waves-effect waves-light btn apporove" onclick="approve()" style="position:fixed;bottom:0;width:90%;left: 5%;">Approve</a>
-
+  </div>
+        
+  <a class="waves-effect waves-light btn-large" onclick="create_group()">Create</a>
+     
   <script src="../../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
   <script src="../../asset/vendor/materialize/js/materialize.min.js"></script>
   <script src="../../api_get.js"></script>
-  <script src="detail.js"></script>
-
-  <!-- create mode 100644 api/ajax-tester/new_api_builder_post.html
-  create mode 100644 api/mobile/chat_details.php/group_id=1
-
-  create mode 100644 api/mobile/chat_group.php//message list
-
-
-  create mode 100644 api/mobile/chat_group_members.php//group_id
-  
-  create mode 100644 api/mobile/new_chat_group.php//
-
-
-  create mode 100644 api/mobile/update_approved_maintenance_report.php
-  create mode 100644 api/mobile/user_list.php -->
+  <script src="add.js"></script>
 </body>
 </html>
