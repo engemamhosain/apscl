@@ -27,7 +27,7 @@
  
  var result=[],lastTime=0;
    function sendMessage(){
-        get("post_chat_details.php",{group_id:location.hash.split("/")[1]},function(data){
+        get("i_chat_details.php",{group_id:location.hash.split("/")[1],message:$(".type_msg").val()},function(data){
                 try {
 
                     getMessage(lastTime);
