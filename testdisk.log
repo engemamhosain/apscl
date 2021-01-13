@@ -1,0 +1,301 @@
+
+
+Tue May 19 21:34:51 2020
+Command line: TestDisk
+
+TestDisk 7.1, Data Recovery Utility, July 2019
+Christophe GRENIER <grenier@cgsecurity.org>
+https://www.cgsecurity.org
+OS: Linux, kernel 5.4.0-29-generic (#33-Ubuntu SMP Wed Apr 29 14:32:27 UTC 2020) x86_64
+Compiler: GCC 9.2
+ext2fs lib: 1.45.5, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.1
+User is not root!
+Hard disk list
+
+
+TestDisk exited normally.
+Using locale 'en_US.UTF-8'.
+
+
+Tue May 19 21:34:51 2020
+Command line: TestDisk /debug
+
+TestDisk 7.1, Data Recovery Utility, July 2019
+Christophe GRENIER <grenier@cgsecurity.org>
+https://www.cgsecurity.org
+OS: Linux, kernel 5.4.0-29-generic (#33-Ubuntu SMP Wed Apr 29 14:32:27 UTC 2020) x86_64
+Compiler: GCC 9.2
+ext2fs lib: 1.45.5, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.1
+/dev/sda: LBA, HPA, LBA48 support
+/dev/sda: size       468862128 sectors
+/dev/sda: user_max   468862128 sectors
+/dev/sda: native_max 468862128 sectors
+/dev/sdb: LBA, HPA, LBA48, DCO support
+/dev/sdb: size       3907029168 sectors
+/dev/sdb: user_max   3907029168 sectors
+/dev/sdb: native_max 3907029168 sectors
+/dev/sdb: dco        3907029168 sectors
+/dev/sdc: LBA, HPA, LBA48, DCO support
+/dev/sdc: size       234455040 sectors
+/dev/sdc: user_max   234455040 sectors
+/dev/sdc: native_max 234455040 sectors
+/dev/sdc: dco        234455040 sectors
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop13 - 0 B - 0 sectors (RO), sector size=512
+Warning: can't get size for Disk /dev/loop14 - 0 B - 0 sectors (RO), sector size=512
+Warning: can't get size for Disk /dev/loop22 - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop5 - 0 B - 0 sectors (RO), sector size=512
+Warning: can't get size for Disk /dev/loop6 - 0 B - 0 sectors (RO), sector size=512
+Warning: can't get size for Disk /dev/loop7 - 0 B - 0 sectors (RO), sector size=512
+Warning: can't get size for Disk /dev/loop9 - 0 B - 0 sectors (RO), sector size=512
+Hard disk list
+Disk /dev/sda - 240 GB / 223 GiB - CHS 29185 255 63, sector size=512 - KINGSTON SV300S37A240G, S/N:50026B723108010C, FW:505CUA
+Disk /dev/sdb - 2000 GB / 1863 GiB - CHS 243201 255 63, sector size=512 - ST2000NM0011, S/N:Z1P4V6LH, FW:SN03
+Disk /dev/sdc - 120 GB / 111 GiB - CHS 14594 255 63, sector size=512 - WDC WDS120G2G0A-00JH30, S/N:1845A2801600, FW:UE450000
+Disk /dev/loop0 - 98 MB / 93 MiB - 192064 sectors (RO), sector size=512
+Disk /dev/loop1 - 98 MB / 93 MiB - 192352 sectors (RO), sector size=512
+Disk /dev/loop10 - 57 MB / 54 MiB - 112528 sectors (RO), sector size=512
+Disk /dev/loop11 - 3862 KB / 3772 KiB - 7544 sectors (RO), sector size=512
+Disk /dev/loop12 - 132 MB / 126 MiB - 258704 sectors (RO), sector size=512
+Disk /dev/loop15 - 57 MB / 54 MiB - 112264 sectors (RO), sector size=512
+Disk /dev/loop16 - 57 MB / 54 MiB - 112536 sectors (RO), sector size=512
+Disk /dev/loop17 - 65 MB / 62 MiB - 127160 sectors (RO), sector size=512
+Disk /dev/loop18 - 2273 KB / 2220 KiB - 4440 sectors (RO), sector size=512
+Disk /dev/loop19 - 167 MB / 160 MiB - 327992 sectors (RO), sector size=512
+Disk /dev/loop2 - 147 MB / 140 MiB - 288088 sectors (RO), sector size=512
+Disk /dev/loop20 - 52 MB / 49 MiB - 101960 sectors (RO), sector size=512
+Disk /dev/loop21 - 147 MB / 140 MiB - 288088 sectors (RO), sector size=512
+Disk /dev/loop3 - 164 MB / 156 MiB - 320880 sectors (RO), sector size=512
+Disk /dev/loop4 - 254 MB / 242 MiB - 496472 sectors (RO), sector size=512
+Disk /dev/loop8 - 267 MB / 255 MiB - 523400 sectors (RO), sector size=512
+
+Partition table type (auto): None
+Disk /dev/sdb - 2000 GB / 1863 GiB - ST2000NM0011
+Partition table type: None
+
+Interface Advanced
+
+recover_EXT2: s_block_group_nr=0/14904, s_mnt_count=29/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 488378646
+recover_EXT2: part_size 3907029168
+Filesystem created: Mon Mar 23 15:40:00 2020
+Last mount time:    Tue May 12 12:12:35 2020
+   P ext4                     0   0  1 243201  80 63 3907029168 [2020-2TB ]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 2000 GB / 1863 GiB
+search_superblock
+
+recover_EXT2: s_block_group_nr=0/14904, s_mnt_count=29/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 488378646
+recover_EXT2: part_size 3907029168
+Filesystem created: Mon Mar 23 15:40:00 2020
+Last mount time:    Tue May 12 12:12:35 2020
+Ext2 superblock found at sector 2 (block=0, blocksize=4096)
+
+block_group_nr 1
+
+recover_EXT2: "e2fsck -b 32768 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=1/14904, s_mnt_count=2/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 488378646
+recover_EXT2: part_size 3907029168
+Filesystem created: Mon Mar 23 15:40:00 2020
+Last mount time:    Mon Mar 23 15:40:34 2020
+Ext2 superblock found at sector 262144 (block=32768, blocksize=4096)
+
+block_group_nr 3
+
+recover_EXT2: "e2fsck -b 98304 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=3/14904, s_mnt_count=2/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 488378646
+recover_EXT2: part_size 3907029168
+Filesystem created: Mon Mar 23 15:40:00 2020
+Last mount time:    Mon Mar 23 15:40:34 2020
+Ext2 superblock found at sector 786432 (block=98304, blocksize=4096)
+
+block_group_nr 5
+
+recover_EXT2: "e2fsck -b 163840 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=5/14904, s_mnt_count=2/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 488378646
+recover_EXT2: part_size 3907029168
+Filesystem created: Mon Mar 23 15:40:00 2020
+Last mount time:    Mon Mar 23 15:40:34 2020
+Ext2 superblock found at sector 1310720 (block=163840, blocksize=4096)
+
+block_group_nr 7
+
+recover_EXT2: "e2fsck -b 229376 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=7/14904, s_mnt_count=2/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 488378646
+recover_EXT2: part_size 3907029168
+Filesystem created: Mon Mar 23 15:40:00 2020
+Last mount time:    Mon Mar 23 15:40:34 2020
+Ext2 superblock found at sector 1835008 (block=229376, blocksize=4096)
+
+block_group_nr 9
+
+recover_EXT2: "e2fsck -b 294912 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=9/14904, s_mnt_count=2/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 488378646
+recover_EXT2: part_size 3907029168
+Filesystem created: Mon Mar 23 15:40:00 2020
+Last mount time:    Mon Mar 23 15:40:34 2020
+Ext2 superblock found at sector 2359296 (block=294912, blocksize=4096)
+
+block_group_nr 25
+
+recover_EXT2: "e2fsck -b 819200 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=25/14904, s_mnt_count=2/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 488378646
+recover_EXT2: part_size 3907029168
+Filesystem created: Mon Mar 23 15:40:00 2020
+Last mount time:    Mon Mar 23 15:40:34 2020
+Ext2 superblock found at sector 6553600 (block=819200, blocksize=4096)
+
+block_group_nr 27
+
+recover_EXT2: "e2fsck -b 884736 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=27/14904, s_mnt_count=2/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 488378646
+recover_EXT2: part_size 3907029168
+Filesystem created: Mon Mar 23 15:40:00 2020
+Last mount time:    Mon Mar 23 15:40:34 2020
+Ext2 superblock found at sector 7077888 (block=884736, blocksize=4096)
+
+block_group_nr 49
+
+recover_EXT2: "e2fsck -b 1605632 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=49/14904, s_mnt_count=2/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 488378646
+recover_EXT2: part_size 3907029168
+Filesystem created: Mon Mar 23 15:40:00 2020
+Last mount time:    Mon Mar 23 15:40:34 2020
+Ext2 superblock found at sector 12845056 (block=1605632, blocksize=4096)
+
+block_group_nr 81
+
+recover_EXT2: "e2fsck -b 2654208 -B 4096 device" may be needed
+recover_EXT2: s_block_group_nr=81/14904, s_mnt_count=2/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 488378646
+recover_EXT2: part_size 3907029168
+Filesystem created: Mon Mar 23 15:40:00 2020
+Last mount time:    Mon Mar 23 15:40:34 2020
+Ext2 superblock found at sector 21233664 (block=2654208, blocksize=4096)
+  ext4                     0   0  1 243201  80 63 3907029168 [2020-2TB ]
+superblock 0, blocksize=4096 [2020-2TB ]
+superblock 32768, blocksize=4096 [2020-2TB ]
+superblock 98304, blocksize=4096 [2020-2TB ]
+superblock 163840, blocksize=4096 [2020-2TB ]
+superblock 229376, blocksize=4096 [2020-2TB ]
+superblock 294912, blocksize=4096 [2020-2TB ]
+superblock 819200, blocksize=4096 [2020-2TB ]
+superblock 884736, blocksize=4096 [2020-2TB ]
+superblock 1605632, blocksize=4096 [2020-2TB ]
+superblock 2654208, blocksize=4096 [2020-2TB ]
+
+To repair the filesystem using alternate superblock, run
+fsck.ext4 -p -b superblock -B blocksize device
+
+Interface Advanced
+
+recover_EXT2: s_block_group_nr=0/14904, s_mnt_count=29/4294967295, s_blocks_per_group=32768, s_inodes_per_group=8192
+recover_EXT2: s_blocksize=4096
+recover_EXT2: s_blocks_count 488378646
+recover_EXT2: part_size 3907029168
+Filesystem created: Mon Mar 23 15:40:00 2020
+Last mount time:    Tue May 12 12:12:35 2020
+   P ext4                     0   0  1 243201  80 63 3907029168 [2020-2TB ]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 2000 GB / 1863 GiB
+Change partition type:
+   P ext4                     0   0  1 243201  80 63 3907029168 [2020-2TB ]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 2000 GB / 1863 GiB
+
+
+dir_partition inode=2
+   P ext4                     0   0  1 243201  80 63 3907029168 [2020-2TB ]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 2000 GB / 1863 GiB
+Directory /
+       2 drwx------  1000   1000      4096 19-May-2020 21:27 .
+       2 drwx------  1000   1000      4096 19-May-2020 21:27 ..
+X     11 drwx------     0      0         0 19-May-2020 21:25 lost+found
+X55312385 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 backup-folders
+X32243713 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 disk-images
+X23855105 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 delete
+X105119745 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 download
+X83361793 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 ielts
+ 55574529 drwxr-xr-x  1000   1000      4096 23-Mar-2020 16:54 unity
+X58982401 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 html
+X93061121 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 music
+ 35127297 drwxr-xr-x  1000   1000      4096 19-May-2020 21:25 raw_lx
+ 8126465 drwx------  1000   1000      4096 27-Mar-2020 09:01 .Trash-1000
+X83099649 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 ebook
+X56360961 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 old-code
+ 35258369 drwxr-xr-x  1000   1000      4096  7-May-2020 13:44 soft-apps
+ 21495809 drwxr-xr-x  1000   1000      4096 10-May-2020 10:47 yeamin-school
+X36438017 drwxrwxr-x  1000   1000         0 19-May-2020 21:25 image
+X41418753 drwxr-xr-x     0      0         0 19-May-2020 21:27 node_modules
+X120586241 drwxrwxr-x  1000   1000      4096 19-May-2020 21:25 puppeteer
+
+dir_partition inode=55312385
+   P ext4                     0   0  1 243201  80 63 3907029168 [2020-2TB ]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 2000 GB / 1863 GiB
+Directory /backup-folders
+Directory /
+       2 drwx------  1000   1000      4096 19-May-2020 21:27 .
+       2 drwx------  1000   1000      4096 19-May-2020 21:27 ..
+X     11 drwx------     0      0         0 19-May-2020 21:25 lost+found
+X55312385 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 backup-folders
+X32243713 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 disk-images
+X23855105 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 delete
+X105119745 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 download
+X83361793 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 ielts
+ 55574529 drwxr-xr-x  1000   1000      4096 23-Mar-2020 16:54 unity
+X58982401 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 html
+X93061121 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 music
+ 35127297 drwxr-xr-x  1000   1000      4096 19-May-2020 21:25 raw_lx
+ 8126465 drwx------  1000   1000      4096 27-Mar-2020 09:01 .Trash-1000
+X83099649 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 ebook
+X56360961 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 old-code
+ 35258369 drwxr-xr-x  1000   1000      4096  7-May-2020 13:44 soft-apps
+ 21495809 drwxr-xr-x  1000   1000      4096 10-May-2020 10:47 yeamin-school
+X36438017 drwxrwxr-x  1000   1000         0 19-May-2020 21:25 image
+X41418753 drwxr-xr-x     0      0         0 19-May-2020 21:27 node_modules
+X120586241 drwxrwxr-x  1000   1000      4096 19-May-2020 21:25 puppeteer
+
+dir_partition inode=55312385
+   P ext4                     0   0  1 243201  80 63 3907029168 [2020-2TB ]
+     ext4 blocksize=4096 Large_file Sparse_SB Recover, 2000 GB / 1863 GiB
+Directory /backup-folders
+Directory /
+       2 drwx------  1000   1000      4096 19-May-2020 21:27 .
+       2 drwx------  1000   1000      4096 19-May-2020 21:27 ..
+X     11 drwx------     0      0         0 19-May-2020 21:25 lost+found
+X55312385 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 backup-folders
+X32243713 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 disk-images
+X23855105 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 delete
+X105119745 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 download
+X83361793 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 ielts
+ 55574529 drwxr-xr-x  1000   1000      4096 23-Mar-2020 16:54 unity
+X58982401 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 html
+X93061121 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 music
+ 35127297 drwxr-xr-x  1000   1000      4096 19-May-2020 21:25 raw_lx
+ 8126465 drwx------  1000   1000      4096 27-Mar-2020 09:01 .Trash-1000
+X83099649 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 ebook
+X56360961 drwxr-xr-x  1000   1000         0 19-May-2020 21:25 old-code
+ 35258369 drwxr-xr-x  1000   1000      4096  7-May-2020 13:44 soft-apps
+ 21495809 drwxr-xr-x  1000   1000      4096 10-May-2020 10:47 yeamin-school
+X36438017 drwxrwxr-x  1000   1000         0 19-May-2020 21:25 image
+X41418753 drwxr-xr-x     0      0         0 19-May-2020 21:27 node_modules
+X120586241 drwxrwxr-x  1000   1000      4096 19-May-2020 21:25 puppeteer
+
+TestDisk exited normally.

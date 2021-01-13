@@ -7,7 +7,7 @@
 
 
 <script type="text/javascript">
-    $(".username").html(localStorage.username+" ( "+localStorage.role+" )");
+    $(".username").html(localStorage.username+" ("+localStorage.role+")");
     $(".userid").html( "ID: " + localStorage.id );
 </script>
 

@@ -1,16 +1,16 @@
-<?php 
+<?php
 session_start();
 
-if(strcmp($_SESSION ["role"], "admin") != 0){
+if (strcmp($_SESSION["role"], "admin") != 0) {
 //	header('Location: dashboard.php');
 }
 
-?>
-<?php //include 'curl_api/api.php';?>
-<?php include 'includes/header-new.php';?>
-<?php
- // $api = new Api();
- // $deparment=$api->get_user_list();
+//include 'curl_api/api.php';
+include 'includes/header-new.php';
+include 'includes/pdf_uploader/pdf_upload_all.php';
+init_pdfProcess();
+// $api = new Api();
+// $deparment=$api->get_user_list();
 
 ?>
 
@@ -148,54 +148,58 @@ label.light {
 
 .add-user-form-card {
   margin: 20px auto;
-  width: 50%; 
- 
-  -webkit-border-radius: 8px/7px; 
-  -moz-border-radius: 8px/7px; 
-  border-radius: 8px/7px; 
-  background-color: #ebebeb; 
-  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
-  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
-  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  width: 50%;
+
+  -webkit-border-radius: 8px/7px;
+  -moz-border-radius: 8px/7px;
+  border-radius: 8px/7px;
+  background-color: #ebebeb;
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31);
   border: solid 1px #cbc9c9;
 }
 
-                                    
+
 </style>
 
- 
-      
+
+
         <h1>Device Manual</h1>
 
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-        Upload Deviece manual pdf file:<input type="file" name="fileToUpload" id="fileToUpload" required>
 
-          <br><br>  
+
+        <form action="upload.php" method="post" >
+          Upload Deviece manual pdf file:
+        <input type="file" id="file-x" />
+        <input type="hidden" name="file_url" id="file_url" required>
+
+          <br><br>
           <label for="volumn_no">Volumn No:</label>
           <input type="text" id="name" name="volumn_no"  required>
-          
+
           <label for="document_number">Document Number:</label>
           <input type="text" id="mail" name="document_number" class="user" required>
-          
+
           <label for="equipment_name">Equipment Name:</label>
           <input type="text" id="password" name="equipment_name" class="user" required>
 
            <label for="plant_name">Plant Name:</label>
           <input type="text" id="employee_id" name="plant_name" class="user" required>
-          
+
         <label for="title_of_document">Title of the documents:</label>
         <input name="title_of_document" id="add_user_push" class="user" required></input><br>
           <button class="userBtn" type="submit">Add Manual</button>
 
         </form>
-                                         
+
 	<?php include 'includes/footer-new.php';?>
 	<?php include 'includes/include_js.php';?>
-	 
+
 	 <script src="asset/js/app/pages/add_user.js"></script>
 	 <script type="text/javascript">
 
 	 </script>
-		
 
-	
+
+

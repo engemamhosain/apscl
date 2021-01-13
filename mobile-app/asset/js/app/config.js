@@ -38,3 +38,4 @@ if(location.host=="softlh.com"){
 	init_local_config();
 }
 
+console.log('config!!!');
