@@ -1,13 +1,10 @@
 
-function ajax_full_text(in_text_array){
+function ajax_full_text(data_with_full_text){
     
     $.post(tg.config.k20api + 'pdf-upload/full_text_in.php', 
-         {
-            pdf_id:'2', 
-            pdf_name:'2 smaple-manual-for-text-searche.pdf', 
-            start_page: 0,
-            text_array: in_text_array
-         }, function(data){
+         
+        data_with_full_text
+         , function(data){
                  console.log('posted ',data);
              }).fail(function(err){
                      console.error(err.responseJSON);
@@ -15,9 +12,10 @@ function ajax_full_text(in_text_array){
 }
 
 
-function load_pdf(urlPDF){
-    // console.log("loading. ... ", urlPDF);
-    pdfjsLib.getDocument(urlPDF).promise.then(function (pdf) {
+function load_pdf(pdf_meta){
+    console.log("loading. ... ",pdf_meta, pdf_meta.file_url);
+
+    pdfjsLib.getDocument(pdf_meta.file_url).promise.then(function (pdf) {
         var pdfDocument = pdf;
         var pagesPromises = [];
 
@@ -32,8 +30,21 @@ function load_pdf(urlPDF){
 
             // Display text of all the pages in the console
             console.log('??? ',pagesText);
-             
-             ajax_full_text(pagesText);
+             /*
+
+                {
+            pdf_id:'2', 
+            pdf_name:'2 smaple-manual-for-text-searche.pdf', 
+            start_page: 0,
+            text_array: in_text_array
+         }
+             */
+             ajax_full_text({
+            pdf_id:pdf_meta.pdf_id, 
+            pdf_name:pdf_meta.file_url, 
+            start_page: 0,
+            text_array: pagesText
+         });
         });
 
     }, function (reason) {

@@ -169,26 +169,26 @@ label.light {
 
 
 
-        <form action="upload.php" method="post" >
+        <form id="form_add_manual" method="post" >
           Upload Deviece manual pdf file:
         <input type="file" id="file-x" />
-        <input type="hidden" name="file_url" id="file_url" required>
+        <input type="hidden" name="file_url" id="file_url" class="go" required />
 
           <br><br>
           <label for="volumn_no">Volumn No:</label>
-          <input type="text" id="name" name="volumn_no"  required>
+          <input type="text" id="volumn_no" name="volumn_no" class="user go" required />
 
           <label for="document_number">Document Number:</label>
-          <input type="text" id="mail" name="document_number" class="user" required>
+          <input type="text" id="document_number" name="document_number" class="user go" required />
 
           <label for="equipment_name">Equipment Name:</label>
-          <input type="text" id="password" name="equipment_name" class="user" required>
+          <input  type="text" id="equipment_name" name="equipment_name" class="user go" required>
 
            <label for="plant_name">Plant Name:</label>
-          <input type="text" id="employee_id" name="plant_name" class="user" required>
+          <input  type="text" id="plant_name" name="plant_name" class="user go" required>
 
         <label for="title_of_document">Title of the documents:</label>
-        <input name="title_of_document" id="add_user_push" class="user" required></input><br>
+        <input  name="title_of_document" id="title_of_document" class="user go" required></input><br>
           <button class="userBtn" type="submit">Add Manual</button>
 
         </form>
