@@ -11,7 +11,7 @@ function ajax_full_text(data_with_full_text){
                  });
 }
 
-
+var xbn = [];
 function load_pdf(pdf_meta){
     console.log("loading. ... ",pdf_meta, pdf_meta.file_url);
 
@@ -29,22 +29,22 @@ function load_pdf(pdf_meta){
         Promise.all(pagesPromises).then(function (pagesText) {
 
             // Display text of all the pages in the console
-            console.log('??? ',pagesText);
-             /*
+            console.log('??? page_size: '  ,pagesText.length);
+            var majic_number = 350, point;
+            xbn =pagesText;
+            var i, no = Math.ceil(pagesText.length / majic_number);
+            console.log(no);
 
-                {
-            pdf_id:'2', 
-            pdf_name:'2 smaple-manual-for-text-searche.pdf', 
-            start_page: 0,
-            text_array: in_text_array
-         }
-             */
-             ajax_full_text({
-            pdf_id:pdf_meta.pdf_id, 
-            pdf_name:pdf_meta.file_url, 
-            start_page: 0,
-            text_array: pagesText
-         });
+             for(i = 0; i < no; i += 1){
+                 point =  i * majic_number
+                ajax_full_text({
+                    pdf_id:pdf_meta.pdf_id, 
+                    pdf_name:pdf_meta.file_url, 
+                    start_page: point,
+                    text_array: pagesText.slice(point, point + majic_number),
+                 });
+             }
+
         });
 
     }, function (reason) {
@@ -69,17 +69,24 @@ function load_pdf(pdf_meta){
                 // The main trick to obtain the text of the PDF page, use the getTextContent method
                 pdfPage.getTextContent().then(function (textContent) {
                     var textItems = textContent.items;
-                    var finalString = "";
+                    var finalString = '';
 
                     // Concatenate the string of the item to the final string
+                    if(textItems.length < 10){
+                        resolve('');
+                    }
                     for (var i = 0; i < textItems.length; i++) {
                         var item = textItems[i];
 
                         finalString += item.str + " ";
                     }
 
+                    
+                    finalString = finalString.trim();
+                    // console.log(i, 'textItems.length', textItems.length, 'text_lengh', finalString.length);
                     // Solve promise with the text retrieven from the page
                     resolve(finalString);
+                    
                 });
             });
         });

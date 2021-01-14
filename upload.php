@@ -1,4 +1,7 @@
 <?php
+
+// -------------
+die('not using this code!!');
 include 'curl_api/api.php';
 
 $target_dir = "uploads/";
