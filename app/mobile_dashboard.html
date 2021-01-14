@@ -16,15 +16,15 @@
 </head>
 
 <body class="app-color">
-
-  <div class="header"><div class="logo-title">
-    <a href="mobile_dashboard.php">
+  
+  <div><div>
+    
       <!-- <a href="#!" data-target="sidenav-left" class="sidenav-trigger left"><i class="material-icons black-text">menu</i></a> -->
-      <div class="site-title">O&M Knowledge Base <span>APSCL</span></div></a>
-  </div>
+      <div class="col-12 sie-ttitle-mobile"><img src="asset/img/burger-menu.png" width="30" style="position: absolute; top:12px; left:15px "> O&M Knowledge Base <span>APSCL</span></div>
+    </div>
 
 
-  <div class="user-pic dropdown-trigger"  data-target='dropdown-user'><img src="asset/img/user-nopic.png"></div>
+  <!-- <div class="user-pic dropdown-trigger"  data-target='dropdown-user'><img src="asset/img/user-nopic.png"></div> -->
    <!-- Dropdown user -->
   <div id='dropdown-user' class='dropdown-content'>
     
@@ -33,10 +33,10 @@
    
   </div>
   <a href="#!" class="dropdown-trigger"  data-target='dropdown-notification'>
-  <div class="notif-icon">        
+  <!-- <div class="notif-icon">        
      <i  class="material-icons white-text res" style="font-size:30px;">notifications</i> 
     <div class="notif-num">9</div>
-  </div>
+  </div> -->
   </a>
 </div>
 <!-- Dropdown notifiaction -->
@@ -72,17 +72,13 @@
        </div>
 </script>
 
-  <header>
-   
-    <ul id="sidenav-left" class="sidenav sidenav-fixed">
-      <!-- <?php include 'includes/side-nav.php';?> -->
-    </ul>
+  
 
-  </header>
-
-<div class="container"> 
+<div class="container-fluid"> 
+  
   <div class="row">
-
+    <img src="asset/img/banner.png" width="100%">
+<div>
     <div class="col s10 offset-s1">
       <input type="text" name="" class="searchbykeyword" value="search by keywords" onclick="value=''">      
     </div>
@@ -98,42 +94,44 @@
       </div>
       <button class="btn waves-effect waves-light col s3">Search</button>      
     </div>
-
+  </div>
+</div>
     <section id="round-links">
-      <div class="col s6">
+<div>  
+      <div class="col s12 dlinks">
         <a href="pages/send_info/mobile-send-info.html">
           <div class="button card bg-color ds-card">          
-            <br><i  style="" class="material-icons white-text center">info</i><br>
-            <div>Send info</div>   
+            <i  style="" class="material-icons white-text center">info</i>
+            <h5>Send info</h5>   
           </div>
         </a>
       </div>
 
-      <div class="col s6">
+      <div class="col s12 dlinks">
         <a href="../mobile-create-tr.php">
-          <div class=" button card bg-color ds-card" style="text-align: center;">          
-            <br><i  style="" class="material-icons white-text center">create</i><br>
-            <div>Create TR</div>   
+          <div class=" button card bg-color ds-card">          
+            <i  style="" class="material-icons white-text center">create</i>
+            <h5>Create TR</h5>   
           </div>
         </a>
       </div>
 
-      <div class="col s6">
+      <div class="col s12 dlinks">
         <a href="../mobile-add-report.php">
-          <div class=" button card bg-color ds-card" style="text-align: center;">          
-            <br><i  style="" class="material-icons white-text center">add_circle</i><br>
-            <div>Add Report</div>   
+          <div class=" button card bg-color ds-card">          
+            <i  style="" class="material-icons white-text center">add_circle</i>
+            <h5>Add Report</h5>   
           </div>
         </a>  
       </div>
 
-      <div class="col s6">
+      <div class="col s12 dlinks">
 
         <a href="pages/manual/manual.html">
 
-          <div class=" button card bg-color ds-card" style="text-align: center;">          
-            <br><i  style="" class="material-icons white-text center">assignment</i><br>
-            <div>All Manual</div>  
+          <div class=" button card bg-color ds-card">          
+            <i  style="" class="material-icons white-text center">assignment</i>
+            <h5>All Manual</h5>  
           </div>
 
         </a>
