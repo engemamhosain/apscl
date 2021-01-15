@@ -45,16 +45,18 @@
 
 
 if(location.hash.split(",")[0]=="#my"){
-  load("waiting_for_approval_maintenance_report.php");
+  load("my_maintenance_report.php");
+
   $(".apporove").hide();
 }
 
 if(location.hash.split(",")[0]=="#waiting"){
-  load("maintenance_report.php");
+  load("waiting_for_approval_maintenance_report.php");
+ 
 }
 
 if(location.hash.split(",")[0]=="#approve"){
-  load("my_maintenance_report.php");
+  load("maintenance_report.php");
   $(".apporove").hide();
 }
 
