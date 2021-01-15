@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<div class="col-12 sie-ttitle-mobile"><img src="app/asset/img/burger-menu.png" width="30" style="position: absolute; top:12px; left:15px "> O&M Knowledge Base <span>APSCL</span></div>
+
   <link rel="icon" type="image/png" href="Login_v3/images/icons/favicon.ico"/>
   <title>
     O&M Knowledge Base APSCL 
@@ -12,14 +14,14 @@
 
 <body class="app-color">
 
+<img src="app/asset/img/banner.png" width="100%">
 
 
 
 
-
-  <div class="header secondary"><div class="logo-title">
+  <!-- <div class="header secondary"><div class="logo-title">
     <a href="mobile_dashboard.php"> <i  class="material-icons" style="font-size:33px; vertical-align: middle;">keyboard_backspace</i></a> Current Page Title
-  </div>
+  </div> -->
   <!-- <div class="user-pic dropdown-trigger"  data-target='dropdown-user'><img src="asset/img/user-nopic.png"></div> -->
    <!-- Dropdown user -->
   <div id='dropdown-user' class='dropdown-content'>
@@ -28,12 +30,12 @@
     <a href=""><i  class="material-icons" style="font-size:16px; vertical-align: middle;">settings</i> Settings</a>
    
   </div>
-<a href="#!" class="dropdown-trigger"  data-target='dropdown-notification'>
+<!-- <a href="#!" class="dropdown-trigger"  data-target='dropdown-notification'>
 <div class="notif-icon secondary">        
    <i  class="material-icons white-text res" style="font-size:30px;">notifications</i> 
   <div class="notif-num">9</div>
 </div>
-</a>
+</a> -->
 </div>
 <!-- Dropdown notifiaction -->
   <div id='dropdown-notification' class='dropdown-content'>
@@ -46,6 +48,8 @@
   </div>
 
 <style>
+      .sie-ttitle-mobile{ background-color: rgb(202, 53, 53); padding: 0 10px; color:white; font-weight: bold; padding-left: 60px; font-size: 18px; line-height: 50px; height: 50px;}
+
   .header.secondary{ height: 40px }
   #dropdown-user{ width:120px!important; padding: 15px; top: 60px!important; text-align: right }
    #dropdown-notification{ width:120px!important; padding: 15px; top:10px!important; text-align: right }

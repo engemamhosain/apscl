@@ -1,14 +1,14 @@
 <?php include 'mobile-header-secondary.php';?>
 
-<div class="container"> 
+<div class="container-fluid"> 
   <div class="row">
 
-   <h4>Add Report</h4>
+   <h5 style="text-align:center">Add Report</h5>
 
 
 <main>
 
-<div class="container">
+<div>
 	
 <div class="scrollspy">
 
@@ -39,7 +39,7 @@
 	      href="#report/edit/<%= _id %>"
 	      ><i class="material-icons green-text">edit</i></a>
 
-	      <span class="title"><a  style="padding-right:80px;" class="click_title" href=#report/<%= _id %> data-id=<%= _id %>  ><%= name_of_trouble %></a></span><br>
+	      <span class="title"><a  style="padding-right:80px; display:inline-block" class="click_title" href=#report/<%= _id %> data-id=<%= _id %>  ><%= name_of_trouble %></a></span><br>
 	      <small><%= report_creator %>  <%= performed_date %></small>
 	      <p> <%= $('<p>' +description_of_trouble+'</p>').text().substring(0, 250) %>
 	      </p>
