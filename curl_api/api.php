@@ -9,6 +9,7 @@ class Api {
   const BASE_Post_URL = "https://softlh.com/apscl/cockpit-master/api/collections/save/";
   const BASE_get_URL = "https://softlh.com/apscl/cockpit-master/api/collections/get/";
 
+  var base_url="https://softlh.com/k20-apscl/k20-backend/api/mobile/"
  
 
   const BASE_URL = "https://softlh.com/apscl/cockpit/api/cockpit/";
@@ -56,7 +57,6 @@ class Api {
 
     public function post_device_manual($post,$ducument_name) {
 
-  
       $data = array(
         'Volumn_No' => $post['volumn_no'],
         'Document_Number' => $post['document_number'],
@@ -64,7 +64,7 @@ class Api {
         'Plant_Name' => $post['plant_name'],
         'Title_Of_Document' => $post['title_of_document'],
         'Ducument_Name' => $ducument_name,
-    );
+      );
 
     $payload = json_encode( array( "data"=> $data ) );
 
@@ -83,12 +83,11 @@ class Api {
 
       $cURLConnection = curl_init(self::BASE_get_URL."manual".self::TOKEN);
       curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
-  
       $apiResponse = curl_exec($cURLConnection);
       curl_close($cURLConnection);
       $jsonArrayUser = json_decode($apiResponse);
-      
           return $jsonArrayUser;
+
     }
   
     public function get_tr() {

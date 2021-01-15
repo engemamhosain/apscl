@@ -52,3 +52,15 @@ $d.ready(function(){
     // });
     api.login('fahad', 'fahad');
 });
+
+
+function get(url,data,fn){
+    $.ajax({
+        type: "POST",
+        url: tg.config.k20api+"/desktop/"+url,
+        data: data,
+        success: fn
+    });
+
+    return fn;
+}
