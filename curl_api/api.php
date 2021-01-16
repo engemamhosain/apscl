@@ -2,6 +2,7 @@
 
 
 class Api {
+
   // Properties
   // public $name;
   // public $color;
@@ -9,8 +10,7 @@ class Api {
   const BASE_Post_URL = "https://softlh.com/apscl/cockpit-master/api/collections/save/";
   const BASE_get_URL = "https://softlh.com/apscl/cockpit-master/api/collections/get/";
 
-  var base_url="https://softlh.com/k20-apscl/k20-backend/api/mobile/"
- 
+
 
   const BASE_URL = "https://softlh.com/apscl/cockpit/api/cockpit/";
   const TOKEN = "?token=bac038febd5cd9e663f2f731834db8";

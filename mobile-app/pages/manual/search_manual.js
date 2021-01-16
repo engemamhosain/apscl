@@ -15,14 +15,14 @@ function getSearch(keyword,id){
 
               <br>
 
-              <b>${element.pdf_name}</b><br>
+              <b>${element.title_of_document}</b><br>
               <b>Page no:${element.page_no}</b><br>
               <b>Search Line</b>
               <div>${element.page_text}</div>
             </div>
 
             <div class="card-action">
-              <a href="">${element.pdf_name}</a>
+              <a href="">${element.title_of_document}</a>
             </div>
           </div>
         </div>

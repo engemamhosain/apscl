@@ -8,7 +8,7 @@ if(location.hash=="#my"){
        data.forEach(element => {
         $(".list").append(`
       
-          <li class="collection-item avatar" onclick="goApproveDetail('${element.id}')">
+          <li class="collection-item avatar" onclick="goApproveDetail('${element.id}','${element.approved}')">
           <i class="material-icons circle green">message</i>
           <span class="title">Report  ${element.name_of_trouble}</span>
           <p>${element.report_creator}</p>
@@ -30,7 +30,7 @@ if(location.hash=="#waiting"){
        data.forEach(element => {
         $(".list").append(`
       
-          <li class="collection-item avatar" onclick="goWaitingDetail('${element.id}')">
+          <li class="collection-item avatar" onclick="goWaitingDetail('${element.id}','${element.approved}')">
           <i class="material-icons circle green">message</i>
           <span class="title" style="color:green">Report  ${element.name_of_trouble}</span>
           <p>${element.report_creator}</p>
@@ -52,7 +52,7 @@ if(location.hash=="#approved"){
        data.forEach(element => {
         $(".list").append(`
       
-          <li class="collection-item avatar" onclick="goApproveDetail('${element.id}')">
+          <li class="collection-item avatar" onclick="goApproveDetail('${element.id}','${element.approved}')">
           <i class="material-icons circle green">message</i>
           <span class="title">Report  ${element.name_of_trouble}</span>
           <p>${element.report_creator}</p>
@@ -72,14 +72,14 @@ if(location.hash=="#approved"){
 
 
 
-function goMyDetail(link){
-  location.href="detail_report.html#my,"+link
+function goMyDetail(link,approve_status){
+  location.href="detail_report.html#my,"+link+","+approve_status
 }
 
-function goWaitingDetail(link){
-  location.href="detail_report.html#waiting,"+link
+function goWaitingDetail(link,approve_status){
+  location.href="detail_report.html#waiting,"+link+","+approve_status
 }
-function goApproveDetail(link){
-  location.href="detail_report.html#approve,"+link
+function goApproveDetail(link,approve_status){
+  location.href="detail_report.html#approve,"+link+","+approve_status
 }
 
