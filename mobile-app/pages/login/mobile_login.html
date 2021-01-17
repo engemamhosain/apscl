@@ -8,36 +8,84 @@
   <title>
     O&M Knowledge Base APSCL :: Login
   </title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="../../asset/vendor/materialize/css/admin-materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <!-- <link rel="stylesheet" href="../../mobile-css.css"> -->
+  <!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+  <!--===============================================================================================-->
+     <!--===============================================================================================-->
+     <link rel="stylesheet" type="text/css" href="../../asset/vendor/materialize/materialize.min.css">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../../asset/font-awesome-4.7/css/font-awesome.min.css">
+  <!--===============================================================================================-->
+  <!--===============================================================================================-->
+  <!--===============================================================================================-->	
+    <!--===============================================================================================-->	
+  <!--===============================================================================================-->
+    
+    <link rel="stylesheet" type="text/css" href="../../asset/css/main.css">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="../../mobile-css.css">
 </head>
 
 <body class="app-color">
+  
 
-<div class="container"> 
+
+
+<div class="container-fluid"> 
   <div class="row">
-    <div class="col s12" align="center">
-       <img src="../../asset/img/apscl-logo.png" width="150" style="padding: 30px 0">
+    <div class="col-12 sie-ttitle-mobile"><img src="../../asset/img/burger-menu.png" width="30" style="position: absolute; top:12px; left:15px "> O&M Knowledge Base <span>APSCL</span></div>
+    
+      <div class="col-12">
+  
+        <div class="card card-login">
+          <div class="card-login-splash">
+            <div class="wrapper">
+              <div>&nbsp;</div>
+              <div style="text-align: center;"><img src="../../asset/img/apscl-logo.png" width="100"></div>
+             
+            </div>
+  
+         
+          </div>
+          <div class="card-content">
+            <span class="card-title">Log In</span>
+            <div>
+              <div class="input-field">
+                <input id="username" type="text" class="validate">
+                <label for="username">Username</label>
+              </div>
+              <div class="input-field">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+              </div>
+  
+              <a href="#!">Forgot Password?</a>
+  
+              <br><br>
+              <div>
+                <input class="btn right" type="submit" value="Log In" onclick="post()">
+                <input class="btn red" type="submit" value="Register">
+              </div>
+  
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>    
+  
+
+
+
+
+  
+  
+
+
   </div>
-    <div class="site-title-mobile">O&M Knowledge Base <span>APSCL</span></div>
-<br>   
-
-<div class="input-field col s12">
-  <input id="email" type="email" class="validate" placeholder="email">
-</div>
-<div class="input-field col s12">
-  <input id="password" type="password" class="validate" placeholder="password">
 </div>
 
-  <a class="waves-effect waves-light btn" style="width: 100%;" onclick="post()"><i class="material-icons right">arrow_forward</i>Login</a> 
-  </div>
-
-  </div>
-</div>
-
+<!-- <?php include 'mobile-footer.php';?> -->
 <style>
   /* Change Autocomplete styles in Chrome*/
 input:-webkit-autofill,
@@ -53,13 +101,23 @@ select:-webkit-autofill:focus {
 }
 </style>
 </body>
-
+<!--===============================================================================================-->
 <script src="../../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../asset/vendor/materialize/materialize.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../asset/vendor/bootstrap/js/popper.js"></script>
+
+<!--===============================================================================================-->
+
+
+<!--===============================================================================================-->
+	<script src="../../asset/js/app/main.js"></script>
 <script src="../../api_get.js"></script>
 <script src="login.js"></script>
 <script>
   function post(){
-    athenticate($("#email").val(),$("#password").val());
+    athenticate($("#username").val(),$("#password").val());
   }
 
 </script>

@@ -35,6 +35,10 @@
         })
     });
 
+
 </script>
+
+<script src="asset/js/app/pages/manual.js"></script>
+
 <?php include 'includes/footer-new.php';?>
 <script src="//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js"></script>

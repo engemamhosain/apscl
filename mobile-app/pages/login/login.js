@@ -5,11 +5,13 @@ function athenticate(email,password){
     get("login.php",{email:email,password:password},function (result){
         try {
 
+
             if(result.empty){
                 alert(result.error)
+                return
             }
        
-                    var data = result.data[0];
+                    var data = result.user_data;
                   localStorage.user=data.user;
                   localStorage.department=data.department;
                   localStorage.designation=data.designation;

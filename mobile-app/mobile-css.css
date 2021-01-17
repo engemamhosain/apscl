@@ -3,8 +3,9 @@ a:hover, a:active{ color: red }
 .app-color{background-color:rgb(173, 197, 239);}
 .bg-color{background-color: #0d47a1;}
 .tx-color{color: white;}
-.ds-card{width:123px;height:123px;border-radius: 50%;margin:20px auto;text-align: center;color: white;font-size: 17px;transition: all .2s;}
-.ds-card i{ font-size: 42px }
+.ds-card{margin-bottom:1px; padding:20px;color: white;font-size: 17px;transition: all .2s;}
+.ds-card i{ font-size: 42px ; float:right}
+.dlinks a{ display: block;}
 .logo-m{width: 60px; position: absolute; left: 0; top: 50%; margin-top: -30px }
 .site-title{ margin-left: 20px; font-size: 20px; font-weight: bold; line-height: 18px; display: inline-block; line-height: 22px; color:white }
 .site-title span{ display: block;  letter-spacing: 2px }
@@ -15,6 +16,7 @@ background: linear-gradient(180deg, rgba(221, 36, 36, 0.952) 0%, rgb(248, 60, 60
 .header{ display: table; position: relative; }
 .logo-title{ display: table-cell; height: 100%; vertical-align: middle; position: relative; width: 100%}
 .logo-title a{ color: #222 }
+#round-links{ margin-top: 1px;}
 #round-links a:hover .ds-card{background: black}
 .site-title-mobile{font-size: 20px; font-weight: bold; line-height: 18px;  line-height: 22px; text-align: center; }
 .site-title-mobile span{ display: block; letter-spacing: 2px }
@@ -77,3 +79,7 @@ background: linear-gradient(180deg, rgba(221, 36, 36, 0.952) 0%, rgb(248, 60, 60
     .input-field textarea.valid:focus~.helper-text::after {
       color: #26a69a;
     }
+
+    
+    .sie-ttitle-mobile{ background-color: rgb(202, 53, 53); padding: 0 10px; color:white; font-weight: bold; padding-left: 60px; font-size: 18px; line-height: 50px; height: 50px;}
+    .card.card-login{ margin-top: 0;}
