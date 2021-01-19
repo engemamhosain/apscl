@@ -1,7 +1,7 @@
 
      <h1 class="page-title">Device Manual</h1>
 
-    <form class="search-manual">
+
       <div class="row">
         <div class="input-field col12">
           <i class="material-icons prefix">search</i>
@@ -9,9 +9,7 @@
           <label for="search">Search All Manuals</label>
         </div>
       </div>
-    </form>
-
-
+   
 
 
 

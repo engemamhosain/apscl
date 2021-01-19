@@ -8,7 +8,7 @@ get('gm_users.php',{}, function(data){
          $(".list").append(`  
 
 
-         <tr>
+         <tr class="childSelector">
          <td> 
              <img src="https://bootdey.com/img/Content/avatar/avatar1.png"  alt="">
              <a href="#" class="user-link">${element.name}</a>

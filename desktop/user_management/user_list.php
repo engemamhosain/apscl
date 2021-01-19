@@ -183,11 +183,20 @@
 
 <div class="row">
 	<div class="col-lg-12">
+	<div class="row">
+        <div class="input-field col12">
+          <i class="material-icons prefix">search</i>
+           <input type="text" id="search" value="">
+          <label for="search">Search</label>
+        </div>
+      </div>
+   
+		     
 		<div class="main-box clearfix">
 			<div class="table-responsive">
 				<table class="table user-list">
 					<thead>
-						<tr>
+						<tr >
 							<th><span>User</span></th>
 							<th class="text-center"><span>id</span></th>
 							<th class="text-center"><span>Status</span></th>
