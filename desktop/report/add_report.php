@@ -1,40 +1,14 @@
-
 <?php include '../includes/header-new.php';?>
+
 <main>
 <div class="container">
 <div class="scrollspy">
-<form onsubmit="return false" >
 
-		        <div class="input-field">
-		          <input id="search" type="search" required>
-		          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-		          <i class="material-icons">close</i>
-		        </div>
-		      </form>
-<!-- <div class="row">
-<div class="col s12 m8 offset-m1 xl7 offset-xl1">
-	<h5> Reports </h5>
-</div>
-</div> -->
+
 <div class="row">
 <div class="col s12 m12 l12 xl12">
 
 
-	<script type="text/template" id="tmp_report_list">
-
-	    <div class="collection-item avatar" style ="position:relative">
-	      <i class="material-icons circle blue">dvr</i>
-	      <div style ="position:absolute;right:16px; cursor:pointer;" onclick="deleteReport('<%= id %>');"><i class="material-icons red-text">delete</i></div>
-	      <a style ="position:absolute;right:45px;"
-	      href="#report/edit/<%= id %>"
-	      ><i class="material-icons green-text">edit</i></a>
-
-	      <span class="title"><a  style="padding-right:80px;" class="click_title" href=details_report.php#<%= id %> data-id=<%= id %>  ><%= name_of_trouble %></a></span><br>
-	      <small><%= report_creator %>  <%= performed_date %></small>
-	      <p> <%= $('<p>' +trouble_description+'</p>').text().substring(0, 250) %>
-	      </p>
-	    </div>
-	</script>
 
 	<script type="text/template" id="tmp_report_details">
 
@@ -164,26 +138,64 @@
 	      	</div>
 		</div>
 	</script>
-	<div id="edit_item_push" class="collection container_main hide">
+	
+	<div id="edit_item_push" class="collection container_main">
 
-		<div id="edit_item_all_the_fields">
+		<div id="edit_item_all_the_fields"></div>
 
-		</div>
-		<input type="hidden" id="_id" class="tg-inputs" />
-		<button id="update_report" class="waves-effect waves-light btn">
-		 			<i class="material-icons left">save</i>
-		 	Update </button>
+		<label for="first_name">Perform Report</label>
+		<input type="text" class="datepicker">
+	
+		<div class="row">
+			<div class="col s12">
+			<div class="row">
+				<div class="input-field col s12">
+				<i class="material-icons prefix">search</i>
+				<input type="text" id="autocomplete-input" class="autocomplete1">
+				<label for="autocomplete-input">names</label>
+				</div>
+			</div>
+			</div>
+ 		</div>
+        <script>
+	
+
+  
+
+	$(document).ready(function(){
+
+
+	
+	
+    $('input.autocomplete1').autocomplete({
+      data: {
+        "A M M SAZZADUR RAHMAN-306020003": null,
+        "A.K.M. YAQUB-306050009": null,
+        "MD. MIZANUR RAHMAN SARKER-1909020007": null,
+      
+	  },
+	  onAutocomplete:select,
+    });
+  });
+		
+  
+   function select(data){
+		console.log(data)
+   }
+
+		</script>
+
+	
+		<button id="add_report" class="waves-effect waves-light btn">
+		 			<i class="material-icons left">save</i>Update 
+		</button>
+
 	</div>
 
-	<div id="edit_push" class="container_main hide">
-		<?php include 'partial_report_edit.php';?>
-		<div id="all_the_fields"></div>
-		<button id="save_report" class="waves-effect waves-light btn"><i class="material-icons left">save</i>Save </button>
-	</div>
-	<div id="list_push" class="collection container_main"></div>
-	<div id="editor"></div>	 
-	<div id="details_push" class="collection container_main"></div>
-	<a class="btn-floating left btn-large waves-effect waves-light red" href="#report/add"><i class="material-icons">add</i></a>
+
+	<?php include 'partial_report_edit.php';?>
+
+	
 </div>
 </div>
 </div>
@@ -192,6 +204,9 @@
 
 </main>
 
-  <?php include '../includes/footer-new.php';?>
-	<script src="../asset/js/app/pages/report_list.js"></script>
 
+
+  <?php include '../includes/footer-new.php';?>
+  <script src="../asset/js/app/pages/add_report.js"></script>
+
+		

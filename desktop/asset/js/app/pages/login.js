@@ -13,6 +13,7 @@ function login(){
         localStorage.jwt = data.user_data.jwt;
         localStorage.name = data.user_data.name;
         localStorage.role = data.user_data.role;
+        localStorage.uuid = data.user_data.uuid;
   
         // localStorage.department = get_user.department;	
         // localStorage.designation = get_user.designation;	

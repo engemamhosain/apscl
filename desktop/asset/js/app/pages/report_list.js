@@ -1,3 +1,7 @@
+api_get('report', init_list_populate);
+
+  var tml_textarea = _.template($("#tmp_textarea").html()), 
+  tml_textinput = _.template($("#tmp_input").html());
 
 function deleteReport(item_id){
     if(confirm("Deleting this report, Will delete this permanently.\n Are you Sure? ")){
@@ -8,46 +12,17 @@ function deleteReport(item_id){
     }
 }
 
-function edit_report_init_view(item_id){
-
-
-}
-
-
-function user_list_populate(){
-    
-    api_get('user_list', init_list_populate);
-
-    //  var template = $(".user-list").html(),
-    //      tx = _.template(template), 
-    //      html_to_push = '';
-    
-    // _.each(data.entries, function(item, key, arr){
-    //     item.id=key;
-    //     html_to_push  += tx(item);
-    // });         
-
-    //  $("#list_push").html(html_to_push);
-
-
-}
-
 function init_list_populate(data){
     
-     
-     var template = $("#tmp_report_list").html(),
-         tx = _.template(template), 
-         html_to_push = '';
-    
-    _.each(data.entries, function(item, key, arr){
+     var template = $("#tmp_report_list").html(),tx = _.template(template), html_to_push = '';
+
+    _.each(data.data, function(item, key, arr){
+        console.log(item)
         item.id=key;
         html_to_push  += tx(item);
     });         
 
      $("#list_push").html(html_to_push);
-
-     // $('.click_title').unbind('click');
-     // $('.click_title').click(open_details);
      $('.container_main').hide();
      $('#list_push').show();
      change_breadcum([{url:'#report', title:'Report'}]);
@@ -56,19 +31,12 @@ function init_list_populate(data){
 
 function init_detail_populate(data){
 
-     var template = $("#tmp_report_details").html(),
-         tx = _.template(template), 
-         html_to_push = '';
-    
-        
-        html_to_push  = tx(data);
-
+     var template = $("#tmp_report_details").html(), tx = _.template(template), html_to_push = '';
+     html_to_push  = tx(data);
      $('.container_main').hide();
      $('#details_push').show();
-
      $("#details_push").html(html_to_push);
-     // $('.click_title').unbind('click');
-     // $('.click_title').click(open_details);
+
 }
 
 function search_reports(e){
@@ -89,23 +57,14 @@ function search_reports(e){
 
 
 
-api_get('report', init_list_populate);
-// var editor = new Jodit('#textarea1');
- var tml_textarea = _.template($("#tmp_textarea").html()), 
- tml_textinput = _.template($("#tmp_input").html());
 
 function add_report_init(){
+
     var push_html = '', editor_id_list = [];
     _.each(tg.db['report'].fields, function(item, key, arr){
-
-        if(item.type === 'text' && item.options.label!="Status" && item.options.label!="Approved By" && item.options.label!="Approved Date"){
-            
-            push_html += tml_textinput({key:key, label:item.options.label, value:''});            
-        }else if(item.type === 'html'){
-            push_html += tml_textinput({key:key, label:item.options.label, value:''});            
-            editor_id_list.push('#all_the_fields #'+key);
-        }
-        // console.log('edit', {key, item});
+        push_html += tml_textinput({key:'all_the_fields'+key, label:item.option, value:''});            
+        editor_id_list.push('#all_the_fields'+key);
+   
     });
 
     
@@ -221,67 +180,32 @@ function report_add_init_view(){
 }
 
 function report_edit_init_view(edit_data){
-    
-    change_breadcum([{url:'#report', title:'Report'}, {url:'#report/edit/'+item._id, title: item.name_of_trouble}]);
 
+   
+
+    console.log(edit_data);
+    change_breadcum([{url:'#report', title:'Report'}, {url:'#report/edit/'+item.id, title: item.name_of_trouble}]);
     var push_html = '', editor_id_list = [];
     _.each(tg.db['report'].fields, function(item, key, arr){
         
         if(item.name == "status"){
             return
         }
-        if(item.type === 'text'){
-            push_html += tml_textinput({key:key, label:item.options.label, value: edit_data[key]});            
-        }else if(item.type === 'html'){
-            push_html += tml_textarea({key:key, label:item.options.label, value: edit_data[key]});            
-            editor_id_list.push('#edit_item_all_the_fields #'+key);
-        }
-        
+
+        push_html += tml_textarea({key:key, label:item.value, value: edit_data[item.option]});  
+        editor_id_list.push('#edit_item_all_the_fields'+key);
     });
     
 
-    $('#_id').val(edit_data._id);
+    $('#_id').val(edit_data.id);
     
     $('#edit_item_all_the_fields').html(push_html);
 
+
     _.each(editor_id_list, function(item){
-       
 
      new Jodit(item, {
-
-    // buttons: [
-    //     'source', '|',
-    //     'table',
-    //     'bold',
-    //     'italic', '|',
-    //     'ul',
-    //     'ol', '|',
-    //     'font',
-    //     'fontsize',
-    //     'brush',
-    //     'paragraph', '|',
-    //     'image',
-    //     'file',
-    //     'video',
-    //     'cut',
-    //     'copy',
-    //     'paste',
-    //     'link', '|',
-    //     'left',
-    //     'center',
-    //     'right',
-    //     'justify', '|',
-    //     'undo', 'redo', '|',
-    //     'hr',
-    //     'eraser',
-    //     'fullsize',
-    //     'about'
-    // ],
-    //         uploader: {
-    //              insertImageAsBase64URI: true
-    //         },
-
- enableDragAndDropFileToEditor: true,
+    enableDragAndDropFileToEditor: true,
     uploader: {
         url:tg.config.cockpit_add_asset_url,
         format: 'json',
@@ -349,6 +273,8 @@ $('#search').on('keyup', search_reports);
 
 $d.on('hash-changed', function(e, hash){
 
+
+    
     if (hash.substr(0,7) !== '#report'){
         return;
     }
@@ -359,14 +285,15 @@ $d.on('hash-changed', function(e, hash){
         report_add_init_view()
     }else if(hash.substr(0,13) === '#report/edit/'){
         var id = hash.split('/')[2];
-        item = _.filter(tg.db['report'].entries, function(item){
+         item = _.filter(tg.db['report'].data, function(item){
           
-
-            if(item._id === id ){
+               
+            if(item.id == id ){
                  return item;
             }
 
         })[0];
+       
 
         report_edit_init_view(item);
         
@@ -377,7 +304,7 @@ $d.on('hash-changed', function(e, hash){
         item = _.filter(tg.db['report'].entries, function(item){
     
 
-            if(item._id === id){
+            if(item.id === id){
                 return item;
             }
         })[0];
@@ -440,7 +367,7 @@ $('#save_report').click(function(){
 
     obj.status="not approve"
     api_post('report', obj , function(data){
-        location.replace("report_list.php")
+     //   location.replace("report_list.php")
     });
 });
 

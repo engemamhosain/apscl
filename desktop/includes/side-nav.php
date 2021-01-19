@@ -23,9 +23,10 @@
             <li class="bold waves-effect waves-blue"><a class="collapsible-header">Equipment Maintenance<i class="material-icons chevron">chevron_left</i></a>
               <div class="collapsible-body">
                 <ul>
-                   <li class="unpublish" style="display: none;"><a href="../report/waiting_for_approve.php#report" class="waves-effect waves-blue">Not Approved Reports<i class="material-icons">speaker_notes_off</i></a></li>
-                  <li><a href="../report/report_list.php#report" class="waves-effect waves-blue">Show Reports<i class="material-icons">note</i></a></li>
-                  <li><a href="../report/report_list.php#report/add" class="waves-effect waves-blue">Create New<i class="material-icons">note_add</i></a></li>                  
+                <li  ><a href="../report/approved_report.php" class="waves-effect waves-blue">Approved Report<i class="material-icons">verified</i></a></li>
+                   <li  ><a href="../report/waiting_for_approve.php" class="waves-effect waves-blue">Waiting For Approved<i class="material-icons">speaker_notes_off</i></a></li>
+                  <li><a href="../report/my_report.php" class="waves-effect waves-blue">My Reports<i class="material-icons">note</i></a></li>
+                  <li><a href="../report/add_report.php" class="waves-effect waves-blue">Add Report<i class="material-icons">note_add</i></a></li>                  
                 </ul>
               </div>
             </li>

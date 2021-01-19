@@ -20,8 +20,10 @@
 
 	    <div class="collection-item avatar" style ="position:relative">
 	      <i class="material-icons circle blue">dvr</i>
+	     
 
-	      <span class="title"><a  style="padding-right:80px;" class="click_title" href=details_report.php#waiting/<%= id %> data-id=<%= id %>  ><%= name_of_trouble %></a></span><br>
+
+	      <span class="title"><a  style="padding-right:80px;" class="click_title" href=details_report.php#approved/<%= id %> data-id=<%= id %>  ><%= name_of_trouble %></a></span><br>
 	      <small><%= report_creator %>  <%= performed_date %></small>
 	      <p> <%= $('<p>' +trouble_description+'</p>').text().substring(0, 250) %>
 	      </p>
@@ -50,5 +52,5 @@
 </main>
 
   <?php include '../includes/footer-new.php';?>
-  <script src="../asset/js/app/pages/waiting_for_approve.js"></script>
+  <script src="../asset/js/app/pages/approved_report.js"></script>
 
