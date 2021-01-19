@@ -6,50 +6,48 @@
     O&M Knowledge Base APSCL 
   </title>
 
-<!-- <link rel="stylesheet" href="../../asset/vendor/bootstrap/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="asset/vendor/bootstrap/css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="../../asset/vendor/jodit/jodit.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="../../asset/vendor/materialize/css/admin-materialize.min.css">
+<link rel="stylesheet" href="../../asset/vendor/materialize/materialize.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <link rel="stylesheet" href="../../mobile-css.css">
 </head>
 
 <body class="app-color">
-  
-  <div><div>
-    
-      <!-- <a href="#!" data-target="sidenav-left" class="sidenav-trigger left"><i class="material-icons black-text">menu</i></a> -->
-      <div class="col-12 sie-ttitle-mobile"><img src="../../asset/img/burger-menu.png" width="30" style="position: absolute; top:12px; left:15px "> O&M Knowledge Base <span>APSCL</span></div>
-    </div>
 
-
-  <!-- <div class="user-pic dropdown-trigger"  data-target='dropdown-user'><img src="../../asset/img/user-nopic.png"></div> -->
-   <!-- Dropdown user -->
-  <div id='dropdown-user' class='dropdown-content'>
-    
-    <div class="user-name"></div>
-    <a href=""><i  class="material-icons" style="font-size:16px; vertical-align: middle;">settings</i> Settings</a>
-   
+  <div class="header"><div class="logo-title">
+    <a href="">
+      <a href="#!" data-target="sidenav-left" class="sidenav-trigger left"><i class="material-icons white-text">menu</i></a>
+      <div class="site-title">O&M Knowledge Base <span>APSCL</span></div></a>
   </div>
-  <a href="#!" class="dropdown-trigger"  data-target='dropdown-notification'>
-  <!-- <div class="notif-icon">        
+
+  <div class="user-pic"><img src="../../asset/img/user-nopic.png"></div>
+
+  <!-- <div class="user-pic dropdown-trigger"  ><img src="../../asset/img/user-nopic.png"></div> -->
+
+  <a href="../notification/notification.html"  data-target='dropdown-notification'>
+  <div class="notif-icon">        
      <i  class="material-icons white-text res" style="font-size:30px;">notifications</i> 
     <div class="notif-num">9</div>
-  </div> -->
-  </a>
-</div>
-<!-- Dropdown notifiaction -->
-  <div id='dropdown-notification' class='dropdown-content'>    
-     <div id ="notification_message" style="font-size: 12px;"></div>
   </div>
+  </a>
 
+
+</div>
+
+
+  
 <style>
   #dropdown-user{ width:120px!important; padding: 15px; top: 60px!important; text-align: right }
    #dropdown-notification{ height:400px;width:300px!important; padding: 15px; top:10px!important; text-align: right }
   .notif-icon{position: absolute;top:50%; margin-top:-15px;right:65px;}
-  .notif-num{text-align:center;position: absolute;top:0;right:0;background-color: red;width:16px;height:16px;line-height:16px;border-radius: 10px; color: white; font-size: 12px}
+  .notif-num{text-align:center;position: absolute;top:0;right:0;background-color: rgb(0, 0, 0);width:16px;height:16px;line-height:16px;border-radius: 10px; color: white; font-size: 12px}
 </style>
+
+
+
 
   <script type="text/template" id="tmp_tr_notification_list">
        <div class="card blue-grey darken-1" style="color: white;width:100%">            
@@ -72,14 +70,19 @@
        </div>
 </script>
 
-  
+  <header>
+   
+    <ul id="sidenav-left" class="sidenav sidenav-fixed">
+      <!-- <?php include 'includes/side-nav.php';?> -->
+    </ul>
+
+  </header>
+
 
 <div class="container-fluid"> 
-  
   <div class="row">
-    <img src="../../asset/img/banner.png" width="100%">
-<div>
-    <div class="col s10 offset-s1">
+
+    <!-- <div class="col s10 offset-s1">
       <input type="text" name="" class="searchbykeyword" value="search by keywords" onclick="value=''">      
     </div>
     <div class="col s10 offset-s1">
@@ -93,45 +96,43 @@
 
       </div>
       <button class="btn waves-effect waves-light col s3">Search</button>      
-    </div>
-  </div>
-</div>
+    </div> -->
+
     <section id="round-links">
-<div>  
-      <div class="col s12 dlinks">
+      <div class="col s6">
         <a href="../send_info/group_list.html">
           <div class="button card bg-color ds-card">          
-            <i  class="material-icons white-text center">info</i>
-            <h5>Send info</h5>   
+            <i  style="" class="material-icons white-text center">info</i>
+            <div class="txt">Send info</div>   
           </div>
         </a>
       </div>
 
-      <div class="col s12 dlinks">
-        <a href="#">
-          <div class=" button card bg-color ds-card" onclick='alert("Please go to TR-CR management system")'>          
+      <div class="col s6">
+        <a href="#!">
+          <div class=" button card bg-color ds-card" style="text-align: center;">          
             <i class="material-icons white-text center">create</i>
-            <h5>Create TR</h5>   
+            <div class="txt">Create TR</div>   
           </div>
         </a>
       </div>
 
-      <div class="col s12 dlinks">
-        <a href="../add_report/report.html">
-          <div class=" button card bg-color ds-card">          
-            <i  class="material-icons white-text center">report</i>
-            <h5>Reports</h5>   
+      <div class="col s6">
+        <a href="../add_report/add_report.html">
+          <div class=" button card bg-color ds-card" style="text-align: center;">          
+            <i  class="material-icons white-text center">list</i>
+            <div class="txt">Report</div>   
           </div>
         </a>  
       </div>
 
-      <div class="col s12 dlinks">
+      <div class="col s6">
 
         <a href="../manual/manual.html">
 
-          <div class=" button card bg-color ds-card">          
+          <div class=" button card bg-color ds-card" style="text-align: center;">          
             <i  class="material-icons white-text center">assignment</i>
-            <h5>All Manual</h5>  
+            <div class="txt">All Manual</div>  
           </div>
 
         </a>
@@ -150,7 +151,7 @@
 
 <script src="../../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
 <script src="../../asset/vendor/underscore/underscore-min.js"></script>
-<script src="../../asset/vendor/materialize/js/materialize.min.js"></script>
+<script src="../../asset/vendor/materialize/materialize.min.js"></script>
 <script src="../../asset/vendor/jodit/jodit.min_new.js"></script>
 <script src="../../asset/js/lib/tg_core.js"></script>
 <script src="../../asset/js/app/config.js"></script>

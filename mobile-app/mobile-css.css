@@ -3,14 +3,16 @@ a:hover, a:active{ color: red }
 .app-color{background-color:rgb(173, 197, 239);}
 .bg-color{background-color: #0d47a1;}
 .tx-color{color: white;}
-.ds-card{margin-bottom:1px; padding:20px;color: white;font-size: 17px;transition: all .2s;}
-.ds-card i{ font-size: 42px ; float:right}
+.ds-card{width:140px;height:140px;border-radius: 50%;margin:20px auto;text-align: center;color: white;font-size: 17px;transition: all .2s;}
+.ds-card i{ font-size: 42px; margin-top: 25px; margin-bottom: 10px;}
+.ds-card .txt{font-size: 18px; font-weight: bold;}
 .dlinks a{ display: block;}
 .logo-m{width: 60px; position: absolute; left: 0; top: 50%; margin-top: -30px }
-.site-title{ margin-left: 70px; font-size: 20px; font-weight: bold; line-height: 18px; display: inline-block; line-height: 22px }
-.site-title span{ display: block; text-align: center; letter-spacing: 2px }
-.header{ padding: 10px; height: 80px; box-shadow: 0 2px 3px rgba(0,0,0,.2);background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);}
+.site-title{ margin-left: 10px; font-size: 20px; font-weight: bold; line-height: 18px; display: inline-block; line-height: 22px; color:white }
+.site-title span{ display: block;  letter-spacing: 2px }
+.header{ padding: 0 10px; height: 60px; box-shadow: 0 2px 3px rgba(0,0,0,.2);background:#e57373;
+background: linear-gradient(180deg, rgba(221, 36, 36, 0.952) 0%, rgb(248, 60, 60) 100%);}
+.header .material-icons{font-size: 40px; font-weight: bold; color:white; margin-right: 10px;}
 .searchbykeyword{ border: 1px solid rgba(13, 71, 161,.5) !important; margin: 15px auto!important; padding:0 0 0 5px!important; background: rgba(255,255,255,.5)!important; box-sizing: border-box!important;}
 .header{ display: table; position: relative; }
 .logo-title{ display: table-cell; height: 100%; vertical-align: middle; position: relative; width: 100%}
@@ -21,9 +23,10 @@ background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0
 .site-title-mobile span{ display: block; letter-spacing: 2px }
 .mobilelogin label{ color: #222!important }
 .remember{ margin-left: 20px }
-.user-pic{ width: 50px; margin-top: 5px}
-.user-pic img{ width: 100%; }
-
+.user-pic{ width: 40px; height:40px; margin-top: 10px; background-color: white; border-radius: 100px; overflow: hidden;}
+.user-pic img{ width: 100%; height: 40px; object-fit: cover; }
+.header.secondary{color:white;}
+.collection.list  li{ padding-right: 40px;}
 @media (max-width: 400px){
 .site-title{ font-size: 15px }
 }
