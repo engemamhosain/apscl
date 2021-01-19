@@ -191,6 +191,9 @@ label.light {
 
         </form>
 
+
+
+
         <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -201,6 +204,7 @@ label.light {
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
   </div>
+
 	<?php include '../includes/footer-new.php';?>
 	<?php include '../includes/include_js.php';?>
 

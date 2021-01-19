@@ -10,3 +10,17 @@
 <script src="../asset/vendor/materialize/js/init.js"></script>
 <script src="../asset/vendor/moment/moment.js"></script>
 <script src="../asset/js/app/pages/notification.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".childSelector").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+$(".preloader-wrapper").hide();
+
+</script>

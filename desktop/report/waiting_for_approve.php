@@ -18,7 +18,7 @@
 
 	<script type="text/template" id="tmp_report_list">
 
-	    <div class="collection-item avatar" style ="position:relative">
+	    <div class="collection-item avatar childSelector" >
 	      <i class="material-icons circle blue">dvr</i>
 
 	      <span class="title"><a  style="padding-right:80px;" class="click_title" href=details_report.php#waiting/<%= id %> data-id=<%= id %>  ><%= name_of_trouble %></a></span><br>

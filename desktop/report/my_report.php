@@ -1,31 +1,33 @@
 
 <?php include '../includes/header-new.php';?>
+
+			
+		    
+
 <main>
 <div class="container">
 <div class="scrollspy">
-<form onsubmit="return false" >
 
-		        <div class="input-field">
-		          <input id="search" type="search" required>
-		          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-		          <i class="material-icons">close</i>
-		        </div>
-		      </form>
-
+	<div class="input-field">
+		<input id="search" type="search" required>
+		<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+		<i class="material-icons">close</i>
+	</div>
+		    
 <div class="row">
 <div class="col s12 m12 l12 xl12">
 
 
 	<script type="text/template" id="tmp_report_list">
 
-	    <div class="collection-item avatar" style ="position:relative">
+	    <div class="collection-item avatar childSelector" style ="position:relative">
 	      <i class="material-icons circle blue">dvr</i>
 	     
 	      <a style ="position:absolute;right:45px;"
 	      href="edit_report.php#my/<%= id %>"
 	      ><i class="material-icons green-text">edit</i></a>
 
-	      <span class="title"><a  style="padding-right:80px;" class="click_title" href=details_report.php#my/<%= id %> data-id=<%= id %>  ><%= name_of_trouble %></a></span><br>
+	      <span class="title"><a  style="padding-right:80px;" class="click_title"  href=details_report.php#my/<%= id %> data-id=<%= id %>  ><%= name_of_trouble %></a></span><br>
 	      <small><%= report_creator %>  <%= performed_date %></small>
 	      <p> <%= $('<p>' +trouble_description+'</p>').text().substring(0, 250) %>
 	      </p>
@@ -54,5 +56,6 @@
 </main>
 
   <?php include '../includes/footer-new.php';?>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.searchable@1.1.0/jquery.searchable.min.js"></script>
   <script src="../asset/js/app/pages/my_report.js"></script>
 

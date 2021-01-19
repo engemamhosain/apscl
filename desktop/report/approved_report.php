@@ -14,11 +14,11 @@
 
 <div class="row">
 <div class="col s12 m12 l12 xl12">
-
+	  
 
 	<script type="text/template" id="tmp_report_list">
 
-	    <div class="collection-item avatar" style ="position:relative">
+	    <div class="collection-item avatar childSelector" style ="position:relative">
 	      <i class="material-icons circle blue">dvr</i>
 	     
 
