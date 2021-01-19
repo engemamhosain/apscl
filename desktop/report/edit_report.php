@@ -157,6 +157,24 @@
 	<div id="edit_item_push" class="collection container_main hide">
 
 		<div id="edit_item_all_the_fields"></div>
+
+
+			<div class="assingWrapper">
+				<label for="first_name">Assign To Report</label>
+					
+				<div class="row">
+					<div class="col s12">
+						<div class="row">
+							<div class="input-field col s12">
+							<i class="material-icons prefix">search</i>
+							<input type="text" id="autocomplete-input" class="autocomplete1">
+							<label for="autocomplete-input">employee</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div>	
+
 		<button id="update_report" class="waves-effect waves-light btn">
 		 			<i class="material-icons left">save</i>Update 
 		</button>

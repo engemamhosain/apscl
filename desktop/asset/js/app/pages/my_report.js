@@ -4,8 +4,6 @@ get('my_maintenance_report.php	',{}, function(data){
     var template = $("#tmp_report_list").html(),tx = _.template(template), html_to_push = '';
 
     _.each(data.data, function(item, key, arr){
-        console.log(item)
-        item.id=key;
         html_to_push  += tx(item);
     });         
  

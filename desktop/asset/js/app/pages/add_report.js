@@ -1,18 +1,23 @@
 
   
   
-  var tml_textarea = _.template($("#tmp_textarea").html()), 
+  var tml_textarea = _.template($("#tmp_textarea").html()),
   tml_textinput = _.template($("#tmp_input").html());
 
 
-    var fields= [{option:"name_of_trouble",value:"name of trouble"},{option:"trouble_analysis",value:"trouble analysis"},{option:"description_of_work",value:"description of work"},{option:"root_cause_analysis",value:"root cause analysis"},{option:"trouble_description",value:"trouble description"},{option:"used_tools_list",value:"used tools list"},{option:"list_of_personel",value:"list_of_personel"},{option:"referance_manual",value:"referance_manual"},{option:"report_creator",value:"report creator"}]
+    var fields= [{option:"name_of_trouble",value:"Name of trouble"},{option:"trouble_analysis",value:"Trouble analysis"},{option:"description_of_work",value:"Description of work"},{option:"root_cause_analysis",value:"Root cause analysis"},{option:"trouble_description",value:"Trouble description"},{option:"used_tools_list",value:"Used tools list"},{option:"list_of_personel",value:"List of personel"},{option:"referance_manual",value:"Referance manual"},{option:"report_creator",value:"Report creator"}]
         
 
      var push_html = '', editor_id_list = [];
     _.each(fields, function(item, key, arr){
+        if(key==0){
 
-        push_html += tml_textarea({key:item.option, label:item.value, value: ""});  
-        editor_id_list.push('#'+item.option);
+            push_html += tml_textinput({key:item.option, label:item.value, value: ""});  
+        }else{
+            push_html += tml_textarea({key:item.option, label:item.value, value: ""});  
+            editor_id_list.push('#'+item.option);
+        }
+        
     });
     
     
@@ -85,23 +90,38 @@
 
 $('#add_report').click(function(){
 
-    var obj = {};
-    $('#edit_item_push .tg-inputs').each(function(i, v){
-        obj[v.id] = $(v).val();
-    });
-    obj.id = location.hash.split("/")[1]
-    obj.report_creator = localStorage.name
-    obj.approved = 0
-    obj.approved_by_uid = null
-    obj.approved_by_name = null
-    obj.performed_date = '9999-12-31 23:59:59'
-    get('i_maintenance_report.php',obj, function(data){
+    try {
 
-    });
+        var obj = {};
+        $('#edit_item_push .tg-inputs').each(function(i, v){
+            obj[v.id] = $(v).val();
+        });
+        obj.id = location.hash.split("/")[1]
+        obj.report_creator = localStorage.name
+        obj.approved = 0
+
+        // obj.approved_by_uid = search_data[0].id
+        // obj.approved_by_name = search_data[0].name
+        obj.approved_by_uid =0
+        obj.approved_by_name = ""
+        obj.performed_date = $(".datepicker").val()
+        get('i_maintenance_report.php',obj, function(data){
+            location.replace("my_report.php");
+        });
+        
+    } catch (error) {
+        console.log(error)
+    }
+   
   
 });
 
 
+
+
+$(document).ready(function(){
+    $('.datepicker').datepicker({format: 'yyyy-mm-dd'});
+  });
 
 
   

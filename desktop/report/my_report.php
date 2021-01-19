@@ -22,7 +22,7 @@
 	      <i class="material-icons circle blue">dvr</i>
 	     
 	      <a style ="position:absolute;right:45px;"
-	      href="#report/edit/<%= id %>"
+	      href="edit_report.php#my/<%= id %>"
 	      ><i class="material-icons green-text">edit</i></a>
 
 	      <span class="title"><a  style="padding-right:80px;" class="click_title" href=details_report.php#my/<%= id %> data-id=<%= id %>  ><%= name_of_trouble %></a></span><br>

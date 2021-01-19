@@ -4,6 +4,7 @@
 if(location.hash.split("/")[0]=="#my"){
     load("my_maintenance_report.php")
     $(".approve").hide()
+
 }
 
 if(location.hash.split("/")[0]=="#waiting"){
@@ -14,6 +15,7 @@ if(location.hash.split("/")[0]=="#waiting"){
 if(location.hash.split("/")[0]=="#approved"){
     load("gm_maintenance_report.php")
     $(".approve").hide()
+
 }
 
 
@@ -53,3 +55,4 @@ function approve(){
         location.replace("waiting_for_approve.php") 
     });
 }
+

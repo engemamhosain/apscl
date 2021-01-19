@@ -2,9 +2,10 @@
 get('waiting_for_approval_maintenance_report.php',{}, function(data){
 
     try {
+        var fields= [{option:"name_of_trouble",value:"Name of trouble"},{option:"trouble_analysis",value:"Trouble analysis"},{option:"description_of_work",value:"Description of work"},{option:"root_cause_analysis",value:"Root cause analysis"},{option:"trouble_description",value:"Trouble description"},{option:"used_tools_list",value:"Used tools list"},{option:"list_of_personel",value:"List of personel"},{option:"referance_manual",value:"Referance manual"},{option:"report_creator",value:"Report creator"}]
+    
         tg.db["report"] = data;
-        tg.db["report"].fields= [{option:"name_of_trouble",value:"name of trouble"},{option:"description_of_work",value:"description of work"},{option:"root_cause_analysis",value:"root cause analysis"},{option:"trouble_description",value:"trouble description"},{option:"used_tools_list",value:"used tools list"},{option:"list_of_personel",value:"list_of_personel"},{option:"referance_manual",value:"referance_manual"},{option:"report_creator",value:"report creator"}]
-        
+        tg.db["report"].fields = fields
 
       _.each(data.data, function(item, key, arr){
         
@@ -28,16 +29,21 @@ get('waiting_for_approval_maintenance_report.php',{}, function(data){
   var tml_textarea = _.template($("#tmp_textarea").html()), 
   tml_textinput = _.template($("#tmp_input").html());
 
-
+var performed_date;
 function report_edit_init_view(edit_data){
 
-   
+    performed_date = edit_data.performed_date;
 
      var push_html = '', editor_id_list = [];
     _.each(tg.db['report'].fields, function(item, key, arr){
 
-        push_html += tml_textarea({key:item.option, label:item.value, value: edit_data[item.option]});  
-        editor_id_list.push('#'+item.option);
+        if(key==0){
+
+            push_html += tml_textinput({key:item.option, label:item.value, value: edit_data[item.option]});  
+        }else{
+            push_html += tml_textarea({key:item.option, label:item.value, value: edit_data[item.option]});  
+            editor_id_list.push('#'+item.option);
+        }
     });
     
 
@@ -114,12 +120,42 @@ $('#update_report').click(function(){
         obj[v.id] = $(v).val();
     });
     obj.id = location.hash.split("/")[1]
-    get('u_maintenance_report.php',obj, function(data){
+    obj.approved = 0
+    if(typeof search_data[0] =="undefined"){
+        obj.approved_by_uid = 0
+        obj.approved_by_name = ""
 
+    }else{
+        obj.approved_by_uid = search_data[0].id
+        obj.approved_by_name = search_data[0].name
+    }
+
+  
+   
+    
+    obj.performed_date = performed_date
+    get('u_maintenance_report.php',obj, function(data){
+        location.replace("my_report.php")
     });
   
 });
 
+
+var meta_data=[],search_data=[];
+get('all_user_list.php',{}, function(data){
+    meta_data=data.meta_data;
+    $('input.autocomplete1').autocomplete({
+        data: data.data,
+        onAutocomplete:select,
+      });
+
+
+});
+
+  
+function select(select){
+    search_data= _.where(meta_data, {name_deisgnation:select});
+}
 
 
 
