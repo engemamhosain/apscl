@@ -23,6 +23,7 @@
       <div class="site-title">O&M Knowledge Base <span>APSCL</span></div></a>
   </div>
 
+  
   <div class="user-pic"><img src="../../asset/img/user-nopic.png"></div>
 
   <!-- <div class="user-pic dropdown-trigger"  ><img src="../../asset/img/user-nopic.png"></div> -->
@@ -37,7 +38,16 @@
 
 </div>
 
-
+<nav>
+  <div class="nav-wrapper" onclick="location.href='../search/search.html'">
+      <div class="input-field">
+        <input id="search" type="search" required>
+        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+  
+  </div>
+</nav>
   
 <style>
   #dropdown-user{ width:120px!important; padding: 15px; top: 60px!important; text-align: right }
@@ -72,8 +82,17 @@
 
   <header>
    
+
     <ul id="sidenav-left" class="sidenav sidenav-fixed">
-      <!-- <?php include 'includes/side-nav.php';?> -->
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>APSCL O&M <span>Knowledge Base</h4></li>
+        <li class="collection-item"><div>Home<a href="mobile_dashboard.html" class="secondary-content"><i class="material-icons">home</i></a></div></li>
+        <li class="collection-item"><div>Settings<a href="#!" class="secondary-content"><i class="material-icons">settings_applications</i></a></div></li>
+        <li class="collection-item"><div>Contact us<a href="#!" class="secondary-content"><i class="material-icons">contacts</i></a></div></li>
+        <li class="collection-item"><div>About<a href="#!" class="secondary-content"><i class="material-icons">contact_mail</i></a></div></li>
+        <li class="collection-item"><div>profile<a href="#!" class="secondary-content"><i class="material-icons">people</i></a></div></li>
+        <li class="collection-item"><div>Logout<a href="#!" class="secondary-content"><i class="material-icons">logout</i></a></div></li>
+      </ul>
     </ul>
 
   </header>
@@ -118,7 +137,7 @@
       </div>
 
       <div class="col s6">
-        <a href="../add_report/add_report.html">
+        <a href="../add_report/report.html">
           <div class=" button card bg-color ds-card" style="text-align: center;">          
             <i  class="material-icons white-text center">list</i>
             <div class="txt">Report</div>   
@@ -156,18 +175,18 @@
 <script src="../../asset/js/lib/tg_core.js"></script>
 <script src="../../asset/js/app/config.js"></script>
 
-<script src="../../asset/js/app/nav.js"></script>
+<!-- <script src="../../asset/js/app/nav.js"></script>
 
 <script src="../../asset/js/app/main.js"></script>
 
-<script src="../../asset/js/app/api.js"></script>
+<script src="../../asset/js/app/api.js"></script> -->
 
 
 <script src="../../asset/vendor/materialize/js/init.js"></script>
 <script src="../../asset/vendor/moment/moment.js"></script>
 
 
-<script src="../../asset/js/app/pages/notification.js"></script>
+<!-- <script src="../../asset/js/app/pages/notification.js"></script>
 
 <script type="text/javascript">
   if(window.app){
@@ -177,4 +196,4 @@
 
   localStorage.isLogin="true"
   $(".user-name").html(localStorage.user)
-</script>
+</script> -->
