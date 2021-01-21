@@ -40,7 +40,7 @@ $(document).ready(function(){
 
             
 
-            $.post(tg.config.k20api +'desktop/i_device_manual.php',data, function(post_data){
+            $.post(tg.config.k20api +'/desktop/i_device_manual.php',data, function(post_data){
             
 
                  load_pdf({
