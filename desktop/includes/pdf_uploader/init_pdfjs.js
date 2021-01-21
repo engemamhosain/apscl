@@ -1,7 +1,7 @@
 
 function ajax_full_text(data_with_full_text){
     
-    $.post(tg.config.k20api + 'pdf-upload/full_text_in.php', 
+    $.post(tg.config.k20api + '/pdf-upload/full_text_in.php', 
          
         data_with_full_text
          , function(data){
