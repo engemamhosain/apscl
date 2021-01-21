@@ -34,7 +34,7 @@
         }
     },
     uploader: {
-        url: 'https://softlh.com/k20-apscl/k20-backend/api/file/upload_file.php',
+        url: tg.config.k20api + '/file/jedit_upload_file.php',
         format: 'json',
         pathVariableName: 'path',
         filesVariableName: 'file',
@@ -42,8 +42,14 @@
             return data;
         },
         isSuccess: function (resp) {
-           this.jodit.selection.insertHTML('<img src="'+resp.assets.file_uploader+'"/>') 
-            return !resp.error;
+           console.log('files:: ', resp);
+           var str = '';
+           for(var i=0, ilen = resp.length; i < ilen; i+=1){
+               str += '<img src="'+resp[i]+'" />'
+           }
+           this.jodit.selection.insertHTML(str);
+
+           return !resp.error;
         },
         getMsg: function (resp) {
             return resp.msg.join !== undefined ? resp.msg.join(' ') : resp.msg;
