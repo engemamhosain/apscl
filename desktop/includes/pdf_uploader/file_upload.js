@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-        var file_upload_location = tg.config.k20api +'file/upload_file.php',
+        var file_upload_location = tg.config.k20api +'/file/upload_file.php',
             $file =$('#file-x');
 
         function upload_file(success_fn){
