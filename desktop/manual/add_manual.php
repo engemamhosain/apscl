@@ -8,8 +8,6 @@ if (strcmp($_SESSION["role"], "admin") != 0) {
 include '../includes/header-new.php';
 include '../includes/pdf_uploader/pdf_upload_all.php';
 init_pdfProcess();
-
-
 ?>
 
 <style type="text/css">
@@ -208,7 +206,7 @@ label.light {
 	<?php include '../includes/footer-new.php';?>
 	<?php include '../includes/include_js.php';?>
 
-	 <script src="asset/js/app/pages/add_user.js"></script>
+	 <script src="../asset/js/app/pages/add_user.js"></script>
 	 <script type="text/javascript">
 
 	 </script>
