@@ -21,7 +21,7 @@ function init_local_config() {
 	    cockpit_image_url: 'http://localhost/cockpit/storage/uploads',    
 	    apiurl: 'https://softlh.com/apscl/cockpit-master/api/',    
 	    token: '?token=account-9214b485376d6e2643747f5342301c',
-        k20api: '/k20/api/'      
+        k20api: '/k20/api'      
 	};
 
 }	
@@ -29,8 +29,8 @@ function init_local_config() {
 if(location.host === "softlh.com"){
 	init_production_config();
 }else{
-	init_production_config();
-//	init_local_config();
+	// init_production_config();
+	init_local_config();
 }
 
 
