@@ -10,12 +10,12 @@
                     <img class="circle" src="../asset/img/employee.jpg">
                   </a>
                   <a href="#name">
-                    <span class="white-text name username"></span>
+                    <span class="white-text name username"></span><span></span>
                   </a>
-                  <a href="#email">
+                  <a href="#email" style="float:left">
                     <span class="white-text email userid"></span>
                   </a>
-
+                  <a href="../profile/profile.php" class="white-text name"><i class="material-icons chevron">edit</i></a>
 
             </div></li>
         <li class="no-padding">

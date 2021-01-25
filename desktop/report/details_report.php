@@ -1,5 +1,10 @@
 
 <?php include '../includes/header-new.php';?>
+
+<link rel="stylesheet" href="rating/jsRapStar.css" />
+	<link rel="stylesheet" href="rating/rating.css" />
+	
+
 <main>
 <div class="container">
 	<div class="scrollspy">
@@ -142,7 +147,23 @@
 				<div id="details_push" class="collection container_main"></div>
 				<a class="waves-effect waves-light btn approve" onclick= "approve()">Approved</a>
 			</div>
+
+
+			
+		
+			<div class="list"></div>
+			<div class="card-panel review" style="display:none;">
+				Rating:<div id="rating"></div>
+				<b>Review</b>	
+				<textarea id="comment"  required></textarea>
+				<a class="waves-effect waves-light btn review" onclick= "review()">Review</a>
+	   		</div>
+
+			
+
 		</div>
+
+
 
 		
 
@@ -155,5 +176,6 @@
 
 
   <?php include '../includes/footer-new.php';?>
+  <script src="rating/jsRapStar.js"></script>
   <script src="../asset/js/app/pages/details_report.js"></script>	
 
