@@ -152,43 +152,12 @@ label.light {
 </style>
 
       <div  class="add-user-form-card list">
-      <h1>New user add</h1>
-        
-        <fieldset>
-          <legend><span class="number">1</span>Your basic info</legend>
-         
-          
-          <label for="mail">Email:</label>
-          <input type="email" id="mail" name="email" class="user">
-
-          <label for="phone">Phone:</label>
-          <input type="number" id="phone" name="user" class="user">
-
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="user">
-
-          <label for="designation">Designation</label>
-          <select name="designation" id="designation" class="user"></select><br>
-
-
-          <label for="division">Division</label>
-          <select name="division" id="division" class="user"></select><br>
-
-
-          </fieldset>
-          
-
-        <label for="Role">Role:</label>
-        <select name="role" id="Role" class="user"></select>
-        </fieldset>
-                                         
-        <button class="userBtn" type="submit" onclick="postUser()">Add user</button>
       </div>
 
 	<?php include '../includes/footer-new.php';?>
 	<?php include '../includes/include_js.php';?>
 	 
 
-   <script src="../asset/js/app/pages/add_user.js"></script>
+   <script src="../asset/js/app/pages/update_user.js"></script>
 
 	

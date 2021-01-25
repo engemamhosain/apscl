@@ -30,7 +30,7 @@ get('gm_users.php',{}, function(data){
          </td>	
          <td>
                  
-             <a href="add_user.php#${element.employee_id}" > <i class="material-icons green-text">create</i></a>
+             <a href="update_user.php#${element.employee_id}" > <i class="material-icons green-text">create</i></a>
          </td>							
      </tr>
        `);

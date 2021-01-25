@@ -3,14 +3,20 @@
   
   var tml_textarea = _.template($("#tmp_textarea").html()),
   tml_textinput = _.template($("#tmp_input").html());
-
-
-    var fields= [{option:"name_of_trouble",value:"Name of trouble"},{option:"trouble_analysis",value:"Trouble analysis"},{option:"description_of_work",value:"Description of work"},{option:"root_cause_analysis",value:"Root cause analysis"},{option:"trouble_description",value:"Trouble description"},{option:"used_tools_list",value:"Used tools list"},{option:"list_of_personel",value:"List of personel"},{option:"referance_manual",value:"Referance manual"},{option:"report_creator",value:"Report creator"}]
+  
+    var fields= [
+    {option:"plant_id",value:"Plant id"},{option:"plant_name",value:"Plant name"},{option:"equipment_name",value:"Equipment name"},{option:"department",value:"Department"},{option:"kks_no",value:"KKS no"},    
+    {option:"name_of_trouble",value:"Name of trouble"},{option:"trouble_analysis",value:"Trouble analysis"},
+    {option:"description_of_work",value:"Description of work"},{option:"root_cause_analysis",
+    value:"Root cause analysis"},{option:"trouble_description",value:"Trouble description"},{option:"used_tools_list",value:"Used tools list"},
+    {option:"list_of_personel",value:"List of personel"},{option:"referance_manual",value:"Referance manual"},{option:"report_creator",value:"Report creator"}
+   
+]
         
 
      var push_html = '', editor_id_list = [];
     _.each(fields, function(item, key, arr){
-        if(key==0){
+        if(key>=0 && key<=6){
 
             push_html += tml_textinput({key:item.option, label:item.value, value: ""});  
         }else{
@@ -93,6 +99,13 @@
 
 
 //name_of_trouble, performed_date, trouble_description, trouble_analysis, description_of_work, used_tools_list, root_cause_analysis, report_creator, approved, approved_by_uid, approved_by_name, referance_manual, list_of_personel) "
+
+
+
+$( "#form_add_roprt" ).submit(function( event ) {
+   
+    event.preventDefault();
+  });
 
 $('#add_report').click(function(){
 

@@ -7,9 +7,7 @@
 
 
 	<div id="edit_item_push">
-
-		<div id="edit_item_all_the_fields"></div>
-		<div class="card-panel">
+	<div class="card-panel">
 			<div class="row">
 			<div class="input-field col s12">
 			
@@ -18,6 +16,9 @@
 			</div>
 			</div>
   	  </div>
+
+		<div id="edit_item_all_the_fields"></div>
+		
 
 
 		<!-- <label for="first_name">Assign Report</label>

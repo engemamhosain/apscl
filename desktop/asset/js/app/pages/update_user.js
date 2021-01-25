@@ -16,7 +16,7 @@ var user;
              $(".list").html(`  
     
     
-             <h1>New user add</h1>
+             <h1>Update user</h1>
         
              <fieldset>
                <legend><span class="number">1</span>Your basic info</legend>
@@ -37,7 +37,7 @@ var user;
              <select name="role" id="Role" class="user"></select>
              </fieldset>
                                               
-             <button class="userBtn" type="submit" onclick="postUser()">Add user</button>
+             <button class="userBtn" type="submit" onclick="postUser()">Update</button>
            `);
                 
             });
