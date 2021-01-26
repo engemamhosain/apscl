@@ -12,12 +12,20 @@
         var files = $('#media')[0].files[0];
         fd.append('file',files);
         fd.append('name',localStorage.user);
-        fd.append('employee_id',localStorage.employee_id);
-        fd.append('message',"");
-        fd.append('tr_no',location.hash);
-        fd.append('media_url', $('#media')[0].files[0].name);
-        image_post("media_upload.php",fd,function(data){
-           // console.log(data);
+        image_post("upload_file.php",fd,function(data){
+           
+            var image=` <img src="${data.file_uploader}" style="width:140px;height:120px;"/>`;
+           get("new_chat_details.php",{group_id:location.hash.split("/")[1],message:image},function(data){
+            try {
+
+                getMessage(lastTime);
+                                   
+            } catch (error) {
+                
+            }
+        
+        });  
+
         });
 
 
@@ -27,7 +35,7 @@
  
  var result=[],lastTime=0;
    function sendMessage(){
-        get("i_chat_details.php",{group_id:location.hash.split("/")[1],message:$(".type_msg").val()},function(data){
+        get("new_chat_details.php",{group_id:location.hash.split("/")[1],message:$(".type_msg").val()},function(data){
                 try {
 
                     getMessage(lastTime);
