@@ -7,17 +7,14 @@
 
 <main>
 <div class="container">
-	<div class="scrollspy">
 
-		<div class="row">
-			<div class="col s12 m12 l12 xl12">
-
-
+<div class="card">
+        <div class="card-content">
 
 
 				<script type="text/template" id="tmp_report_details">
 
-					<div class="">
+					<div class="row">
 						<div class="col s12 m8 x12 ">
 
 							<span style="font-weight: bold;">
@@ -50,7 +47,8 @@
 						<br>
 						</div>
 
-
+					<div class="col s12">
+					<hr>
 						<span style="font-weight: bold;">
 						Description of trouble
 						</span>
@@ -134,7 +132,7 @@
 								
 						</div> -->
 
-						<br><br>
+						<br><br></div>
 						</div>
 					</div>
 				</script>
@@ -144,7 +142,7 @@
 
 
 			
-				<div id="details_push" class="collection container_main"></div>
+				<div id="details_push" class="container_main"></div>
 				<a class="waves-effect waves-light btn approve" onclick= "approve()">Approved</a>
 			</div>
 
@@ -159,18 +157,11 @@
 				<a class="waves-effect waves-light btn review" onclick= "review()">Review</a>
 	   		</div>
 
-			
-
-		</div>
-
-
-
+	</div>		
+</div>
 		
 
-	</div>
 </div>
-
-
 
 </main>
 

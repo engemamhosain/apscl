@@ -4,52 +4,60 @@ include '../includes/header-new.php';
 ?>
 
 <style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
 
-.title {
-  color: grey;
-  font-size: 18px;
-}
-
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
-
-button:hover, a:hover {
-  opacity: 0.7;
-}
 </style>
 </head>
 <body>
+<main><div class="container">
+<h4 style="text-align:center">Profile</h4>
+  <div class="row equal-height-grid">
 
-<h2 style="text-align:center">Profile</h2>
+    <div class="col l9 s12">
+
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Employee Name</span>
+          <p>Designation</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="card-content">
+          <div>
+
+            Bio
+          </div>
+        </div>
+
+       
+      </div>
+
+    </div>
+
+    <div class="col l3 s12">
+
+      <div class="card">
+        <div class="card-content">
+          
+        <img src="employee.jpg" alt="John" style="width:100%">
+        </div>
+        
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+    </main>
+
 
 <div class="card profile">
  
 </div>
 	<?php include '../includes/footer-new.php';?>
-	<?php include '../includes/include_js.php';?>
+	<?php //include '../includes/include_js.php';?>
 
 	 <script src="../asset/js/app/pages/add_user.js"></script>
 	 <script type="text/javascript">
@@ -68,6 +76,8 @@ button:hover, a:hover {
              
        `);
 	 </script>
+
+   
 
 
 
