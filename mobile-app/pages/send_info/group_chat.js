@@ -14,11 +14,12 @@
         fd.append('name',localStorage.user);
         image_post("upload_file.php",fd,function(data){
            
-            var image=` <img src="${data.file_uploader}" style="width:140px;height:120px;"/>`;
+            var image=`<img src="${data.file_uploader}" style="width:100%;height:120px;"/>`;
            get("new_chat_details.php",{group_id:location.hash.split("/")[1],message:image},function(data){
             try {
 
                 getMessage(lastTime);
+             
                                    
             } catch (error) {
                 
@@ -39,6 +40,7 @@
                 try {
 
                     getMessage(lastTime);
+                    $(".type_msg").val("");
                                        
                 } catch (error) {
                     
@@ -79,17 +81,17 @@
 
     var load =(data)=>{
 
-        if(data.message=="" && data.media_url!=""){
+        if(data.message.startsWith(" <img")){
 
             $(".card-body").append(  `
         
-            <div class="d-flex justify-content-start mb-4">
+            <div class=" justify-content-start mb-4">
                
-                <div class="msg_cotainer" style="background-color:skyblue">
-                   ${data.name}
+                <div class="msg_cotainer1" style="background-color:skyblue1">
+                   ${data.created_by_name}
                </div>
                 <div class="card" style="height:150px;" >
-                   <img src="${image_show_url+"/"+data.media_url}" style="width:200px;height:150px;"/>
+                    ${data.message}
                     <span class="msg_time_send">${new Date(data.created_on*1000).toDateString()+" "+new Date(data.created_on*1000).toLocaleTimeString()}</span>
                 </div>
             </div>
@@ -117,8 +119,8 @@
      var own_message=(data)=>{
 
 
-
-        if(data.message=="" && data.media_url!=""){
+        console.log(data.message)
+        if(data.message.startsWith(" <img")){
 
             $(".card-body").append(`
             <div class="d-flex justify-content-end mb-4">
@@ -162,4 +164,12 @@
       timedCount();
 
      
+   function goAddMember(){
+       location.href="add_member.html#/"+location.hash.split("/")[1];
+   }
+
+   function memberList(){
+    location.href="member_list.html#/"+location.hash.split("/")[1];
+}
+
    

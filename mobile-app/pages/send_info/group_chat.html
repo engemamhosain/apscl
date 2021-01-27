@@ -10,22 +10,19 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
-    
-    <link rel="stylesheet" href="css.css" >
+	 <link rel="stylesheet" href="css.css" >
 
   </head>
-	<!--Coded With Love By Mutiullah Samim-->
+
 	<body class="app-color">
 
 		
-
 		<div style="position:fixed;top:0;width:100%;padding-left:16px;line-height:60px;text-align:left;background-color:rgb(202, 53, 53);height: 60px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);color:white">
 			<a onclick="window.history.back()">	<i class="fas fa-arrow-left fa-lg"></i></a> Message
 			</div>
 			
 		<div class="container-fluid">
 			<div class="row">
-				
 					
 					<div class="col-md-8 col-xl-6 chat">
 						<div class="card">
@@ -37,8 +34,8 @@
 									
 									</div>
 									<div class="user_info">
-										<span class="title"></span>
-										<i class="fas fa-user-plus"  style="color: white; margin-left: 15px;"></i>
+										<span class="title"  onclick="memberList()" ></span>
+										<i class="fas fa-user-plus"  onclick="goAddMember()" style="color: white; margin-left: 15px;"></i>
 									
 									</div>
 								
@@ -46,8 +43,7 @@
 							
 							</div>
 
-							
-			
+						
 							<div class="card-body msg_card_body"></div>
 							
 							<div class="card-footer">
@@ -66,7 +62,10 @@
 					</div>
 				
 			</div>
-		</div>	   
+		</div>	  
+		
+		
+		
 	<script src="../../api_get.js"></script>
 	<script src="group_chat.js"></script>
 

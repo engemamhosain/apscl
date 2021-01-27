@@ -1,6 +1,7 @@
 
 //var base_url="http://localhost/apscl-fahad/curl_api/"
 var base_url="https://softlh.com/k20-apscl/k20-backend/api/mobile/"
+var user_url="https://softlh.com/k20-apscl/k20-backend/api/desktop/all_user_list.php"
 
 var search_base_url="https://softlh.com/k20-apscl/k20-backend/api/pdf-upload/search_in_pdf.php"
 var manual_pdf="https://softlh.com/k20-apscl/k20-backend/upload/pdf/"
@@ -14,6 +15,20 @@ function get(url,data,fn){
         type: "POST",
         url: base_url+url,
         data: data,
+        success: fn
+    });
+
+    return fn;
+}
+
+
+
+function get_user(fn){
+
+    $.ajax({
+        type: "POST",
+        url: user_url,
+        data: {},
         success: fn
     });
 
