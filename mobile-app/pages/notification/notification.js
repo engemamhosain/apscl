@@ -14,7 +14,7 @@
     //     "updated_by_uid": null
     // },
 
- get("notification.php",{},function (result){
+ get("gm_notification.php",{},function (result){
     try {
        var data = result.data
        data.forEach(element => {

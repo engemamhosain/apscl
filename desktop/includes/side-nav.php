@@ -51,7 +51,7 @@
             <li class="bold waves-effect waves-blue"><a class="collapsible-header">Admin/User Management<i class="material-icons chevron">chevron_left</i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="../user_management/user_list.php" class="waves-effect waves-blue">Team Management<i class="material-icons">group</i></a></li> <li><a href="add_user.php" class="waves-effect waves-blue">Add user<i class="material-icons">add</i></a></li>
+                  <li><a href="../user_management/user_list.php" class="waves-effect waves-blue">Team Management<i class="material-icons">group</i></a></li> <li><a href="../user_management/add_user.php" class="waves-effect waves-blue">Add user<i class="material-icons">add</i></a></li>
                 </ul>
               </div>
             </li>

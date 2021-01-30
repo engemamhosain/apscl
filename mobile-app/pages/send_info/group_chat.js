@@ -1,4 +1,5 @@
-          
+    var lastSaveId=0;
+      
  	$(".title").html(decodeURIComponent(location.hash.split("/")[2]))
 
 
@@ -18,7 +19,7 @@
            get("new_chat_details.php",{group_id:location.hash.split("/")[1],message:image},function(data){
             try {
 
-                getMessage(lastTime);
+                getMessage(lastSaveId);
              
                                    
             } catch (error) {
@@ -34,35 +35,37 @@
 
  
  
- var result=[],lastTime=0;
+ var result=[];
    function sendMessage(){
         get("new_chat_details.php",{group_id:location.hash.split("/")[1],message:$(".type_msg").val()},function(data){
-                try {
+                
+            try {
 
-                    getMessage(lastTime);
+                    getMessage(lastSaveId);
                     $(".type_msg").val("");
                                        
                 } catch (error) {
                     
                 }
             
-            });  
+        });
    } 
 
     
-    function getMessage(time){
-        get("chat_details.php",{group_id:location.hash.split("/")[1],created_on:time},function(data){
+    function getMessage(id){
+        get("chat_details.php",{group_id:location.hash.split("/")[1],last_id:id},function(data){
             try {
+                if(data.last_id!=null){
+                    lastSaveId = data.last_id; 
+                }
+               
                 result=data.data
+
                 result.forEach(element => {
                     if(localStorage.name==element.name){
                         own_message(element);
                     }else{
                         load(element);
-                    }
-
-                    if(result.length>0){
-                        lastTime=result[result.length-1].created_on;
                     }
                     
                 });  
@@ -73,7 +76,7 @@
           
         });  
     }
-    getMessage(0);
+    getMessage(lastSaveId);
 
 
     
@@ -154,11 +157,12 @@
 
 
      function timedCount() {
-         if(lastTime!=0){
-            getMessage(lastTime);
+         if(lastSaveId!=0){
+             console.log(lastSaveId)
+            getMessage(lastSaveId);
          }
        
-        setTimeout("timedCount()",30*1000);
+        setTimeout("timedCount()",10*1000);
       }
       
       timedCount();

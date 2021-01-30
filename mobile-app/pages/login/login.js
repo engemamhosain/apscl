@@ -18,10 +18,13 @@ function athenticate(email,password){
                   localStorage.employee_id=data.employee_id;
     
 
-                    localStorage.email=data.email;
+                    localStorage.uuid=data.uuid;
+                    localStorage.jwt=data.jwt;
+                    localStorage.id=data.id;
                     localStorage.name=data.name;
-                    localStorage.group=data.group;  
+                    localStorage.role=data.role;  
                     localStorage.api_key=data.api_key;
+                    localStorage.isLogin="true"
                     setTimeout(() => {
                      location.href="../dashboard/mobile_dashboard.html"
                     }, 1000);

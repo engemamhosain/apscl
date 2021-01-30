@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="icon" type="image/png" href="Login_v3/images/icons/favicon.ico"/>
+
   <title>
     O&M Knowledge Base APSCL 
   </title>
@@ -13,6 +13,40 @@
 <link rel="stylesheet" href="../../asset/vendor/materialize/css/admin-materialize.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="../../mobile-css.css">
+  <style>
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+   #imageUpload
+{
+    display: none;
+}
+
+#profileImage
+{
+    cursor: pointer;
+}
+
+#profile-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#profile-container img {
+    width: 150px;
+    height: 150px;
+}
+  </style>
 </head>
 
 <body class="app-color">
@@ -24,11 +58,38 @@
   </div>
 
 
+
 </div>
+
+
+<div id="profile-container" class="center">
+  <image id="profileImage"  src="../../asset/img/employee.jpg" />
+</div>
+<input id="imageUpload" type="file"  name="profile_photo" placeholder="Photo" required="" capture>
+<input type="text" value="name">
+
+<input type="button" value="Update">
+
 
   <script src="../../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
   <script src="../../asset/vendor/materialize/js/materialize.min.js"></script>
   <script src="../../api_get.js"></script>
+<script>
 
+$("#profileImage").click(function(e) {
+    $("#imageUpload").click();
+});
+
+function fasterPreview( uploader ) {
+    if ( uploader.files && uploader.files[0] ){
+          $('#profileImage').attr('src', 
+             window.URL.createObjectURL(uploader.files[0]) );
+    }
+}
+
+$("#imageUpload").change(function(){
+    fasterPreview( this );
+});
+</script>
 </body>
 </html>

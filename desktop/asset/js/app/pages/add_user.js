@@ -1,14 +1,23 @@
 
-
-
-
  var department = ["Mechanical Maintenance", "Electrical Maintenance", "Instrument and Control", "Operation (Shift)","Operation (General)"];
  var designation = ["Assistant Engineer","Sub-Assistant Engineer", "Exicutive Engineer"];
- var role = ['USER_READ', 'USER_WRITE', 'GROUP', 'ADMIN'];  
+ var role = ['USER_READ', 'USER_WRITE', 'GROUP', 'ADMIN']; 
+
+ get('gm_division.php',{}, function(data){
+	department=data.data;
+	load(department,"#division")
+  })
+ get('gm_designation.php',{}, function(data){
+	designation=data.data 
+	load(designation,"#designation")
+  })
+
+
+ 
  
         load(role,"#Role")
-        load(designation,"#designation")
-        load(department,"#division")
+      
+
 
 function  load(data,id){
     for (var i = 0; i < data.length; i++)
