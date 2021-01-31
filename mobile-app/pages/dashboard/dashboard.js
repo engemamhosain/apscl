@@ -5,4 +5,7 @@ if(window.app){
     location.href=app.redirect();
   }
 }
+
+
+$('.profileImage').attr('src',localStorage.userPic);
  

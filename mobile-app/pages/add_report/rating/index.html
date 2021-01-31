@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Demo</title>
+	<link rel="stylesheet" href="jsRapStar.css" />
+	<link rel="stylesheet" href="index.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="jsRapStar.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			$('#demo1').jsRapStar({
+				step: false,
+				value: 5,
+				length: 5,
+				starHeight: 64,
+				colorFront: '#0f0',
+				onClick: function (score) {
+					
+				alert(score)
+				},
+				onMousemove: function (score) {
+					$(this).attr('title', 'Rate ' + score);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="divMain">
+	
+		<div>Standard</div>
+		<div id="demo1"></div>
+	
+	</div>
+</body>
+</html>
