@@ -1,5 +1,5 @@
 
-var env="beta"
+var env="production"
 if(env=="production"){
     var base_url="https://softlh.com/k20-apscl/k20-backend/api/mobile/"
     var user_url="https://softlh.com/k20-apscl/k20-backend/api/desktop/all_user_list.php"
@@ -87,4 +87,23 @@ function get_one(data,id){
         return obj.id==id;
     })
 }
+
+
+
+function getNotificationCount(url,data,fn){
+
+    $.ajax({
+        type: "POST",
+        url: base_url+url,
+        data: data,
+        success: fn
+    });
+
+    return fn;
+}
+
+
+getNotificationCount("go_notification_count.php",{},function(data){
+$(".notif-num").html(data.count)
+})
 

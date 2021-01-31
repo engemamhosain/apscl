@@ -150,6 +150,7 @@
 			
 		
 			<div class="list"></div>
+			
 			<div class="card-panel review" style="display:none;">
 				Rating:<div id="rating"></div>
 				<b>Review</b>	

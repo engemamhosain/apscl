@@ -46,6 +46,16 @@
     width: 150px;
     height: 150px;
 }
+
+.button2 {background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+} /* Blue */
   </style>
 </head>
 
@@ -61,14 +71,13 @@
 
 </div>
 
-
+<br>
 <div id="profile-container" class="center">
   <image id="profileImage"  src="../../asset/img/employee.jpg" />
 </div>
 <input id="imageUpload" type="file"  name="profile_photo" placeholder="Photo" required="" capture>
-<input type="text" value="name">
-
-<input type="button" value="Update">
+<br><br>
+<input type="button" class="button2" value="Update">
 
 
   <script src="../../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
@@ -76,14 +85,24 @@
   <script src="../../api_get.js"></script>
 <script>
 
+$('#profileImage').attr('src',localStorage.userPic);
+
 $("#profileImage").click(function(e) {
     $("#imageUpload").click();
 });
 
 function fasterPreview( uploader ) {
     if ( uploader.files && uploader.files[0] ){
-          $('#profileImage').attr('src', 
-             window.URL.createObjectURL(uploader.files[0]) );
+          $('#profileImage').attr('src',window.URL.createObjectURL(uploader.files[0]));
+
+        var fd = new FormData();
+        fd.append('file',uploader.files[0]);
+        fd.append('name',localStorage.user);
+        image_post("upload_file.php",fd,function(data){ 
+          localStorage.userPic=data.file_uploader
+
+        });
+    
     }
 }
 
