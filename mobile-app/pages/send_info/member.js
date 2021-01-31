@@ -1,5 +1,11 @@
-get("chat_groups_members.php",{group_id:location.hash.split("/")[1]},function (result){
+
+
+
+function loadMember(){
+  get("chat_groups_members.php",{group_id:location.hash.split("/")[1]},function (result){
     try {
+      
+  
        var data = result.data
        data.forEach(element => {
         $(".list").append(`
@@ -16,3 +22,6 @@ get("chat_groups_members.php",{group_id:location.hash.split("/")[1]},function (r
     } catch (error) {}
     
 })
+}
+
+loadMember();
