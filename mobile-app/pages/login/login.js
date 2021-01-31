@@ -24,6 +24,7 @@ function athenticate(email,password){
                     localStorage.name=data.name;
                     localStorage.role=data.role;  
                     localStorage.api_key=data.api_key;
+                    localStorage.profile_picture=data.profile_picture;
                     localStorage.isLogin="true"
                     setTimeout(() => {
                      location.href="../dashboard/mobile_dashboard.html"
