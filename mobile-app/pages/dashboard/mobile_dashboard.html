@@ -97,6 +97,7 @@
     </ul>
 <script>
   function Logout(){
+    localStorage.clear();
     location.href="../../";
   }
 </script>
@@ -133,7 +134,7 @@
       </div>
 
       <div class="col s6">
-        <a href="#!">
+        <a href="#!" onclick="alert('Please go to TR-CR management system')">
           <div class=" button card bg-color ds-card" style="text-align: center;">          
             <i class="material-icons white-text center">create</i>
             <div class="txt">Create TR</div>   

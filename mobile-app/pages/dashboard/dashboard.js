@@ -7,5 +7,5 @@ if(window.app){
 }
 
 
-$('.profileImage').attr('src',localStorage.userPic);
+$('.profileImage').attr('src',localStorage.profile_picture+"?"+new Date().getTime());
  

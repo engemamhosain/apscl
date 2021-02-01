@@ -73,9 +73,12 @@
 
 <br>
 <div id="profile-container" class="center">
-  <image id="profileImage"  src="../../asset/img/employee.jpg" />
+  <image id="profileImage"  src="../../asset/img/logo.png" />
 </div>
 <input id="imageUpload" type="file"  name="profile_photo" placeholder="Photo" required="" capture>
+
+<div class="user-name" style="margin-left: 16px;"></div>
+<div class="user-id" style="margin-left: 16px;"></div>
 <br><br>
 <input type="button" class="button2" value="Update">
 
@@ -85,7 +88,12 @@
   <script src="../../api_get.js"></script>
 <script>
 
-$('#profileImage').attr('src',localStorage.userPic);
+if(localStorage.profile_picture!=null && localStorage.profile_picture!="null"){
+  $('#profileImage').attr('src',localStorage.profile_picture);
+}
+
+$('.user-name').html("Name:"+localStorage.name);
+$('.user-id').html("Id:"+localStorage.id);
 
 $("#profileImage").click(function(e) {
     $("#imageUpload").click();
@@ -99,7 +107,7 @@ function fasterPreview( uploader ) {
         fd.append('file',uploader.files[0]);
         fd.append('name',localStorage.user);
         image_post("upload_file.php",fd,function(data){ 
-          localStorage.userPic=data.file_uploader
+          localStorage.profile_picture=data.file_uploader
 
         });
     
