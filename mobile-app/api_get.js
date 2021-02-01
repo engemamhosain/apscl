@@ -22,7 +22,7 @@ if(env=="production"){
 
 
 function get(url,data,fn){
-
+    data.jwt = localStorage.jwt;
     $.ajax({
         type: "POST",
         url: base_url+url,
@@ -36,7 +36,7 @@ function get(url,data,fn){
 
 
 function get_user(fn){
-
+data.jwt = localStorage.jwt;
     $.ajax({
         type: "POST",
         url: user_url,
@@ -49,7 +49,7 @@ function get_user(fn){
 
 
 function search(data,fn){
-
+data.jwt = localStorage.jwt;
     $.ajax({
         type: "POST",
         url: search_base_url,
@@ -62,10 +62,10 @@ function search(data,fn){
 
 
 function image_post(url,data,fn){
-
+// data.jwt = localStorage.jwt;
     $.ajax({
         url: image_url+url,
-        type: 'post',
+        type: 'POST',
         data: data,
         contentType: false,
         processData: false,
@@ -91,7 +91,7 @@ function get_one(data,id){
 
 
 function getNotificationCount(url,data,fn){
-
+data.jwt = localStorage.jwt;
     $.ajax({
         type: "POST",
         url: base_url+url,

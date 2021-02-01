@@ -105,7 +105,8 @@ function fasterPreview( uploader ) {
 
         var fd = new FormData();
         fd.append('file',uploader.files[0]);
-        fd.append('name',localStorage.user);
+        fd.append('name',localStorage.name);
+        fd.append('jwt',localStorage.jwt);
         image_post("upload_file.php",fd,function(data){ 
           localStorage.profile_picture=data.file_uploader
 

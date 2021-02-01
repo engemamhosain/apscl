@@ -8,6 +8,7 @@ $(document).ready(function(){
             var form_data = new FormData();
             
             form_data.append('file', files[0]);
+            form_data.jwt = localStorage.jwt;
 
              $.ajax({
                 url: file_upload_location,
