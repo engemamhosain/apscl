@@ -136,28 +136,76 @@ label.light {
 
 .add-user-form-card {
   margin: 20px auto;
-  width: 50%; 
- 
-  -webkit-border-radius: 8px/7px; 
-  -moz-border-radius: 8px/7px; 
-  border-radius: 8px/7px; 
-  background-color: #ebebeb; 
-  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
-  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
-  box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+  width: 50%;
+
+  -webkit-border-radius: 8px/7px;
+  -moz-border-radius: 8px/7px;
+  border-radius: 8px/7px;
+  background-color: #ebebeb;
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31);
   border: solid 1px #cbc9c9;
 }
 
-                                    
+
 </style>
+<body>
+<main><div class="container">
+<h4 style="text-align:center">Update User</h4>
+  <div class="row equal-height-grid">
+
+    <div class="col l9 s12">
+
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title" id="e_name">Employee Name</span>
+          <p id="e_designation" >Designation</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="card-content">
+          <div id="e_bio">
+
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <div class="col l3 s12">
+
+      <div class="card">
+        <div class="card-content">
+
+
+        <img id="e_photo" src="../profile/employee.png" alt="Profile Photo" style="width:100%" />
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+    </main>
+
+
+
+
 
       <div  class="add-user-form-card list">
       </div>
 
 	<?php include '../includes/footer-new.php';?>
 	<?php include '../includes/include_js.php';?>
-	 
+
 
    <script src="../asset/js/app/pages/update_user.js"></script>
 
-	
+

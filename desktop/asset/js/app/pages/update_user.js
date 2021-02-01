@@ -5,10 +5,33 @@
 // account_active yes / no  
 // Role ('USER_READ', 'USER_WRITE', 'GROUP', 'ADMIN')
 
+function poplate_profile_info(u_data){
+    
+    $("#e_name").html(u_data.name);
+    if(u_data.profile_picture){
+      $("#e_photo").attr('src', u_data.profile_picture+"?"+new Date(getTime()));
+    }
+    $("#e_designation").html('Designation '+u_data.designation);
+    if(u_data.email === null){
+      u_data.email = '-----';
+    }
+    if(u_data.phone === null){
+      u_data.phone = '-----';
+    }
+    var bio = 'Role   '+u_data.role +' <br/>';
+    bio += 'Division   '+u_data.DIVISION +' <br/>';
+    bio += 'Employee id  '+u_data.employee_id +' <br/>';
+    bio += 'Email   '+ u_data.email +' <br/>';
+    bio += 'Phone   '+ u_data.phone +' <br/>';
+    bio += 'Account Active   '+ u_data.account_active +' <br/>';
+    $("#e_bio").html(bio);
+
+}
+
 var user;
     get('go_users.php',{employee_id:location.hash.substr(1,location.hash.length)}, function(data){
 
-    
+        poplate_profile_info(data.data[0]);
         try {
             user = data.data[0]
             data.data.forEach(element => {
@@ -16,7 +39,7 @@ var user;
              $(".list").html(`  
     
     
-             <h1>Update user</h1>
+             <h1></h1>
         
              <fieldset>
                <legend><span class="number">1</span>Your basic info</legend>
