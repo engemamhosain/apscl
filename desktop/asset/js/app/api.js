@@ -62,7 +62,8 @@ function image_post(url,data,fn){
             data: data,
             contentType: false,
             processData: false,
-            success: fn
+            success: fn,
+            
         });
     
         return fn;
@@ -74,7 +75,14 @@ function get(url,data,fn){
         type: "POST",
         url: tg.config.k20api+"/desktop/"+url,
         data: data,
-        success: fn
+        success: fn,
+        error: function (error) {
+            if(localStorage.isLogin == "true"){
+                localStorage.clear();
+                location.href=location.origin+"/apscl-fahad/desktop/login/login.php"
+            }
+         
+        }
     });
 
     return fn;
