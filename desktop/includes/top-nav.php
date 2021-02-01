@@ -1,5 +1,5 @@
 <nav class="navbar white">
-          <div class="nav-wrapper"><a href="dashboard.php" class="brand-logo grey-text text-darken-4"><i class="material-icons">home</i></a>
+          <div class="nav-wrapper"><a  onclick="home()" class="brand-logo grey-text text-darken-4"><i class="material-icons">home</i></a>
           	<span  id="px-breadcrumb">
 		      	<script type="text/template" id="tmp_breadcrumbs">
 		        	<a href="<%= url %>" class="breadcrumb"> <%= title %></a>
@@ -20,4 +20,9 @@
 	.breadcrumb:before{ color: rgba(0,0,0,.5) }
 	.new-badge{ position: absolute; width: 18px; height: 18px; top:10px; right:5px; background: red; color: white; border-radius: 100px; line-height: 18px; text-align: center; font-size: 12px }
 </style>
- 
+ <script>
+	 function home() {
+		location.href=location.origin+"/apscl-fahad/desktop/dashboard/dashboard.php"
+	 }
+	
+ </script>

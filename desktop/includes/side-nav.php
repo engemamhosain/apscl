@@ -61,7 +61,11 @@
         <?php include '../includes/include_js.php';?>
 
 <script type="text/javascript">
-  $(".username").html(localStorage.name+" ( "+localStorage.role+" )");
+
+  $(".username").html(localStorage.name+" ( "+localStorage.role+" )");  
+
+
+
   $(".userid").html( "ID: " + localStorage.id );
   if(localStorage.role=="ADMIN"){
       $(".unpublish").show();
@@ -69,6 +73,8 @@
   if(localStorage.profile_picture){
     $('#profile_pic_side_bar').attr('src', localStorage.profile_picture);
   }
+
+
   function logOut() {
     localStorage.clear();
     location.href=location.origin+"/apscl-fahad/desktop/login/login.php"
