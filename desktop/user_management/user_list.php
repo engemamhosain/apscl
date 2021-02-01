@@ -176,7 +176,7 @@
 .table-stats .table-line-plus .status-social-icon {
 	color: #a75d54;
 }
-                                    
+
 </style>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -185,13 +185,13 @@
 	<div class="col-lg-12">
 	<div class="row">
         <div class="input-field col12">
-          <i class="material-icons prefix">search</i>
+          <i class="material-icons prefix">person_search</i>
            <input type="text" id="search" value="">
-          <label for="search">Search</label>
+          <label for="search">Person Search</label>
         </div>
       </div>
-   
-		     
+
+
 		<div class="main-box clearfix">
 			<div class="table-responsive">
 				<table class="table user-list">
@@ -206,12 +206,12 @@
 						</tr>
 					</thead>
 					<tbody class="list">
-				
-					
+
+
 					</tbody>
 				</table>
 			</div>
-		
+
 		</div>
 	</div>
 </div>
