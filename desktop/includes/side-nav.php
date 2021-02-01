@@ -5,9 +5,9 @@
 
                     <img src="../asset/img/apscl-logo.jpg">
                 </div>
-                
+
                   <a href="#user">
-                    <img class="circle" src="../asset/img/employee.jpg">
+                    <img class="circle" src="../asset/img/employee.png" id="profile_pic_side_bar" >
                   </a>
                   <a href="#name">
                     <span class="white-text name username"></span><span></span>
@@ -26,7 +26,7 @@
                 <li  ><a href="../report/approved_report.php" class="waves-effect waves-blue">Approved Report<i class="material-icons">verified</i></a></li>
                    <li  ><a href="../report/waiting_for_approve.php" class="waves-effect waves-blue">Waiting For Approved<i class="material-icons">speaker_notes_off</i></a></li>
                   <li><a href="../report/my_report.php" class="waves-effect waves-blue">My Reports<i class="material-icons">note</i></a></li>
-                  <li><a href="../report/add_report.php" class="waves-effect waves-blue">Add Report<i class="material-icons">note_add</i></a></li>                  
+                  <li><a href="../report/add_report.php" class="waves-effect waves-blue">Add Report<i class="material-icons">note_add</i></a></li>
                 </ul>
               </div>
             </li>
@@ -36,15 +36,15 @@
                   <li><a href="#" class="waves-effect waves-blue" onclick='alert("Please go to TR-CR management system")'>All TR<i class="material-icons">picture_as_pdf</i></a></li>
                   <li><a href="#" onclick='alert("Please go to TR-CR management system")' class="waves-effect waves-blue">My TR<i class="material-icons">picture_as_pdf</i></a></li>
                   <li><a href="#" onclick='alert("Please go to TR-CR management system")' class="waves-effect waves-blue">Create New<i class="material-icons">queue</i></a></li>
-                  
+
                 </ul>
               </div>
             </li>
             <li class="bold waves-effect waves-blue"><a class="collapsible-header">Equipment Manual<i class="material-icons chevron">chevron_left</i></a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="../manual/device_manual.php" class="waves-effect waves-blue">All Manuals<i class="material-icons">picture_as_pdf</i></a></li>                  
-                  <li><a href="../manual/add_manual.php" class="waves-effect waves-blue">Add New<i class="material-icons">note_add</i></a></li> 
+                  <li><a href="../manual/device_manual.php" class="waves-effect waves-blue">All Manuals<i class="material-icons">picture_as_pdf</i></a></li>
+                  <li><a href="../manual/add_manual.php" class="waves-effect waves-blue">Add New<i class="material-icons">note_add</i></a></li>
                 </ul>
               </div>
             </li>
@@ -66,6 +66,9 @@
   if(localStorage.role=="ADMIN"){
       $(".unpublish").show();
   }
+  if(localStorage.profile_picture){
+    $('#profile_pic_side_bar').attr('src', localStorage.profile_picture);
+  }
 </script>
 
 
@@ -76,7 +79,7 @@
   .sidenav li.active, .sidenav .collapsible>li:hover{ background: rgba(255,255,255,.2) }
 
   .waves-effect.waves-blue .waves-ripple {
-  
+
     background-color: rgba(68, 169, 255, 0.65);
   }
             .sidenav .logo-container{  font-weight: bold;}
