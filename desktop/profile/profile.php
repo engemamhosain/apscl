@@ -4,7 +4,15 @@ include '../includes/header-new.php';
 ?>
 
 <style>
+   #imageUpload
+{
+    display: none;
+}
 
+#profileImage
+{
+    cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -37,6 +45,7 @@ include '../includes/header-new.php';
 
       <div class="card">
         <div class="card-content">
+        <input id="imageUpload" type="file"  name="profile_photo" placeholder="Photo" required="" capture>
 
         <img id="e_photo" src="employee.png" alt="Profile Photo" style="width:100%" />
         </div>
@@ -63,27 +72,42 @@ include '../includes/header-new.php';
 
     $("#e_name").html(localStorage.name);
     if(localStorage.profile_picture){
-      $("#e_photo").attr('src', localStorage.profile_picture);
+      $("#e_photo").attr('src', localStorage.profile_picture+"?"+new Date(getTime()));
     }
     $("#e_designation").html('Designation '+localStorage.designation);
     var bio = 'Role :  '+localStorage.role +' <br/>';
     bio += 'Employee id:  '+localStorage.employee_id +' <br/>';
     // bio += 'Employee id:  '+localStorage.employee_id +' <br/>';
     $("#e_bio").html(bio);
-  //  $(".profile").html(`
-  //  <img src="employee.jpg" alt="John" style="width:100%">
-  // <h1>${localStorage.name}</h1>
-  // <p class="title">${localStorage.role}</p>
-  // <p>${localStorage.id}</p>
-  // <div style="margin: 24px 0;">
-  //   <a href="#"><i class="fa fa-dribbble"></i></a>
-  //   <a href="#"><i class="fa fa-twitter"></i></a>
-  //   <a href="#"><i class="fa fa-linkedin"></i></a>
-  //   <a href="#"><i class="fa fa-facebook"></i></a>
-  // </div>
-  // <p><button>Contact</button></p>
 
-  //      `);
+
+
+
+  $("#e_photo").click(function(e) {
+      $("#imageUpload").click();
+  });
+  
+  function fasterPreview( uploader ) {
+      if ( uploader.files && uploader.files[0] ){
+            $('#e_photo').attr('src',window.URL.createObjectURL(uploader.files[0]));
+  
+          var fd = new FormData();
+          fd.append('file',uploader.files[0]);
+          fd.append('name',localStorage.name);
+          fd.append('jwt',localStorage.jwt);
+          image_post("upload_file.php",fd,function(data){ 
+            localStorage.profile_picture=data.file_uploader
+            get("u_users_profile_picture.php",{profile_picture:data.file_uploader,id:localStorage.id},function(data){ });
+            location.reload()
+          });
+      
+      }
+  }
+  
+  $("#imageUpload").change(function(){
+      fasterPreview( this );
+  });
+  
 	 </script>
 
 

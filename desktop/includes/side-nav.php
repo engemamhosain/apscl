@@ -55,7 +55,7 @@
                 </ul>
               </div>
             </li>
-             <li><a href="" class="waves-effect waves-blue logoff">Logout <i class="material-icons right">logout</i></a></li>
+             <li><a href="" class="waves-effect waves-blue logoff" onclick="logOut()" >Logout <i class="material-icons right">logout</i></a></li>
           </ul>
         </li>
         <?php include '../includes/include_js.php';?>
@@ -68,6 +68,11 @@
   }
   if(localStorage.profile_picture){
     $('#profile_pic_side_bar').attr('src', localStorage.profile_picture);
+  }
+  function logOut() {
+    localStorage.clear();
+    location.href=location.origin+"/apscl-fahad/desktop/login/login.php"
+
   }
 </script>
 

@@ -157,22 +157,28 @@ label.light {
         <fieldset>
           <legend><span class="number">1</span>Your basic info</legend>
          
+
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" class="user">
           
           <label for="mail">Email:</label>
           <input type="email" id="mail" name="email" class="user">
 
           <label for="phone">Phone:</label>
-          <input type="number" id="phone" name="user" class="user">
+          <input type="number" id="phone" name="phone" class="user">
 
           <label for="password">Password</label>
           <input type="password" id="password" name="password" class="user">
+
+          <label for="employee_id">Employee d</label>
+          <input type="text" id="employee_id" name="employee_id" class="user">
 
           <label for="designation">Designation</label>
           <select name="designation" id="designation" class="user"></select><br>
 
 
-          <label for="division">Division</label>
-          <select name="division" id="division" class="user"></select><br>
+          <label for="DIVISION">Division</label>
+          <select name="DIVISION" id="DIVISION" class="user"></select><br>
 
 
           </fieldset>

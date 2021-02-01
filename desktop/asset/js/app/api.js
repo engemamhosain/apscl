@@ -54,7 +54,22 @@ $d.ready(function(){
 });
 
 
+function image_post(url,data,fn){
+    // data.jwt = localStorage.jwt;
+        $.ajax({
+            url: tg.config.k20api+"/file/"+url,
+            type: 'POST',
+            data: data,
+            contentType: false,
+            processData: false,
+            success: fn
+        });
+    
+        return fn;
+    }
+
 function get(url,data,fn){
+    data.jwt=localStorage.jwt;
     $.ajax({
         type: "POST",
         url: tg.config.k20api+"/desktop/"+url,
@@ -66,5 +81,5 @@ function get(url,data,fn){
 }
 
 get("go_notification_count.php",{},function(data){
-
+$(".new-badge").html(data.count)
 })

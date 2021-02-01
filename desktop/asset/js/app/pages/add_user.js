@@ -5,7 +5,7 @@
 
  get('gm_division.php',{}, function(data){
 	department=data.data;
-	load(department,"#division")
+	load(department,"#DIVISION")
   })
  get('gm_designation.php',{}, function(data){
 	designation=data.data 
@@ -48,7 +48,17 @@ function  load(data,id){
 		// }
 
      
-  
+		// name: 11
+		// email: 11
+		// user: 11
+		// password: 11
+		// designation: ASSISTANT ENGINEER
+		// DIVISION: Software Testing Team
+		// role: USER_READ
+		// employee_id: 01750841137
+		// jwt:
+
+		// (name, email, phone, employee_id, designation, DIVISION
 
 
 function postUser(){		
@@ -57,9 +67,9 @@ function postUser(){
 				
 			obj[v.name] =v.value;            
 			});
-            
+      
             get('i_users.php',obj, function(data){
-              //  location.replace("user_list.php")
+                location.replace("user_list.php")
             })
 		
 }
