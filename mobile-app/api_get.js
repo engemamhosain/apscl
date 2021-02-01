@@ -27,7 +27,11 @@ function get(url,data,fn){
         type: "POST",
         url: base_url+url,
         data: data,
-        success: fn
+        success: fn,
+        error: function (error) {
+            // localStorage.clear();
+            // location.href="../../";
+        }
     });
 
     return fn;

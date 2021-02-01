@@ -64,3 +64,7 @@ function get(url,data,fn){
 
     return fn;
 }
+
+get("go_notification_count.php",{},function(data){
+
+})

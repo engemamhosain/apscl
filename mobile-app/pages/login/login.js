@@ -27,7 +27,7 @@ function athenticate(email,password){
                     localStorage.profile_picture=data.profile_picture;
                     localStorage.isLogin="true"
                     setTimeout(() => {
-                     location.href="../dashboard/mobile_dashboard.html"
+                  //   location.href="../dashboard/mobile_dashboard.html"
                     }, 1000);
             
          

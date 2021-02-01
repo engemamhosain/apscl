@@ -2,6 +2,7 @@
  //get("maintenance_report.php",{page_row_count:100,page_offset:0},function (result){
 // get("my_maintenance_report.php",{page_row_count:100,page_offset:0},function (result){
   var test;
+  var rating=5;
   function load(url){
     get(url,{page_row_count:100,page_offset:0},function (result){
       try {
@@ -65,3 +66,73 @@ function approve(){
     window.history.back();
   })
 }
+
+$('#rating').jsRapStar({
+  step: false,
+  value: 5,
+  length: 5,
+  starHeight: 20,
+  colorFront: '#0f0',
+  onClick: function (score) {
+      rating = score
+  },
+  onMousemove: function (score) {
+      $(this).attr('title', 'Rate ' + score);
+  }
+});
+
+
+function review(){
+  get("i_comment.php",{"page_id":location.hash,rating:rating,comment:$("#comment").val()}, function(data){ 
+      location.reload()
+  });
+}
+
+
+
+
+function loadApprove(){
+
+
+
+
+  get('gm_comment.php',{"page_id":location.hash}, function(data){
+  
+      try {
+  
+          data.data.forEach((element,index) => {
+              console.log(index)
+            
+           $(".list").append(`  
+           <ul class="collection">
+         
+  
+           <li class="collection-item avatar">
+             <i class="material-icons circle green">comment</i>
+             <span class="title">${element.created_by_name}</span>
+             <p>
+             ${element.comment}
+             </p>
+             <a href="#!" class="secondary-content"><div class="${index}"></div></a>
+           </li>
+         
+         </ul>
+               
+         `);
+  
+         $('.'+index).jsRapStar({
+             enabled:false,
+             value: element.rating,
+        length: 5,
+        starHeight: 15
+      });
+              
+          });
+       } catch (error) {
+           console.log(error)
+       }
+  
+  });
+
+} 
+loadApprove()
