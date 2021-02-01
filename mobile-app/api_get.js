@@ -29,8 +29,8 @@ function get(url,data,fn){
         data: data,
         success: fn,
         error: function (error) {
-            // localStorage.clear();
-            // location.href="../../";
+            localStorage.clear();
+            location.href="../../";
         }
     });
 
@@ -40,11 +40,11 @@ function get(url,data,fn){
 
 
 function get_user(fn){
-data.jwt = localStorage.jwt;
+//data.jwt = localStorage.jwt;
     $.ajax({
         type: "POST",
         url: user_url,
-        data: {},
+        data: {jwt: localStorage.jwt},
         success: fn
     });
 
