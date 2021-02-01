@@ -181,8 +181,24 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
+
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.12.0/underscore-min.js"></script>
+
+
+
+<div class="col s12">
+	<div class="row">
+		<div class="input-field col s12">
+		<i class="material-icons">search</i>
+		<input type="text" id="autocomplete-input" class="autocomplete1" onkeyup="searchUser(this)">
+		<label for="autocomplete-input"></label>
+		</div>
+	</div>
+</div>
+
+
 <div class="row">
-	<div class="col-lg-12">
+	<!-- <div class="col-lg-12">
 	<div class="row">
         <div class="input-field col12">
           <i class="material-icons prefix">search</i>
@@ -190,7 +206,7 @@
           <label for="search">Search</label>
         </div>
       </div>
-   
+    -->
 		     
 		<div class="main-box clearfix">
 			<div class="table-responsive">
