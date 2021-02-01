@@ -11,11 +11,15 @@
 
         var fd = new FormData();
         var files = $('#media')[0].files[0];
+        console.log($('#media')[0].files[0])
+
         fd.append('file',files);
         fd.append('name',localStorage.user);
+        fd.append('jwt',localStorage.jwt);
+
         image_post("upload_file.php",fd,function(data){
            
-            var image=`<img src="${data.file_uploader}" style="width:100%;height:120px;"/>`;
+            var image=`<img src="${data.file_uploader}" style="max-width:100%;max-height:120px;"/>`;
            get("new_chat_details.php",{group_id:location.hash.split("/")[1],message:image},function(data){
             try {
 

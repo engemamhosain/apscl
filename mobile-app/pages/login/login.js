@@ -3,6 +3,9 @@ function athenticate(email,password){
 
 
     get("login.php",{email:email,password:password},function (result){
+
+
+        console.log('login info',result);
         try {
 
 
@@ -27,7 +30,7 @@ function athenticate(email,password){
                     localStorage.profile_picture=data.profile_picture;
                     localStorage.isLogin="true"
                     setTimeout(() => {
-                  //   location.href="../dashboard/mobile_dashboard.html"
+                     location.href="../dashboard/mobile_dashboard.html"
                     }, 1000);
             
          
