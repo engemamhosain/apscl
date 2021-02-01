@@ -176,7 +176,7 @@
 .table-stats .table-line-plus .status-social-icon {
 	color: #a75d54;
 }
-
+                                    
 </style>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -186,29 +186,28 @@
 
 
 
-<div class="col s12">
-	<div class="row">
-		<div class="input-field col s12">
-		<i class="material-icons">search</i>
-		<input type="text" id="autocomplete-input" class="autocomplete1" onkeyup="searchUser(this)">
-		<label for="autocomplete-input"></label>
+	<div class="col s12">
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="fas fa-search fa-lg"></i>
+			<input type="text" id="autocomplete-input" class="autocomplete1">
+			<label for="autocomplete-input"></label>
+			</div>
 		</div>
 	</div>
-</div>
 
 
 <div class="row">
-	<!-- <div class="col-lg-12">
+	<div class="col-lg-12">
 	<div class="row">
         <div class="input-field col12">
-          <i class="material-icons prefix">person_search</i>
+          <i class="material-icons prefix">search</i>
            <input type="text" id="search" value="">
-          <label for="search">Person Search</label>
+          <label for="search">Search</label>
         </div>
       </div>
-    -->
-
-
+   
+		     
 		<div class="main-box clearfix">
 			<div class="table-responsive">
 				<table class="table user-list">
@@ -223,12 +222,12 @@
 						</tr>
 					</thead>
 					<tbody class="list">
-
-
+				
+					
 					</tbody>
 				</table>
 			</div>
-
+		
 		</div>
 	</div>
 </div>
