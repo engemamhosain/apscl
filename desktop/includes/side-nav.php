@@ -55,8 +55,10 @@
                 </ul>
               </div>
             </li>
+
             <li><a href="../profile/profile.php" class="waves-effect waves-blue logoff" >My Profile <i class="material-icons right">person</i></a></li>
              <li><a href="" class="waves-effect waves-blue logoff" onclick="logOut()" >Logout <i class="material-icons right">logout</i></a></li>
+
           </ul>
         </li>
         <?php include '../includes/include_js.php';?>

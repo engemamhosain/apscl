@@ -1,9 +1,54 @@
 
-get('gm_users.php',{}, function(data){
 
+function getUser(){
+
+    get('gm_users.php',{}, function(data){
+
+        loadView(data.data);
+    
+    });
+}
+
+getUser();
+
+
+var meta_data,search_data;
+get("all_user_list.php",{},function (data){
+    meta_data=data.meta_data;
+
+    // $('input.autocomplete1').autocomplete({
+    //     data: data.data,
+    //     onAutocomplete:select,
+    //   });
+
+})
+
+function select(select){
+  //  getResult(select);
+  //  search_data= _.where(meta_data, {name_deisgnation:select});
+  //  location.href="update_user.php#"+search_data[0].employee_id;
+}
+
+function searchUser(data){
+
+getResult(data.value);
+}
+
+function getResult(valueStartsWith){
+    if(valueStartsWith ==""){
+        getUser()
+        return; 
+    }
+    search_data =  _.filter(meta_data, function(d){ return d["name"].startsWith(valueStartsWith); })
+
+    loadView(search_data);
+
+}
+
+function loadView(data){
     try {
-
-        data.data.forEach(element => {
+        $(".list").html("");
+        data.forEach(element => {
           
          $(".list").append(`  
 
@@ -11,7 +56,7 @@ get('gm_users.php',{}, function(data){
          <tr class="childSelector">
          <td> 
              <img src="https://bootdey.com/img/Content/avatar/avatar1.png"  alt="">
-             <a href="#" class="user-link">${element.name}</a>
+             <a href="update_user.php#${element.employee_id}" class="user-link">${element.name}</a>
              <span class="user-subhead">${element.DIVISION}</span>
          </td>
          <td class="text-center">
@@ -36,8 +81,5 @@ get('gm_users.php',{}, function(data){
        `);
             
         });
-     } catch (error) {
-         console.log(error)
-     }
-
-});
+     } catch (error) {}
+}
