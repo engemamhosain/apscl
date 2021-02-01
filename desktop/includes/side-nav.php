@@ -6,16 +6,16 @@
                     <img src="../asset/img/apscl-logo.jpg">
                 </div>
 
-                  <a href="#user">
+                  <a href="../profile/profile.php">
                     <img class="circle" src="../asset/img/employee.png" id="profile_pic_side_bar" >
                   </a>
-                  <a href="#name">
+                  <a href="../profile/profile.php">
                     <span class="white-text name username"></span><span></span>
                   </a>
-                  <a href="#email" style="float:left">
+                  <a href="../profile/profile.php" style="float:left">
                     <span class="white-text email userid"></span>
                   </a>
-                  <a href="../profile/profile.php" class="white-text name"><i class="material-icons chevron">edit</i></a>
+
 
             </div></li>
         <li class="no-padding">
@@ -55,14 +55,17 @@
                 </ul>
               </div>
             </li>
-             <li><a  class="waves-effect waves-blue logoff" onclick="logOut()" >Logout <i class="material-icons right">logout</i></a></li>
+
+            <li><a href="../profile/profile.php" class="waves-effect waves-blue logoff" >My Profile <i class="material-icons right">person</i></a></li>
+             <li><a href="" class="waves-effect waves-blue logoff" onclick="logOut()" >Logout <i class="material-icons right">logout</i></a></li>
+
           </ul>
         </li>
         <?php include '../includes/include_js.php';?>
 
 <script type="text/javascript">
 
-  $(".username").html(localStorage.name+" ( "+localStorage.role+" )");  
+  $(".username").html(localStorage.name+" ( "+localStorage.role+" )");
 
 
 
