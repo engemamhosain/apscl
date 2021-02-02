@@ -77,7 +77,7 @@ function get(url,data,fn){
         data: data,
         success: fn,
         error: function (error) {
-            reLogin();
+          reLogin();
          
         }
     });
@@ -94,11 +94,13 @@ function reLogin(){
             data: {jwt: localStorage.jwt},
             success: function(data){
                 localStorage.jwt = data.user_data.jwt
-                location.reload();
+               // location.reload();
             },
             error: function (error) {
-                localStorage.clear();
-                location.href="../../";
+
+               // localStorage.clear();
+              //  location.href="../../";
+
             }
         });
     
@@ -108,5 +110,5 @@ function reLogin(){
 if( localStorage.isLogin == "true"){
     get("go_notification_count.php",{},function(data){
         $(".new-badge").html(data.count)
-        })
+    })
 }

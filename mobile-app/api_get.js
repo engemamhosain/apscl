@@ -61,11 +61,11 @@ function reLogin(){
             data: {jwt: localStorage.jwt},
             success: function(data){
                 localStorage.jwt = data.user_data.jwt
-                location.reload();
+             //   location.reload();
             },
             error: function (error) {
-                localStorage.clear();
-                location.href="../../";
+               // localStorage.clear();
+              //  location.href="../../";
             }
         });
  
