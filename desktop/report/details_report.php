@@ -99,7 +99,7 @@
 						<br>
 
 						<div>
-							"<%= referance_manual %>"
+							<%= referance_manual %>
 						</div>
 
 						<span style="font-weight:bold;">
