@@ -29,8 +29,7 @@ function get(url,data,fn){
         data: data,
         success: fn,
         error: function (error) {
-            localStorage.clear();
-            location.href="../../";
+            reLogin();
         }
     });
 
@@ -45,12 +44,33 @@ function get_user(fn){
         type: "POST",
         url: user_url,
         data: {jwt: localStorage.jwt},
-        success: fn
+        success: fn,
+        error: function (error) {
+            reLogin();
+        }
     });
 
     return fn;
 }
 
+function reLogin(){
+    //data.jwt = localStorage.jwt;
+        $.ajax({
+            type: "POST",
+            url: user_url+"login_with_jwt.php",
+            data: {jwt: localStorage.jwt},
+            success: function(data){
+                localStorage.jwt = data.user_data.jwt
+                location.reload();
+            },
+            error: function (error) {
+                localStorage.clear();
+                location.href="../../";
+            }
+        });
+ 
+    }
+    
 
 function search(data,fn){
 data.jwt = localStorage.jwt;

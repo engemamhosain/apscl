@@ -77,10 +77,7 @@ function get(url,data,fn){
         data: data,
         success: fn,
         error: function (error) {
-            if(localStorage.isLogin == "true"){
-                localStorage.clear();
-                location.href=location.origin+"/apscl-fahad/desktop/login/login.php"
-            }
+            reLogin();
          
         }
     });
@@ -88,6 +85,28 @@ function get(url,data,fn){
     return fn;
 }
 
-get("go_notification_count.php",{},function(data){
-$(".new-badge").html(data.count)
-})
+
+function reLogin(){
+
+        $.ajax({
+            type: "POST",
+            url: tg.config.k20api+"/desktop/"+"login_with_jwt.php",
+            data: {jwt: localStorage.jwt},
+            success: function(data){
+                localStorage.jwt = data.user_data.jwt
+                location.reload();
+            },
+            error: function (error) {
+                localStorage.clear();
+                location.href="../../";
+            }
+        });
+    
+     
+}
+    
+if( localStorage.isLogin == "true"){
+    get("go_notification_count.php",{},function(data){
+        $(".new-badge").html(data.count)
+        })
+}
