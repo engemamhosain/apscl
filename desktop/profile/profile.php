@@ -70,44 +70,51 @@ include '../includes/header-new.php';
 	 <script src="../asset/js/app/pages/add_user.js"></script>
 	 <script type="text/javascript">
 
-    $("#e_name").html(localStorage.name);
-    if(localStorage.profile_picture){
-      $("#e_photo").attr('src', localStorage.profile_picture+"?"+new Date(getTime()));
+    function populate_data(){
+
+      $("#e_name").html(localStorage.name);
+      if(localStorage.profile_picture){
+        $("#e_photo").attr('src', localStorage.profile_picture+"?"+new Date(getTime()));
+      }
+      $("#e_designation").html('Designation '+localStorage.designation);
+      var bio = 'Role :  '+localStorage.role +' <br/>';
+      bio += 'Employee id:  '+localStorage.employee_id +' <br/>';
+      // bio += 'Employee id:  '+localStorage.employee_id +' <br/>';
+      $("#e_bio").html(bio);
+
     }
-    $("#e_designation").html('Designation '+localStorage.designation);
-    var bio = 'Role :  '+localStorage.role +' <br/>';
-    bio += 'Employee id:  '+localStorage.employee_id +' <br/>';
-    // bio += 'Employee id:  '+localStorage.employee_id +' <br/>';
-    $("#e_bio").html(bio);
 
-
-
+    populate_data();
 
   $("#e_photo").click(function(e) {
       $("#imageUpload").click();
   });
-  
+
   function fasterPreview( uploader ) {
       if ( uploader.files && uploader.files[0] ){
             $('#e_photo').attr('src',window.URL.createObjectURL(uploader.files[0]));
-  
+
           var fd = new FormData();
           fd.append('file',uploader.files[0]);
           fd.append('name',localStorage.name);
           fd.append('jwt',localStorage.jwt);
-          image_post("upload_file.php",fd,function(data){ 
-            localStorage.profile_picture=data.file_uploader
-            get("u_users_profile_picture.php",{profile_picture:data.file_uploader,id:localStorage.id},function(data){ });
-            location.reload()
+          image_post("upload_file.php",fd,function(data){
+            localStorage.profile_picture = data.file_uploader;
+            get("u_users_profile_picture.php",{profile_picture:data.file_uploader,id:localStorage.id},function(data){
+
+                populate_data();
+              });
+
+            // location.reload()
           });
-      
+
       }
   }
-  
+
   $("#imageUpload").change(function(){
       fasterPreview( this );
   });
-  
+
 	 </script>
 
 
