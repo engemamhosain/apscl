@@ -45,9 +45,10 @@ include '../includes/header-new.php';
 
       <div class="card">
         <div class="card-content">
-        <input id="imageUpload" type="file"  name="profile_photo" placeholder="Photo" required="" capture>
+        <input id="imageUpload" type="file"  name="profile_photo" placeholder="Photo" required="" capture />
 
         <img id="e_photo" src="employee.png" alt="Profile Photo" style="width:100%" />
+        <small style="font-size: .9em;">Clicking on the above image to change your profile picture. </small>
         </div>
 
       </div>
@@ -74,8 +75,6 @@ include '../includes/header-new.php';
 
       $("#e_name").html(localStorage.name);
       if(localStorage.profile_picture){
-
-        $("#profile_pic_side_bar").attr('src', localStorage.profile_picture+"?"+new Date(getTime()));
         $("#e_photo").attr('src', localStorage.profile_picture+"?"+new Date(getTime()));
       }
       $("#e_designation").html('Designation '+localStorage.designation);
