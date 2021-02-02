@@ -37,7 +37,7 @@
       
 	
 		<button id="add_report" class="waves-effect waves-light btn">
-		 			<i class="material-icons left">save</i>Create 
+		 			<i class="material-icons left">save</i>Save 
 		</button>
 
 	</div>

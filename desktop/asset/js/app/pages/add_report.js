@@ -5,7 +5,9 @@
   tml_textinput = _.template($("#tmp_input").html());
   
     var fields= [
-    {option:"plant_id",value:"Plant id"},{option:"plant_name",value:"Plant name"},{option:"equipment_name",value:"Equipment name"},{option:"department",value:"Department"},{option:"kks_no",value:"KKS no"},    
+   // {option:"plant_id",value:"Plant id"},{option:"plant_name",value:"Plant name"},{option:"equipment_name",value:"Equipment name"},{option:"department",value:"Department"},{option:"kks_no",value:"KKS no"},    
+    {option:"plant_id",value:"Plant id"},{option:"equipment_name",value:"Equipment name"},{option:"department",value:"Department"},{option:"kks_no",value:"KKS no"},    
+   
     {option:"name_of_trouble",value:"Name of trouble"},{option:"trouble_analysis",value:"Trouble analysis"},
     {option:"description_of_work",value:"Description of work"},{option:"root_cause_analysis",
     value:"Root cause analysis"},{option:"trouble_description",value:"Trouble description"},{option:"used_tools_list",value:"Used tools list"},
@@ -16,7 +18,23 @@
 
      var push_html = '', editor_id_list = [];
     _.each(fields, function(item, key, arr){
-        if(key>=0 && key<=6){
+        if(key==0){
+
+            push_html +=  `	<div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                    <i class="material-icons prefix">search</i>
+                    <input type="text" id="autocomplete-input" class="autocomplete1">
+                    <label for="autocomplete-input">Search Plant</label>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+
+
+        }
+        else if(key>0 && key<=5){
 
             push_html += tml_textinput({key:item.option, label:item.value, value: ""});  
         }else{
@@ -122,8 +140,8 @@ $('#add_report').click(function(){
         obj.report_creator = localStorage.name
         obj.approved = 0
 
-        // obj.approved_by_uid = search_data[0].id
-        // obj.approved_by_name = search_data[0].name
+        obj.plant_id = search_data[0].id
+        obj.plant_name = search_data[0].name
         obj.approved_by_uid =0
         obj.approved_by_name = ""
         obj.performed_date = $(".datepicker").val()
@@ -144,6 +162,28 @@ $('#add_report').click(function(){
 $(document).ready(function(){
     $('.datepicker').datepicker({format: 'yyyy-mm-dd'});
   });
+
+
+  
+
+
+
+var meta_data=[],search_data=[];
+get('plants.php',{}, function(data){
+    meta_data=data.meta_data;
+    $('input.autocomplete1').autocomplete({
+        data: data.data,
+        onAutocomplete:select,
+      });
+
+
+});
+
+  
+function select(select){
+    search_data= _.where(meta_data, {name:select});
+}
+
 
 
   

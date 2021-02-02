@@ -1,18 +1,20 @@
 
-get('waiting_for_approval_maintenance_report.php',{}, function(data){
+//get('waiting_for_approval_maintenance_report.php',{}, function(data){
+get('my_maintenance_report.php',{}, function(data){
 
 
     try {
 
       
     var fields= [
-        {option:"plant_id",value:"Plant id"},{option:"plant_name",value:"Plant name"},{option:"equipment_name",value:"Equipment name"},{option:"department",value:"Department"},{option:"kks_no",value:"KKS no"},    
+      //  {option:"plant_id",value:"Plant id"},{option:"plant_name",value:"Plant name"},{option:"equipment_name",value:"Equipment name"},{option:"department",value:"Department"},{option:"kks_no",value:"KKS no"},    
+        {option:"plant_name",value:"Plant name"},{option:"equipment_name",value:"Equipment name"},{option:"department",value:"Department"},{option:"kks_no",value:"KKS no"},    
         {option:"name_of_trouble",value:"Name of trouble"},{option:"trouble_analysis",value:"Trouble analysis"},
         {option:"description_of_work",value:"Description of work"},{option:"root_cause_analysis",
         value:"Root cause analysis"},{option:"trouble_description",value:"Trouble description"},{option:"used_tools_list",value:"Used tools list"},
         {option:"list_of_personel",value:"List of personel"},{option:"referance_manual",value:"Referance manual"},{option:"report_creator",value:"Report creator"}
        
-    ]
+    ]   
         tg.db["report"] = data;
         tg.db["report"].fields = fields
 
@@ -38,7 +40,7 @@ get('waiting_for_approval_maintenance_report.php',{}, function(data){
   var tml_textarea = _.template($("#tmp_textarea").html()), 
   tml_textinput = _.template($("#tmp_input").html());
 
-var performed_date;
+var performed_date,plant_id;
 function report_edit_init_view(edit_data){
 
     performed_date = edit_data.performed_date;
@@ -47,7 +49,7 @@ function report_edit_init_view(edit_data){
      var push_html = '', editor_id_list = [];
     _.each(tg.db['report'].fields, function(item, key, arr){
 
-        if(key==0){
+        if(key>=0 && key<=5){
 
             push_html += tml_textinput({key:item.option, label:item.value, value: edit_data[item.option]});  
         }else{
@@ -141,9 +143,8 @@ $('#update_report').click(function(){
     }
 
   
-   
-    
     obj.performed_date = performed_date
+    obj.plant_id = plant_id
     get('u_maintenance_report.php',obj, function(data){
         location.replace("my_report.php")
     });

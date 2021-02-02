@@ -9,7 +9,12 @@ get('waiting_for_approval_maintenance_report.php	',{}, function(data){
         html_to_push  += tx(item);
     });         
  
-     $("#list_push").html(html_to_push);
+    if(data.data.length==0){
+
+      $("#list_push").html("<h2>Sorry, No reports has been found in this list.</h2>");
+    }else{
+      $("#list_push").html(html_to_push);
+    }
    } catch (error) {
        console.log(error)
    }
