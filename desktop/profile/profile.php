@@ -74,6 +74,8 @@ include '../includes/header-new.php';
 
       $("#e_name").html(localStorage.name);
       if(localStorage.profile_picture){
+
+        $("#profile_pic_side_bar").attr('src', localStorage.profile_picture+"?"+new Date(getTime()));
         $("#e_photo").attr('src', localStorage.profile_picture+"?"+new Date(getTime()));
       }
       $("#e_designation").html('Designation '+localStorage.designation);

@@ -40,11 +40,13 @@
         }
     },
     uploader: {
-        url: tg.config.k20api + '/file/jedit_upload_file.php',
+        url: tg.config.k20api + '/file/jedit_upload_file.php?jwt='+localStorage.jwt,
+        data:{jwt:localStorage.jwt},
         format: 'json',
         pathVariableName: 'path',
         filesVariableName: 'file',
-        prepareData: function (data) {                    
+
+        prepareData: function (data) {                 
             return data;
         },
         isSuccess: function (resp) {
@@ -58,10 +60,11 @@
            return !resp.error;
         },
         getMsg: function (resp) {
-            return resp.msg.join !== undefined ? resp.msg.join(' ') : resp.msg;
+            return resp.msg.join !== undefined ? resp.msg.join('') : resp.msg;
         },
         process: function (resp) {  
-               
+            
+               console.log(resp)
             return {
                 files: resp[this.options.filesVariableName] || [],
                 path: resp.assets.path,
