@@ -46,16 +46,16 @@ var user;
               
                
                <label for="mail">Email:</label>
-               <input type="email" id="mail" name="email" class="user">
+               <input type="email" id="mail" name="email" class="user" value="` + user.email +`" />
 
                <label for="phone">Phone:</label>
-               <input type="number" id="phone" name="user" class="user">
+               <input type="number" id="phone" name="phone" class="user" value="` + user.phone +`" >
 
                <label for="status">Account Status:</label>
                <select name="account_active" id="status" class="user"></select>
                </fieldset>
                
-     
+             
              <label for="Role">Role:</label>
              <select name="role" id="Role" class="user"></select>
              </fieldset>
@@ -73,7 +73,7 @@ var user;
 // var department = ["Mechanical Maintenance", "Electrical Maintenance", "Instrument and Control", "Operation (Shift)","Operation (General)"];
 // var designation = ["Assistant Engineer","Sub-Assistant Engineer", "Exicutive Engineer"];
          var status = ["yes","no"];
-         var status_val = ["Active","Not Active"];
+         var status_val = ["yes","no"];
 		 var role = ['USER_READ', 'USER_WRITE', 'GROUP', 'ADMIN'];  
 	 	 
   		// for (var i = 0; i < designation.length; i++)
@@ -92,7 +92,7 @@ var user;
 		     {
 		        value: status[i],
 		        text : status_val[i]
-		    }));
+		    })).val(user.account_active);
 		}
 
 
@@ -102,7 +102,7 @@ var user;
 		     {
 		        value: role[i],
 		        text : role[i]
-		    }));
+		    })).val(user.role);
 		}
 
 
@@ -122,6 +122,7 @@ var user;
 		// 	})
 
 		// }
+          
 
          } catch (error) {
              console.log(error)
@@ -129,19 +130,20 @@ var user;
     
     });
 
-
+// email, phone, role, account_active, id
 
 function postUser(){		
 			var obj = {};
 			$('.user').each(function(i, v){
-				
-			obj[v.name] =v.value;            
+			    obj[v.name] =v.value;            
 			});
-			obj.active ="active";
+			// obj.active ="active";
 			obj.id =user.id;
+            obj.jwt = localStorage.jwt; 
             
+            console.log('check before go: ',obj);
             get('u_users.php',obj, function(data){
-              //  location.replace("user_list.php")
-            })
+                location.reload();
+            });
 		
 }
