@@ -9,7 +9,7 @@ get('gm_maintenance_report.php	',{}, function(data){
  
     if(data.data.length==0){
 
-      $("#list_push").html("<h2>Sorry, No reports has been found in this list.</h2>");
+      $("#list_push").html("<h4>Sorry, No reports has been found in this list.</h4>");
     }else{
       $("#list_push").html(html_to_push);
     }
