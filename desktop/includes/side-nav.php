@@ -73,7 +73,7 @@
   if(localStorage.role=="ADMIN"){
       $(".unpublish").show();
   }
-  if(localStorage.profile_picture){
+  if(localStorage.profile_picture !=='null'){
     $('#profile_pic_side_bar').attr('src', localStorage.profile_picture);
   }
 
