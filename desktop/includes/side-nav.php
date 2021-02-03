@@ -80,7 +80,7 @@
 
   function logOut() {
     localStorage.clear();
-    location.href=location.origin+"/apscl-fahad/desktop/login/login.php"
+    location.href=tg.config.home_url +"login/login.php";
 
   }
 </script>
