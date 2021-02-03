@@ -49,7 +49,7 @@ function report_edit_init_view(edit_data){
      var push_html = '', editor_id_list = [];
     _.each(tg.db['report'].fields, function(item, key, arr){
 
-        if(key>=0 && key<=5){
+        if(key>=0 && key<=4){
 
             push_html += tml_textinput({key:item.option, label:item.value, value: edit_data[item.option]});  
         }else{
