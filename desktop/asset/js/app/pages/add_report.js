@@ -20,7 +20,9 @@
     _.each(fields, function(item, key, arr){
         if(key==0){
 
-            push_html +=  `	<div class="row">
+            push_html +=  `	
+            <div class="card-panel">
+            <div class="row">
             <div class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
@@ -30,11 +32,12 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>`;
 
 
         }
-        else if(key>0 && key<=5){
+        else if(key>0 && key<=4){
 
             push_html += tml_textinput({key:item.option, label:item.value, value: ""});  
         }else{
