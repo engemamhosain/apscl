@@ -22,7 +22,7 @@
 </style>
  <script>
 	 function home() {
-		location.href=tg.config.home_url+"dashboard/dashboard.php";
+		location.href="<?php echo APP_BASE_URL; ?>dashboard/dashboard.php";
 	 }
 
  </script>
