@@ -25,6 +25,6 @@
 </style>
 <div style="position: fixed;right:16px;bottom: 0px;height: 100px;width: 100px;">
 	<a class="btn-floating right btn-large waves-effect waves-light green" href="group_chat.php"><i class="material-icons">message</i></a>
-	  <!-- <iframe src="group_chat/chat.php" class="group_wrapper_frame"></iframe> -->
-	
+	  <!-- <iframe src="<?php echo APP_BASE_URL; ?>group_chat/chat.php" class="group_wrapper_frame"></iframe> -->
+
 </div>

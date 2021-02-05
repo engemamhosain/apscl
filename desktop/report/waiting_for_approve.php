@@ -2,6 +2,17 @@
 <?php include '../includes/header-new.php';?>
 <main>
 <div class="container">
+	<style>
+	.page-title{
+
+    margin-top: 15px;
+    text-align: center;
+
+	}
+</style>
+<h1 class="page-title">Report list Waiting for Approval  </h1>
+
+
 <div class="scrollspy">
 	<div class="input-field col12">
           <i class="material-icons prefix">search</i>
@@ -26,18 +37,18 @@
 	    </div>
 	</script>
 
-	
+
 	<div id="edit_item_push" class="collection container_main hide">
 
 		<div id="edit_item_all_the_fields">
 
 		</div>
-	
+
 	</div>
 
 
 	<div id="list_push" class="collection container_main"></div>
-	<div id="editor"></div>	 
+	<div id="editor"></div>
 	<div id="details_push" class="collection container_main"></div>
 </div>
 </div>

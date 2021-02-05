@@ -176,7 +176,12 @@
 .table-stats .table-line-plus .status-social-icon {
 	color: #a75d54;
 }
+.page-title{
 
+    margin-top: 15px;
+    text-align: center;
+
+	}
 </style>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -198,6 +203,7 @@
 
 
 <div class="row1" style="width:80%;margin-left:10%;">
+	<h1 class="page-title">Team Management</h1>
 	<div class="col-lg-12">
 	<div class="row">
         <div class="input-field col12">

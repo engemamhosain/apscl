@@ -3,7 +3,15 @@
 
 <link rel="stylesheet" href="rating/jsRapStar.css" />
 	<link rel="stylesheet" href="rating/rating.css" />
-	
+<style>
+	.page-title{
+
+    margin-top: 15px;
+    text-align: center;
+
+	}
+</style>
+<h1 class="page-title">Equipment Maintenace Report </h1>
 
 <main>
 <div class="container">
@@ -129,7 +137,7 @@
 
 						<div>
 							<%= new Date(parseInt(updated_on)) %>
-								
+
 						</div> -->
 
 						<br><br></div>
@@ -141,26 +149,26 @@
 
 
 
-			
+
 				<div id="details_push" class="container_main"></div>
 				<a class="waves-effect waves-light btn approve" onclick= "approve()">Approved</a>
 			</div>
 
 
-			
-		
+
+
 			<div class="list"></div>
-			
+
 			<div class="card-panel review" style="display:none;">
 				Rating:<div id="rating"></div>
-				<b>Review</b>	
+				<b>Review</b>
 				<textarea id="comment"  required></textarea>
 				<a class="waves-effect waves-light btn review" onclick= "review()">Review</a>
 	   		</div>
 
-	</div>		
+	</div>
 </div>
-		
+
 
 </div>
 
@@ -169,5 +177,5 @@
 
   <?php include '../includes/footer-new.php';?>
   <script src="rating/jsRapStar.js"></script>
-  <script src="../asset/js/app/pages/details_report.js"></script>	
+  <script src="../asset/js/app/pages/details_report.js"></script>
 
