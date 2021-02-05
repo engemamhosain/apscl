@@ -82,7 +82,7 @@
 
   function logOut() {
     localStorage.clear();
-    location.href=tg.config.home_url +"login/login.php";
+    location.href="<?php echo APP_BASE_URL; ?>login/login.php";
 
   }
 </script>

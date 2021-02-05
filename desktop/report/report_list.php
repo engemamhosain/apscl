@@ -1,4 +1,3 @@
-
 <?php include '../includes/header-new.php';?>
 <main>
 <div class="container">
@@ -152,7 +151,7 @@
 
 		 	<div>
 		 		<%= new Date(parseInt(entries.approved_date)) %>
-		 			
+
 	      	</div>
 
 	      	<br><br>
@@ -181,7 +180,7 @@
 		<button id="save_report" class="waves-effect waves-light btn"><i class="material-icons left">save</i>Save </button>
 	</div>
 	<div id="list_push" class="collection container_main"></div>
-	<div id="editor"></div>	 
+	<div id="editor"></div>
 	<div id="details_push" class="collection container_main"></div>
 	<a class="btn-floating left btn-large waves-effect waves-light red" href="#report/add"><i class="material-icons">add</i></a>
 </div>
