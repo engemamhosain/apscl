@@ -11,6 +11,8 @@ if(localStorage.profile_picture!=null && localStorage.profile_picture!="null"){
   $('.profileImage').attr('src',localStorage.profile_picture+"?"+new Date().getTime());
 }
 function Logout(){
+
   localStorage.clear();
-  location.href="../../";
+  location.href="../../index.html";
+
 }
