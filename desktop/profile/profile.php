@@ -74,7 +74,7 @@ include '../includes/header-new.php';
     function populate_data(){
 
       $("#e_name").html(localStorage.name);
-      if(localStorage.profile_picture){
+      if(localStorage.profile_picture !== 'null'){
         $("#e_photo").attr('src', localStorage.profile_picture+"?"+new Date(getTime()));
       }
       $("#e_designation").html('Designation '+localStorage.designation);

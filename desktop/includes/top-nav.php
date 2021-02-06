@@ -8,7 +8,7 @@
 
 		      </span>
             <ul id="nav-mobile" class="right">
-              
+
               <li class="hide-on-med-and-down"><a href="#!" data-target="dropdown1" class="dropdown-trigger waves-effect waves-light"><i class="material-icons">email</i> <span class="new-badge">0</span></a> </li>
               <!-- <li><a href="#!" data-target="chat-dropdown" class="dropdown-trigger waves-effect"><i class="material-icons">settings</i></a></li> -->
             </ul><a href="#!" data-target="sidenav-left" class="sidenav-trigger left"><i class="material-icons black-text">menu</i></a>
@@ -22,7 +22,7 @@
 </style>
  <script>
 	 function home() {
-		location.href=location.origin+"/apscl-fahad/desktop/dashboard/dashboard.php"
+		location.href="<?php echo APP_BASE_URL; ?>dashboard/dashboard.php";
 	 }
-	
+
  </script>

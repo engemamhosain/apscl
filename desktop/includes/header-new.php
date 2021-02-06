@@ -1,3 +1,4 @@
+<?php include '../includes/config/config.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
 
   <div class="top-banner">
 	<div class="header_wrapper" align="left">
-	 
+
 	  <div class="app-name"> APSCL O&M<br> Knowledge Base </div>
 	   <img src="../asset/img/logo.png"  class="app-logo" />
 	  <div style="position: absolute;right: 0px;top: 0px;">
@@ -39,9 +40,9 @@
 	  background: url(../asset/img/banner.jpg) no-repeat center 30% /cover;
 	  width: 100%;
 	  position: relative;
-	  
+
 	  height: 201px;
-	 
+
 	}
 
 .header_wrapper:after{ content: ''; position: absolute; height: 100%; width: 100%; left:0; top: 0; background: rgba(255, 255, 255,.6); z-index: 0}
@@ -51,7 +52,7 @@
 	height: 150px;padding-left:  10px;margin-top: 25px; position: relative; z-index: 9
 }
 .app-name{
-	color: #222;font-size: 44px;font-weight: bold; text-align: center; position: relative; z-index: 9; line-height: 44px; text-shadow: 0 0 5px rgba(0,0,0,.2) 
+	color: #222;font-size: 44px;font-weight: bold; text-align: center; position: relative; z-index: 9; line-height: 44px; text-shadow: 0 0 5px rgba(0,0,0,.2)
 }
 .app-logo{
 	width:100px; position: absolute; z-index: 9; top: 40px; left: 20px

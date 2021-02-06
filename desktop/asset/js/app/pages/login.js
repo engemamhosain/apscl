@@ -19,7 +19,8 @@ function login(){
         localStorage.profile_picture = data.user_data.profile_picture;
         localStorage.uuid = data.user_data.uuid;
   
-        localStorage.isLogin = "true"
+        localStorage.isLogin = "true";
+        console.log('login',data);
          location.replace("../dashboard/dashboard.php");
     
   
