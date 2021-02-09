@@ -53,7 +53,7 @@ function get_user(fn){
     return fn;
 }
 
-function reLogin(){
+ function reLogin(){
     //data.jwt = localStorage.jwt;
         $.ajax({
             type: "POST",
@@ -67,9 +67,9 @@ function reLogin(){
                // localStorage.clear();
               //  location.href="../../";
             }
-        });
+ });
  
-    }
+}
     
 
 function search(data,fn){

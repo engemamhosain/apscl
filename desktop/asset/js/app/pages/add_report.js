@@ -149,7 +149,7 @@ $('#add_report').click(function(){
         obj.approved_by_name = ""
         obj.performed_date = $(".datepicker").val()
         get('i_maintenance_report.php',obj, function(data){
-            location.replace("my_report.php");
+          //  location.replace("my_report.php");
         });
         
     } catch (error) {

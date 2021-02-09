@@ -121,6 +121,57 @@
 						</div>
 
 
+						<span style="font-weight:bold;">
+						Department
+						</span>
+
+						<br>
+
+						<div>
+							<%=department %>
+						</div>
+
+						<span style="font-weight:bold;">
+						Equipment name
+						</span>
+
+						<br>
+
+						<div>
+							<%=equipment_name %>
+						</div>
+
+
+						<span style="font-weight:bold;">
+						KKS no
+						</span>
+
+						<br>
+
+						<div>
+							<%=kks_no %>
+						</div>
+
+
+						<span style="font-weight:bold;">
+						KKS no
+						</span>
+
+						<br>
+
+						<div>
+							<%=kks_no %>
+						</div>
+
+						<span style="font-weight:bold;">
+						Plant name
+						</span>
+
+						<br>
+
+						<div>
+							<%=plant_name %>
+						</div>
 						<!-- <span style="font-weight:bold;">
 						Approved by
 						</span>
@@ -178,4 +229,3 @@
   <?php include '../includes/footer-new.php';?>
   <script src="rating/jsRapStar.js"></script>
   <script src="../asset/js/app/pages/details_report.js"></script>
-

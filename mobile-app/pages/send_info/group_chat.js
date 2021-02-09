@@ -1,6 +1,7 @@
     var lastSaveId=0;
-      
- 	$(".title").html(decodeURIComponent(location.hash.split("/")[2]))
+    $(".user_img").attr("src",location.hash.split("--")[3]);
+    
+ 	$(".title").html(decodeURIComponent(location.hash.split("--")[2]))
 
 
      function chooseFile(){
@@ -8,7 +9,7 @@
      }
 
      $("#media").change(function() {
-
+        $(".loading").show();
         var fd = new FormData();
         var files = $('#media')[0].files[0];
         console.log($('#media')[0].files[0])
@@ -20,11 +21,10 @@
         image_post("upload_file.php",fd,function(data){
            
             var image=`<img src="${data.file_uploader}" style="max-width:100%;max-height:120px;"/>`;
-           get("new_chat_details.php",{group_id:location.hash.split("/")[1],message:image},function(data){
+           get("new_chat_details.php",{group_id:location.hash.split("--")[1],message:image},function(data){
             try {
-
-                getMessage(lastSaveId);
-             
+                $(".loading").hide()    ;
+                getMessage(lastSaveId); 
                                    
             } catch (error) {
                 
@@ -41,7 +41,7 @@
  
  var result=[];
    function sendMessage(){
-        get("new_chat_details.php",{group_id:location.hash.split("/")[1],message:$(".type_msg").val()},function(data){
+        get("new_chat_details.php",{group_id:location.hash.split("--")[1],message:$(".type_msg").val()},function(data){
                 
             try {
 
@@ -57,7 +57,7 @@
 
     
     function getMessage(id){
-        get("chat_details.php",{group_id:location.hash.split("/")[1],last_id:id},function(data){
+        get("chat_details.php",{group_id:location.hash.split("--")[1],last_id:id},function(data){
             try {
                 if(data.last_id!=null){
                     lastSaveId = data.last_id; 
@@ -173,11 +173,11 @@
 
      
    function goAddMember(){
-       location.href="add_member.html#/"+location.hash.split("/")[1];
+       location.href="add_member.html#/"+location.hash.split("--")[1];
    }
 
    function memberList(){
-    location.href="member_list.html#/"+location.hash.split("/")[1];
+    location.href="member_list.html#/"+location.hash.split("--")[1];
 }
 
    
