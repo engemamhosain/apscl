@@ -8,7 +8,7 @@ if(location.hash=="#my"){
        data.forEach(element => {
         $(".list").append(`
       
-          <li class="collection-item avatar" onclick="goApproveDetail('${element.id}','${element.approved}')">
+          <li class="collection-item avatar" onclick="goMyDetail('${element.id}','${element.approved}')">
           <i class="material-icons circle green">message</i>
           <span class="title">Report  ${element.name_of_trouble}</span>
           <p>${element.report_creator}</p>

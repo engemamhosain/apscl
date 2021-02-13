@@ -153,16 +153,7 @@
 						</div>
 
 
-						<span style="font-weight:bold;">
-						KKS no
-						</span>
-
-						<br>
-
-						<div>
-							<%=kks_no %>
-						</div>
-
+						
 						<span style="font-weight:bold;">
 						Plant name
 						</span>
