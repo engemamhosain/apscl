@@ -10,9 +10,9 @@ function init_production_config() {
 
 
 		
-		k20api: 'https://softlh.com/k20-beta/k20-backend/api',
+		//k20api: 'https://softlh.com/k20-beta/k20-backend/api',
 
-	//  k20api: 'https://softlh.com/k20-apscl/k20-backend/api',
+	    k20api: 'https://softlh.com/k20-apscl/k20-backend/api',
         home_url: 'https://softlh.com/k20-apscl/web/',
         logout_url:'https://softlh.com/k20-apscl/web/',
 	};
@@ -37,7 +37,7 @@ if(location.host === "softlh.com"){
 	init_production_config();
 }else{
 	 init_production_config();
-//	init_local_config();
+	// init_local_config();
 }
 
 
