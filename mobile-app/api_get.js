@@ -1,5 +1,5 @@
 
-var env="production"
+var env="beta"
 if(env=="production"){
     var base_url="https://softlh.com/k20-apscl/k20-backend/api/mobile/"
     var user_url="https://softlh.com/k20-apscl/k20-backend/api/desktop/all_user_list.php"
