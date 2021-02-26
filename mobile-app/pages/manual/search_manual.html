@@ -15,12 +15,12 @@
 
 <body class="app-color">
 
-  <div class="header secondary"><div class="logo-title">
+  <!-- <div class="header secondary"><div class="logo-title">
     <a onclick="window.history.back()"> <i  class="material-icons" style="font-size:33px; vertical-align: middle;">keyboard_backspace</i></a> Search Manual
-  </div>
+  </div> -->
 
 </div>
-
+<!-- 
 
 <nav>
   <div class="nav-wrapper">
@@ -32,16 +32,41 @@
       </div>
     </form>
   </div>
-</nav>
-<br>
+</nav> -->
+
+<br><br><br><br><br><br><br>
 <div class="container"> 
   <div class="row">
-   <div class="col s12 m7 list">
- 
-  </div>
-  
+   <div class="col s12 m7 list"></div>
 </div>
 
+  <div class="progress">
+    <div class="indeterminate"></div>
+  </div>
+    
+
+
+<nav style="position: fixed;top:0;left:0;background:linear-gradient( 180deg, rgba(221, 36, 36, 0.952) 0%, rgb(248, 60, 60) 100%); }" class="header1">
+  <a class="brand-logo left" onclick="window.history.back()"> <i  class="material-icons">keyboard_backspace</i></a>  
+  <div style="text-align: center;">Search Manual</div>
+
+
+
+
+  <nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+
+</nav>
   <script src="../../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
   <script src="../../asset/vendor/materialize/js/materialize.min.js"></script>
   <script src="../../api_get.js"></script>

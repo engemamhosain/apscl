@@ -1,24 +1,32 @@
-
+var page_offset=0;
 function getSearch(keyword,id){
 
-
-   search({keyword:keyword,plant_id:id},function (result){
+ 
+   search({keyword:keyword,plant_id:id,page_offset:page_offset},function (result){
     try {
+      $(".progress").hide();
        var data = result.data;
+       if(result.count==0){
+        return
+      }
+       page_offset+=result.row_count;
+    
+      
        data.forEach(element => {
         $(".list").append(`
         
-        <div class="card horizontal" onclick="goPdf('${element.file_url}',${element.page_no})">
+        <div class="card horizontal" onclick="goPdf('${element.file_url}',${1})">
         
           <div class="card-stacked">
             <div class="card-content">
 
               <br>
-
+              <b>Date:</b><br>
+              <div>${element.created_on}</div>
               <b>${element.title_of_document}</b><br>
-              <b>Page no:${element.page_no}</b><br>
-              <b>Search Line</b>
-              <div>${element.page_text}</div>
+              <b>Id:${element.id}</b><br>
+              <b>Volumn no:</b>
+              <div>${element.volumn_no}</div>
             </div>
 
             <div class="card-action">
@@ -43,8 +51,8 @@ function getSearch(keyword,id){
 
 function load_default(){
 
-  get("gm_device_manual.php",{},function(data){
-
+  get("gm_device_manual.php",{page_offset:1000},function(data){
+    $(".progress").hide();
 
 
     try {
@@ -56,14 +64,13 @@ function load_default(){
          <div class="card-stacked">
            <div class="card-content">
 
-             <br><b>Volumn No:</b>
+            <b>Date:</b><br>
+            <div>${element.created_on}</div>
+             <b>Volumn No:</b>
              <div>${element.volumn_no}</div>
 
              <b>Plant Name:</b>
              <div>${element.plant_name}</div>
-
-             Equipment Name:</b>
-             <div>${element.equipment_name}</div>
 
              <p>${element.title_of_document}</p>
            </div>
@@ -114,8 +121,22 @@ function goPdf(pdf,page){
           load_default()
           return
           }
+    page_offset=0;
     getSearch($("#search").val(),location.hash.substring(1,location.hash.length));
    
   });
 });
 
+
+$(window).scroll(function() {
+  if($(window).scrollTop() == $(document).height() - $(window).height()) {
+    if($("#search").val().length==0){
+      //load_default()
+      
+      }else{
+        getSearch($("#search").val(),location.hash.substring(1,location.hash.length),page_offset);
+        $(".progress").show();
+      }
+
+  }
+});

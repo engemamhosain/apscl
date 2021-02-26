@@ -1,10 +1,11 @@
 
-var env="beta"
+var env="production"
 if(env=="production"){
     var base_url="https://softlh.com/k20-apscl/k20-backend/api/mobile/"
     var user_url="https://softlh.com/k20-apscl/k20-backend/api/desktop/all_user_list.php"
 
-    var search_base_url="https://softlh.com/k20-apscl/k20-backend/api/pdf-upload/search_in_pdf.php"
+ //   var search_base_url="https://softlh.com/k20-apscl/k20-backend/api/pdf-upload/search_in_pdf.php"
+    var search_base_url=base_url+"search_gm_device_manual.php"
     var manual_pdf="https://softlh.com/k20-apscl/k20-backend/upload/pdf/"
     var image_url="https://softlh.com/k20-apscl/k20-backend/api/file/"
 
@@ -12,8 +13,8 @@ if(env=="production"){
 }else{
     var base_url="https://softlh.com/k20-beta/k20-backend/api/mobile/"
     var user_url="https://softlh.com/k20-beta/k20-backend/api/desktop/all_user_list.php"
-    
-    var search_base_url="https://softlh.com/k20-beta/k20-backend/api/pdf-upload/search_in_pdf.php"
+    var search_base_url=base_url+"search_gm_device_manual.php"
+  //  var search_base_url="https://softlh.com/k20-beta/k20-backend/api/pdf-upload/search_in_pdf.php"
     var manual_pdf="https://softlh.com/k20-beta/k20-backend/upload/pdf/"
     var image_url="https://softlh.com/k20-beta/k20-backend/api/file/"
     

@@ -23,7 +23,7 @@
                     <tr>
                         <th width="110">Volumn No</th>
                         <th width="160">Document Number</th>
-                        <th>Equipment Name</th>
+                        <!-- <th>Equipment Name</th> -->
                         <th>Plant Name</th>
                         <th>Title of the documents</th>
 
