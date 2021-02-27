@@ -1,30 +1,21 @@
-<html>
-<body>
- 
-</body>
-
+<?php include '../includes/header-new.php';?>
 
 <style>
   #canvas {
   border: 1px solid black;
 }
-button{
-  border: none;
-  background: #000;
-  color: #fff;
-  margin: 10px;
-  padding: 10px;
-}   
+ 
 </style>
 <center>
 <h1>APSCL MANUAL PDF</h1>
 
 
 <div>
-  <button id="prev">Previous</button>
-  <button id="next">Next</button>
+<a class="waves-effect waves-light btn" id="prev">Previous</a>
   &nbsp; &nbsp;
   <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+
+  <a class="waves-effect waves-light btn" id="next">Next</a>
 </div>
 
 
@@ -134,4 +125,4 @@ pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
 });
 </script>
 
-</html>
+<?php include '../includes/footer-new.php';?>
