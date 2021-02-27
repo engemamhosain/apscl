@@ -17,8 +17,8 @@ function getSearch(keyword,id){
         $(".list").append(`
         
         <tr class="childSelector">
-        <td><a href="${element.file_url}">${element.volumn_no}</a></td>
-        <td><a href="${element.file_url}">${element.document_number}</a></td>
+        <td><a href="device_manual_pdf_view.php#${element.file_url}" target="_blank">${element.volumn_no}</a></td>
+        <td><a href="device_manual_pdf_view.php#${element.file_url}" target="_blank">${element.document_number}</a></td>
         <td>${element.plant_name}</td>
         <td>${element.title_of_document}</td>
         </tr>
@@ -49,8 +49,8 @@ function load_default(){
             $(".list").append(`  
             
                 <tr class="childSelector">
-                <td><a href="${element.file_url}">${element.volumn_no}</a></td>
-                <td><a href="${element.file_url}">${element.document_number}</a></td>
+                <td><a href="device_manual_pdf_view.php#${element.file_url}" target="_blank">${element.volumn_no}</a></td>
+                <td><a href="device_manual_pdf_view.php#${element.file_url}" target="_blank">${element.document_number}</a></td>
                 <td>${element.plant_name}</td>
                 <td>${element.title_of_document}</td>
                 </tr>
