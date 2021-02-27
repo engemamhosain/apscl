@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 include '../includes/header-new.php';
 include '../includes/pdf_uploader/pdf_upload_all.php';
 init_pdfProcess();
