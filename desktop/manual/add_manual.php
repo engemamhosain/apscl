@@ -1,10 +1,6 @@
 <?php
 session_start();
 
-if (strcmp($_SESSION["role"], "admin") != 0) {
-
-}
-
 include '../includes/header-new.php';
 include '../includes/pdf_uploader/pdf_upload_all.php';
 init_pdfProcess();
