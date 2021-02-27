@@ -8,7 +8,7 @@
 function poplate_profile_info(u_data){
     
     $("#e_name").html(u_data.name);
-    if(u_data.profile_picture){
+    if(u_data.profile_picture!=null){
       $("#e_photo").attr('src', u_data.profile_picture+"?"+new Date(getTime()));
     }
     $("#e_designation").html('Designation '+u_data.designation);
