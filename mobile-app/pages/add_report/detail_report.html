@@ -7,6 +7,7 @@
     O&M Knowledge Base APSCL 
   </title>
 <link rel="stylesheet" href="../../asset/vendor/jodit/jodit.min.css">
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="../../asset/vendor/materialize/css/admin-materialize.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -21,19 +22,33 @@
 <body class="app-color">
   <br><br><br><br>
 
-<div class="detail"></div>
+<div class="wrapper-editor" style="display: none;">
+    <div id="editor"></div>
+    <div class="row">
+      <br>
+      <div class="col s6"><a class="waves-effect waves-light btn-small" onclick="Cancel()">Cancel</a></div>
+      <div class="col s6"><a style="float: right;" class="waves-effect waves-light btn-small" onclick="Save()">Save</a></div>
+    </div>
+</div>
 
-<div class="list"></div>
-   
-<div class="card-panel review" style="display:show;">
-  Rating:<div id="rating"></div>
-  <b>Review</b>	
-  <textarea id="comment"  required></textarea>
-  <a class="waves-effect waves-light btn review" onclick= "review()">Review</a>
-   </div>
 
-<a class="waves-effect waves-light btn apporove" onclick="approve()" style="position:fixed;bottom:0;width:90%;left: 5%;">Approve</a>
 
+
+
+<div class="wrapper-non-edit">
+  <div class="detail"></div>
+  <div class="list"></div>
+  <div class="card-panel review" style="display:show;">
+    Rating:<div id="rating"></div>
+    <b>Review</b>	
+    <textarea id="comment"  required></textarea>
+    <a class="waves-effect waves-light btn review" onclick= "review()">Review</a>
+  </div>
+  
+  <a class="waves-effect waves-light btn apporove" onclick="approve()" style="position:fixed;bottom:0;width:90%;left: 5%;">Approve</a>
+  
+</div>
+  
 
 
 <nav style="position: fixed;top:0;left:0;background:linear-gradient( 180deg, rgba(221, 36, 36, 0.952) 0%, rgb(248, 60, 60) 100%);" class="header1">
@@ -42,6 +57,7 @@
 </nav>   
 
 
+  <script src="../../asset/vendor/jodit/jodit.min.js"></script>
   <script src="../../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
   <script src="../../asset/vendor/materialize/js/materialize.min.js"></script>
   <script src="rating/jsRapStar.js"></script>

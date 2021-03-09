@@ -41,6 +41,10 @@
  
  var result=[];
    function sendMessage(){
+       if($(".type_msg").val()<1){
+        alert("Please type message")
+        return
+       }
         get("new_chat_details.php",{group_id:location.hash.split("--")[1],message:$(".type_msg").val()},function(data){
                 
             try {
@@ -73,6 +77,7 @@
                     }
                     
                 });  
+                loadZoom();
                
             } catch (error) {
                 throw error
@@ -181,3 +186,15 @@
 }
 
    
+
+function loadZoom(){
+    ezoom.onInit($('.msg_cotainer img'), {
+        hideControlBtn: false,
+        onClose: function (result) {
+            console.log(result);
+        },
+        onRotate: function (result) {
+            console.log(result);
+        },
+    });
+}

@@ -15,8 +15,6 @@
 // },
 
 function create_group(){
-
-
   get("new_chat_group.php",{"group_name": $("#name").val(),"group_detail":$("#desc").val(), "group_level": "1"},function (result){
     window.history.back();
   })

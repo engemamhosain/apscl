@@ -30,7 +30,7 @@ function getSearch(keyword,id){
             </div>
 
             <div class="card-action">
-            <a href="device_manual_pdf_view.html#${element.file_url}">${element.document_number}</a>
+            <a href="">${element.document_number}</a>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ function load_default(){
            </div>
 
            <div class="card-action">
-             <a href="device_manual_pdf_view.html#${element.file_url}">${element.document_number}</a>
+             <a href="">${element.document_number}</a>
            </div>
          </div>
        </div>
@@ -100,16 +100,22 @@ load_default()
 
 function openPdf(pdf){
 
-  location.href="device_manual_pdf_view.html#"+pdf;
+if(window.app){
+      app.goPdf(pdf);
+    }
+ // location.href="device_manual_pdf_view.html#"+pdf;
  // window.open(pdf);
 
 }
 
 function goPdf(pdf,page){
 
-  
-  location.href=pdf;
-  //  window.open(pdf+"#"+page);
+
+    if(window.app){
+      app.goPdf(pdf);
+    }
+//  location.href=pdf;
+   //window.open(pdf+"#"+page);
 
 }
 
