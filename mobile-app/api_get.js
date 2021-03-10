@@ -10,6 +10,7 @@ if(env=="production"){
     var image_url="https://softlh.com/k20-apscl/k20-backend/api/file/"
 
     var image_show_url="http://localhost/apscl-fahad/uploads/media/"
+    var base_k20api="https://softlh.com/k20-apscl/k20-backend/api";
 }else{
     var base_url="https://softlh.com/k20-beta/k20-backend/api/mobile/"
     var user_url="https://softlh.com/k20-beta/k20-backend/api/desktop/all_user_list.php"
@@ -19,6 +20,8 @@ if(env=="production"){
     var image_url="https://softlh.com/k20-beta/k20-backend/api/file/"
     
     var image_show_url="http://localhost/beta-fahad/uploads/media/"
+    var base_k20api="https://softlh.com/k20-beta/k20-backend/api";
+    
 }
 
 

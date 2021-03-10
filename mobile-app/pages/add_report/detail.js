@@ -203,7 +203,73 @@ function loadApprove(){
 } 
 loadApprove()
 
-var editor = new Jodit('#editor');
+//var editor = new Jodit('#editor');
+
+new Jodit('#editor', {
+  enableDragAndDropFileToEditor: true,
+  filebrowser: {
+      ajax: {
+          url: 'connector/index.php'
+      }
+  },
+  uploader: {
+      url: base_k20api + '/file/jedit_upload_file.php?jwt='+localStorage.jwt,
+      data:{jwt:localStorage.jwt},
+      format: 'json',
+      pathVariableName: 'path',
+      filesVariableName: 'file',
+
+      prepareData: function (data) {                 
+          return data;
+      },
+      isSuccess: function (resp) {
+         console.log('files:: ', resp);
+         var str = '';
+         for(var i=0, ilen = resp.length; i < ilen; i+=1){
+             str += '<img src="'+resp[i]+'" />'
+         }
+         this.jodit.selection.insertHTML(str);
+
+         return !resp.error;
+      },
+      getMsg: function (resp) {
+          return resp.msg.join !== undefined ? resp.msg.join('') : resp.msg;
+      },
+      process: function (resp) {  
+          
+             console.log(resp)
+          return {
+              files: resp[this.options.filesVariableName] || [],
+              path: resp.assets.path,
+              baseurl: resp.baseurl,
+              error: resp.error,
+              msg: resp.msg
+          };
+      },
+      error: function (e) {           
+          console.log("error");
+          this.events.fire('errorPopap', [e.getMessage(), 'error', 4000]);
+      },
+      defaultHandlerSuccess: function (data, resp) {
+          console.log("defaultHandlerSuccess");
+       
+          
+          var i, field = this.options.filesVariableName;
+          if (data[field] && data[field].length) {
+              for (i = 0; i < data[field].length; i += 1) {
+                  this.selection.insertImage(data.baseurl + data[field][i]);
+              }
+          }
+      },
+      defaultHandlerError: function (resp) {
+           console.log("defaultHandlerError");
+          this.events.fire('errorPopap', [this.options.uploader.getMsg(resp)]);
+      }
+  }
+
+
+      });
+
 var store_class_name;
 function edit(class_name){
   store_class_name = class_name;
