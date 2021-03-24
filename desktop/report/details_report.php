@@ -26,12 +26,12 @@
 						<div class="col s12 m8 x12 ">
 
 							<span style="font-weight: bold;">
-							Name of trouble
+							Plant Name
 							</span>
 							<br>
 
 						<a><span class="title">
-							<%=name_of_trouble %>
+							<%=plant_name %>
 						</span></a>
 						<br>
 						</div>
@@ -58,57 +58,89 @@
 					<div class="col s12">
 					<hr>
 						<span style="font-weight: bold;">
-						Description of trouble
+						Department
+						</span>
+						<br>
+						<div>
+							<%= department %>
+						</div>
+						<br>
+						<span style="font-weight: bold;">
+						KKS No
+						</span>
+						<br>
+						<div>
+							<%= kks_no %>
+						</div>
+						<br>
+						<span style="font-weight: bold;">
+						Name Of Trouble
+						</span>
+						<br>
+						<div>
+							<%= name_of_trouble %>
+						</div>
+						<br>
+						<span style="font-weight: bold;">
+						Description Of Trouble
 						</span>
 						<br>
 						<div>
 							<%= trouble_description %>
 						</div>
 						<br>
+
 						<span style="font-weight: bold;">
-						Trouble analysis
+						Trouble Analysis
 						</span>
 						<br>
+
 						<div>
 							<%= trouble_analysis %>
-						</div>
-						<br>
-						<span style="font-weight: bold;">
-						Description of work
-						</span>
-						<br>
-						<div>
-							<%= description_of_work %>
-						</div>
-						<br>
-						<span style="font-weight: bold;">
-						Used tools list
-						</span>
-						<br>
-						<div>
-							<%= used_tools_list %>
-						</div>
-						<br>
-
-						<span style="font-weight: bold;">
-						Root cause analysis
-						</span>
-						<br>
-
-						<div>
-							<%= root_cause_analysis %>
 						</div>
 
 						<br>
 						<span style="font-weight:bold;">
-						Referance manual
+						Description Of Work
 						</span>
 
 						<br>
 
 						<div>
-							<%= referance_manual %>
+							<%= description_of_work %>
 						</div>
+
+						<span style="font-weight:bold;">
+						Used Tools List
+						</span>
+
+						<br>
+
+						<div>
+							<%=used_tools_list %>
+						</div>
+
+
+						<span style="font-weight:bold;">
+							Root Cause Analysisent
+						</span>
+
+						<br>
+
+						<div>
+							<%=root_cause_analysis %>
+						</div>
+
+						<span style="font-weight:bold;">
+						Reference Manual
+						</span>
+
+						<br>
+
+						<div>
+							<%=referance_manual %>
+						</div>
+
 
 						<span style="font-weight:bold;">
 						List of personel
@@ -121,39 +153,7 @@
 						</div>
 
 
-						<span style="font-weight:bold;">
-						Department
-						</span>
-
-						<br>
-
-						<div>
-							<%=department %>
-						</div>
-
-						<span style="font-weight:bold;">
-						Equipment name
-						</span>
-
-						<br>
-
-						<div>
-							<%=equipment_name %>
-						</div>
-
-
-						<span style="font-weight:bold;">
-						KKS no
-						</span>
-
-						<br>
-
-						<div>
-							<%=kks_no %>
-						</div>
-
-
-						
+<!-- 						
 						<span style="font-weight:bold;">
 						Plant name
 						</span>
@@ -162,7 +162,7 @@
 
 						<div>
 							<%=plant_name %>
-						</div>
+						</div> -->
 						<!-- <span style="font-weight:bold;">
 						Approved by
 						</span>

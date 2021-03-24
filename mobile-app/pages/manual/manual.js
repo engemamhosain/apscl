@@ -1,11 +1,11 @@
 
  
 
- get("new_chat_group.php",{  "group_name": "Simple Test Group",
- "group_detail": "Test 1 Group",
- "group_level": 1,},function (result){
+//  get("new_chat_group.php",{  "group_name": "Simple Test Group",
+//  "group_detail": "Test 1 Group",
+//  "group_level": 1,},function (result){
   
-})
+// })
 
  get("plants.php",{},function (result){
     try {
@@ -15,8 +15,9 @@
       
           <li class="collection-item avatar" onclick="goSearch('${element.id}')">
           <i class="material-icons circle green">list</i>
-          <span class="title">Plant Id ${element.id}</span>
+
           <p>${element.name}</p>
+          <br>
           <a href="#!" class="secondary-content"><i class="material-icons">chevron_right</i></a>
         </li>
       `);

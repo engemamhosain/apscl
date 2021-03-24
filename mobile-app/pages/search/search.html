@@ -18,69 +18,81 @@
 
 <body class="app-color">
 
-  <div class="header secondary"><div class="logo-title">
-    <a onclick="window.history.back()"> <i  class="material-icons" style="font-size:33px; vertical-align: middle;">keyboard_backspace</i></a>Search  
-  </div>
+<div class="container"> 
+  <div class="row">
 
-  <div id='dropdown-user' class='dropdown-content'>
-    
-    <div>User Name</div>
-    <a href=""><i  class="material-icons" style="font-size:16px; vertical-align: middle;">settings</i> Settings</a>
-   
-  </div>
+     
 
-  <a href="../notification/notification.html"  data-target='dropdown-notification'>
-    <div class="notif-icon secondary">        
-       <i  class="material-icons white-text res" style="font-size:30px;">notifications</i> 
-      <div class="notif-num">9</div>
-    </div>
-    </a>
-</div>
-
+<!-- 
+   <h4>Search</h4> -->
+<br><br><br><br>
+   <form action="#">
+        
+    <label>
+      <input name="group1" type="radio" checked />
+      <span style="color: black;">Report</span>
+    </label>
+  
+  
+    <label>
+      <input name="group1" type="radio" />
+      <span style="color: black;">Manual</span>
+    </label>
   
 
-<style>
+</form>
+  <select>
+    <option value="" disabled selected>Select Plant</option>
+    <option value="1">Ashuganj 450MW CCPP (North)</option>
+    <option value="2">Ashuganj 450MW CCPP (South)</option>
+    <option value="3">Ashuganj 225MW CCPP</option>
+    <option value="4">50MW Gas Engine</option>
+    <option value="5">Unit-3,4&5</option>
+    <option value="6">Ashuganj 400MW CCPP (East</option>
+  </select>
+
+   
+
+
+  <div class="input-field" style="display:inline-block; margin-left:20px; margin-right: 20px; width:120px">
+    <label for="date">Start Date</label>
+    <input type="text" class="datepicker" id="start_date">
+  </div>
+
+  <div class="input-field" style="display:inline-block; margin-left:20px; margin-right: 20px; width:120px">
+    <label for="date">End Date</label>
+    <input type="text" class="datepicker" id="end_date">
+  </div>
+  
+    <div class="input-field">
+      <label for="search">Type here ...</label>
+      <input type="search" id="search" />
+    </div>
  
-</style>
+</div>
 
 
 <div class="container"> 
   <div class="row">
-
-   <h4>Search</h4>
-   <div class="input-field">
-     <label for="search">Type here ...</label>
-     <input type="search" id="serch" />
-   </div>
-   <label>
-    <input type="checkbox" />
-    <span>Reports</span>
-  </label> &nbsp;&nbsp;&nbsp;&nbsp;
-  <label>
-    <input type="checkbox" />
-    <span>Manual</span>
-  </label> 
-  <div class="input-field" style="display:inline-block; margin-left:20px; margin-right: 20px; width:120px">
-    <label for="date">Date</label>
-    <input type="text" class="datepicker" id="date"></div>
-    <div class="input-field" style="display:inline-block;">
-      <select>
-        <option value="" disabled selected>Select Plant</option>
-        <option value="1">Plant 1</option>
-        <option value="2">Plant 2</option>
-        <option value="3">Plant 3</option>
-      </select>
-      
-    </div>
-  
-
-
-  
+   <div class="col s12 m7 list"></div>
 </div>
+
+<!-- <a class="waves-effect waves-light btn" style="width: 100%;">Search</a>
+ -->
+
+
+
+ <nav style="position: fixed;top:0;left:0;background:linear-gradient( 180deg, rgba(221, 36, 36, 0.952) 0%, rgb(248, 60, 60) 100%); }" class="header1">
+  <a class="brand-logo left" onclick="window.history.back()"> <i  class="material-icons">keyboard_backspace</i></a>  
+  <div style="text-align: center;">Device Manual </div>
+</nav>
 
   <script src="../../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
   <script src="../../asset/vendor/materialize/js/materialize.min.js"></script>
   <script src="../../api_get.js"></script>
+
+  <script src="../../api_get.js"></script>
+  <script src="search.js"></script>
   <script>
     
   
