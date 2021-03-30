@@ -29,20 +29,20 @@
    <form action="#">
         
     <label>
-      <input name="group1" type="radio" checked />
+      <input name="group1" type="radio" checked  value="report"/>
       <span style="color: black;">Report</span>
     </label>
   
   
     <label>
-      <input name="group1" type="radio" />
+      <input name="group1" type="radio" value="manual"/>
       <span style="color: black;">Manual</span>
     </label>
   
 
 </form>
-  <select>
-    <option value="" disabled selected>Select Plant</option>
+  <select id="plant_option">
+    <option value="0"  selected>Select Plant</option>
     <option value="1">Ashuganj 450MW CCPP (North)</option>
     <option value="2">Ashuganj 450MW CCPP (South)</option>
     <option value="3">Ashuganj 225MW CCPP</option>
@@ -56,12 +56,12 @@
 
   <div class="input-field" style="display:inline-block; margin-left:20px; margin-right: 20px; width:120px">
     <label for="date">Start Date</label>
-    <input type="text" class="datepicker" id="start_date">
+    <input type="text" class="datepicker" id="start_date" value="">
   </div>
 
   <div class="input-field" style="display:inline-block; margin-left:20px; margin-right: 20px; width:120px">
     <label for="date">End Date</label>
-    <input type="text" class="datepicker" id="end_date">
+    <input type="text" class="datepicker" id="end_date" data-date-format='yy-mm-dd' >
   </div>
   
     <div class="input-field">

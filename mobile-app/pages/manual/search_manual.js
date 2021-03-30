@@ -10,7 +10,7 @@ function getSearch(keyword,id){
         return
       }
        page_offset+=result.row_count;
-    
+       $(".list").append(`<h4 style="color:green">Total Result ${result.count} </h4>`);
       
        data.forEach(element => {
         $(".list").append(`
@@ -56,6 +56,7 @@ function load_default(){
 
 
     try {
+      $(".list").append(`<h4 style="color:green">Search Result ${data.count} </h4>`);
       data.data.forEach(element => {
        $(".list").append(`
        

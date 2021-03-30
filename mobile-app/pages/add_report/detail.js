@@ -129,7 +129,7 @@ if(location.hash.split(",")[0]=="#approve"){
 
 function approve(){
   get("update_approved_maintenance_report.php",{approved:1,id:location.hash.split(",")[1]},function (result){   
-    window.history.back();
+  //  window.history.back();
   })
 }
 

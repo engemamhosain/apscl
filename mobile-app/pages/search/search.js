@@ -1,38 +1,43 @@
 var page_offset=0;
-function getSearch(keyword,id){
+var search_type="report";
+var types= ["report","manual"];
+var start = "11-11-2000";
+var obj = {};
+getObj = ()=>{
+  
+  if($("#start_date").val()==""){
+    obj.start_date = start;
 
- 
-   search({keyword:keyword,plant_id:id,page_offset:page_offset},function (result){
+  }
+  if($("#end_date").val()==""){
+    obj.end_date = new Date().toShortFormat();
+
+  }
+  obj.plant_id = $('#plant_option').val();
+  obj.keyword = $('#search').val()
+  return obj;
+
+}
+function getSearch(){ 
+   search({page_offset:0,...getObj()},function (result){
+   
     try {
+
       $(".progress").hide();
        var data = result.data;
        if(result.count==0){
         return
       }
+
        page_offset+=result.row_count;
        $(".list").html("");
        $(".list").append(`<h4 style="color:green">Search Result ${result.count} </h4>`);
        data.forEach(element => {
         $(".list").append(`
         
-        <div class="card horizontal" onclick="goPdf('${element.file_url}',${1})">
-        
-          <div class="card-stacked">
-            <div class="card-content">
-
-              <br>
-              <b>Date:</b><br>
-              <div>${element.created_on}</div>
-              <b>${element.title_of_document}</b><br>
-              <b>Id:${element.id}</b><br>
-              <b>Volumn no:</b>
-              <div>${element.volumn_no}</div>
-            </div>
-
-            <div class="card-action">
-            <a href="">${element.document_number}</a>
-            </div>
-          </div>
+        <div  onclick="goPdf('${element.file_url}',${1})">
+          <a href="">${element.title_of_document}</a><br><br>
+    
         </div>
 
     
@@ -48,6 +53,31 @@ function getSearch(keyword,id){
 })
 
 }
+
+report_search = ()=>{
+  get("maintenance_report.php",{page_row_count:100,page_offset:0,...getObj()},function (result){
+    try { 
+       var data = result.data
+       $(".list").html("");
+       $(".list").append(`<h4 style="color:green">Search Result ${result.count} </h4>`);
+            data.forEach(element => {
+          
+              $(".list").append(`
+              
+              <a  onclick="goApproveDetail('${element.id}','${element.approved}')">${element.name_of_trouble}</a><br><br>
+          
+            `);  
+       });
+    } catch (error) {}
+    
+})
+
+}
+
+function goApproveDetail(link,approve_status){
+  location.href="../add_report/detail_report.html#approve,"+link+","+approve_status
+}
+
 
 
 
@@ -72,19 +102,24 @@ function goPdf(pdf,page){
 
 }
 
-    $(document).ready(function(){
-  $(".input-field").on("keyup", function() {
-  
-        $(".list").html("");
+$(document).ready(function(){
+        $(".input-field").on("keyup", function() {
+        
+              $(".list").html("");
 
-        if($("#search").val().length==0){
-          load_default()
-          return
+              // if($("#search").val().length==0){
+              //   load_default()
+              //   return
+              //   }
+          page_offset=0;
+
+          if($('input[name="group1"]:checked').val()==types[0]){
+            report_search();
+          }else{
+            getSearch();
           }
-    page_offset=0;
-    getSearch($("#search").val(),location.hash.substring(1,location.hash.length));
-   
-  });
+        
+        });
 });
 
 
@@ -100,3 +135,67 @@ $(window).scroll(function() {
 
   }
 });
+
+
+
+
+$('input[type=radio][name=group1]').change(function() {
+
+    page_offset=0;
+    if(this.value==types[0]){
+      report_search();
+    }else{
+      getSearch();
+    }
+
+});
+
+
+
+$('#plant_option').change(function() {
+
+  if($('input[name="group1"]:checked').val()==types[0]){
+    report_search();
+  }else{
+    getSearch();
+  }
+
+});
+
+$('#end_date').change(function(){
+    if($('input[name="group1"]:checked').val()==types[0]){
+      report_search();
+    }else{
+      getSearch();
+    }
+});
+
+$('#start_date').change(function(){
+  if($('input[name="group1"]:checked').val()==types[0]){
+    report_search();
+  }else{
+    getSearch();
+  }
+});
+
+
+
+
+
+Date.prototype.toShortFormat = function() {
+
+  let monthNames =["Jan","Feb","Mar","Apr",
+                    "May","Jun","Jul","Aug",
+                    "Sep", "Oct","Nov","Dec"];
+  
+  let day = this.getDate();
+  
+  let monthIndex = this.getMonth();
+  let monthName = monthNames[monthIndex];
+  
+  let year = this.getFullYear();
+  
+  return `${day}-${monthName}-${year}`;  
+}
+
+

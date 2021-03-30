@@ -5,6 +5,7 @@ if(location.hash=="#my"){
   get("my_maintenance_report.php",{page_row_count:100,page_offset:0},function (result){
     try {
        var data = result.data
+       $(".list").append(`<h4 style="color:green">Total ${result.count} </h4>`);
        data.forEach(element => {
         $(".list").append(`
       
@@ -27,6 +28,7 @@ if(location.hash=="#waiting"){
   get("waiting_for_approval_maintenance_report.php",{page_row_count:100,page_offset:0},function (result){
     try {
        var data = result.data
+       $(".list").append(`<h4 style="color:green">Total ${result.count} </h4>`);
        data.forEach(element => {
         $(".list").append(`
       
@@ -46,9 +48,12 @@ if(location.hash=="#waiting"){
 
 
 if(location.hash=="#approved"){
+
+
   get("maintenance_report.php",{page_row_count:100,page_offset:0},function (result){
     try {
        var data = result.data
+       $(".list").append(`<h4 style="color:green">Total ${result.count} </h4>`);
        data.forEach(element => {
         $(".list").append(`
       
@@ -64,6 +69,7 @@ if(location.hash=="#approved"){
     } catch (error) {}
     
 })
+
 }
 
  
