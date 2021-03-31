@@ -10,6 +10,7 @@
  get("plants.php",{},function (result){
     try {
        var data = result.data
+       
        data.forEach(element => {
         $(".list").append(`
       

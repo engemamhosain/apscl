@@ -65,3 +65,4 @@ function select(select){
 function getResult(keyToFilter, valueStartsWith){
     search_data =  _.filter(results, function(d){ return d[keyToFilter].startsWith(valueStartsWith); })
 }
+

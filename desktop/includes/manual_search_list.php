@@ -14,7 +14,7 @@
 
 
 
-
+  <div class="count"></div>
 
     <div class="table-responsive">
 
@@ -34,6 +34,7 @@
             </table>
 
     </div>
+    <div id="pagination"></div>
 
 <style>
     .search-manual{ padding: 10px 0 0 10px }

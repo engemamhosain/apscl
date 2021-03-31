@@ -18,6 +18,7 @@ include '../includes/header-new.php';
 <body>
 <main><div class="container">
 <h4 style="text-align:center">Profile</h4>
+
   <div class="row equal-height-grid">
 
     <div class="col l9 s12">
@@ -41,6 +42,9 @@ include '../includes/header-new.php';
 
     </div>
 
+
+ 
+
     <div class="col l3 s12">
 
       <div class="card">
@@ -62,9 +66,13 @@ include '../includes/header-new.php';
     </main>
 
 
+
 <div class="card profile">
 
 </div>
+
+
+
 	<?php include '../includes/footer-new.php';?>
 	<?php //include '../includes/include_js.php';?>
 
@@ -93,6 +101,7 @@ include '../includes/header-new.php';
 
   function fasterPreview( uploader ) {
       if ( uploader.files && uploader.files[0] ){
+        $(".preloader-wrapper").show();
             $('#e_photo').attr('src',window.URL.createObjectURL(uploader.files[0]));
 
           var fd = new FormData();
@@ -104,6 +113,8 @@ include '../includes/header-new.php';
             get("u_users_profile_picture.php",{profile_picture:data.file_uploader,id:localStorage.id},function(data){
 
                 populate_data();
+                $(".preloader-wrapper").hide();
+                location.reload();
               });
 
             // location.reload()
@@ -115,6 +126,9 @@ include '../includes/header-new.php';
   $("#imageUpload").change(function(){
       fasterPreview( this );
   });
+
+
+
 
 	 </script>
 

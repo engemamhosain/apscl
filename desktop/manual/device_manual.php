@@ -3,7 +3,7 @@
     <div class="container">
         <div class="card"><?php include '../includes/manual_search_list.php';?></div>
     </div>
-</main>
+</main> 
 
 
 <script type="text/javascript">
@@ -15,3 +15,4 @@
 <script src="../asset/js/app/pages/manual.js"></script>
 
 <?php include '../includes/footer-new.php';?>
+<script src="../asset/vendor/Pagination/js/dynapagin.js"></script> 
