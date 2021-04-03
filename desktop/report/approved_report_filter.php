@@ -20,12 +20,12 @@
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">date_range</i>
-		  <input id="icon_prefix" type="text" class="datepicker">
+		  <input id="icon_prefix" type="text" class="datepicker start_date" >
           <label for="icon_prefix">Start Date</label>
         </div>
         <div class="input-field col s6">
           <i class="material-icons prefix">date_range</i>
-          <input id="icon_telephone" type="text" class="datepicker">
+          <input id="icon_telephone" type="text" class="datepicker end_date">
           <label for="icon_telephone">End Date </label>
         </div>
       </div>
@@ -54,10 +54,10 @@
 
 	  </div>
 </div>
-<div style="margin:100px;" class="row">
+<!-- <div style="margin:100px;" class="row">
 	<a class="waves-effect waves-light btn" onclick="location.reload()" style="float:left;">Cancel</a>
 	<a class="waves-effect waves-light btn"  onclick="Filter()" style="float:right;">Apply</a>
-</div>
+</div> -->
 
 
 	<div class="scrollspy">
@@ -70,9 +70,15 @@
 		</div>
 	</div>
 </div>
+	<div class="row">
+		<center>
 
-
+	
+	<div class="list" ></div>
+	</center>
+	</div>
 </main>
+
 
   <?php include '../includes/footer-new.php';?>
   <script src="../asset/js/app/pages/approved_report_search.js"></script>

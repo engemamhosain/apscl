@@ -1,18 +1,23 @@
 var page_offset=0;
 var search_type="report";
 var types= ["report","manual"];
-var start = "11-11-2000";
+var start = "2020-02-01";
 var obj = {};
 getObj = ()=>{
   
   if($("#start_date").val()==""){
-    obj.start_date = start;
-
+    obj.performed_date_rage_start = start;
+  }else{
+    obj.performed_date_rage_start = new Date($("#start_date").val()).toShortFormat();
   }
+
   if($("#end_date").val()==""){
-    obj.end_date = new Date().toShortFormat();
-
+    obj.performed_date_rage_end = new Date().toShortFormat();
+   // obj.performed_date_rage_end = "2020-02-06";
+  }else{
+    obj.performed_date_rage_end = new Date($("#end_date").val()).toShortFormat();
   }
+
   obj.plant_id = $('#plant_option').val();
   obj.keyword = $('#search').val()
   return obj;
@@ -55,7 +60,7 @@ function getSearch(){
 }
 
 report_search = ()=>{
-  get("maintenance_report.php",{page_row_count:100,page_offset:0,...getObj()},function (result){
+  get("search_gm_all_reports.php",{page_row_count:100,page_offset:0,...getObj()},function (result){
     try { 
        var data = result.data
        $(".list").html("");
@@ -162,6 +167,7 @@ $('#plant_option').change(function() {
 
 });
 
+
 $('#end_date').change(function(){
     if($('input[name="group1"]:checked').val()==types[0]){
       report_search();
@@ -191,11 +197,13 @@ Date.prototype.toShortFormat = function() {
   let day = this.getDate();
   
   let monthIndex = this.getMonth();
-  let monthName = monthNames[monthIndex];
+  //let monthName = monthNames[monthIndex];
+  let monthName = monthIndex+1;
   
   let year = this.getFullYear();
   
-  return `${day}-${monthName}-${year}`;  
+  
+  return `${year}-${monthName}-${day}`;  
 }
 
 

@@ -56,10 +56,57 @@
      new Jodit(item, {
     enableDragAndDropFileToEditor: true,
     filebrowser: {
+        howLongShowMsg: 3000,
+        createNewFolder: true,
+        deleteFolder: true,
+        width: '650px',
+        height: '400px',
+        // if you need only 'select' button then use buttons: ['select']
+        buttons: [
+        
+            'select'  // File Selection button
+        ],
+        isSuccess: function (resp) {
+            return !resp.error;
+        },
+        getMsg: function (resp) {
+            return resp.msg;
+        },
+        // Here most part of settings from [jQuery.ajax](http://api.jquery.com/jquery.ajax/0
         ajax: {
-            url: 'connector/index.php'
-        }
-    },
+            url: '',
+            async: true,
+            beforeSend: function () {
+                return true;
+            },
+            data: {},
+            cache : true,
+            contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
+            headers : {},
+            method : 'POST',
+            processData  : true,
+            dataType: 'json',
+
+            prepareData: function (data) {
+                return data;
+            },
+
+            process: function (resp) {
+                return {
+                    files: resp.files || [],
+                    path: resp.path,
+                    baseurl: resp.baseurl,
+                    error: resp.error,
+                    msg: resp.msg
+                };
+            }
+        },
+    },    
+    // filebrowser: {
+    //     ajax: {
+    //         url: tg.config.k20api + '/file/jedit_upload_file.php?jwt='+localStorage.jwt
+    //     }
+    // },
     uploader: {
         url: tg.config.k20api + '/file/jedit_upload_file.php?jwt='+localStorage.jwt,
         data:{jwt:localStorage.jwt},
