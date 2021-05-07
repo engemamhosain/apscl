@@ -32,7 +32,6 @@ report_search = ()=>{
 
 
        data.forEach(element => {
-          
           $(".list").append(`
             <div class="collection-item avatar" style ="position:relative" onclick="goApproveDetail('${element.id}','${element.approved}')">
             <i class="material-icons circle blue">dvr</i>

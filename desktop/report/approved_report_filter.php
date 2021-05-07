@@ -72,7 +72,7 @@
 </div>
 	<div class="row">
 	
-	<div class="list" class="collection container_main"></div>
+	<div class="list collection container_main"></div>
 
 	</div>
 </main>
