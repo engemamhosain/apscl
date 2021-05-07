@@ -24,17 +24,35 @@ getObj = ()=>{
 report_search = ()=>{
   get("search_gm_all_reports.php",{page_row_count:100,page_offset:0,...getObj()},function (result){
     try { 
+
+
        var data = result.data
        $(".list").html("");
        $(".list").append(`<h4 style="color:green">Search Result ${result.count} </h4>`);
-            data.forEach(element => {
+
+
+       data.forEach(element => {
+          
+          $(".list").append(`
+            <div class="collection-item avatar" style ="position:relative" onclick="goApproveDetail('${element.id}','${element.approved}')">
+            <i class="material-icons circle blue">dvr</i>
+            <span class="title"><a  style="padding-right:80px;" class="click_title" href="" >${element.name_of_trouble} </a></span><br>
+            <small><%= report_creator %>  <%= performed_date %></small>
+            <p>${element.trouble_description}
+            </p>
+          </div>
+          
+        `);  
+   });
+            {/* data.forEach(element => {
           
               $(".list").append(`
+              
               
               <a  onclick="goApproveDetail('${element.id}','${element.approved}')">${element.name_of_trouble}</a><br><br>
           
             `);  
-       });
+       }); */}
     } catch (error) {}
     
 })

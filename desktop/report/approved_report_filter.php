@@ -74,7 +74,7 @@
 		<center>
 
 	
-	<div class="list" ></div>
+	<div class="list" class="collection container_main"></div>
 	</center>
 	</div>
 </main>
