@@ -37,8 +37,8 @@ report_search = ()=>{
             <div class="collection-item avatar" style ="position:relative" onclick="goApproveDetail('${element.id}','${element.approved}')">
             <i class="material-icons circle blue">dvr</i>
             <span class="title"><a  style="padding-right:80px;" class="click_title" href="" >${element.name_of_trouble} </a></span><br>
-            <small><%= report_creator %>  <%= performed_date %></small>
-            <p>${element.trouble_description}
+            <small>${element.report_creator} ${element.performed_date}</small>
+            <p>${element.trouble_description.substr(0,100)}...
             </p>
           </div>
           

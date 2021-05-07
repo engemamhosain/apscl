@@ -71,11 +71,9 @@
 	</div>
 </div>
 	<div class="row">
-		<center>
-
 	
 	<div class="list" class="collection container_main"></div>
-	</center>
+
 	</div>
 </main>
 
