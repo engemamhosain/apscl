@@ -28,7 +28,7 @@ report_search = ()=>{
 
        var data = result.data
        $(".list").html("");
-       $(".list").append(`<h4 style="color:green">Search Result ${result.count} </h4>`);
+       $(".list").append(`<h4 style="color:green"> <center>Search Result ${result.count} </center></h4>`);
 
 
        data.forEach(element => {
@@ -40,7 +40,6 @@ report_search = ()=>{
             <p>${element.trouble_description.substr(0,100)}...
             </p>
           </div>
-          
         `);  
    });
             {/* data.forEach(element => {
