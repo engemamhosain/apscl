@@ -63,7 +63,7 @@ function get_user(fn){
     //data.jwt = localStorage.jwt;
         $.ajax({
             type: "POST",
-            url: re_login+"login_with_jwt.php",
+            url: base_url+"login_with_jwt.php",
             data: {jwt: localStorage.jwt},
             success: function(data){
                 localStorage.jwt = data.user_data.jwt
