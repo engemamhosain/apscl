@@ -1,83 +1,42 @@
-	
-// // var id_list={};
-// // 		id_list[localStorage.id]=localStorage.id;
-// // 		var obj={
-// // 			title:"title",
-// // 			message:"message",
-// // 			type:"type",
-// // 			employee_id:id_list,
-// // 			message_id:"message_id",
-// // 			department:"department",
-// // 			is_read:true,
-// // 			_id:"5e74898c3734615cbd0003b7"
-// // 		}
+    get('gm_notification.php',{}, function(data){
+    var html_to_push="";
+        try {
+        
+        _.each(data.data, function(item, key, arr){
+            html_to_push+=`<div class="card blue-grey darken-1" style="color: white;width:100%">            
+                <table class="striped" onclick="location.reload('tr_status.php#<%= message_id %>')">
+                <thead>
+                    <tr>
+                        <th width="50%">${item.title }</th>
+                        <th style="text-align:right">${new Date(_created).toLocaleDateString()+""+
+                        new Date(_created).toLocaleTimeString() }</th>            
+                    </tr>
+                </thead>
 
-// // 		api_post('Notification',obj, function(data){
-// // 			console.log(data);
-
-// // 		}); 
-// // 	}
-
-// init_notification_count_populate = (data) =>{
-// 	var notificaionCount=0;
-// 	for (var i=0;i < data.entries.length; i++) {
-// 		if(typeof(data.entries[i].employee_id[localStorage.id])=="undefined"){
-
-// 			++notificaionCount;
-
-// 		}
-	
-	
-// 	}
-// 	//$("a .new-badge").html(notificaionCount);
-// 	$(".notif-num").html(notificaionCount);
-// }
-//   api_get_notificaion('Notification', init_notification_count_populate);
-
-// init_notification_list_populate = (data) =>{
-
-
-// 	  var template = $("#tmp_tr_notification_list").html(),
-//         tx = _.template(template), 
-//         html_to_push = '';
-
-//          _.each(data.entries, function(item, key, arr){    
-//                 html_to_push  += tx(item);              
-//         });
-
-
-//         $("#notification_message").html(html_to_push);
-
-// 		for (var i=0;i < data.entries.length; i++) {
-// 		if(typeof(data.entries[i].employee_id[localStorage.id])=="undefined"){
-
-			
-// 			if(data.entries[i].employee_id.length != 0){
-
-// 				var id_list=data.entries[i].employee_id;
-// 			}else{
-// 				var id_list={}
-// 			}
-// 			id_list[localStorage.id]=localStorage.id;
-// 			var obj={				
-// 				employee_id:id_list,
-// 				_id:data.entries[i]._id
-// 			}
-// 			api_post('Notification',obj, function(data){}); 	
-
-// 		}		
-// 	}
-// }
-
-// $(".notif-icon").click(function(){
-
-// 	api_get_notificaion('Notification', init_notification_list_populate);		
-// 	api_get_notificaion('Notification', init_notification_count_populate);
-// })
-
-
-// $("#nav-mobile").click(function(){
-// 	$("#dropdown1").css("height","500px")
-// 	api_get_notificaion('Notification', init_notification_list_populate);		
-// 	api_get_notificaion('Notification', init_notification_count_populate);
-// })
+                <tbody>
+                    <tr>
+                    <td>${item.message}</td>
+                    <td></td>       
+                    </tr>         
+                </tbody>
+                </table>             
+            </div>`
+            
+        });         
+    
+    
+        if(data.data.length==0){
+            $("#notification_message").html("<h4>Sorry, No reports has been found in this list.</h4>");
+        }else{
+            $("#notification_message").html(html_to_push);
+        }
+    
+        
+        } catch (error) {
+            console.log(error)
+        }
+    
+    });
+    
+    
+    

@@ -32,3 +32,4 @@
 
 </div>
   <?php include '../includes/footer-new.php';?>
+  <script src="../asset/js/app/pages/notification.js"></script>
