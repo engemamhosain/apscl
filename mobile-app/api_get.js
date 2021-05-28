@@ -1,8 +1,9 @@
 
-var env="production"
+var env="beta"
 if(env=="production"){
     var base_url="https://softlh.com/k20-apscl/k20-backend/api/mobile/"
     var user_url="https://softlh.com/k20-apscl/k20-backend/api/desktop/all_user_list.php"
+    var re_login="https://softlh.com/k20-apscl/k20-backend/api/desktop/"
 
  //   var search_base_url="https://softlh.com/k20-apscl/k20-backend/api/pdf-upload/search_in_pdf.php"
     var search_base_url=base_url+"search_gm_device_manual.php"
@@ -14,6 +15,7 @@ if(env=="production"){
 }else{
     var base_url="https://softlh.com/k20-beta/k20-backend/api/mobile/"
     var user_url="https://softlh.com/k20-beta/k20-backend/api/desktop/all_user_list.php"
+    var re_login="https://softlh.com/k20-beta/k20-backend/api/desktop/"
     var search_base_url=base_url+"search_gm_device_manual.php"
   //  var search_base_url="https://softlh.com/k20-beta/k20-backend/api/pdf-upload/search_in_pdf.php"
     var manual_pdf="https://softlh.com/k20-beta/k20-backend/upload/pdf/"
@@ -61,7 +63,7 @@ function get_user(fn){
     //data.jwt = localStorage.jwt;
         $.ajax({
             type: "POST",
-            url: user_url+"login_with_jwt.php",
+            url: re_login+"login_with_jwt.php",
             data: {jwt: localStorage.jwt},
             success: function(data){
                 localStorage.jwt = data.user_data.jwt

@@ -5,11 +5,11 @@
 	<link rel="stylesheet" href="rating/rating.css" />
 <style>
 	.page-title{
-
     margin-top: 15px;
     text-align: center;
-
 	}
+
+	.container_main img{width:100%}	
 </style>
 <h1 class="page-title">Equipment Maintenace Report </h1>
 
@@ -37,6 +37,7 @@
 						</div>
 						<div class="col s12 m4 x4 ">
 						<span style="font-weight: bold;">
+						Print  <i class="material-icons small " onclick="print()">print</i><br>
 						Report creator
 						</span>
 						<br>
@@ -216,6 +217,25 @@
 
 </main>
 
+
+<script>
+	    function print(){
+        var cssHead = `<head>
+            <link rel="stylesheet" href="../asset/vendor/materialize/css/admin-materialize.min.css">
+            </head>`
+
+        var divContents =$(".container_main").html()+$(".list").html();
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head>'+cssHead+'<title>APSCL</title>');
+            printWindow.document.write(`</head><body> <div class="card">`);
+            printWindow.document.write(divContents);
+            printWindow.document.write('</div></body></html>');
+            printWindow.document.close(); 
+            setTimeout(function(){
+                printWindow.print();
+            },2000)
+    }
+</script>
 
   <?php include '../includes/footer-new.php';?>
   <script src="rating/jsRapStar.js"></script>

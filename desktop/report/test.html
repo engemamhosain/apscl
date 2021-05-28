@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Home - Admin</title>
+
+<link rel="stylesheet" href="../asset/vendor/jodit/jodit.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../asset/vendor/materialize/css/admin-materialize.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="has-fixed-sidenav">
+
+<link rel="stylesheet" href="rating/jsRapStar.css" />
+<link rel="stylesheet" href="rating/rating.css" />
+<head>
+    <style>
+          
+    .container_main img{width:100% }
+    </style>
+</head>
+<main>
+<div class="container" >
+<div class="card">
+<div class="card-content">
+    <div id="details_push" class="container_main">
+
+        <div class="row">
+            <div class="col s12 m8 x12 ">
+
+                <span style="font-weight: bold;">
+                Plant Name
+                </span>
+                <br>
+
+            <a><span class="title">
+                50MW Gas Engine
+            </span></a>
+            <br>
+            </div>
+            <div class="col s12 m4 x4 ">
+            <span style="font-weight: bold;">
+              Print  <i class="material-icons small " onclick="print()">print</i><br>
+            Report creator  
+           
+            </span>
+            <br>
+
+            <a href="#">admin
+            </a>
+
+            <br>
+
+            <span style="font-weight: bold;">
+            Performed date
+            </span>
+            <br>
+
+            <span>2021-05-25</span>
+            <br>
+            </div>
+
+        <div class="col s12">
+        <hr>
+            <span style="font-weight: bold;">
+            Department
+            </span>
+            <br>
+            <div>
+                department
+            </div>
+            <br>
+            <span style="font-weight: bold;">
+            KKS No
+            </span>
+            <br>
+            <div>
+                111
+            </div>
+            <br>
+            <span style="font-weight: bold;">
+            Name Of Trouble
+            </span>
+            <br>
+            <div>
+                test title 1
+            </div>
+            <br>
+            <span style="font-weight: bold;">
+            Description Of Trouble
+            </span>
+            <br>
+            <div>
+                
+            </div>
+            <br>
+
+            <span style="font-weight: bold;">
+            Trouble Analysis
+            </span>
+            <br>
+
+            <div>
+                <img src="https://softlh.com/k20-beta/upload/image/05-22-21-dc231deb0eaf1238658862daba888dee.jpg">
+            </div>
+
+            <br>
+            <span style="font-weight:bold;">
+            Description Of Work
+            </span>
+
+            <br>
+
+            <div>
+                test
+            </div>
+
+            <span style="font-weight:bold;">
+            Used Tools List
+            </span>
+
+            <br>
+
+            <div>
+                
+            </div>
+
+
+            <span style="font-weight:bold;">
+                Root Cause Analysisent
+            </span>
+
+            <br>
+
+            <div>
+                test
+            </div>
+
+            <span style="font-weight:bold;">
+            Reference Manual
+            </span>
+
+            <br>
+
+            <div>
+                
+            </div>
+
+
+            <span style="font-weight:bold;">
+            List of personel
+            </span>
+
+            <br>
+
+            <div>
+                
+            </div>
+
+            <br><br></div>
+            </div>
+        
+    </div>
+        <div id="details_push" class="container_main"></div>
+        <a class="waves-effect waves-light btn approve" onclick="approve()">Approved</a>
+</div>
+<div class="list"></div>
+
+    <div class="card-panel review" style="display:none;">
+    Rating:<div id="rating"></div>
+    <b>Review</b>
+
+    <textarea id="comment" required></textarea>
+    <a class="waves-effect waves-light btn review" onclick="review()">Review</a>
+    </div>
+
+</div>
+</div>
+</div>
+</main>
+<footer>
+<div>
+<div class="row">
+<div class="col s12">
+<p class="center-align" style="font-size:14px; color:black">Ashuganj Power Station Company Ltd. © 2020. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+<script src="../asset/vendor/jquery/jquery-3.4.1.min.js"></script>
+<script src="../asset/vendor/underscore/underscore-min.js"></script>
+<script src="../asset/vendor/materialize/js/materialize.min.js"></script>
+<script src="../asset/vendor/jodit/jodit.min_new.js"></script>
+<script src="../asset/js/lib/tg_core.js"></script>
+<script src="../asset/js/app/config.js"></script>
+<script src="../asset/js/app/nav.js"></script>
+<script src="../asset/js/app/main.js"></script>
+<script src="../asset/js/app/api.js"></script>
+<script src="../asset/vendor/materialize/js/init.js"></script>
+<script src="../asset/vendor/moment/moment.js"></script>
+<script src="../asset/js/app/pages/notification.js"></script>
+<script>
+$(document).ready(function(){
+  $("#search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".childSelector").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+$(".preloader-wrapper").hide();
+
+</script></body>
+</html> <script src="rating/jsRapStar.js"></script>
+<script src="../asset/js/app/pages/details_report.js"></script>
+
+<script>
+
+      
+    function print(){
+        var cssHead = `<head>
+            <link rel="stylesheet" href="../asset/vendor/materialize/css/admin-materialize.min.css">
+            </head>`
+
+        var divContents =$(".container_main").html()+$(".list").html();
+            var printWindow = window.open('', '', 'height=400,width=800');
+            printWindow.document.write('<html><head>'+cssHead+'<title>APSCL</title>');
+            printWindow.document.write(`</head><body> <div class="card">`);
+            printWindow.document.write(divContents);
+            printWindow.document.write('</div></body></html>');
+            printWindow.document.close(); 
+            setTimeout(function(){
+                printWindow.print();
+            },2000)
+    }
+ 
+</script>

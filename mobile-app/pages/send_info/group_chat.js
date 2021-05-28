@@ -27,7 +27,7 @@
                 getMessage(lastSaveId); 
                                    
             } catch (error) {
-                
+                throw error;
             }
         
         });  

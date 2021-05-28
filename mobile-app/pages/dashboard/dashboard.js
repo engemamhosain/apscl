@@ -4,6 +4,8 @@ if(window.app){
   if(app.redirect()!=""){
     location.href=app.redirect();
   }
+  
+  app.resetHash();
 }
 
 

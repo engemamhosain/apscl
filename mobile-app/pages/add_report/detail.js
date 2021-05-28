@@ -205,7 +205,7 @@ loadApprove()
 
 //var editor = new Jodit('#editor');
 
-new Jodit('#editor', {
+var editor  =new Jodit('#editor', {
   enableDragAndDropFileToEditor: true,
   filebrowser: {
       ajax: {
