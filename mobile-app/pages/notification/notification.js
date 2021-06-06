@@ -35,7 +35,7 @@
 })
 
 function goDetails(link){
-  if(action_url!=null){
+  if(link!=null){
     location.href=link
   }
  

@@ -7,7 +7,7 @@
                 <table class="striped" onclick="location.reload('tr_status.php#<%= message_id %>')">
                 <thead>
                     <tr>
-                        <th width="50%">${item.id }</th>
+                        <th width="50%">id ${item.id }</th>
                         <th style="text-align:right">${new Date(_created).toLocaleDateString()+""+
                         new Date(_created).toLocaleTimeString() }</th>            
                     </tr>
