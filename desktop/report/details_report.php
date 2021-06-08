@@ -107,8 +107,12 @@
 						<span style="font-weight:bold;">
 						Used Tools List
 						</span>
-
+						<div>
+							<%=used_tools_list %>
+						</div>
 						<br>
+
+
 						<span style="font-weight: bold;">
 						<!-- Description Of Trouble -->
 						Lessons Learned
@@ -120,9 +124,8 @@
 						</div>
 						<br>
 
-						<div>
-							<%=used_tools_list %>
-						</div>
+
+
 
 
 						<span style="font-weight:bold;">
