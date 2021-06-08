@@ -9,7 +9,7 @@
     text-align: center;
 	}
 
-	.container_main img{width:100%}	
+	.container_main img{width:100%}
 </style>
 <h1 class="page-title">Equipment Maintenace Report </h1>
 
@@ -82,14 +82,7 @@
 							<%= name_of_trouble %>
 						</div>
 						<br>
-						<span style="font-weight: bold;">
-						Description Of Trouble
-						</span>
-						<br>
-						<div>
-							<%= trouble_description %>
-						</div>
-						<br>
+
 
 						<span style="font-weight: bold;">
 						Trouble Analysis
@@ -115,6 +108,16 @@
 						Used Tools List
 						</span>
 
+						<br>
+						<span style="font-weight: bold;">
+						<!-- Description Of Trouble -->
+						Lessons Learned
+
+						</span>
+						<br>
+						<div>
+							<%= trouble_description %>
+						</div>
 						<br>
 
 						<div>
@@ -154,7 +157,7 @@
 						</div>
 
 
-<!-- 						
+<!--
 						<span style="font-weight:bold;">
 						Plant name
 						</span>
@@ -230,7 +233,7 @@
             printWindow.document.write(`</head><body> <div class="card">`);
             printWindow.document.write(divContents);
             printWindow.document.write('</div></body></html>');
-            printWindow.document.close(); 
+            printWindow.document.close();
             setTimeout(function(){
                 printWindow.print();
             },2000)
