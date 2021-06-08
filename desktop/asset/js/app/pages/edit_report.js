@@ -10,7 +10,10 @@
         {option:"plant_name",value:"Plant name"},{option:"equipment_name",value:"Equipment name"},{option:"department",value:"Department"},{option:"kks_no",value:"KKS no"},    
         {option:"name_of_trouble",value:"Name of trouble"},{option:"trouble_analysis",value:"Trouble analysis"},
         {option:"description_of_work",value:"Description of work"},{option:"root_cause_analysis",
-        value:"Root cause analysis"},{option:"trouble_description",value:"Trouble description"},{option:"used_tools_list",value:"Used tools list"},
+        value:"Root cause analysis"},
+        // {option:"trouble_description",value:"Trouble description"},
+        {option:"trouble_description",value:"Lessons Learned"},
+        {option:"used_tools_list",value:"Used tools list"},
         {option:"list_of_personel",value:"List of personel"},{option:"referance_manual",value:"Referance manual"},{option:"report_creator",value:"Report creator"}
        
     ]   

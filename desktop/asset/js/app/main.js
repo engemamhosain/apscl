@@ -114,7 +114,10 @@ function api_get(collection_name, callback){
     $.post(url,{"filter": {"status":status}}, function(data){
         set_full_text(data);
         tg.db[collection_name] = data;
-        tg.db[collection_name].fields= [{option:"name_of_trouble",value:"name of trouble"},{option:"description_of_work",value:"description of work"},{option:"root_cause_analysis",value:"root cause analysis"},{option:"trouble_description",value:"trouble description"},{option:"used_tools_list",value:"used tools list"},{option:"report_creator",value:"report creator"}]
+        tg.db[collection_name].fields= [{option:"name_of_trouble",value:"name of trouble"},{option:"description_of_work",value:"description of work"},{option:"root_cause_analysis",value:"root cause analysis"},
+            // {option:"trouble_description",value:"trouble description"},
+            {option:"trouble_description",value:"Lessons Learned"},
+            {option:"used_tools_list",value:"used tools list"},{option:"report_creator",value:"report creator"}]
         callback(data);
     });
 }

@@ -10,7 +10,7 @@
 
 <main>
 <div class="container" style="background-color:white">
-	<h1 class="page-title">Create A Equpment Maintenace Report </h1>
+	<h1 class="page-title">Create A Equipment Maintenance Report </h1>
 
 
 
