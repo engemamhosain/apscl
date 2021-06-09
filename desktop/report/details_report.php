@@ -11,7 +11,7 @@
 
 	.container_main img{width:100%}
 </style>
-<h1 class="page-title">Equipment Maintenace Report </h1>
+<h1 class="page-title">Equipment Maintenance Report </h1>
 
 <main>
 <div class="container">
