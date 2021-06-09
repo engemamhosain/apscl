@@ -34,6 +34,19 @@
 							<%=plant_name %>
 						</span></a>
 						<br>
+						<br>
+
+						<span class="title" style="font-weight: bold;">
+
+						Equipment Name
+						</span>
+						<br>
+
+
+						<div>
+							<a><%= equipment_name %></a>
+						</div>
+						<br>
 						</div>
 						<div class="col s12 m4 x4 ">
 						<span style="font-weight: bold;">
@@ -58,14 +71,24 @@
 
 					<div class="col s12">
 					<hr>
+
+
+
+
+
 						<span style="font-weight: bold;">
+
 						Department
 						</span>
 						<br>
+
+
 						<div>
 							<%= department %>
 						</div>
 						<br>
+
+
 						<span style="font-weight: bold;">
 						KKS No
 						</span>
@@ -74,6 +97,8 @@
 							<%= kks_no %>
 						</div>
 						<br>
+
+
 						<span style="font-weight: bold;">
 						Name Of Trouble
 						</span>
