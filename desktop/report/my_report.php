@@ -9,7 +9,7 @@
 
 	}
 </style>
-<h1 class="page-title">My Equipment Maintenace Reports </h1>
+<h1 class="page-title">My Equipment Maintenance Reports </h1>
 
 
 <main>

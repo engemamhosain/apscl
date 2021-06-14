@@ -11,7 +11,7 @@
 
 	.container_main img{width:100%}
 </style>
-<h1 class="page-title">Equipment Maintenace Report </h1>
+<h1 class="page-title">Equipment Maintenance Report </h1>
 
 <main>
 <div class="container">
@@ -33,6 +33,19 @@
 						<a><span class="title">
 							<%=plant_name %>
 						</span></a>
+						<br>
+						<br>
+
+						<span class="title" style="font-weight: bold;">
+
+						Equipment Name
+						</span>
+						<br>
+
+
+						<div>
+							<a><%= equipment_name %></a>
+						</div>
 						<br>
 						</div>
 						<div class="col s12 m4 x4 ">
@@ -58,14 +71,24 @@
 
 					<div class="col s12">
 					<hr>
+
+
+
+
+
 						<span style="font-weight: bold;">
+
 						Department
 						</span>
 						<br>
+
+
 						<div>
 							<%= department %>
 						</div>
 						<br>
+
+
 						<span style="font-weight: bold;">
 						KKS No
 						</span>
@@ -74,6 +97,8 @@
 							<%= kks_no %>
 						</div>
 						<br>
+
+
 						<span style="font-weight: bold;">
 						Name Of Trouble
 						</span>
@@ -107,8 +132,12 @@
 						<span style="font-weight:bold;">
 						Used Tools List
 						</span>
-
+						<div>
+							<%=used_tools_list %>
+						</div>
 						<br>
+
+
 						<span style="font-weight: bold;">
 						<!-- Description Of Trouble -->
 						Lessons Learned
@@ -120,13 +149,12 @@
 						</div>
 						<br>
 
-						<div>
-							<%=used_tools_list %>
-						</div>
+
+
 
 
 						<span style="font-weight:bold;">
-							Root Cause Analysisent
+							Root Cause Analysis
 						</span>
 
 						<br>
