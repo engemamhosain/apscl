@@ -46,7 +46,7 @@ function LoadList(page_offset){
 }
 
 function LoadPagination(count){
-  $(".count").html("Total Approve Report "+count);
+  $(".count").html("Total Approved Report "+count);
   $(function () { 
     $('#dynapagin').dynapagin({
       total:Math.ceil(count/25),

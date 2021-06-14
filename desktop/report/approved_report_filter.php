@@ -71,7 +71,7 @@
 	</div>
 </div>
 	<div class="row">
-	<div class="list collection container_main"></div>
+	<div class="list collection container_main" style="margin:100px"></div>
 	</div>
 </main>
 
