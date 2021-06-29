@@ -22,7 +22,10 @@ function addMember(){
   try {
 
     get("i_chat_groups_members.php",{group_id:location.hash.split("/")[1],user_id:search_data[0].id,user_name:search_data[0].name},function (result){ 
-      location.reload()
+      if(window.app){
+        app.toast("member added successfully")
+        }
+        window.history.back();
     })
   } catch (error) {}
  
