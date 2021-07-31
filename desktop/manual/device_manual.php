@@ -1,6 +1,8 @@
 <?php include '../includes/header-new.php';?>
 <main>
     <div class="container">
+    <!-- <a class="waves-effect waves-light btn" onclick='location.href="approved_report_filter.php"
+'><i class="material-icons left">filter_list</i>Filter</a> -->
         <div class="card"><?php include '../includes/manual_search_list.php';?></div>
     </div>
 </main> 

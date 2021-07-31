@@ -8,8 +8,8 @@
                 <thead>
                     <tr>
                         <th width="50%">id ${item.id }</th>
-                        <th style="text-align:right">${new Date(_created).toLocaleDateString()+""+
-                        new Date(_created).toLocaleTimeString() }</th>            
+                        <th style="text-align:right">${new Date(item.created_on).toLocaleDateString()+""+
+                        new Date(item.created_on).toLocaleTimeString() }</th>            
                     </tr>
                 </thead>
 

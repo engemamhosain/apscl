@@ -1,5 +1,6 @@
 
 var page_offset=0;
+
 function getSearch(keyword,id){
 
  
@@ -38,11 +39,11 @@ function getSearch(keyword,id){
 })
 
 }
-function load_default(){
+function load_default(id){
 
 
 
-    get('gm_device_manual.php',{}, function(data){
+    get('gm_device_manual.php',{plant_id:id}, function(data){
 
         try {
           $(".count").html(`<h4>Total Count ${data.count}</h4>`);
@@ -67,7 +68,7 @@ function load_default(){
     });
 }
 
-load_default();
+load_default(location.hash.split("#")[1]);
 
 
 $(document).ready(function(){
@@ -80,25 +81,14 @@ $(document).ready(function(){
             return
             }
       page_offset=0;
-      getSearch($("#search").val(),1);
+      getSearch($("#search").val(),location.hash.split("#")[1]);
      
     });
   });
 
 
 
-  // $(window).scroll(function() {
-  //   if($(window).scrollTop() == $(document).height() - $(window).height()) {
-  //     if($("#search").val().length==0){
-  //       //load_default()
-        
-  //       }else{
-  //         getSearch($("#search").val(),1);
-  //         $(".progress").show();
-  //       }
-  
-  //   }
-  // });
+ 
 
 
 
